@@ -59,45 +59,45 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
                 return;
             }
         };  */
-// Open the repository
-let repo = match Repository::open_ext(
-    repo_path,
-    RepositoryOpenFlags::empty(),
-    Vec::<OsString>::new(),
-) {
-    Ok(repo) => repo,
-    Err(err) => {
-        println!("Failed to open repository: {}", err);
-        return;
-    }
-};
+        // Open the repository
+        let repo = match Repository::open_ext(
+            repo_path,
+            RepositoryOpenFlags::empty(),
+            Vec::<OsString>::new(),
+        ) {
+            Ok(repo) => repo,
+            Err(err) => {
+                println!("Failed to open repository: {}", err);
+                return;
+            }
+        };
 
-// Get the commit
-let commit = match repo.find_commit(Oid::from_str(&sha.0).expect("Invalid OID")) {
-    Ok(commit) => commit,
-    Err(err) => {
-        println!("Failed to find commit {}: {}", sha.0, err);
-        return;
-    }
-};
+        // Get the commit
+        let commit = match repo.find_commit(Oid::from_str(&sha.0).expect("Invalid OID")) {
+            Ok(commit) => commit,
+            Err(err) => {
+                println!("Failed to find commit {}: {}", sha.0, err);
+                return;
+            }
+        };
 
-// Get the diff
-let tree1 = commit.tree().expect("Failed to get tree");
-let tree2 = if commit.parent_count() > 0 {
-    let parent = commit.parent(0).expect("Failed to get parent commit");
-    parent.tree().expect("Failed to get parent tree")
-} else {
-    repo.revparse_single("HEAD").expect("Failed to get HEAD").peel_to_tree().expect("Failed to peel to tree")
-};
-let diff = repo.diff_tree_to_tree(Some(&tree2), Some(&tree1), None).expect("Failed to diff trees");
-let mut diff_text = Vec::new();
-diff.print(git2::DiffFormat::Patch, |delta, hunk, line| {
-    diff_text.extend_from_slice(line.content());
-    diff_text.push(b'\n');
-    true
-}).expect("Failed to print diff");
-let diff_str = String::from_utf8_lossy(&diff_text).to_string();
-                        
+        // Get the diff
+        let tree1 = commit.tree().expect("Failed to get tree");
+        let tree2 = if commit.parent_count() > 0 {
+            let parent = commit.parent(0).expect("Failed to get parent commit");
+            parent.tree().expect("Failed to get parent tree")
+        } else {
+            repo.revparse_single("HEAD").expect("Failed to get HEAD").peel_to_tree().expect("Failed to peel to tree")
+        };
+        let diff = repo.diff_tree_to_tree(Some(&tree2), Some(&tree1), None).expect("Failed to diff trees");
+        let mut diff_text = Vec::new();
+        diff.print(git2::DiffFormat::Patch, |delta, hunk, line| {
+            diff_text.extend_from_slice(line.content());
+            diff_text.push(b'\n');
+            true
+        }).expect("Failed to print diff");
+        let diff_str = String::from_utf8_lossy(&diff_text).to_string();
+                                
 
         let parsed_diff = get_functions_from_diff(&diff_str, age.try_into().unwrap(), &sha.1);
 
