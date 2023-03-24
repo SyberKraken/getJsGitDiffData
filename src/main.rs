@@ -1,13 +1,17 @@
 use std::collections::HashMap;
-use std::fs;
+use std::{fs, env};
+use std::sync::{Arc, Mutex};
 use std::process::Command;
 use std::io::Write;
+use indicatif::{ProgressBar, ProgressStyle};
 use regex::Regex;
+use rayon::prelude::*;
+use git2::{Repository, Oid};
 //sha,  funcs, age, commit message
 
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i32, String)>> {
-    let mut sha_to_parsed_diffs:HashMap<String, Vec<(String, Vec<String>,i32, String)>> = HashMap::new();
-    let mut errors = 0;
+    let sha_to_parsed_diffs:HashMap<String, Vec<(String, Vec<String>,i32, String)>> = HashMap::new();
+    let shared_data = Arc::new(Mutex::new(sha_to_parsed_diffs));
     
 
     let output = Command::new("git")
@@ -29,8 +33,15 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
 
     let sha_list = commits;
 
-    let mut age = 0;
-    for sha in sha_list {
+    let pb = ProgressBar::new(sha_list.len().try_into().unwrap());
+    pb.set_style(
+        ProgressStyle::default_bar()
+            .template("{bar:40} {pos}/{len} [{elapsed_precise}] ({eta})").unwrap()
+    );
+    
+
+    sha_list.par_iter().enumerate().for_each(|(age,sha)| {
+        pb.inc(1);
         let diff_output = Command::new("git")
             .arg("--git-dir=".to_owned() + repo_path + "/.git")
             .arg("--work-tree=".to_owned() + repo_path)
@@ -41,23 +52,24 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
         let diff = match diff_output {
             Ok(output) => String::from_utf8_lossy(&output.stdout).to_string(),
             Err(err) => {
-                errors += 1;
                 println!("Error getting diff for sha {}: {:?}", sha.0, err);
-                continue;
+                return;
             }
         };
 
-        age+=1;
-        let parsed_diff = get_functions_from_diff(&diff, age,&sha.1);
+        let parsed_diff = get_functions_from_diff(&diff, age.try_into().unwrap(), &sha.1);
 
-        sha_to_parsed_diffs.insert(sha.0.to_owned(), parsed_diff);
-    }
 
-    if errors > 0 {
-        println!("{} errors in linking of commits", errors);
-    }
+        let mut data = shared_data.lock().unwrap();
+        data.insert(sha.0.to_owned(), parsed_diff);
+        drop(data)
+    });
+    //this makes us wait for all to finish
+    sha_list.par_iter().for_each(|_| {});
 
-    sha_to_parsed_diffs
+    let data = shared_data.lock().unwrap();
+    let returndata = data.clone();
+    returndata
 }
 
 //age and message is passthrough
@@ -86,8 +98,10 @@ fn get_functions_from_diff(diff: &str, age: i32, message: &String) -> Vec<(Strin
     }
     files_objects
 }
+//Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
 fn main() {
-    let directory_path = "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv";
+    let args: Vec<String> = env::args().collect();
+    let directory_path = &args[1];
     let sha_to_parsed_diffs = generate_json(&directory_path);
 
     let mut result = HashMap::new();
