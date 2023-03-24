@@ -1,0 +1,3668 @@
+{
+  "95c8e390c962802df08b3192386e203543655622": [
+    [
+      "README.md",
+      [],
+      4,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      4,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [],
+      4,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      4,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      4,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ]
+  ],
+  "76e58bf3cd10f2e99833656f35794f6ec0c3b33b": [
+    [
+      "README.md",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      27,
+      "readme update"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      27,
+      "readme update"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      27,
+      "readme update"
+    ],
+    [
+      "log.csv",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "package-lock.json",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "package.json",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      27,
+      "readme update"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      27,
+      "readme update"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      27,
+      "readme update"
+    ],
+    [
+      "{",
+      [],
+      27,
+      "readme update"
+    ]
+  ],
+  "84a07502f9ffd55f71990ddd04fb54f80f09f1d6": [
+    [
+      "README.md",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/gitdifffor2commits.bat",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/gitstuff.bat",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "log.csv",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "package-lock.json",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "package.json",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "{",
+      [],
+      33,
+      "first version of counting touched function frequency is added"
+    ]
+  ],
+  "a09a0697e57dd2a68e027ce14b201da5a9ea1612": [
+    [
+      "README.md",
+      [],
+      11,
+      "actualy added images"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      11,
+      "actualy added images"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      11,
+      "actualy added images"
+    ],
+    [
+      "package-lock.json",
+      [],
+      11,
+      "actualy added images"
+    ],
+    [
+      "package.json",
+      [],
+      11,
+      "actualy added images"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      11,
+      "actualy added images"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      11,
+      "actualy added images"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      11,
+      "actualy added images"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      11,
+      "actualy added images"
+    ]
+  ],
+  "f5895b63ce8936434ddf1e8e80818500bdb8264e": [
+    [
+      "README.md",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/next.config.js",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/package-lock.json",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/package.json",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "log.csv",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "package-lock.json",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "package.json",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      22,
+      "reworked menu header"
+    ],
+    [
+      "{",
+      [],
+      22,
+      "reworked menu header"
+    ]
+  ],
+  "b83d4e6b4a45efd783597231e6a5fc4fe41d9747": [
+    [
+      "README.md",
+      [],
+      10,
+      "added image to readme"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      10,
+      "added image to readme"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      10,
+      "added image to readme"
+    ],
+    [
+      "package-lock.json",
+      [],
+      10,
+      "added image to readme"
+    ],
+    [
+      "package.json",
+      [],
+      10,
+      "added image to readme"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      10,
+      "added image to readme"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      10,
+      "added image to readme"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      10,
+      "added image to readme"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      10,
+      "added image to readme"
+    ]
+  ],
+  "40fc944f6f5d46219e4bc27d07a057da3838cb82": [
+    [
+      "README.md",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "package-lock.json",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "package.json",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home",
+        "Home"
+      ],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      16,
+      "fully working input on page for loading data from remote repositories"
+    ]
+  ],
+  "63efe55c0a6cf626992cc7e4cf1ad4c64e5ce7fa": [
+    [
+      "README.md",
+      [],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "isBug",
+        "processDiff",
+        "processDiff"
+      ],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "package-lock.json",
+      [],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "package.json",
+      [],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      8,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ]
+  ],
+  "45f1acdd8266c46675bcfca1fd6c5033ca0f15b1": [
+    [
+      "README.md",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/next.config.js",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/package-lock.json",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/package.json",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "log.csv",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "package-lock.json",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "package.json",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      24,
+      "optimized string pruning"
+    ],
+    [
+      "{",
+      [],
+      24,
+      "optimized string pruning"
+    ]
+  ],
+  "45196e216366dd279feb1afd905a28083815a69d": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "package-lock.json",
+      [],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "package.json",
+      [],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      9,
+      "Added video to readme"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      9,
+      "Added video to readme"
+    ]
+  ],
+  "760a943ab34a70dd2b8bbe286532b785733fcc08": [
+    [
+      "README.md",
+      [],
+      3,
+      "added full state variables for factors, consider calculating all the factor version and displaying results"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      3,
+      "added full state variables for factors, consider calculating all the factor version and displaying results"
+    ]
+  ],
+  "ea811e5ac21b3aadc2a8f2dc5a10e07b601f9ba2": [
+    [
+      "README.md",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "package-lock.json",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "package.json",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      15,
+      "updated readme and added hint in input bar"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      15,
+      "updated readme and added hint in input bar"
+    ]
+  ],
+  "3ba623a3a4c003fcd20c6d7c527d372761273a92": [
+    [
+      "README.md",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "X",
+        "File_treemap"
+      ],
+      36,
+      "testcommit1"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      36,
+      "testcommit1"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      36,
+      "testcommit1"
+    ],
+    [
+      "log.csv",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "package-lock.json",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "package.json",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      36,
+      "testcommit1"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      36,
+      "testcommit1"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      36,
+      "testcommit1"
+    ],
+    [
+      "{",
+      [],
+      36,
+      "testcommit1"
+    ]
+  ],
+  "90532b1810c4178ec99d5bec457344c7a4327a58": [
+    [
+      "README.md",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      37,
+      "custom data container added"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      37,
+      "custom data container added"
+    ],
+    [
+      "components/X.tsx",
+      [
+        "X"
+      ],
+      37,
+      "custom data container added"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      37,
+      "custom data container added"
+    ],
+    [
+      "log.csv",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "package-lock.json",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "package.json",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      37,
+      "custom data container added"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      37,
+      "custom data container added"
+    ],
+    [
+      "public/data.json",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "static/data.js",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      37,
+      "custom data container added"
+    ],
+    [
+      "{",
+      [],
+      37,
+      "custom data container added"
+    ]
+  ],
+  "757c050da187e6163a38441aa3599f9f8470ec85": [
+    [
+      "README.md",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "log.csv",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "package-lock.json",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "package.json",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "pages/api/test.ts",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "{",
+      [],
+      19,
+      "working initial count of functions form weblink and js"
+    ]
+  ],
+  "cc1adad5413f7380a604f20948128cc5ce68326b": [
+    [
+      "README.md",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "log.csv",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "package-lock.json",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "package.json",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "{",
+      [],
+      29,
+      "fully working detection all  the way toscreen"
+    ]
+  ],
+  "d977974ec98cc89d2e325c71c7f4ef5f302b89e0": [
+    [
+      "README.md",
+      [],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog"
+      ],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      6,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ]
+  ],
+  "c1466b2edf4ac954469713d3c977b6cd7c8a6d80": [
+    [
+      "README.md",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/package-lock.json",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/package.json",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "log.csv",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "package-lock.json",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "package.json",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "{",
+      [],
+      26,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ]
+  ],
+  "44f07236cde453992f27a0cb02872db0bb5267bb": [
+    [
+      "README.md",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "log.csv",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "package-lock.json",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "package.json",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ],
+    [
+      "{",
+      [],
+      32,
+      "api/data now reads values form generated result file"
+    ]
+  ],
+  "b3950b47726910642377917c09be0e050ddddf9b": [
+    [
+      "README.md",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/package-lock.json",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/package.json",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "log.csv",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "package-lock.json",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "package.json",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      25,
+      "updated readme and comments"
+    ],
+    [
+      "{",
+      [],
+      25,
+      "updated readme and comments"
+    ]
+  ],
+  "e99015c98a79afb499730f77f4895b7f018e97c6": [
+    [
+      "README.md",
+      [],
+      5,
+      "forgot to save 1 file last commit"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      5,
+      "forgot to save 1 file last commit"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog"
+      ],
+      5,
+      "forgot to save 1 file last commit"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      5,
+      "forgot to save 1 file last commit"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      5,
+      "forgot to save 1 file last commit"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      5,
+      "forgot to save 1 file last commit"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      5,
+      "forgot to save 1 file last commit"
+    ]
+  ],
+  "2792a12205260c105bb200e30404b66ee971b762": [
+    [
+      "README.md",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "log.csv",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "package-lock.json",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "package.json",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "pages/api/result.json",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "{",
+      [],
+      31,
+      "frontend not uses data from json file in gitscripts"
+    ]
+  ],
+  "a08e7aadceaf7f673c2bc2d690e4da5563e8c00d": [
+    [
+      "README.md",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/next.config.js",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/package-lock.json",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/package.json",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "log.csv",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "package-lock.json",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "package.json",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "{",
+      [],
+      21,
+      "now shows precentage of commits that are bugs of given functions"
+    ]
+  ],
+  "ba4c2670a51051c8e84ec54fee74f1b0d31eee1f": [
+    [
+      "README.md",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "package-lock.json",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "package.json",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      14,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      14,
+      "fixed git exec command in gitlogtext"
+    ]
+  ],
+  "c8d37542cd53de0ac7af725ffc454e793926c895": [
+    [
+      "README.md",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "log.csv",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "package-lock.json",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "package.json",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "pages/api/result.json",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home",
+        "Home"
+      ],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "{",
+      [],
+      30,
+      "testing for arrow fiuncton detection"
+    ]
+  ],
+  "f9881d2b658cf28527314e22eb31729741b8f78f": [
+    [
+      "README.md",
+      [],
+      12,
+      "added image"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      12,
+      "added image"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      12,
+      "added image"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      12,
+      "added image"
+    ],
+    [
+      "package-lock.json",
+      [],
+      12,
+      "added image"
+    ],
+    [
+      "package.json",
+      [],
+      12,
+      "added image"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      12,
+      "added image"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      12,
+      "added image"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      12,
+      "added image"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      12,
+      "added image"
+    ]
+  ],
+  "2c2e9562f4f746c90debfa22427fa6738f14429d": [
+    [
+      "README.md",
+      [],
+      2,
+      "removed example clone of treemap for multichart"
+    ]
+  ],
+  "0443608c68a72346597223bc1dede74e167de5c9": [
+    [
+      "README.md",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "log.csv",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "package-lock.json",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "package.json",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "public/data.json",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "styles/Home.module.css",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "{",
+      [],
+      38,
+      "Initial commit from Create Next App"
+    ]
+  ],
+  "884d6d111701d7e7587319c3ad6f8dd9ea5e0327": [
+    [
+      "README.md",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      34,
+      "test3"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      34,
+      "test3"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      34,
+      "test3"
+    ],
+    [
+      "log.csv",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "package-lock.json",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "package.json",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      34,
+      "test3"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      34,
+      "test3"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      34,
+      "test3"
+    ],
+    [
+      "{",
+      [],
+      34,
+      "test3"
+    ]
+  ],
+  "20c733da2b8a0a5e62d0c10eed21b7dc17c25ee0": [],
+  "0e4e8e2a247ef6d4e053ccf1e203f5c8ae045779": [
+    [
+      "README.md",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      35,
+      "test2"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      35,
+      "test2"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      35,
+      "test2"
+    ],
+    [
+      "log.csv",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "package-lock.json",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "package.json",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      35,
+      "test2"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      35,
+      "test2"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      35,
+      "test2"
+    ],
+    [
+      "{",
+      [],
+      35,
+      "test2"
+    ]
+  ],
+  "bb60aa6f1453914ebf66a29754b3df4aed80f982": [
+    [
+      "README.md",
+      [],
+      13,
+      "styling change"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      13,
+      "styling change"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      13,
+      "styling change"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      13,
+      "styling change"
+    ],
+    [
+      "package-lock.json",
+      [],
+      13,
+      "styling change"
+    ],
+    [
+      "package.json",
+      [],
+      13,
+      "styling change"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      13,
+      "styling change"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      13,
+      "styling change"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      13,
+      "styling change"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      13,
+      "styling change"
+    ]
+  ],
+  "ca104b2ad2d84a92f6c5c10ba762c6e2ed0917a0": [
+    [
+      "README.md",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/next.config.js",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/package-lock.json",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/package.json",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "log.csv",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "package-lock.json",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "package.json",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ],
+    [
+      "{",
+      [],
+      23,
+      "bugfixcommitexamplefortesting"
+    ]
+  ],
+  "9d8c3d2a8fa7c490e5ab92bc50571b86eafb0678": [
+    [
+      "README.md",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "package-lock.json",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "package.json",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "{",
+      [],
+      17,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ]
+  ],
+  "502aec9f2908b0993d1991c4198b9cb12c353bf6": [
+    [
+      "README.md",
+      [],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "isBug"
+      ],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      7,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ]
+  ],
+  "63603d564c2cf50e1772eec560134bb18ca044dd": [
+    [
+      "README.md",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "log.csv",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "package-lock.json",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "package.json",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      20,
+      "cleanup for unused files"
+    ],
+    [
+      "{",
+      [],
+      20,
+      "cleanup for unused files"
+    ]
+  ],
+  "1a343b082c77bf09084b55fed7ada818e062d19c": [
+    [
+      "README.md",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "isBug",
+        "processDiff"
+      ],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "log.csv",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "package-lock.json",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "package.json",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "pages/api/test.ts",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ],
+    [
+      "{",
+      [],
+      18,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ]
+  ],
+  "75831242a562ac42dce97980c0f1e06251b626c2": [
+    [
+      "README.md",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "gitscripts/result.json",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "isBug",
+        "processDiff"
+      ],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "log.csv",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "package-lock.json",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "package.json",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      28,
+      "pushing to remote"
+    ],
+    [
+      "{",
+      [],
+      28,
+      "pushing to remote"
+    ]
+  ]
+}
