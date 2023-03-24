@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::ffi::OsString;
 use std::{fs, env};
 use std::sync::{Arc, Mutex};
 use std::process::Command;
@@ -6,7 +7,7 @@ use std::io::Write;
 use indicatif::{ProgressBar, ProgressStyle};
 use regex::Regex;
 use rayon::prelude::*;
-use git2::{Repository, Oid};
+use git2::{Repository, RepositoryOpenFlags, Oid};
 //sha,  funcs, age, commit message
 
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i32, String)>> {
@@ -22,6 +23,7 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
         .output()
         .unwrap()
         .stdout;
+
     let log_output = String::from_utf8_lossy(&output);
     let mut commits = vec![];
     for line in log_output.lines() {
@@ -42,7 +44,8 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
 
     sha_list.par_iter().enumerate().for_each(|(age,sha)| {
         pb.inc(1);
-        let diff_output = Command::new("git")
+
+        /*  let diff_output = Command::new("git")
             .arg("--git-dir=".to_owned() + repo_path + "/.git")
             .arg("--work-tree=".to_owned() + repo_path)
             .arg("diff")
@@ -55,9 +58,48 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
                 println!("Error getting diff for sha {}: {:?}", sha.0, err);
                 return;
             }
-        };
+        };  */
+// Open the repository
+let repo = match Repository::open_ext(
+    repo_path,
+    RepositoryOpenFlags::empty(),
+    Vec::<OsString>::new(),
+) {
+    Ok(repo) => repo,
+    Err(err) => {
+        println!("Failed to open repository: {}", err);
+        return;
+    }
+};
 
-        let parsed_diff = get_functions_from_diff(&diff, age.try_into().unwrap(), &sha.1);
+// Get the commit
+let commit = match repo.find_commit(Oid::from_str(&sha.0).expect("Invalid OID")) {
+    Ok(commit) => commit,
+    Err(err) => {
+        println!("Failed to find commit {}: {}", sha.0, err);
+        return;
+    }
+};
+
+// Get the diff
+let tree1 = commit.tree().expect("Failed to get tree");
+let tree2 = if commit.parent_count() > 0 {
+    let parent = commit.parent(0).expect("Failed to get parent commit");
+    parent.tree().expect("Failed to get parent tree")
+} else {
+    repo.revparse_single("HEAD").expect("Failed to get HEAD").peel_to_tree().expect("Failed to peel to tree")
+};
+let diff = repo.diff_tree_to_tree(Some(&tree2), Some(&tree1), None).expect("Failed to diff trees");
+let mut diff_text = Vec::new();
+diff.print(git2::DiffFormat::Patch, |delta, hunk, line| {
+    diff_text.extend_from_slice(line.content());
+    diff_text.push(b'\n');
+    true
+}).expect("Failed to print diff");
+let diff_str = String::from_utf8_lossy(&diff_text).to_string();
+                        
+
+        let parsed_diff = get_functions_from_diff(&diff_str, age.try_into().unwrap(), &sha.1);
 
 
         let mut data = shared_data.lock().unwrap();
@@ -88,7 +130,7 @@ fn get_functions_from_diff(diff: &str, age: i32, message: &String) -> Vec<(Strin
             curr_filename = name_match[1].to_string();
             curr_file_functions = vec![];
         }
-        if let Some(func_match) = regex.find(line) {
+        else if let Some(func_match) = regex.find(line) {
             let function_name = func_match.as_str().split('(').next().unwrap().trim().to_string().replace("function", "").replace(" ", "").replace("=>", "").replace(" async","").replace("= ","=").replace(": ",":").replace(") ",")").replace('=',"");
             curr_file_functions.push(function_name);
         }
