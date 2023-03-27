@@ -140,18 +140,185 @@ fn get_functions_from_diff(diff: &str, age: i32, message: &String) -> Vec<(Strin
     }
     files_objects
 }
-//Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let directory_path = &args[1];
-    let sha_to_parsed_diffs = generate_json(&directory_path);
 
-    let mut result = HashMap::new();
-    for (sha, parsed_diffs) in sha_to_parsed_diffs {
-        result.insert(sha, parsed_diffs);
+
+
+
+//Class part, mbe move this
+struct Function {
+    name: String,
+    freq_counter: f32,
+    bug_counter: f32,
+    aged_freq_counter: f32,
+    aged_bug_freq_counter: f32,
+    oldest_newest: (i32, i32),
+}
+impl Function {
+    fn new(
+        name: String,
+        freq_counter: f32,
+        bug_counter: f32,
+        aged_freq_counter: f32,
+        aged_bug_freq_counter: f32,
+        oldest_newest: (i32, i32),
+    ) -> Function {
+        Function {
+            name,
+            freq_counter,
+            bug_counter,
+            aged_freq_counter,
+            aged_bug_freq_counter,
+            oldest_newest,
+        }
+    }
+}
+
+struct File {
+    name: String,
+    freq_counter: f32,
+    bug_counter: f32,
+    aged_freq_counter: f32,
+    aged_bug_freq_counter: f32,
+    oldest_newest: (i32, i32),
+    function_list: HashMap<String, Function>,
+}
+impl File {
+    fn new(
+        name: String,
+        freq_counter: f32,
+        bug_counter: f32,
+        aged_freq_counter: f32,
+        aged_bug_freq_counter: f32,
+        oldest_newest: (i32, i32),
+    ) -> File {
+        File {
+            name,
+            freq_counter,
+            bug_counter,
+            aged_freq_counter,
+            aged_bug_freq_counter,
+            oldest_newest,
+            function_list: HashMap::new(),
+        }
     }
 
-    let json = serde_json::to_string_pretty(&result).unwrap();
-    let mut file = fs::File::create("generatedJson.json").unwrap();
-    file.write_all(json.as_bytes()).unwrap();
+    fn add_function(&mut self, function: Function) {
+        self.function_list.insert(function.name.clone(), function);
+    }
+}
+
+struct FileList {
+    files: HashMap<String, File>,
+}
+
+impl FileList {
+    fn add_file(&mut self, filename: &str, freq_counter: f32, bug_counter: f32, aged_freq_counter: f32, aged_bug_freq_counter: f32, oldest_newest: (i32, i32)) {
+        if let Some(file) = self.files.get_mut(filename) {
+            // Update existing file
+            file.freq_counter += freq_counter;
+            file.bug_counter += bug_counter;
+            file.aged_freq_counter += aged_freq_counter;
+            file.aged_bug_freq_counter += aged_bug_freq_counter;
+            if oldest_newest.0 < file.oldest_newest.0 {
+                file.oldest_newest.0 = oldest_newest.0;
+            }
+            if oldest_newest.1 > file.oldest_newest.1 {
+                file.oldest_newest.1 = oldest_newest.1;
+            }
+        } else {
+            // Add new file
+            let file = File {
+                name: filename.to_string(),
+                freq_counter,
+                bug_counter,
+                aged_freq_counter,
+                aged_bug_freq_counter,
+                oldest_newest,
+                function_list: HashMap::new(),
+            };
+            self.files.insert(filename.to_string(), file);
+        }
+    }
+    
+    fn add_function(&mut self, filename: &str, function_name: &str, freq_counter: f32, bug_counter: f32, aged_freq_counter: f32, aged_bug_freq_counter: f32, oldest_newest: (i32, i32)) {
+        if let Some(file) = self.files.get_mut(filename) {
+            if let Some(function) = file.function_list.get_mut(function_name) {
+                // Update existing function
+                function.freq_counter += freq_counter;
+                function.bug_counter += bug_counter;
+                function.aged_freq_counter += aged_freq_counter;
+                function.aged_bug_freq_counter += aged_bug_freq_counter;
+                if oldest_newest.0 < function.oldest_newest.0 {
+                    function.oldest_newest.0 = oldest_newest.0;
+                }
+                if oldest_newest.1 > function.oldest_newest.1 {
+                    function.oldest_newest.1 = oldest_newest.1;
+                }
+            } else {
+                // Add new function
+                let function = Function {
+                    name : function_name.to_string(),
+                    freq_counter,
+                    bug_counter,
+                    aged_freq_counter,
+                    aged_bug_freq_counter,
+                    oldest_newest,
+                };
+                file.function_list.insert(function_name.to_string(), function);
+            }
+        } else {
+            // Add new file with new function
+            let mut file = File {
+                name: filename.to_string(),
+                freq_counter,
+                bug_counter,
+                aged_freq_counter,
+                aged_bug_freq_counter,
+                oldest_newest,
+                function_list: HashMap::new(),
+            };
+            let function = Function {
+                name: function_name.to_string(),
+                freq_counter,
+                bug_counter,
+                aged_freq_counter,
+                aged_bug_freq_counter,
+                oldest_newest,
+            };
+            file.function_list.insert(function_name.to_string(), function);
+            self.files.insert(filename.to_string(), file);
+        }
+    }
+}
+//Generation Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
+//Parsing of generated json is 1:path to json, 2 any input at all.
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    if args.len() > 2{
+        let json_path = "generatedJson.json";
+        //let  json_path = &args[1];
+
+        let file_string = std::fs::read_to_string(json_path).unwrap();
+        let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+
+
+        for (sha, sha_content) in file_data{
+
+        }
+
+    }else{
+        let directory_path = &args[1];
+        let sha_to_parsed_diffs = generate_json(&directory_path);
+    
+        let mut result = HashMap::new();
+        for (sha, parsed_diffs) in sha_to_parsed_diffs {
+            result.insert(sha, parsed_diffs);
+        }
+    
+        let json = serde_json::to_string_pretty(&result).unwrap();
+        let mut file = fs::File::create("generatedJson.json").unwrap();
+        file.write_all(json.as_bytes()).unwrap();
+    }
+ 
+
 }
