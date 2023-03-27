@@ -351,26 +351,40 @@ impl fmt::Display for FileList {
 
 
 //Generation Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
-//Parsing of generated json is 1:path to json, 2 any input at all.
+//Parsing of generated json is 1:path to json, 2: new filename, 3:age cuttof, 0 indicates no cuttof
 fn main() {
     let args: Vec<String> = env::args().collect();
     let age_to_year_amount = 1000000 ;//TODO: not implemented
-    let supported_file_types = ["js", "ts"];//TODO: not implemented
-    let recognized_bugfix_indicators = ["bugfix","Bugfix" ];
-    if args.len() > 2{
-        let json_path = "generatedJson.json";
-        //let  json_path = &args[1];
+    let supported_file_types = ["js", "ts", "jsx", "tsx"];//TODO: not implemented
+    let recognized_bugfix_indicators = [
+        Regex::new(r"(?i)line-[0-9]+").unwrap(),    //upsales confirmed
+        Regex::new(r"(?i)bug").unwrap(), //upsales confirmed, might break on other ones
+        Regex::new(r"(?i)hotfix").unwrap(), //upsales confirmed
+        ];
 
+    
+    if args.len() > 3{
+        //let json_path = "generatedJson.json";
+        //"C:\Users\simon\Downloads\upsalesJson.json"
+        let  json_path = &args[1];
+        let new_filename = &args[2];
+        let age_cuttof_string = &args[3].parse::<i128>().unwrap() ;
+        let mut age_cuttof:usize = *age_cuttof_string as usize;
         let file_string = std::fs::read_to_string(json_path).unwrap();
         let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
         let mut file_list: FileList = FileList::new();
         
-
-    
+        let max_age = file_data.len();
+        if age_cuttof == 0{age_cuttof = max_age}
+        let analyze_age_above = max_age - age_cuttof;
+        println!("the max parsed age is, {}", analyze_age_above);
+        //let age_filtered_file_data = item for item in file_data if item.1.2 > ageCuttof;
+        
         for (_, files) in file_data {
+            if (files.len() > 0) && (files[0].2) < analyze_age_above as i32 {continue;}
             for (filename, functions, age, message) in files {
                 let mut bug_counter = 0.0;
-                if recognized_bugfix_indicators.iter().any(|substring| message.contains(substring)){ bug_counter+=1.0;};
+                if (recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message))){ bug_counter+=1.0;};
                 file_list.add_file(&filename, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age));
                 for func_name in functions{
                     file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age))
@@ -380,10 +394,8 @@ fn main() {
 
         //println!("{}", file_list);
         let json = serde_json::to_string_pretty(&file_list).unwrap();
-        let mut file = fs::File::create("parsedJson.json").unwrap();
-        file.write_all(json.as_bytes()).unwrap();
-    
-       
+        let mut file = fs::File::create(new_filename.to_owned() + ".json").unwrap();
+        file.write_all(json.as_bytes()).unwrap();       
 
     }else{
         let directory_path = &args[1];
