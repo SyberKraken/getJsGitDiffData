@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use std::ffi::OsString;
-use std::{fs, env};
+use std::{fs, env, fmt};
 use std::sync::{Arc, Mutex};
 use std::process::Command;
 use std::io::Write;
@@ -8,6 +8,8 @@ use indicatif::{ProgressBar, ProgressStyle};
 use regex::Regex;
 use rayon::prelude::*;
 use git2::{Repository, RepositoryOpenFlags, Oid};
+use serde::{Serialize, Deserialize};
+
 //sha,  funcs, age, commit message
 
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i32, String)>> {
@@ -91,7 +93,7 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>,i3
         };
         let diff = repo.diff_tree_to_tree(Some(&tree2), Some(&tree1), None).expect("Failed to diff trees");
         let mut diff_text = Vec::new();
-        diff.print(git2::DiffFormat::Patch, |delta, hunk, line| {
+        diff.print(git2::DiffFormat::Patch, |_, _, line| {
             diff_text.extend_from_slice(line.content());
             diff_text.push(b'\n');
             true
@@ -145,6 +147,8 @@ fn get_functions_from_diff(diff: &str, age: i32, message: &String) -> Vec<(Strin
 
 
 //Class part, mbe move this
+
+#[derive(Serialize, Deserialize)]
 struct Function {
     name: String,
     freq_counter: f32,
@@ -171,8 +175,23 @@ impl Function {
             oldest_newest,
         }
     }
+   
 }
-
+impl fmt::Display for Function {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "    {}: freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}",
+            self.name,
+            self.freq_counter,
+            self.bug_counter,
+            self.aged_freq_counter,
+            self.aged_bug_freq_counter,
+            self.oldest_newest
+        )
+    }
+}
+#[derive(Serialize, Deserialize)]
 struct File {
     name: String,
     freq_counter: f32,
@@ -205,13 +224,34 @@ impl File {
     fn add_function(&mut self, function: Function) {
         self.function_list.insert(function.name.clone(), function);
     }
+    
+}
+impl fmt::Display for File {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "File {}: freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}\n",
+            self.name,
+            self.freq_counter,
+            self.bug_counter,
+            self.aged_freq_counter,
+            self.aged_bug_freq_counter,
+            self.oldest_newest
+        )?;
+        for function in self.function_list.values() {
+            write!(f, "{}\n", function)?;
+        }
+        Ok(())
+    }
 }
 
+#[derive(Serialize, Deserialize)]
 struct FileList {
     files: HashMap<String, File>,
 }
 
 impl FileList {
+    fn new ()-> FileList{FileList { files: (HashMap::new()) }}
     fn add_file(&mut self, filename: &str, freq_counter: f32, bug_counter: f32, aged_freq_counter: f32, aged_bug_freq_counter: f32, oldest_newest: (i32, i32)) {
         if let Some(file) = self.files.get_mut(filename) {
             // Update existing file
@@ -290,21 +330,60 @@ impl FileList {
         }
     }
 }
+/* impl Serialize for FileList {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        let mut map = serializer.serialize_map(Some(1))?;
+        map.serialize_entry("files", &self.files)?;
+        map.end()
+    }
+} */
+impl fmt::Display for FileList {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        for file in self.files.values() {
+            write!(f, "{}", file)?;
+        }
+        Ok(())
+    }
+}
+
+
 //Generation Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
 //Parsing of generated json is 1:path to json, 2 any input at all.
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let age_to_year_amount = 1000000 ;//TODO: not implemented
+    let supported_file_types = ["js", "ts"];//TODO: not implemented
+    let recognized_bugfix_indicators = ["bugfix","Bugfix" ];
     if args.len() > 2{
         let json_path = "generatedJson.json";
         //let  json_path = &args[1];
 
         let file_string = std::fs::read_to_string(json_path).unwrap();
         let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+        let mut file_list: FileList = FileList::new();
+        
 
-
-        for (sha, sha_content) in file_data{
-
+    
+        for (_, files) in file_data {
+            for (filename, functions, age, message) in files {
+                let mut bug_counter = 0.0;
+                if recognized_bugfix_indicators.iter().any(|substring| message.contains(substring)){ bug_counter+=1.0;};
+                file_list.add_file(&filename, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age));
+                for func_name in functions{
+                    file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age))
+                }
+            }
         }
+
+        //println!("{}", file_list);
+        let json = serde_json::to_string_pretty(&file_list).unwrap();
+        let mut file = fs::File::create("parsedJson.json").unwrap();
+        file.write_all(json.as_bytes()).unwrap();
+    
+       
 
     }else{
         let directory_path = &args[1];
