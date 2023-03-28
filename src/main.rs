@@ -248,10 +248,11 @@ impl fmt::Display for File {
 #[derive(Serialize, Deserialize)]
 struct FileList {
     files: HashMap<String, File>,
+    max_age: usize,
 }
 
 impl FileList {
-    fn new ()-> FileList{FileList { files: (HashMap::new()) }}
+    fn new (max_age : usize)-> FileList{FileList { files: (HashMap::new()), max_age: max_age }}
     fn add_file(&mut self, filename: &str, freq_counter: f32, bug_counter: f32, aged_freq_counter: f32, aged_bug_freq_counter: f32, oldest_newest: (i32, i32)) {
         if let Some(file) = self.files.get_mut(filename) {
             // Update existing file
@@ -362,53 +363,74 @@ fn main() {
         Regex::new(r"(?i)hotfix").unwrap(), //upsales confirmed
         ];
 
-    
-    if args.len() > 3{
-        //let json_path = "generatedJson.json";
-        //"C:\Users\simon\Downloads\upsalesJson.json"
-        let  json_path = &args[1];
-        let new_filename = &args[2];
-        let age_cuttof_string = &args[3].parse::<i128>().unwrap() ;
-        let mut age_cuttof:usize = *age_cuttof_string as usize;
-        let file_string = std::fs::read_to_string(json_path).unwrap();
-        let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
-        let mut file_list: FileList = FileList::new();
+    match args.len() {
         
-        let max_age = file_data.len();
-        if age_cuttof == 0{age_cuttof = max_age}
-        let analyze_age_above = max_age - age_cuttof;
-        println!("the max parsed age is, {}", analyze_age_above);
-        //let age_filtered_file_data = item for item in file_data if item.1.2 > ageCuttof;
+       
+        //generate raw data from git repo
+        2 =>{
+            println!(" generate raw data from git repo");
+            let directory_path = &args[1];
+            let sha_to_parsed_diffs = generate_json(&directory_path);
         
-        for (_, files) in file_data {
-            if (files.len() > 0) && (files[0].2) < analyze_age_above as i32 {continue;}
-            for (filename, functions, age, message) in files {
-                let mut bug_counter = 0.0;
-                if (recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message))){ bug_counter+=1.0;};
-                file_list.add_file(&filename, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age));
-                for func_name in functions{
-                    file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age))
+            let mut result = HashMap::new();
+            for (sha, parsed_diffs) in sha_to_parsed_diffs {
+                result.insert(sha, parsed_diffs);
+            }
+        
+            let json = serde_json::to_string_pretty(&result).unwrap();
+            let mut file = fs::File::create("generatedJson.json").unwrap();
+            file.write_all(json.as_bytes()).unwrap();
+            }
+        ,
+        //Convert file/function objects into d3 treemap parsable json
+        3=>{
+            println!("Convert file/function objects into d3 treemap parsable json");
+            let  json_path = &args[1];
+            let file_string = std::fs::read_to_string(json_path).unwrap();
+            //println!("{}", file_string);
+            let mut file = fs::File::create("TESTTESTTTEST.json").unwrap();
+            file.write_all(file_string.as_bytes()).unwrap();
+            let file_list : FileList = serde_json::from_str(&file_string).unwrap();
+            //println!("{}", file_list);
+
+        }
+        //Parse raw data into file/function objects 
+        4 =>{
+            //let json_path = "generatedJson.json";
+            //"C:\Users\simon\Downloads\upsalesJson.json"
+            println!("Parse raw data into file/function objects ");
+            let  json_path = &args[1];
+            let new_filename = &args[2];
+            let age_cuttof_string = &args[3].parse::<i128>().unwrap() ;
+            let mut age_cuttof:usize = *age_cuttof_string as usize;
+            let file_string = std::fs::read_to_string(json_path).unwrap();
+            let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+        
+            
+            let max_age = file_data.len();
+            if age_cuttof == 0{age_cuttof = max_age}
+            let analyze_age_above = max_age - age_cuttof;
+            //let age_filtered_file_data = item for item in file_data if item.1.2 > ageCuttof;
+            let mut file_list: FileList = FileList::new(max_age-1);
+            for (_, files) in file_data {
+                if (files.len() > 0) && (files[0].2) < analyze_age_above as i32 {continue;}
+                for (filename, functions, age, message) in files {
+                    let mut bug_counter = 0.0;
+                    if (recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message))){ bug_counter+=1.0;};
+                    file_list.add_file(&filename, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age));
+                    for func_name in functions{
+                        file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age))
+                    }
                 }
             }
-        }
 
-        //println!("{}", file_list);
-        let json = serde_json::to_string_pretty(&file_list).unwrap();
-        let mut file = fs::File::create(new_filename.to_owned() + ".json").unwrap();
-        file.write_all(json.as_bytes()).unwrap();       
-
-    }else{
-        let directory_path = &args[1];
-        let sha_to_parsed_diffs = generate_json(&directory_path);
-    
-        let mut result = HashMap::new();
-        for (sha, parsed_diffs) in sha_to_parsed_diffs {
-            result.insert(sha, parsed_diffs);
+            //println!("{}", file_list);
+            let json = serde_json::to_string_pretty(&file_list).unwrap();
+            let mut file = fs::File::create(new_filename.to_owned() + ".json").unwrap();
+            file.write_all(json.as_bytes()).unwrap();       
         }
-    
-        let json = serde_json::to_string_pretty(&result).unwrap();
-        let mut file = fs::File::create("generatedJson.json").unwrap();
-        file.write_all(json.as_bytes()).unwrap();
+        ,
+        _=> println!("no matching branch for {} arguments", args.len())
     }
  
 
