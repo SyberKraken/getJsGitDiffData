@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::ffi::OsString;
 use std::{fs, env, fmt};
@@ -146,7 +147,7 @@ fn get_functions_from_diff(diff: &str, age: i32, message: &String) -> Vec<(Strin
 
 
 
-//Class part, mbe move this
+//Class part easy acess, mbe move this
 
 #[derive(Serialize, Deserialize)]
 struct Function {
@@ -177,6 +178,17 @@ impl Function {
     }
    
 }
+impl Function {
+    fn get_field(&self, n: u32) -> f32 {
+        match n {
+            0 => self.freq_counter,
+            1 => self.bug_counter,
+            2 => self.aged_freq_counter,
+            3 => self.aged_bug_freq_counter,
+            _ => -1.0,
+        }
+    }
+}
 impl fmt::Display for Function {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
@@ -200,6 +212,17 @@ struct File {
     aged_bug_freq_counter: f32,
     oldest_newest: (i32, i32),
     function_list: HashMap<String, Function>,
+}
+impl File {
+    fn get_field(&self, n: u32) -> f32 {
+        match n {
+            0 => self.freq_counter,
+            1 => self.bug_counter,
+            2 => self.aged_freq_counter,
+            3 => self.aged_bug_freq_counter,
+            _ => -1.0,
+        }
+    }
 }
 impl File {
     fn new(
@@ -249,6 +272,19 @@ impl fmt::Display for File {
 struct FileList {
     files: HashMap<String, File>,
     max_age: usize,
+}
+impl FileList {
+    fn remove_files_with_no_functions(&mut self) {
+        let mut files_to_remove = Vec::new();
+        for (file_name, file) in &self.files {
+            if file.function_list.is_empty() {
+                files_to_remove.push(file_name.clone());
+            }
+        }
+        for file_name in files_to_remove {
+            self.files.remove(&file_name);
+        }
+    }
 }
 
 impl FileList {
@@ -351,6 +387,97 @@ impl fmt::Display for FileList {
 }
 
 
+//Class part to be equivalent to D3 standard
+
+#[derive(Debug, Deserialize, Serialize, Clone)]
+struct Child {
+    name: String,
+    group: String,
+    value: f64,
+    colname: String,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct Parent {
+    name: String,
+    children: Vec<Child>,
+    value: f64,
+    colname: String,
+}
+
+impl Parent {
+    fn sort_children_by_value(&mut self) {
+        self.children.sort_by(|a, b| a.value.partial_cmp(&b.value).unwrap());;
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct Container {
+    name: String,
+    children: Vec<Parent>,
+}
+impl Container {
+    fn sort_parents_by_total_child_value(&mut self) {
+        self.children.sort_by(|a,b| { 
+            let a_total_value: f64 = a.children.iter().map(|child| child.value).sum();
+            let b_total_value: f64 = b.children.iter().map(|child| child.value).sum();
+            b_total_value.partial_cmp(&a_total_value).unwrap()
+        });
+    }
+}
+
+fn filelist_to_container(filelist: FileList, field: u32) -> Container {
+    let mut container = Container {
+        name: "Container".to_string(),
+        children: vec![],
+    };
+
+    // Create a mapping from function names to their corresponding child objects
+    let mut function_children_map: HashMap<String, Child> = HashMap::new();
+    for (file_name, file) in &filelist.files {
+        for (function_name, function) in &file.function_list {
+            let child = function_children_map
+                .entry(function_name.to_owned())
+                .or_insert(Child {
+                    name: function_name.to_owned(),
+                    group: file_name.to_owned(),
+                    value: function.get_field(field) as f64,
+                    colname: "level3".to_owned(),
+                });
+            child.value += function.freq_counter as f64;
+        }
+    }
+
+    // Create parent objects and add corresponding child objects
+    for (file_name, file) in &filelist.files {
+        let mut children:Vec<Child> = vec![];
+        for (function_name, function) in &file.function_list {
+            let child:Child = function_children_map.get(function_name).unwrap().clone();
+            children.push(child);
+        }
+
+        let parent = Parent {
+            name: file_name.to_owned(),
+            children,
+            value: file.get_field(field) as f64,
+            colname: "level2".to_owned(),
+        };
+        container.children.push(parent);
+    }
+
+    // Update child objects with parent information
+    for parent in &container.children {
+        for child in &parent.children {
+            let parent_name = parent.name.clone();
+            let mut child = function_children_map.get_mut(&child.name).unwrap();
+            child.group = parent_name;
+        }
+    }
+
+    container
+}
+
+
 //Generation Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
 //Parsing of generated json is 1:path to json, 2: new filename, 3:age cuttof, 0 indicates no cuttof
 fn main() {
@@ -388,10 +515,16 @@ fn main() {
             let  json_path = &args[1];
             let file_string = std::fs::read_to_string(json_path).unwrap();
             //println!("{}", file_string);
-            let mut file = fs::File::create("TESTTESTTTEST.json").unwrap();
-            file.write_all(file_string.as_bytes()).unwrap();
-            let file_list : FileList = serde_json::from_str(&file_string).unwrap();
+            /* let mut file = fs::File::create("TESTTESTTTEST.json").unwrap();
+            file.write_all(file_string.as_bytes()).unwrap(); */
+            let mut file_list : FileList = serde_json::from_str(&file_string).unwrap();
+            file_list.remove_files_with_no_functions();
             //println!("{}", file_list);
+            let mut container : Container = filelist_to_container(file_list, 0);
+            container.sort_parents_by_total_child_value();
+            let json = serde_json::to_string_pretty(&container).unwrap();
+            let mut file = fs::File::create("d3Data.json").unwrap();
+            file.write_all(json.as_bytes()).unwrap();     
 
         }
         //Parse raw data into file/function objects 
