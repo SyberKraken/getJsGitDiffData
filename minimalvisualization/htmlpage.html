@@ -10,8 +10,8 @@
 
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 10, bottom: 10, left: 10},
-      width = 30000 - margin.left - margin.right,
-      height = 30000 - margin.top - margin.bottom;
+      width = 3840 - margin.left - margin.right,
+      height = 2160 - margin.top - margin.bottom;
     
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
@@ -23,7 +23,9 @@
             "translate(" + margin.left + "," + margin.top + ")");
     
     // read json data
-    d3.json("http://localhost:5500/d3Data.json", function(data) {
+    let params = new Proxy(new URLSearchParams(window.location.search),{get:(searchParams, prop) => searchParams.get(prop),});
+    let file_to_show = params.file;
+    d3.json("http://localhost:5500/" + file_to_show, function(data) {
     
       // Give the data to this cluster layout:
       var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
