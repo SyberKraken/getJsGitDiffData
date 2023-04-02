@@ -7,7 +7,9 @@ use regex::Regex;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::ffi::OsString;
-use std::io::Write;
+use std::io::Write as _;
+use std::fmt::Write as _;
+use std::iter::FlatMap;
 use std::process::Command;
 use std::sync::{Arc, Mutex};
 use std::{env, fmt, fs};
@@ -207,13 +209,13 @@ impl Function {
     }
 }
 impl Function {
-    fn get_field(&self, n: u32) -> f32 {
+    fn get_field(&self, n: i32) -> f32 {
         match n {
-            0 => self.freq_counter,
-            1 => self.bug_counter,
-            2 => self.aged_freq_counter,
-            3 => self.aged_bug_freq_counter,
-            _ => -1.0,
+            0 => return self.freq_counter,
+            1 => return self.bug_counter,
+            2 => return self.aged_freq_counter,
+            3 => return self.aged_bug_freq_counter,
+            _ => return -1.0,
         }
     }
 }
@@ -242,7 +244,7 @@ struct File {
     function_list: HashMap<String, Function>,
 }
 impl File {
-    fn get_field(&self, n: u32) -> f32 {
+    fn get_field(&self, n: i32) -> f32 {
         match n {
             0 => self.freq_counter,
             1 => self.bug_counter,
@@ -443,15 +445,28 @@ impl FileList {
     struct Child {
         name: String,
         group: String,
-        value: f64,
+        value: f32,
         colname: String,
     }
+    impl Child{
+        fn new(
+            name: String,
+            group: String,
+            value: f32,
+            colname: String, 
+        ) -> Child {
+            return Child {name: (name),
+                group: (group),
+                value: (value),
+                colname: (colname),  };
+        }
+    }
 
-    #[derive(Debug, Deserialize, Serialize)]
+    #[derive(Debug, Deserialize, Serialize, Clone)]
     struct Parent {
         name: String,
         children: Vec<Child>,
-        value: f64,
+        value: f32,
         colname: String,
     }
 
@@ -492,8 +507,8 @@ impl FileList {
     impl Container {
         fn sort_parents_by_total_child_value(&mut self) {
             self.children.sort_by(|a, b| {
-                let a_total_value: f64 = a.children.iter().map(|child| child.value).sum();
-                let b_total_value: f64 = b.children.iter().map(|child| child.value).sum();
+                let a_total_value: f32 = a.children.iter().map(|child| child.value).sum();
+                let b_total_value: f32 = b.children.iter().map(|child| child.value).sum();
                 b_total_value.partial_cmp(&a_total_value).unwrap()
             });
         }
@@ -507,56 +522,58 @@ impl FileList {
     }
 
 
-    fn filelist_to_container(filelist: FileList, field: u32) -> Container {
-        let mut container = Container {
+fn filelist_to_container(filelist: FileList, field: i32) -> Container {
+    /*   let mut container = Container {
         name: "Container".to_string(),
         children: vec![],
-        };
+    }; */
+    let child_vec : Vec<Parent> = vec![] ;
+    let pb = ProgressBar::new(filelist.files.len().try_into().unwrap());
+    pb.set_style(
+        ProgressStyle::default_bar()
+            .template("{bar:40} {pos}/{len} [{elapsed_precise}] ({eta})")
+            .unwrap(),
+    );
 
-        // Create a mapping from function names to their corresponding child objects
-        let mut function_children_map: HashMap<String, Child> = HashMap::new();
+    // Create parent objects and add corresponding child objects
+    
+    let shared_container = Arc::new(Mutex::new(child_vec));
+    filelist.files.par_iter().for_each(|(file_name, file)|{
+        pb.inc(1);
+        let mut children: Vec<Child> = vec![];
+
         for (file_name, file) in &filelist.files {
             for (function_name, function) in &file.function_list {
-                let child = function_children_map
-                    .entry(function_name.to_owned())
-                    .or_insert(Child {
-                        name: function_name.to_owned(),
-                        group: file_name.to_owned(),
-                        value: function.get_field(field) as f64,
-                        colname: "level3".to_owned(),
-                    });
-                child.value += function.freq_counter as f64;
+
+                let child = Child::new(function_name.to_owned(),
+                file_name.to_owned(),
+                function.get_field(field), 
+                "level3".to_owned() );
+                children.push( child );
             }
         }
-
-        // Create parent objects and add corresponding child objects
-        for (file_name, file) in &filelist.files {
-            let mut children: Vec<Child> = vec![];
-            for (function_name, _function) in &file.function_list {
-                let child: Child = function_children_map.get(function_name).unwrap().clone();
-                children.push(child);
-            }
-
-            let parent = Parent {
-                name: file_name.to_owned(),
-                children,
-                value: file.get_field(field) as f64,
-                colname: "level2".to_owned(),
-            };
-            container.children.push(parent);
-        }
-
-        // Update child objects with parent information
-        for parent in &container.children {
-            for child in &parent.children {
-                let parent_name = parent.name.clone();
-                let mut child = function_children_map.get_mut(&child.name).unwrap();
-                child.group = parent_name;
-            }
-        }
-
-        container
-    }
+        
+        let parent = Parent {
+            name: file_name.to_owned(),
+            children,
+            value: file.get_field(field),
+            colname: "level2".to_owned(),
+        };
+        //container.children.push(parent);
+        let mut data = shared_container.lock().unwrap();
+        data.push(parent);
+        drop(data)
+    }) ;
+    //this makes us wait for all to finish
+    filelist.files.par_iter().for_each(|_| {});
+    
+    let data = shared_container.lock().unwrap().clone();
+    let container = Container {
+        name: "Container".to_string(),
+        children: data,
+    };
+    return container;
+}
 
     fn filelist_to_container_only_files(filelist: &FileList, field: &str) -> Container {
         let mut parent = Parent {
@@ -565,27 +582,27 @@ impl FileList {
             value: 0.0,
             colname: "level2".to_owned(),
         };
-        for (_, file) in &filelist.files {
-            let child = Child {
-                name: file.name.clone(),
-                group: String::from("Files"),
-                value: match field {
-                    "freq_counter" => file.freq_counter as f64,
-                    "bug_counter" => file.bug_counter as f64,
-                    "aged_freq_counter" => file.aged_freq_counter as f64,
-                    "aged_bug_freq_counter" => file.aged_bug_freq_counter as f64,
-                    _ => panic!("Invalid field name"),
-                },
-                colname: "level3".to_owned(),
-            };
-            parent.value += child.value;
-            parent.children.push(child);
-        }
-        Container {
-            name: String::from("Container"),
-            children: vec![parent],
-        }
+    for (_, file) in &filelist.files {
+        let child = Child {
+            name: file.name.clone(),
+            group: String::from("Files"),
+            value: match field {
+                "freq_counter" => file.freq_counter as f32,
+                "bug_counter" => file.bug_counter as f32,
+                "aged_freq_counter" => file.aged_freq_counter as f32,
+                "aged_bug_freq_counter" => file.aged_bug_freq_counter as f32,
+                _ => panic!("Invalid field name"),
+            },
+            colname: "level3".to_owned(),
+        };
+        parent.value += child.value;
+        parent.children.push(child);
     }
+    Container {
+        name: String::from("Container"),
+        children: vec![parent],
+    }
+}
     
     fn generate_full_data_from_repo(directort_path:&String){
 
@@ -615,7 +632,7 @@ impl FileList {
 //Generation Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
 //Parsing of generated json is 1:path to json, 2: new filename, 3:age cuttof, 0 indicates no cuttof
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let mut args: Vec<String> = env::args().collect();
     //let age_to_year_amount = 1000000; //TODO: not implemented
     //let supported_file_types = ["js", "ts", "jsx", "tsx"]; //TODO: not implemented
     let filtered_file_types = vec!["json", "md"];
@@ -624,12 +641,36 @@ fn main() {
         Regex::new(r"(?i)bug").unwrap(),         //upsales confirmed, might break on other ones
         Regex::new(r"(?i)hotfix").unwrap(),      //upsales confirmed
     ];
-    //Modes: repo, classes, d3, text
+    //Modes: repo, classes, d3, text\
+    
+    if args.len() == 1{ /*assume testing*/ args = vec!["main.rs".to_string(), "d3".to_string(), r"C:\Users\simon\Documents\rust stuff\getJsGitDiffData\upsales.json".to_string(),  "d3Data".to_string(), "full".to_string(), "2".to_string()]; }
     let mode:&str = &args[1];
     match  mode {
 
-        //generate mroe compact textfile listing files+functions in order
-        "text" =>{"todo";}        
+        //generate mroe compact textfile 
+        "text" =>{
+            println!(" generate compact textfile");
+            // args 2+ : 
+            let path = &args[2];
+            let filename = &args[3];
+            let age_cuttof = &args[4].parse::<i128>().unwrap() ;
+
+            let age_cuttof:usize = *age_cuttof as usize;
+            let file_string = std::fs::read_to_string(path).unwrap();
+
+            let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+        
+            let file_list = file_data_map_to_file_list(file_data, age_cuttof, recognized_bugfix_indicators);
+
+            
+            let mut hugeString:String = String::new();
+            write!(&mut hugeString,"{}", file_list);
+            println!("{}",hugeString);
+            
+            let mut file = fs::File::create(filename.to_owned() + "_fileMap.txt").unwrap();
+            file.write_all(hugeString.as_bytes()).unwrap();   
+
+        }        
        
         //generate raw data from git repo
         "repo" =>{
@@ -689,8 +730,9 @@ fn main() {
                         
             
             let json = serde_json::to_string_pretty(&copy_container).unwrap();
-            //d3Data.json hardcoded into visualization atm, TODO: insert new_filename
-            let mut file = fs::File::create("d3Data.json").unwrap();
+            //d3Data.json hardcoded into visualization atm
+            fs::remove_file(new_filename.to_owned() + ".json");
+            let mut file = fs::File::create(new_filename.to_owned() + ".json").unwrap();
             file.write_all(json.as_bytes()).unwrap();     
 
         }
@@ -715,6 +757,6 @@ fn main() {
             file.write_all(json.as_bytes()).unwrap();       
         }
         ,
-        _=> println!("no matching branch for {} arguments", args[1])
+        _=> println!("no matching branch for {} argument", args[1])
     }
 }
