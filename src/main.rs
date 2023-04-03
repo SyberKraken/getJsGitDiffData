@@ -188,6 +188,7 @@ struct Function {
     aged_freq_counter: f32,
     aged_bug_freq_counter: f32,
     oldest_newest: (i32, i32),
+    times_func_got_bugfixed_after_end_of_measuring : i32,
 }
 impl Function {
     fn _new(
@@ -205,6 +206,7 @@ impl Function {
             aged_freq_counter,
             aged_bug_freq_counter,
             oldest_newest,
+            times_func_got_bugfixed_after_end_of_measuring : 0,
         }
     }
 }
@@ -223,8 +225,9 @@ impl fmt::Display for Function {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "    {}: freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}",
+            "    {}: bugfixes_after={}, freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}\n",
             self.name,
+            self.times_func_got_bugfixed_after_end_of_measuring,
             self.freq_counter,
             self.bug_counter,
             self.aged_freq_counter,
@@ -242,7 +245,8 @@ struct File {
     aged_bug_freq_counter: f32,
     oldest_newest: (i32, i32),
     function_list: HashMap<String, Function>,
-    functions_bugfixed_after_File_data: HashMap<String, i32>,
+    times_file_got_bugfixed_after_end_of_measuring : i32,
+    functions_bugfixed_after_file_data: HashMap<String, i32>,
 }
 impl File {
     fn get_field(&self, n: i32) -> f32 {
@@ -254,8 +258,19 @@ impl File {
             _ => -1.0,
         }
     }
-}
-impl File {
+    fn insert_function_bugfix(&mut self, function_name:String){
+        if self.functions_bugfixed_after_file_data.contains_key(&function_name){
+            self.functions_bugfixed_after_file_data.insert(function_name.to_owned(), 
+                        self.functions_bugfixed_after_file_data.get(&function_name).unwrap() + 1) ;
+        }else{
+            self.functions_bugfixed_after_file_data.insert(function_name.to_owned(), 1);
+        }
+    }
+    fn get_sorted_function_vec_by_field(&self, field:i32) -> Vec<&Function>{
+        let mut fn_list: Vec<&Function> = self.function_list.values().into_iter().collect();
+        fn_list.sort_by(|a,b|{ b.get_field(field).total_cmp(&a.get_field(field))});
+        return fn_list;
+    }
     fn _new(
         name: String,
         freq_counter: f32,
@@ -272,7 +287,8 @@ impl File {
             aged_bug_freq_counter,
             oldest_newest,
             function_list: HashMap::new(),
-            functions_bugfixed_after_File_data: HashMap::new(),
+            times_file_got_bugfixed_after_end_of_measuring : 0,
+            functions_bugfixed_after_file_data: HashMap::new(),
         }
     }
 
@@ -284,17 +300,19 @@ impl fmt::Display for File {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "File {}: freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}\n",
+            "File {}: file_bugfixes_after={},freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}\n",
             self.name,
+            self.times_file_got_bugfixed_after_end_of_measuring,
             self.freq_counter,
             self.bug_counter,
             self.aged_freq_counter,
             self.aged_bug_freq_counter,
             self.oldest_newest
         )?;
-        for function in self.function_list.values() {
+        //separated this 
+       /*  for function in self.function_list.values() {
             write!(f, "{}\n", function)?;
-        }
+        } */
         Ok(())
     }
 }
@@ -307,6 +325,14 @@ struct FileList {
     files_bugfixed_after_file_list: HashMap<String, i32>,
 }
 impl FileList {
+    fn insert_bugfix(&mut self, filename:&String){
+        if self.files_bugfixed_after_file_list.contains_key(filename){
+            self.files_bugfixed_after_file_list.insert(filename.to_owned(), self.files_bugfixed_after_file_list.get(filename).unwrap() + 1) ;
+        }else{
+            self.files_bugfixed_after_file_list.insert(filename.to_owned(), 1);
+        }
+    }
+
     fn remove_files_with_no_functions(&mut self) {
         let mut files_to_remove = Vec::new();
         for (file_name, file) in &self.files {
@@ -318,9 +344,6 @@ impl FileList {
             self.files.remove(&file_name);
         }
     }
-}
-
-impl FileList {
     fn new(max_age: usize) -> FileList {
         FileList {
             files: (HashMap::new()),
@@ -359,7 +382,8 @@ impl FileList {
                 aged_bug_freq_counter,
                 oldest_newest,
                 function_list: HashMap::new(),
-                functions_bugfixed_after_File_data: HashMap::new(),
+                times_file_got_bugfixed_after_end_of_measuring : 0,
+                functions_bugfixed_after_file_data: HashMap::new(),
             };
             self.files.insert(filename.to_string(), file);
         }
@@ -397,6 +421,7 @@ impl FileList {
                     aged_freq_counter,
                     aged_bug_freq_counter,
                     oldest_newest,
+                    times_func_got_bugfixed_after_end_of_measuring : 0,
                 };
                 file.function_list
                     .insert(function_name.to_string(), function);
@@ -411,7 +436,8 @@ impl FileList {
                 aged_bug_freq_counter,
                 oldest_newest,
                 function_list: HashMap::new(),
-                functions_bugfixed_after_File_data: HashMap::new(),
+                times_file_got_bugfixed_after_end_of_measuring : 0,
+                functions_bugfixed_after_file_data: HashMap::new(),
             };
             let function = Function {
                 name: function_name.to_string(),
@@ -420,6 +446,7 @@ impl FileList {
                 aged_freq_counter,
                 aged_bug_freq_counter,
                 oldest_newest,
+                times_func_got_bugfixed_after_end_of_measuring : 0,
             };
             file.function_list
                 .insert(function_name.to_string(), function);
@@ -437,6 +464,8 @@ impl FileList {
             map.end()
         }
     } */
+
+    //OBS!!! no longer prints nested functions
     impl fmt::Display for FileList {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             for file in self.files.values() {
@@ -615,22 +644,56 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
 
 }
 
-    fn file_data_map_to_file_list(file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>>, age_limit: usize, recognized_bugfix_indicators:[regex::Regex; 3]) -> FileList{
+//This function does all the counting of factors we want to extract form the generated data of commits
+fn file_data_map_to_file_list(
+                            file_data: HashMap<String,
+                            Vec<(String, Vec<String>, i32, String)>>, 
+                            age_limit: usize,
+                            recognized_bugfix_indicators:[regex::Regex; 3]) -> FileList{
     let max_age = file_data.len();
-    let mut age_cuttof = age_limit;
+
+    let age_precentage_to_int: i32 = (max_age as f32 * (age_limit as f32 /100.0)) as i32;
+    //println!("cuttof: {},\n{}\n{}\n{}", age_precentage_to_int, max_age, age_limit, age_limit as f32 /100.0);
+
+
+   /*  let mut age_cuttof = age_limit;
     if age_cuttof == 0{age_cuttof = max_age}
     let analyze_age_above = max_age - age_cuttof;
+ */
     //let age_filtered_file_data = item for item in file_data if item.1.2 > ageCuttof;
     let mut file_list: FileList = FileList::new(max_age-1);
     //"files" represents a commit
     for (_, files) in file_data {
-        if (files.len() > 0) && (files[0].2) < analyze_age_above as i32 {
-            // post-cuttof data
-            
-            continue;
+        //println!("{}, {}", files[0].2,analyze_age_above as i32 );
+        if (files.len() > 0) && (files[0].2) > age_precentage_to_int as i32 {
+            // post-cuttof functionality counts bugg fixed after cuttoff
+            for (filename, functions, age, message) in files {
+                if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ 
+                    //If we are bugfix
+                    //if we have a fix on file that didnt exist before cuttof, simply ignore it
+                    if !file_list.files.contains_key(&filename){ continue;}
+
+                    let changed_file = file_list.files.get_mut(&filename).unwrap();
+                    changed_file.times_file_got_bugfixed_after_end_of_measuring += 1;
+
+                   // file_list.insert_bugfix(&filename); //old 
+                    //increase bug_fixed counter by 1
+                    for function in functions{
+                        //if newer function than cuttof, ignore
+                        if !changed_file.function_list.contains_key(&function){continue;}
+                        changed_file.function_list.get_mut(&function).unwrap().times_func_got_bugfixed_after_end_of_measuring += 1;
+                      
+                      /*   let tempname = filename.to_owned();
+                        file_list.files.get_mut(&filename).unwrap().
+                            insert_function_bugfix(function); */ // old
+                    }
+                    
+                };
+              
+            }
         }
         else{
-            //normal adds everything to list from single commit
+            //pre-cuttof functionality adds everything to list from single commit
             for (filename, functions, age, message) in files {
                 let mut bug_counter = 0.0;
                 if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ bug_counter+=1.0;};
@@ -671,17 +734,18 @@ fn main() {
             // args 2+ : 
             let path = &args[2];
             let filename = &args[3];
-            let age_cuttof = &args[4].parse::<i128>().unwrap() ;
+            let age_cuttof_in_precentage_points:&usize = &args[4].parse::<usize>().unwrap() ;
             let field_to_sort_by:i32 = args[5].parse::<i32>().unwrap();
-            let age_cuttof:usize = *age_cuttof as usize;
+
             let file_string = std::fs::read_to_string(path).unwrap();
 
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
-        
-            let file_list = file_data_map_to_file_list(file_data, age_cuttof, recognized_bugfix_indicators);
+
+            let file_list = file_data_map_to_file_list(file_data, age_cuttof_in_precentage_points.to_owned(), recognized_bugfix_indicators);
 
             let mut sortable_file_vec:Vec<&File> = file_list.files.values().into_iter().collect();
             
+            //sort files by chosen field
             sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
 
             let mut huge_string:String = String::new();
@@ -696,14 +760,24 @@ fn main() {
             };
 
             for file in sortable_file_vec{
+                //filter out json etc.
                 if endings_filter(&file.name){continue;} 
+            
                 let _ = write!(huge_string, "{}", file);
+
+                //sort functions by chosen field
+                let func_vec = file.get_sorted_function_vec_by_field(field_to_sort_by);
+
+                for func in func_vec{
+                    let _ = write!(huge_string, "{}", func);
+
+                }
+                
             }
             //println!("{}",huge_string);
             
 
             let _ = fs::remove_file(filename.to_owned() + "_fileMap.txt");
-
             let mut file = fs::File::create(filename.to_owned() + "_fileMap.txt").unwrap();
             file.write_all(huge_string.as_bytes()).unwrap();   
 
@@ -742,7 +816,6 @@ fn main() {
             let mut container : Container ;
 
             match sub_mode {
-                //"functions"=> {let x = "TODO";}
                 "files"=>{
                     container = filelist_to_container_only_files(&file_list, "freq_counter");
                     container.sort_parents_by_total_child_value();}
@@ -779,9 +852,9 @@ fn main() {
             // args 2+ : 
             let json_path = &args[2];
             let new_filename = &args[3];
-            let age_cuttof_string = &args[4].parse::<i128>().unwrap() ;
+            let age_cuttof_precentage = &args[4].parse::<i128>().unwrap() ;
+            let age_cuttof:usize = *age_cuttof_precentage as usize;
 
-            let age_cuttof:usize = *age_cuttof_string as usize;
             let file_string = std::fs::read_to_string(json_path).unwrap();
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
         
