@@ -5,11 +5,10 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{HashMap, VecDeque};
 use std::ffi::OsString;
 use std::io::Write as _;
 use std::fmt::Write as _;
-use std::iter::FlatMap;
 use std::process::Command;
 use std::sync::{Arc, Mutex};
 use std::{env, fmt, fs};
@@ -247,6 +246,7 @@ struct File {
     function_list: HashMap<String, Function>,
     times_file_got_bugfixed_after_end_of_measuring : i32,
     functions_bugfixed_after_file_data: HashMap<String, i32>,
+    times_functions_got_bugfiexed_after_file_data: i32,
 }
 impl File {
     fn get_field(&self, n: i32) -> f32 {
@@ -258,7 +258,7 @@ impl File {
             _ => -1.0,
         }
     }
-    fn insert_function_bugfix(&mut self, function_name:String){
+    fn _insert_function_bugfix(&mut self, function_name:String){
         if self.functions_bugfixed_after_file_data.contains_key(&function_name){
             self.functions_bugfixed_after_file_data.insert(function_name.to_owned(), 
                         self.functions_bugfixed_after_file_data.get(&function_name).unwrap() + 1) ;
@@ -289,6 +289,7 @@ impl File {
             function_list: HashMap::new(),
             times_file_got_bugfixed_after_end_of_measuring : 0,
             functions_bugfixed_after_file_data: HashMap::new(),
+            times_functions_got_bugfiexed_after_file_data: 0,
         }
     }
 
@@ -300,14 +301,15 @@ impl fmt::Display for File {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "File {}: file_bugfixes_after={},freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}\n",
+            "File {}: file_bugfixes_after={},freq={}, bug={}, aged_freq={}, aged_bug_freq={}, oldest_newest={:?}, total_fixes_in_file={}\n",
             self.name,
             self.times_file_got_bugfixed_after_end_of_measuring,
             self.freq_counter,
             self.bug_counter,
             self.aged_freq_counter,
             self.aged_bug_freq_counter,
-            self.oldest_newest
+            self.oldest_newest,
+            self.times_functions_got_bugfiexed_after_file_data
         )?;
         //separated this 
        /*  for function in self.function_list.values() {
@@ -323,9 +325,10 @@ struct FileList {
     max_age: usize,
     //TODO: add some post-end bugfixes to files or smthn here1
     files_bugfixed_after_file_list: HashMap<String, i32>,
+    total_bugfixes_after_file_list: i32,
 }
 impl FileList {
-    fn insert_bugfix(&mut self, filename:&String){
+    fn _insert_bugfix(&mut self, filename:&String){
         if self.files_bugfixed_after_file_list.contains_key(filename){
             self.files_bugfixed_after_file_list.insert(filename.to_owned(), self.files_bugfixed_after_file_list.get(filename).unwrap() + 1) ;
         }else{
@@ -333,7 +336,7 @@ impl FileList {
         }
     }
 
-    fn remove_files_with_no_functions(&mut self) {
+    fn _remove_files_with_no_functions(&mut self) {
         let mut files_to_remove = Vec::new();
         for (file_name, file) in &self.files {
             if file.function_list.is_empty() {
@@ -349,6 +352,7 @@ impl FileList {
             files: (HashMap::new()),
             max_age: max_age,
             files_bugfixed_after_file_list: (HashMap::new()),
+            total_bugfixes_after_file_list: 0,
         }
     }
     fn add_file(
@@ -384,6 +388,7 @@ impl FileList {
                 function_list: HashMap::new(),
                 times_file_got_bugfixed_after_end_of_measuring : 0,
                 functions_bugfixed_after_file_data: HashMap::new(),
+                times_functions_got_bugfiexed_after_file_data: 0,
             };
             self.files.insert(filename.to_string(), file);
         }
@@ -438,6 +443,7 @@ impl FileList {
                 function_list: HashMap::new(),
                 times_file_got_bugfixed_after_end_of_measuring : 0,
                 functions_bugfixed_after_file_data: HashMap::new(),
+                times_functions_got_bugfiexed_after_file_data: 0,
             };
             let function = Function {
                 name: function_name.to_string(),
@@ -526,8 +532,8 @@ impl FileList {
             while i < self.children.len() {
                 
                 if filter( &self.children[i].name) {
-                    let val = self.children.remove(i);
-                    // your code here
+                    let _ = self.children.remove(i);
+                    
                 } else {
                     i += 1;
                 }
@@ -549,7 +555,7 @@ impl FileList {
             });
         }
 
-        fn new(
+        fn _new(
             name: String,
             children: Vec<Parent>,     
         ) -> Container {
@@ -640,9 +646,6 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
     }
 }
     
-    fn generate_full_data_from_repo(directort_path:&String){
-
-}
 
 //This function does all the counting of factors we want to extract form the generated data of commits
 fn file_data_map_to_file_list(
@@ -667,13 +670,14 @@ fn file_data_map_to_file_list(
         //println!("{}, {}", files[0].2,analyze_age_above as i32 );
         if (files.len() > 0) && (files[0].2) > age_precentage_to_int as i32 {
             // post-cuttof functionality counts bugg fixed after cuttoff
-            for (filename, functions, age, message) in files {
+            for (filename, functions, _age, message) in files {
                 if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ 
                     //If we are bugfix
                     //if we have a fix on file that didnt exist before cuttof, simply ignore it
                     if !file_list.files.contains_key(&filename){ continue;}
 
                     let changed_file = file_list.files.get_mut(&filename).unwrap();
+                    file_list.total_bugfixes_after_file_list += 1;
                     changed_file.times_file_got_bugfixed_after_end_of_measuring += 1;
 
                    // file_list.insert_bugfix(&filename); //old 
@@ -681,6 +685,7 @@ fn file_data_map_to_file_list(
                     for function in functions{
                         //if newer function than cuttof, ignore
                         if !changed_file.function_list.contains_key(&function){continue;}
+                        changed_file.times_functions_got_bugfiexed_after_file_data += 1;
                         changed_file.function_list.get_mut(&function).unwrap().times_func_got_bugfixed_after_end_of_measuring += 1;
                       
                       /*   let tempname = filename.to_owned();
@@ -750,6 +755,9 @@ fn main() {
 
             let mut huge_string:String = String::new();
 
+            //append metatdata to top, this should probably be in a var in json later
+            let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
+
             let endings_filter = |name:&str|-> bool{
                 for end in &filtered_file_types{
                     if name.ends_with(end){
@@ -759,21 +767,46 @@ fn main() {
                 return false;
             };
 
+            
+            let top_list_precentage_breakpoints = [1, 5, 10, 25, 50, 75];
+            let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i)/100});
+            let mut breakpoints_total_bugs_predicted:VecDeque<f32> = VecDeque::with_capacity(top_list_precentage_breakpoints.len());
+
+            let mut precentage_found_count = 0.0;
+            let mut breakpoint_index = 0;
+            let mut index = 0;
             for file in sortable_file_vec{
+
+                precentage_found_count += (file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0;
+                
+                if breakpoint_index < precentages_to_files.len() && index == precentages_to_files[breakpoint_index]{
+                    breakpoints_total_bugs_predicted.push_back(precentage_found_count);
+                    breakpoint_index += 1;
+                }
+                
                 //filter out json etc.
                 if endings_filter(&file.name){continue;} 
             
                 let _ = write!(huge_string, "{}", file);
-
+                //this could be integrated ionto analysis
+                let _ = write!(huge_string, "   file % of total fixes = {} \n", ((file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0).to_string() );
+                
                 //sort functions by chosen field
                 let func_vec = file.get_sorted_function_vec_by_field(field_to_sort_by);
-
+                            
+                //Temp disabled func print TODO
                 for func in func_vec{
                     let _ = write!(huge_string, "{}", func);
 
-                }
-                
+                } 
+                index+=1;
             }
+
+            
+            for i in 0..breakpoints_total_bugs_predicted.len() {
+                println!("top {}% in list => {}% of bugs predicted", top_list_precentage_breakpoints[i], breakpoints_total_bugs_predicted[i] );
+            }
+           
             //println!("{}",huge_string);
             
 
