@@ -755,8 +755,8 @@ fn main() {
 
             let mut huge_string:String = String::new();
 
-            //append metatdata to top, this should probably be in a var in json later
-            let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
+            //append metatdata to top, this should probably be in a var in json later TODO: disabled
+           // let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
 
             let endings_filter = |name:&str|-> bool{
                 for end in &filtered_file_types{
@@ -767,7 +767,6 @@ fn main() {
                 return false;
             };
 
-            
             let top_list_precentage_breakpoints = [1, 5, 10, 25, 50, 75];
             let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i)/100});
             let mut breakpoints_total_bugs_predicted:VecDeque<f32> = VecDeque::with_capacity(top_list_precentage_breakpoints.len());
@@ -775,16 +774,18 @@ fn main() {
             let mut precentage_found_count = 0.0;
             let mut breakpoint_index = 0;
             let mut index = 0;
+            //currentley only does files
             for file in sortable_file_vec{
 
                 precentage_found_count += (file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0;
                 
+                //run check for breakpoints where we list how many % of bugs found
                 if breakpoint_index < precentages_to_files.len() && index == precentages_to_files[breakpoint_index]{
                     breakpoints_total_bugs_predicted.push_back(precentage_found_count);
                     breakpoint_index += 1;
                 }
                 
-                //filter out json etc.
+/*                 //filter out json etc. OBS TODO disabled
                 if endings_filter(&file.name){continue;} 
             
                 let _ = write!(huge_string, "{}", file);
@@ -794,18 +795,20 @@ fn main() {
                 //sort functions by chosen field
                 let func_vec = file.get_sorted_function_vec_by_field(field_to_sort_by);
                             
-                //Temp disabled func print TODO
+                //TODO: currentley only files are analyzes in rpecent ang offther studff
                 for func in func_vec{
                     let _ = write!(huge_string, "{}", func);
 
-                } 
+                }   */
                 index+=1;
             }
 
             
             for i in 0..breakpoints_total_bugs_predicted.len() {
-                println!("top {}% in list => {}% of bugs predicted", top_list_precentage_breakpoints[i], breakpoints_total_bugs_predicted[i] );
+                let _ = writeln!(huge_string, "top {}% in list => {}% of bugs predicted", top_list_precentage_breakpoints[i], breakpoints_total_bugs_predicted[i] );
             }
+
+
            
             //println!("{}",huge_string);
             
