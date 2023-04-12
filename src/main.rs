@@ -10,10 +10,15 @@ use std::ffi::OsString;
 use std::io::Write as _;
 use std::fmt::Write as _;
 use std::process::Command;
+use std::ptr::null;
 use std::sync::{Arc, Mutex};
 use std::{env, fmt, fs};
 
 //sha,  funcs, age, commit message
+fn get_implemented_nr_of_fields_for_analysis() -> i32 {
+    //TODO: this needs to be manualy updated
+    return 6;        
+}
 
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i32, String)>> {
     let sha_to_parsed_diffs: HashMap<String, Vec<(String, Vec<String>, i32, String)>> =
@@ -248,16 +253,31 @@ struct File {
     functions_bugfixed_after_file_data: HashMap<String, i32>,
     times_functions_got_bugfiexed_after_file_data: i32,
 }
+fn get_file_field_name( n: i32) -> String {
+    let ret = "ERROR no field for: ".to_owned() + &n.to_string();
+    match n { 
+        0 => return "frequency".to_string(),
+        1 => return "fixed bugs".to_string(),
+        2 => return "oldest".to_string(),
+        3 => return "newest".to_string(),
+        4 => return "frequency aged".to_string(),
+        5 => return "fixed bugs aged".to_string(),
+        _ => return "!!!!!!!!ERROR unknown field!!!!!!!!!!!".to_string()
+    }
+}
 impl File {
     fn get_field(&self, n: i32) -> f32 {
         match n {
             0 => self.freq_counter,
             1 => self.bug_counter,
-            2 => self.aged_freq_counter,
-            3 => self.aged_bug_freq_counter,
+            2 => self.oldest_newest.0 as f32,
+            3 => self.oldest_newest.1 as f32,
+            4 => self.aged_freq_counter,
+            5 => self.aged_bug_freq_counter,
             _ => -1.0,
         }
     }
+    
     fn _insert_function_bugfix(&mut self, function_name:String){
         if self.functions_bugfixed_after_file_data.contains_key(&function_name){
             self.functions_bugfixed_after_file_data.insert(function_name.to_owned(), 
@@ -652,7 +672,7 @@ fn file_data_map_to_file_list(
                             file_data: HashMap<String,
                             Vec<(String, Vec<String>, i32, String)>>, 
                             age_limit: usize,
-                            recognized_bugfix_indicators:[regex::Regex; 3]) -> FileList{
+                            recognized_bugfix_indicators:&[regex::Regex; 3]) -> FileList{
     let max_age = file_data.len();
 
     let age_precentage_to_int: i32 = (max_age as f32 * (age_limit as f32 /100.0)) as i32;
@@ -671,6 +691,9 @@ fn file_data_map_to_file_list(
         if (files.len() > 0) && (files[0].2) > age_precentage_to_int as i32 {
             // post-cuttof functionality counts bugg fixed after cuttoff
             for (filename, functions, _age, message) in files {
+                //TODO: filter other types here as well, list in main mbe.
+                if filename.ends_with(".json") || filename.ends_with(".JSON"){continue;};
+
                 if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ 
                     //If we are bugfix
                     //if we have a fix on file that didnt exist before cuttof, simply ignore it
@@ -702,8 +725,8 @@ fn file_data_map_to_file_list(
             for (filename, functions, age, message) in files {
                 let mut bug_counter = 0.0;
                 if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ bug_counter+=1.0;};
-                //add_file adds values to existing file if it is in list
-                file_list.add_file(&filename, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age));
+                //add_file adds values to existing file if it is in list //TODO: aged currentley adds values form 0 to 1 based on age 
+                file_list.add_file(&filename, 1.0, bug_counter, age as f32 /(max_age as f32), bug_counter * (age as f32 /(max_age as f32)), (age,age));
                 for func_name in functions{
                     //add_function adds values to existing func if it is in list
                     file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age))
@@ -740,81 +763,95 @@ fn main() {
             let path = &args[2];
             let filename = &args[3];
             let age_cuttof_in_precentage_points:&usize = &args[4].parse::<usize>().unwrap() ;
-            let field_to_sort_by:i32 = args[5].parse::<i32>().unwrap();
+
+            let nr_of_fields = get_implemented_nr_of_fields_for_analysis();
+            let mut huge_string:String = String::new();
 
             let file_string = std::fs::read_to_string(path).unwrap();
 
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
 
-            let file_list = file_data_map_to_file_list(file_data, age_cuttof_in_precentage_points.to_owned(), recognized_bugfix_indicators);
+            let file_list = file_data_map_to_file_list(file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
 
-            let mut sortable_file_vec:Vec<&File> = file_list.files.values().into_iter().collect();
+
+            //now loops over all into files
+            //let field_to_sort_by:i32 = args[5].parse::<i32>().unwrap();
             
-            //sort files by chosen field
-            sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
 
-            let mut huge_string:String = String::new();
+            for i in 0..nr_of_fields{
+                let field_to_sort_by = i;
 
-            //append metatdata to top, this should probably be in a var in json later TODO: disabled
-           // let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
+                let _ = writeln!(huge_string, "----- {} -----", get_file_field_name(field_to_sort_by));
 
-            let endings_filter = |name:&str|-> bool{
-                for end in &filtered_file_types{
-                    if name.ends_with(end){
-                        return true;
+                let mut sortable_file_vec:Vec<&File> = file_list.files.values().into_iter().collect();
+                
+                //sort files by chosen field
+                sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
+    
+                //append metatdata to top, this should probably be in a var in json later TODO: disabled
+               // let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
+    
+                let endings_filter = |name:&str|-> bool{
+                    for end in &filtered_file_types{
+                        if name.ends_with(end){
+                            return true;
+                        }
                     }
+                    return false;
+                };
+    
+                let top_list_precentage_breakpoints = [1, 5, 10, 25, 50, 75];
+                let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i)/100});
+                let mut breakpoints_total_bugs_predicted:VecDeque<f32> = VecDeque::with_capacity(top_list_precentage_breakpoints.len());
+    
+                let mut precentage_found_count = 0.0;
+                let mut breakpoint_index = 0;
+                let mut index = 0;
+                //currentley only does files
+                for file in sortable_file_vec{
+    
+                    precentage_found_count += (file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0;
+                    
+                    //run check for breakpoints where we list how many % of bugs found
+                    if breakpoint_index < precentages_to_files.len() && index == precentages_to_files[breakpoint_index]{
+                        breakpoints_total_bugs_predicted.push_back(precentage_found_count);
+                        breakpoint_index += 1;
+                    }
+                    
+    /*                 //filter out json etc. OBS TODO disabled
+                    
+                
+                    let _ = write!(huge_string, "{}", file);
+                    //this could be integrated ionto analysis
+                    let _ = write!(huge_string, "   file % of total fixes = {} \n", ((file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0).to_string() );
+                    
+                    //sort functions by chosen field
+                    let func_vec = file.get_sorted_function_vec_by_field(field_to_sort_by);
+                                
+                    //TODO: currentley only files are analyzes in rpecent ang offther studff
+                    for func in func_vec{
+                        let _ = write!(huge_string, "{}", func);
+    
+                    }   */
+                    index+=1;
                 }
-                return false;
-            };
-
-            let top_list_precentage_breakpoints = [1, 5, 10, 25, 50, 75];
-            let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i)/100});
-            let mut breakpoints_total_bugs_predicted:VecDeque<f32> = VecDeque::with_capacity(top_list_precentage_breakpoints.len());
-
-            let mut precentage_found_count = 0.0;
-            let mut breakpoint_index = 0;
-            let mut index = 0;
-            //currentley only does files
-            for file in sortable_file_vec{
-
-                precentage_found_count += (file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0;
+    
                 
-                //run check for breakpoints where we list how many % of bugs found
-                if breakpoint_index < precentages_to_files.len() && index == precentages_to_files[breakpoint_index]{
-                    breakpoints_total_bugs_predicted.push_back(precentage_found_count);
-                    breakpoint_index += 1;
+                for i in 0..breakpoints_total_bugs_predicted.len() {
+                    let _ = writeln!(huge_string, "top {}% in list => {}% of bugs predicted", top_list_precentage_breakpoints[i], breakpoints_total_bugs_predicted[i] );
                 }
                 
-/*                 //filter out json etc. OBS TODO disabled
-                if endings_filter(&file.name){continue;} 
-            
-                let _ = write!(huge_string, "{}", file);
-                //this could be integrated ionto analysis
-                let _ = write!(huge_string, "   file % of total fixes = {} \n", ((file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0).to_string() );
-                
-                //sort functions by chosen field
-                let func_vec = file.get_sorted_function_vec_by_field(field_to_sort_by);
-                            
-                //TODO: currentley only files are analyzes in rpecent ang offther studff
-                for func in func_vec{
-                    let _ = write!(huge_string, "{}", func);
-
-                }   */
-                index+=1;
+    
+                let _ = writeln!(huge_string, "\n");
             }
-
-            
-            for i in 0..breakpoints_total_bugs_predicted.len() {
-                let _ = writeln!(huge_string, "top {}% in list => {}% of bugs predicted", top_list_precentage_breakpoints[i], breakpoints_total_bugs_predicted[i] );
-            }
-
-
+           
            
             //println!("{}",huge_string);
             
 
             let _ = fs::remove_file(filename.to_owned() + "_fileMap.txt");
             let mut file = fs::File::create(filename.to_owned() + "_fileMap.txt").unwrap();
+            
             file.write_all(huge_string.as_bytes()).unwrap();   
 
         }        
@@ -894,7 +931,7 @@ fn main() {
             let file_string = std::fs::read_to_string(json_path).unwrap();
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
         
-            let file_list = file_data_map_to_file_list(file_data, age_cuttof, recognized_bugfix_indicators);
+            let file_list = file_data_map_to_file_list(file_data, age_cuttof, &recognized_bugfix_indicators);
             
 
             //println!("{}", file_list);

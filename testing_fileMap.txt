@@ -1,6 +1,0 @@
-top 1% in list => 9.712729% of bugs predicted
-top 5% in list => 19.644823% of bugs predicted
-top 10% in list => 27.618683% of bugs predicted
-top 25% in list => 43.23608% of bugs predicted
-top 50% in list => 57.036034% of bugs predicted
-top 75% in list => 77.8172% of bugs predicted
