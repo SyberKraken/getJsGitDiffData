@@ -286,7 +286,7 @@ impl File {
             7 => self.bug_counter  * self.oldest_newest.1 as f32,
             8 => self.freq_counter  * self.oldest_newest.0 as f32,
             9 => self.bug_counter  * self.oldest_newest.0 as f32,
-            10 => self.oldest_newest.1 as f32 * self.aged_freq_counter * self.aged_bug_freq_counter,
+            10 => self.oldest_newest.1 as f32 + self.aged_freq_counter + self.aged_bug_freq_counter,
             _ => -1.0,
         }
     }
@@ -657,16 +657,18 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
 }
 
     fn filelist_to_container_only_files(filelist: &FileList, field: &str) -> Container {
+        let mut parentlist = vec![];
+    for (_, file) in &filelist.files {
+        let shortname = file.name.clone().split("/").last().unwrap().to_string();
         let mut parent = Parent {
-            name: String::from("Files"),
+            name: shortname.clone(),
             children: vec![],
             value: 0.0,
             colname: "level2".to_owned(),
         };
-    for (_, file) in &filelist.files {
         let child = Child {
-            name: file.name.clone(),
-            group: String::from("Files"),
+            name: shortname.clone(),
+            group: file.name.clone(),
             value: match field {
                 "freq_counter" => file.freq_counter as f32,
                 "bug_counter" => file.bug_counter as f32,
@@ -676,12 +678,13 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
             },
             colname: "level3".to_owned(),
         };
-        parent.value += child.value;
+        parent.value = 0.0;
         parent.children.push(child);
+        parentlist.push(parent);
     }
     Container {
         name: String::from("Container"),
-        children: vec![parent],
+        children: parentlist,
     }
 }
     
@@ -691,7 +694,7 @@ fn file_data_map_to_file_list(
                             file_data: &HashMap<String,
                             Vec<(String, Vec<String>, i32, String)>>, 
                             age_limit: usize,
-                            recognized_bugfix_indicators:&[regex::Regex; 3]) -> FileList{
+                            recognized_bugfix_indicators:&[regex::Regex; 5]) -> FileList{
     let max_age = file_data.len();
 
     let age_precentage_to_int: i32 = (max_age as f32 * (age_limit as f32 /100.0)) as i32;
@@ -1037,7 +1040,7 @@ fn main() {
             }
         ,
 
-        //Convert file/function objects into d3 treemap parsable json, this in entire structure with files and functions
+        //Convert raw extracted data into d3 treemap parsable json, this in entire structure with files and functions
         //args 2 is string representing if we want files,functions or both
         "d3"=>{
             println!("Convert file/function objects into d3 treemap parsable json");
@@ -1045,10 +1048,16 @@ fn main() {
             let json_path = &args[2];
             let new_filename = &args[3];
             let sub_mode:&str = &args[4];
-            let amount_items_to_show:usize = args[5].parse::<usize>().unwrap();
+            let field_to_analyze = &args[5].parse::<usize>().unwrap();
+            //this is now set to 100 since the visualization i running on whole repo //let age_cuttof_in_precentage_points = &args[6].parse::<usize>().unwrap();
+            let amount_items_to_show:usize = args[6].parse::<usize>().unwrap();
 
             let file_string = std::fs::read_to_string(json_path).unwrap();
-            let file_list : FileList = serde_json::from_str(&file_string).unwrap();
+
+            let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+
+            let file_list = file_data_map_to_file_list(&file_data, 100, &recognized_bugfix_indicators);
+
             let mut container : Container ;
 
             match sub_mode {
@@ -1056,10 +1065,10 @@ fn main() {
                     container = filelist_to_container_only_files(&file_list, "freq_counter");
                     container.sort_parents_by_total_child_value();}
                 "full"=> {
-                    container = filelist_to_container(file_list, 0); 
+                    container = filelist_to_container(file_list, field_to_analyze.to_owned() as i32); 
                     container.sort_parents_by_total_child_value();}
 
-                _=> {println!("no matching field for for {} ", mode); return}
+                _=> {println!("no matching field for for {} ", sub_mode); return}
             }
 
             // container is the dataformat for a d3 visualization json
@@ -1069,16 +1078,20 @@ fn main() {
             for mut p in container.children{
                 p.remove_children_with_ending(&filtered_file_types);
                 p.sort_children_by_value();
+                if p.name.ends_with(".json") || p.name.ends_with(".JSON"){
+                   continue;
+                }
                 copy_container.children.push(p);
             }
 
+
             copy_container.children.truncate(amount_items_to_show);
-                        
-            
+
+
             let json = serde_json::to_string_pretty(&copy_container).unwrap();
             //d3Data.json hardcoded into visualization atm
-            let _ = fs::remove_file(new_filename.to_owned() + ".json");
-            let mut file = fs::File::create(new_filename.to_owned() + ".json").unwrap();
+            let _ = fs::remove_file(new_filename.to_owned() + "_d3.json");
+            let mut file = fs::File::create(new_filename.to_owned() + "_d3.json").unwrap();
             file.write_all(json.as_bytes()).unwrap();     
 
         }
