@@ -2,11 +2,13 @@
 
 use git2::{Oid, Repository, RepositoryOpenFlags};
 use indicatif::{ProgressBar, ProgressStyle};
-use rayon::prelude::*;
+use rayon::collections::hash_map;
+use rayon::{prelude::*, vec};
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, VecDeque};
 use std::ffi::OsString;
+use std::hash::Hash;
 use std::io::Write as _;
 use std::fmt::Write as _;
 use std::process::Command;
@@ -17,7 +19,7 @@ use std::{env, fmt, fs};
 //sha,  funcs, age, commit message
 fn get_implemented_nr_of_fields_for_analysis() -> i32 {
     //TODO: this needs to be manualy updated
-    return 6;        
+    return 11;        
 }
 
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i32, String)>> {
@@ -252,16 +254,22 @@ struct File {
     times_file_got_bugfixed_after_end_of_measuring : i32,
     functions_bugfixed_after_file_data: HashMap<String, i32>,
     times_functions_got_bugfiexed_after_file_data: i32,
+    repo_max_age: i32,
 }
 fn get_file_field_name( n: i32) -> String {
     let ret = "ERROR no field for: ".to_owned() + &n.to_string();
     match n { 
         0 => return "frequency".to_string(),
         1 => return "fixed bugs".to_string(),
-        2 => return "oldest".to_string(),
-        3 => return "newest".to_string(),
-        4 => return "frequency aged".to_string(),
-        5 => return "fixed bugs aged".to_string(),
+        2 => return "oldest change".to_string(),
+        3 => return "newest change".to_string(),
+        4 => return "frequency aged by commit ages".to_string(),
+        5 => return "fixed bugs aged by commit ages".to_string(),
+        6 => return "frequency aged by most recent newest file change".to_string(),
+        7 => return "fixed bugs aged by most recent newest file change".to_string(),
+        8 => return "frequency aged by most recent oldest file change ".to_string(),
+        9 => return "fixed bugs aged by most recent oldest file change ".to_string(),
+        10 => return "custom formula".to_string(),
         _ => return "!!!!!!!!ERROR unknown field!!!!!!!!!!!".to_string()
     }
 }
@@ -274,6 +282,11 @@ impl File {
             3 => self.oldest_newest.1 as f32,
             4 => self.aged_freq_counter,
             5 => self.aged_bug_freq_counter,
+            6 => self.freq_counter  * self.oldest_newest.1 as f32,
+            7 => self.bug_counter  * self.oldest_newest.1 as f32,
+            8 => self.freq_counter  * self.oldest_newest.0 as f32,
+            9 => self.bug_counter  * self.oldest_newest.0 as f32,
+            10 => self.oldest_newest.1 as f32 * self.aged_freq_counter * self.aged_bug_freq_counter,
             _ => -1.0,
         }
     }
@@ -298,6 +311,7 @@ impl File {
         aged_freq_counter: f32,
         aged_bug_freq_counter: f32,
         oldest_newest: (i32, i32),
+        repo_max_age: i32,
     ) -> File {
         File {
             name,
@@ -310,6 +324,7 @@ impl File {
             times_file_got_bugfixed_after_end_of_measuring : 0,
             functions_bugfixed_after_file_data: HashMap::new(),
             times_functions_got_bugfiexed_after_file_data: 0,
+            repo_max_age,
         }
     }
 
@@ -383,6 +398,7 @@ impl FileList {
         aged_freq_counter: f32,
         aged_bug_freq_counter: f32,
         oldest_newest: (i32, i32),
+        repo_max_age: i32,
     ) {
         if let Some(file) = self.files.get_mut(filename) {
             // Update existing file
@@ -409,6 +425,7 @@ impl FileList {
                 times_file_got_bugfixed_after_end_of_measuring : 0,
                 functions_bugfixed_after_file_data: HashMap::new(),
                 times_functions_got_bugfiexed_after_file_data: 0,
+                repo_max_age,
             };
             self.files.insert(filename.to_string(), file);
         }
@@ -423,6 +440,7 @@ impl FileList {
         aged_freq_counter: f32,
         aged_bug_freq_counter: f32,
         oldest_newest: (i32, i32),
+        repo_max_age: i32,
     ) {
         if let Some(file) = self.files.get_mut(filename) {
             if let Some(function) = file.function_list.get_mut(function_name) {
@@ -464,6 +482,7 @@ impl FileList {
                 times_file_got_bugfixed_after_end_of_measuring : 0,
                 functions_bugfixed_after_file_data: HashMap::new(),
                 times_functions_got_bugfiexed_after_file_data: 0,
+                repo_max_age,
             };
             let function = Function {
                 name: function_name.to_string(),
@@ -669,7 +688,7 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
 
 //This function does all the counting of factors we want to extract form the generated data of commits
 fn file_data_map_to_file_list(
-                            file_data: HashMap<String,
+                            file_data: &HashMap<String,
                             Vec<(String, Vec<String>, i32, String)>>, 
                             age_limit: usize,
                             recognized_bugfix_indicators:&[regex::Regex; 3]) -> FileList{
@@ -697,9 +716,9 @@ fn file_data_map_to_file_list(
                 if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ 
                     //If we are bugfix
                     //if we have a fix on file that didnt exist before cuttof, simply ignore it
-                    if !file_list.files.contains_key(&filename){ continue;}
+                    if !file_list.files.contains_key(filename){ continue;}
 
-                    let changed_file = file_list.files.get_mut(&filename).unwrap();
+                    let changed_file = file_list.files.get_mut(filename).unwrap();
                     file_list.total_bugfixes_after_file_list += 1;
                     changed_file.times_file_got_bugfixed_after_end_of_measuring += 1;
 
@@ -707,9 +726,9 @@ fn file_data_map_to_file_list(
                     //increase bug_fixed counter by 1
                     for function in functions{
                         //if newer function than cuttof, ignore
-                        if !changed_file.function_list.contains_key(&function){continue;}
+                        if !changed_file.function_list.contains_key(function){continue;}
                         changed_file.times_functions_got_bugfiexed_after_file_data += 1;
-                        changed_file.function_list.get_mut(&function).unwrap().times_func_got_bugfixed_after_end_of_measuring += 1;
+                        changed_file.function_list.get_mut(function).unwrap().times_func_got_bugfixed_after_end_of_measuring += 1;
                       
                       /*   let tempname = filename.to_owned();
                         file_list.files.get_mut(&filename).unwrap().
@@ -726,10 +745,10 @@ fn file_data_map_to_file_list(
                 let mut bug_counter = 0.0;
                 if recognized_bugfix_indicators.iter().any(|regex| regex.is_match(&message)){ bug_counter+=1.0;};
                 //add_file adds values to existing file if it is in list //TODO: aged currentley adds values form 0 to 1 based on age 
-                file_list.add_file(&filename, 1.0, bug_counter, age as f32 /(max_age as f32), bug_counter * (age as f32 /(max_age as f32)), (age,age));
+                file_list.add_file(&filename, 1.0, bug_counter, age.to_owned() as f32 /(max_age as f32), bug_counter * (age.to_owned() as f32 /(max_age as f32)), (age.to_owned(),age.to_owned()), file_list.max_age as i32);
                 for func_name in functions{
                     //add_function adds values to existing func if it is in list
-                    file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age,age))
+                    file_list.add_function(&filename, &func_name, 1.0, bug_counter, 0.0/*not done yet */, 0.0/*not done yet */, (age.to_owned(),age.to_owned()), file_list.max_age as i32)
                 }
             }
         }
@@ -749,16 +768,161 @@ fn main() {
         Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed
         Regex::new(r"(?i)bug").unwrap(),         //upsales confirmed, might break on other ones
         Regex::new(r"(?i)hotfix").unwrap(),      //upsales confirmed
+        Regex::new(r"(?i)fix:").unwrap(),     //confirmed as standard in vue(v2)
+        Regex::new(r"(?i)fix(.*):").unwrap(),     //confirmed as standard in vue(v2)
     ];
     //Modes: repo, classes, d3, text\
     
     if args.len() == 1{ /*assume testing*/ args = vec!["main.rs".to_string(), "d3".to_string(), r"C:\Users\simon\Documents\rust stuff\getJsGitDiffData\upsales.json".to_string(),  "d3Data".to_string(), "full".to_string(), "2".to_string()]; }
     let mode:&str = &args[1];
     match  mode {
+        //exclusivley files, runs multi precentage version of text and anylized the data into averages
+        "multi_analysis"=>{
+            println!("running large multianalysis");
+            // args 2+ : 
+            let json_data_path = &args[2];
+            let file_string = std::fs::read_to_string(json_data_path).unwrap();
+            let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+            //This is how much of the repo to include when making a prediction list we make a list of prioritized files for each precentage of the data.
+            let precentages = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75];
+             //this is breakpoints for top% of items, so 1 is the top 1% of items sorted by the chosen factor
+            let top_list_precentage_breakpoints = [1, 5, 10, 25, 50];
+            let nr_of_fields = get_implemented_nr_of_fields_for_analysis();
+            //should be , (FREQ, [(10, [1,5,10...]),(15, [1,5,10..])...])
+            let mut final_data_labels = vec![];
+            let mut final_data :Vec<Vec<(i32,Vec<f64>)>> = Vec::new();
 
+
+
+            for index in 0..nr_of_fields{
+                final_data_labels.push(get_file_field_name(index));
+                final_data.push(vec![]);
+                for p in &top_list_precentage_breakpoints{
+                    final_data.get_mut(index as usize).unwrap().push((*p, vec![]))
+                }
+            }
+            
+            for precentage in precentages{
+
+
+                let age_cuttof_in_precentage_points = precentage as usize;
+
+                let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
+                
+                for i in 0..nr_of_fields{
+                    let field_to_sort_by = i;
+    
+                    let mut sortable_file_vec:Vec<&File> = file_list.files.values().into_iter().collect();
+                    
+                    //sort files by chosen field
+                    sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
+        
+                    let endings_filter = |name:&str|-> bool{
+                        for end in &filtered_file_types{
+                            if name.ends_with(end){
+                                return true;
+                            }
+                        }
+                        return false;
+                    };
+        
+                   
+                 
+                    let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i as usize)/100});
+                    let mut breakpoints_total_bugs_predicted:VecDeque<f32> = VecDeque::with_capacity(top_list_precentage_breakpoints.len());
+        
+                    let mut precentage_found_count = 0.0;
+                    let mut breakpoint_index = 0;
+                    let mut index = 0;
+                    //currentley only does files
+                    for file in sortable_file_vec{
+        
+                        precentage_found_count += (file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0;
+                        
+                        //run check for breakpoints where we list how many % of bugs found
+                        if breakpoint_index < precentages_to_files.len() && index == precentages_to_files[breakpoint_index]{
+                            breakpoints_total_bugs_predicted.push_back(precentage_found_count);
+                            breakpoint_index += 1;
+                        }
+                        
+                        index+=1;
+                    }
+                    
+                    //Push the resuling % of found bugs for each precentage breakpoint(j) for this paticular field(i) 
+                    let field_sorted_by_vec_ref= final_data.get_mut(i as usize).unwrap();
+                    
+                    for j in 0..breakpoints_total_bugs_predicted.len() {
+                        field_sorted_by_vec_ref.get_mut(j).unwrap().1.push(breakpoints_total_bugs_predicted[j] as f64)
+                        //.push(breakpoints_total_bugs_predicted[j] as f64);
+                       // let _ = writeln!(huge_string, "top {}% in list => {}% of bugs predicted", top_list_precentage_breakpoints[j], breakpoints_total_bugs_predicted[j] );
+                    }
+                    
+                }
+               
+               
+
+            }        
+
+            
+            let mut movable_indexes:Vec<usize> = vec![];
+            for i in 0..final_data.len(){
+                movable_indexes.push(i)
+            }
+
+            //Get total deviation from precentages
+            let mut movable_index_divergence_total:HashMap<usize, f64> = HashMap::new();
+
+            for (i,label) in final_data_labels.iter().enumerate(){
+                movable_index_divergence_total.insert(i.to_owned(), 0.0);
+                for title_vector in final_data.get(i){
+                    for precentage_pair in title_vector{
+                        let avg_sum:f64 = precentage_pair.1.iter().sum();
+                        let avg = avg_sum/(precentage_pair.1.len() as f64);
+                        *movable_index_divergence_total.get_mut(&i.to_owned()).unwrap() += (avg - precentage_pair.0 as f64)/precentages.len() as f64 ;
+                    }
+                }
+            }
+
+            //sort index_vector for use in sorting other indexed vectors
+            movable_indexes.sort_by(|a,b|{
+                
+                //b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))
+                let b_div = movable_index_divergence_total.get(b).unwrap();
+                let a_div = movable_index_divergence_total.get(a).unwrap();
+       
+                return b_div.partial_cmp(&a_div).unwrap();
+                } 
+            );
+            //println!("{}", serde_json::to_string_pretty(&movable_indexes).unwrap());
+            let mut huge_string:String = String::new();
+
+            for moved_index in movable_indexes{
+                writeln!(huge_string,"{} > avg deviation = {}", final_data_labels.get(moved_index).unwrap(), movable_index_divergence_total.get(&moved_index).unwrap());
+            }
+
+
+            //below code is old and should be incorporated with sortablble_indexes, right now we simply print all fo the big data below teh neer metadata
+            
+            for (i,label) in final_data_labels.iter().enumerate(){
+                writeln!(huge_string,"{}", label);
+                for title_vector in final_data.get(i){
+                    for precentage_pair in title_vector{
+                        let avg_sum:f64 = precentage_pair.1.iter().sum();
+                        let avg = avg_sum/(precentage_pair.1.len() as f64);
+                        writeln!(huge_string,"  {} => {}", &precentage_pair.0, avg);
+                    }
+                }
+             
+
+            }
+
+            let _ = fs::remove_file("macro_analysis.txt");
+            let mut file = fs::File::create("macro_analysis.txt").unwrap();
+            file.write_all(huge_string.as_bytes()).unwrap();   
+        },
         //generate mroe compact textfile from raw data(generated by "repo")
         "text" =>{
-            println!(" generate compact textfile");
+            println!("generate compact textfile");
             // args 2+ : 
             let path = &args[2];
             let filename = &args[3];
@@ -771,8 +935,7 @@ fn main() {
 
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
 
-            let file_list = file_data_map_to_file_list(file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
-
+            let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
 
             //now loops over all into files
             //let field_to_sort_by:i32 = args[5].parse::<i32>().unwrap();
@@ -931,7 +1094,7 @@ fn main() {
             let file_string = std::fs::read_to_string(json_path).unwrap();
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
         
-            let file_list = file_data_map_to_file_list(file_data, age_cuttof, &recognized_bugfix_indicators);
+            let file_list = file_data_map_to_file_list(&file_data, age_cuttof, &recognized_bugfix_indicators);
             
 
             //println!("{}", file_list);

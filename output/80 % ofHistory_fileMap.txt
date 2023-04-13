@@ -1,0 +1,180 @@
+----- frequency -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0.8903729% of bugs predicted
+top 10% in list => 0.8903729% of bugs predicted
+top 25% in list => 2.6711185% of bugs predicted
+top 50% in list => 13.07735% of bugs predicted
+top 75% in list => 80.63457% of bugs predicted
+
+
+----- fixed bugs -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0.27824152% of bugs predicted
+top 10% in list => 5.843072% of bugs predicted
+top 25% in list => 18.642178% of bugs predicted
+top 50% in list => 38.56427% of bugs predicted
+top 75% in list => 72.509834% of bugs predicted
+
+
+----- oldest change -----
+top 1% in list => 5.175293% of bugs predicted
+top 5% in list => 21.86978% of bugs predicted
+top 10% in list => 55.370113% of bugs predicted
+top 25% in list => 100.00027% of bugs predicted
+top 50% in list => 100.00027% of bugs predicted
+top 75% in list => 100.00027% of bugs predicted
+
+
+----- newest change -----
+top 1% in list => 39.343334% of bugs predicted
+top 5% in list => 75.06965% of bugs predicted
+top 10% in list => 82.30398% of bugs predicted
+top 25% in list => 82.30398% of bugs predicted
+top 50% in list => 82.30398% of bugs predicted
+top 75% in list => 100.000275% of bugs predicted
+
+
+----- frequency aged by commit ages -----
+top 1% in list => 0.8903729% of bugs predicted
+top 5% in list => 2.0033388% of bugs predicted
+top 10% in list => 3.7284365% of bugs predicted
+top 25% in list => 21.81413% of bugs predicted
+top 50% in list => 41.958824% of bugs predicted
+top 75% in list => 82.192726% of bugs predicted
+
+
+----- fixed bugs aged by commit ages -----
+top 1% in list => 0.27824152% of bugs predicted
+top 5% in list => 11.185309% of bugs predicted
+top 10% in list => 24.095715% of bugs predicted
+top 25% in list => 47.968857% of bugs predicted
+top 50% in list => 57.26214% of bugs predicted
+top 75% in list => 72.50985% of bugs predicted
+
+
+----- frequency aged by newest file change age % -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0.8903729% of bugs predicted
+top 10% in list => 1.5581524% of bugs predicted
+top 25% in list => 3.7284365% of bugs predicted
+top 50% in list => 21.424595% of bugs predicted
+top 75% in list => 82.19273% of bugs predicted
+
+
+----- fixed bugs aged by newest file changeage % -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 2.6154704% of bugs predicted
+top 10% in list => 5.8430724% of bugs predicted
+top 25% in list => 24.095713% of bugs predicted
+top 50% in list => 47.968853% of bugs predicted
+top 75% in list => 72.50984% of bugs predicted
+
+
+----- frequency aged by oldest file age change % -----
+top 1% in list => 2.6711185% of bugs predicted
+top 5% in list => 13.967722% of bugs predicted
+top 10% in list => 28.158035% of bugs predicted
+top 25% in list => 55.314438% of bugs predicted
+top 50% in list => 68.50314% of bugs predicted
+top 75% in list => 92.20949% of bugs predicted
+
+
+----- fixed bugs aged by oldest file age change % -----
+top 1% in list => 13.689481% of bugs predicted
+top 5% in list => 38.564266% of bugs predicted
+top 10% in list => 47.968845% of bugs predicted
+top 25% in list => 65.94329% of bugs predicted
+top 50% in list => 65.94329% of bugs predicted
+top 75% in list => 72.509834% of bugs predicted
+
+
+----- REVERSE frequency -----
+top 1% in list => 0.9460212% of bugs predicted
+top 5% in list => 2.504174% of bugs predicted
+top 10% in list => 7.4568744% of bugs predicted
+top 25% in list => 18.86476% of bugs predicted
+top 50% in list => 87.423584% of bugs predicted
+top 75% in list => 97.32901% of bugs predicted
+
+
+----- REVERSE fixed bugs -----
+top 1% in list => 1.5581526% of bugs predicted
+top 5% in list => 5.3978863% of bugs predicted
+top 10% in list => 10.628822% of bugs predicted
+top 25% in list => 27.26765% of bugs predicted
+top 50% in list => 61.38012% of bugs predicted
+top 75% in list => 81.357895% of bugs predicted
+
+
+----- REVERSE oldest change -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0% of bugs predicted
+top 10% in list => 0% of bugs predicted
+top 25% in list => 0% of bugs predicted
+top 50% in list => 0% of bugs predicted
+top 75% in list => 0% of bugs predicted
+
+
+----- REVERSE newest change -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0% of bugs predicted
+top 10% in list => 0% of bugs predicted
+top 25% in list => 0% of bugs predicted
+top 50% in list => 17.696148% of bugs predicted
+top 75% in list => 17.696148% of bugs predicted
+
+
+----- REVERSE frequency aged by commit ages -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0.44518644% of bugs predicted
+top 10% in list => 0.44518644% of bugs predicted
+top 25% in list => 17.80745% of bugs predicted
+top 50% in list => 58.041237% of bugs predicted
+top 75% in list => 78.18595% of bugs predicted
+
+
+----- REVERSE fixed bugs aged by commit ages -----
+top 1% in list => 1.5581526% of bugs predicted
+top 5% in list => 5.3978863% of bugs predicted
+top 10% in list => 10.628822% of bugs predicted
+top 25% in list => 27.26765% of bugs predicted
+top 50% in list => 42.793556% of bugs predicted
+top 75% in list => 52.03119% of bugs predicted
+
+
+----- REVERSE frequency aged by newest file change age % -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0.44518644% of bugs predicted
+top 10% in list => 0.44518644% of bugs predicted
+top 25% in list => 17.80745% of bugs predicted
+top 50% in list => 78.57549% of bugs predicted
+top 75% in list => 96.27169% of bugs predicted
+
+
+----- REVERSE fixed bugs aged by newest file changeage % -----
+top 1% in list => 1.5581526% of bugs predicted
+top 5% in list => 5.3978863% of bugs predicted
+top 10% in list => 10.628822% of bugs predicted
+top 25% in list => 27.26765% of bugs predicted
+top 50% in list => 52.03119% of bugs predicted
+top 75% in list => 75.90435% of bugs predicted
+
+
+----- REVERSE frequency aged by oldest file age change % -----
+top 1% in list => 0% of bugs predicted
+top 5% in list => 0% of bugs predicted
+top 10% in list => 0.44518644% of bugs predicted
+top 25% in list => 6.9003906% of bugs predicted
+top 50% in list => 31.496935% of bugs predicted
+top 75% in list => 44.685627% of bugs predicted
+
+
+----- REVERSE fixed bugs aged by oldest file age change % -----
+top 1% in list => 1.5581526% of bugs predicted
+top 5% in list => 5.3978863% of bugs predicted
+top 10% in list => 10.628822% of bugs predicted
+top 25% in list => 27.26765% of bugs predicted
+top 50% in list => 34.05675% of bugs predicted
+top 75% in list => 34.05675% of bugs predicted
+
+
