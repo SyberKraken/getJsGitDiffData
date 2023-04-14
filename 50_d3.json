@@ -1,0 +1,655 @@
+{
+  "name": "Container",
+  "children": [
+    {
+      "name": "editOrder.js",
+      "children": [
+        {
+          "name": "editOrder.js",
+          "group": "ui/app/upsales/domain/order/controllers/editOrder.js",
+          "value": 4024.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "globalHelpers.js",
+      "children": [
+        {
+          "name": "globalHelpers.js",
+          "group": "ui/app/babel/components/__setup__/globalHelpers.js",
+          "value": 3604.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "salesboard.js",
+      "children": [
+        {
+          "name": "salesboard.js",
+          "group": "ui/app/upsales/domain/salesboard/controllers/salesboard.js",
+          "value": 2729.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.js",
+      "children": [
+        {
+          "name": "account.js",
+          "group": "ui/app/upsales/domain/account/controllers/account.js",
+          "value": 2677.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "admin.js",
+      "children": [
+        {
+          "name": "admin.js",
+          "group": "ui/app/upsales/domain/admin/admin.js",
+          "value": 2580.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Tools.d.ts",
+      "children": [
+        {
+          "name": "Tools.d.ts",
+          "group": "ui/types/Tools.d.ts",
+          "value": 2572.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "root.jsx",
+      "children": [
+        {
+          "name": "root.jsx",
+          "group": "ui/app/upsales/common/components/react/navbar/root.jsx",
+          "value": 2570.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "baseWidget.js",
+      "children": [
+        {
+          "name": "baseWidget.js",
+          "group": "base/src/core/report/widget/baseWidget.js",
+          "value": 2458.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "app.js",
+      "children": [
+        {
+          "name": "app.js",
+          "group": "ui/app/upsales/app.js",
+          "value": 2441.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editAgreement.js",
+      "children": [
+        {
+          "name": "editAgreement.js",
+          "group": "ui/app/upsales/domain/agreement/controllers/editAgreement.js",
+          "value": 2375.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "sidebar.jsx",
+      "children": [
+        {
+          "name": "sidebar.jsx",
+          "group": "ui/app/upsales/common/components/react/admin/sidebar.jsx",
+          "value": 2211.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "_admin.scss",
+      "children": [
+        {
+          "name": "_admin.scss",
+          "group": "ui/app/styles/_admin.scss",
+          "value": 2202.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "agreement.js",
+      "children": [
+        {
+          "name": "agreement.js",
+          "group": "base/src/domain/repositories/elastic/agreement.js",
+          "value": 2021.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upsales-base.js",
+      "children": [
+        {
+          "name": "upsales-base.js",
+          "group": "upsalesMocks/upsales-base.js",
+          "value": 1993.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "sub.js",
+      "children": [
+        {
+          "name": "sub.js",
+          "group": "ui/app/upsales/domain/admin/controllers/sub.js",
+          "value": 1943.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editActivity.js",
+      "children": [
+        {
+          "name": "editActivity.js",
+          "group": "ui/app/upsales/domain/activity/controllers/editActivity.js",
+          "value": 1938.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "AppointmentModalFields.js",
+      "children": [
+        {
+          "name": "AppointmentModalFields.js",
+          "group": "ui/app/babel/components/Modals/Appointment/AppointmentModalFields.js",
+          "value": 1862.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "templateParser.js",
+      "children": [
+        {
+          "name": "templateParser.js",
+          "group": "ui/app/upsales/common/services/templateParser.js",
+          "value": 1851.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "main.js",
+      "children": [
+        {
+          "name": "main.js",
+          "group": "ui/app/upsales/main.js",
+          "value": 1845.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "legacy-dynamic-load.js",
+      "children": [
+        {
+          "name": "legacy-dynamic-load.js",
+          "group": "ui/app/babel/legacy-dynamic-load.js",
+          "value": 1801.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.html",
+      "children": [
+        {
+          "name": "index.html",
+          "group": "ui/app/index.html",
+          "value": 1796.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "all-spec.js",
+      "children": [
+        {
+          "name": "all-spec.js",
+          "group": "api/test/controller/all-spec.js",
+          "value": 1795.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.html",
+      "children": [
+        {
+          "name": "index.html",
+          "group": "app/index.html",
+          "value": 1792.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ActivityOutcomes.js",
+      "children": [
+        {
+          "name": "ActivityOutcomes.js",
+          "group": "ui/app/babel/components/Activity/ActivityOutcomes/ActivityOutcomes.js",
+          "value": 1767.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Billing.js",
+      "children": [
+        {
+          "name": "Billing.js",
+          "group": "ui/app/babel/components/Billing/Billing.js",
+          "value": 1753.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "contact.js",
+      "children": [
+        {
+          "name": "contact.js",
+          "group": "ui/app/upsales/domain/contact/controllers/contact.js",
+          "value": 1750.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "repository.js",
+      "children": [
+        {
+          "name": "repository.js",
+          "group": "base/core/__mocks__/repository.js",
+          "value": 1726.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "contact.js",
+      "children": [
+        {
+          "name": "contact.js",
+          "group": "ui/app/upsales/common/attributes/contact.js",
+          "value": 1718.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editSegment.js",
+      "children": [
+        {
+          "name": "editSegment.js",
+          "group": "ui/app/upsales/domain/segment/controllers/editSegment.js",
+          "value": 1683.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "reportCenterHelpers.ts",
+      "children": [
+        {
+          "name": "reportCenterHelpers.ts",
+          "group": "ui/app/pages/Reportcenter/reportCenterHelpers.ts",
+          "value": 1676.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editOrder.html",
+      "children": [
+        {
+          "name": "editOrder.html",
+          "group": "ui/app/upsales/domain/order/views/editOrder.html",
+          "value": 1656.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ReportcenterActions.js",
+      "children": [
+        {
+          "name": "ReportcenterActions.js",
+          "group": "ui/app/babel/store/actions/ReportcenterActions.js",
+          "value": 1617.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upsales.js",
+      "children": [
+        {
+          "name": "upsales.js",
+          "group": "provisioning/src/helpers/upsales.js",
+          "value": 1601.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "FilterHelper.js",
+      "children": [
+        {
+          "name": "FilterHelper.js",
+          "group": "ui/app/upsales/common/components/listFilters/FilterHelper.js",
+          "value": 1555.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "billing.js",
+      "children": [
+        {
+          "name": "billing.js",
+          "group": "provisioning/src/services/billing.js",
+          "value": 1535.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "factory.ts",
+      "children": [
+        {
+          "name": "factory.ts",
+          "group": "api/src/controller/factory.ts",
+          "value": 1533.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.html",
+      "children": [
+        {
+          "name": "account.html",
+          "group": "ui/app/upsales/domain/account/views/account.html",
+          "value": 1531.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "featureHelper.js",
+      "children": [
+        {
+          "name": "featureHelper.js",
+          "group": "ui/app/upsales/common/helpers/featureHelper.js",
+          "value": 1530.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "base/index.js",
+          "value": 1518.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "agreement.test.js",
+      "children": [
+        {
+          "name": "agreement.test.js",
+          "group": "base/src/domain/repositories/elastic/agreement.test.js",
+          "value": 1513.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "features.js",
+      "children": [
+        {
+          "name": "features.js",
+          "group": "base/core/enum/features.js",
+          "value": 1504.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.jsx",
+      "children": [
+        {
+          "name": "index.jsx",
+          "group": "ui/app/upsales/common/components/react/index.jsx",
+          "value": 1455.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "profile.jsx",
+      "children": [
+        {
+          "name": "profile.jsx",
+          "group": "ui/app/upsales/common/components/react/admin/pages/profile.jsx",
+          "value": 1454.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "AppointmentCtrl.js",
+      "children": [
+        {
+          "name": "AppointmentCtrl.js",
+          "group": "ui/app/babel/components/Modals/Appointment/AppointmentCtrl.js",
+          "value": 1429.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "job.js",
+      "children": [
+        {
+          "name": "job.js",
+          "group": "base/core/enum/job.js",
+          "value": 1428.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "entity.js",
+      "children": [
+        {
+          "name": "entity.js",
+          "group": "base/core/enum/entity.js",
+          "value": 1397.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "EditPhonecall.js",
+      "children": [
+        {
+          "name": "EditPhonecall.js",
+          "group": "ui/app/babel/components/EditPhonecall/EditPhonecall.js",
+          "value": 1394.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "factory.js",
+      "children": [
+        {
+          "name": "factory.js",
+          "group": "base/domain/factory.js",
+          "value": 1381.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "widgetType.js",
+      "children": [
+        {
+          "name": "widgetType.js",
+          "group": "base/src/core/enum/widgetType.js",
+          "value": 1357.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "multiRunnerActions.js",
+      "children": [
+        {
+          "name": "multiRunnerActions.js",
+          "group": "ui/app/upsales/common/services/multiRunnerActions.js",
+          "value": 1354.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    }
+  ]
+}
