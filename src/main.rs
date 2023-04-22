@@ -778,6 +778,24 @@ impl Folder {
 
 
 }
+impl fmt::Display for Folder_file {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} ({})", self.name, self.value)
+    }
+}
+
+impl fmt::Display for Folder {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}\n", self.name)?;
+        for (_, file) in &self.files {
+            write!(f, "- {}\n", file)?;
+        }
+        for (_, folder) in &self.subfolders {
+            write!(f, "- {}\n", folder)?;
+        }
+        Ok(())
+    }
+}
 
 fn filelist_to_container_only_files(filelist: &FileList, field: i32) -> Container {
     let mut parentlist = vec![];
