@@ -695,7 +695,91 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
     return container;
 }
 
-fn filelist_to_container_only_files(filelist: &FileList, field: &str) -> Container {
+#[derive(Debug)]
+struct Folder_file {
+    name: String,
+    value: i32,
+}
+
+#[derive(Debug)]
+struct Folder {
+    name: String,
+    files: HashMap<String, Folder_file>,
+    subfolders: HashMap<String, Folder>,
+}
+
+impl Folder {
+    fn new(name: &str) -> Folder {
+        Folder {
+            name: String::from(name),
+            files: HashMap::new(),
+            subfolders: HashMap::new(),
+        }
+    }
+
+    fn get_value(&self, path: &str) -> Option<i32> {
+        let mut parts = path.split('/');
+        let first_part = parts.next()?;
+        if first_part != "" {
+            return None;
+        }
+        let mut current_folder = self;
+        for part in parts {
+            if part == "" {
+                continue;
+            }
+            match current_folder.subfolders.get(part) {
+                Some(folder) => current_folder = folder,
+                None => return None,
+            }
+        }
+        Some(current_folder.get_total_value())
+    }
+
+    fn get_total_value(&self) -> i32 {
+        let files_value: i32 = self.files.values().map(|file| file.value).sum();
+        let subfolders_value: i32 = self.subfolders.values().map(|folder| folder.get_total_value()).sum();
+        files_value + subfolders_value
+    }
+    fn add_file(&mut self, path: &str, value: i32) {
+        let mut parts = path.split('/');
+        let first_part = parts.next().unwrap(); // path always starts with '/'
+        if first_part != "" {
+            panic!("Invalid path");
+        }
+
+        let mut current_folder = self;
+
+        for part in parts.clone().take(parts.clone().count() - 1) {
+            if part == "" {
+                continue;
+            }
+
+            if current_folder.subfolders.contains_key(part) {
+                current_folder = current_folder.subfolders.get_mut(part).unwrap();
+            } else {
+                let new_folder = Folder::new(part);
+                current_folder.subfolders.insert(String::from(part), new_folder);
+                current_folder = current_folder.subfolders.get_mut(part).unwrap();
+            }
+        }
+
+        let file_name = String::from(parts.last().unwrap());
+        let file = Folder_file { name: file_name.clone(), value };
+        let existing_file = current_folder.files.get_mut(&file_name);
+        if existing_file.is_some() {
+            existing_file.unwrap().value += value;
+        } else {
+            current_folder.files.insert(file_name, file);
+        }
+    }
+
+
+
+
+}
+
+fn filelist_to_container_only_files(filelist: &FileList, field: i32) -> Container {
     let mut parentlist = vec![];
     for (_, file) in &filelist.files {
         let shortname = file.name.clone().split("/").last().unwrap().to_string();
@@ -708,13 +792,7 @@ fn filelist_to_container_only_files(filelist: &FileList, field: &str) -> Contain
         let child = Child {
             name: shortname.clone(),
             group: file.name.clone(),
-            value: match field {
-                "freq_counter" => file.freq_counter as f32,
-                "bug_counter" => file.bug_counter as f32,
-                "aged_freq_counter" => file.aged_freq_counter as f32,
-                "aged_bug_freq_counter" => file.aged_bug_freq_counter as f32,
-                _ => panic!("Invalid field name"),
-            },
+            value: file.get_field(field),
             colname: "level3".to_owned(),
         };
         parent.value = 0.0;
@@ -1125,6 +1203,7 @@ fn main() {
         "d3"=>{
             println!("Convert file/function objects into d3 treemap parsable json");
             // args 2+ :
+            //TODO: parse into nested folder diagrams
             let json_path = &args[2];
             let new_filename = &args[3];
             let sub_mode:&str = &args[4];
@@ -1137,14 +1216,15 @@ fn main() {
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
 
             let file_list = file_data_map_to_file_list(&file_data, 100, &recognized_bugfix_indicators);
-
+            //file_list.files.get(name) gives object from full filepath
             let mut container : Container ;
 
             match sub_mode {
                 "files"=>{
-                    container = filelist_to_container_only_files(&file_list, "freq_counter");
+                    container = filelist_to_container_only_files(&file_list, *field_to_analyze as i32);
                     container.sort_parents_by_total_child_value();}
                 "full"=> {
+                    //OBS: TODO this takes forever to run and sometimes crashes because of memory, TODO: trash this and do partial ones
                     container = filelist_to_container(file_list, field_to_analyze.to_owned() as i32);
                     container.sort_parents_by_total_child_value();}
 

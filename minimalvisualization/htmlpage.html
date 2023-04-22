@@ -5,7 +5,7 @@
     margin: 0;
     background-color: black;
   }
-  
+
   a {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
@@ -27,7 +27,7 @@
     margin-bottom: 5px;
   }
   rect{
-    
+
   }
 </style>
 <!-- Load d3.js -->
@@ -50,7 +50,7 @@
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
   width = 1920 - margin.left - margin.right,
   height = 1080 - margin.top - margin.bottom;
-    
+
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
     .append("svg")
@@ -59,12 +59,12 @@
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-    
+
     // read json data
     let params = new Proxy(new URLSearchParams(window.location.search),{get:(searchParams, prop) => searchParams.get(prop),});
     let file_to_show = params.file;
     d3.json("http://localhost:5500/" + file_to_show, function(data) {
-    
+
      // Give the data to this cluster layout:
 let root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
 let nr_of_rects = Number(file_to_show.split("_")[0])
@@ -94,19 +94,17 @@ let inc_colour = (d) =>{
 		r = Math.round(310 - 3.10 * perc);
 	}
 	var h = r * 0x10000 + g * 0x100 + b * 0x1;
-  console.log(perc)
-  console.log(d.data.name, inc_count, '#' + ('000000' + h.toString(16)).slice(-6))
-  
+/*   console.log(perc)
+  console.log(d.data.name, inc_count, '#' + ('000000' + h.toString(16)).slice(-6)) */
+
   return '#' + ('000000' + h.toString(16)).slice(-6);
 
 }
 
-
-
 let title_sizing = (d) =>{
   let width = recmapper.get((d.x0,d.y0))
   let name = d.data.name
-  
+
   //console.log(d.data.name, width)
   //console.log(d)
   if (width > 300){ return "30px"}
@@ -149,18 +147,18 @@ let full_name_linebreak = (d) =>{
   let lastpart = name.substring(name.length/2,name.length)
   if (name.length > 20){
     return firstpart + "\n" + lastpart
-  }    
-  
+  }
+
   return name
 }
 
-console.log(nr_of_rects)
+/* console.log(nr_of_rects) */
 // Then d3.treemap computes the position of each element of the hierarchy
 d3.treemap()
   .size([width, height])
   .paddingTop(0)
   .paddingRight(0)
-  .paddingInner(0)     
+  .paddingInner(0)
   .paddingOuter(0)
   .padding(0)
   (root)
@@ -188,7 +186,7 @@ svg
     .style("stroke", "black")
     .style("fill", function(d){ return inc_colour(d)} )
     .style("opacity", function(d){ return opacity(d.data.value)})
-
+    .attr("title", "TESTWORK")
 
 // and to add the text labels
 svg
@@ -209,14 +207,18 @@ svg
   .data(root.leaves())
   .enter()
   .append("text")
-    .attr("x", function(d){ return d.x0+5})    
-    .attr("y", function(d){ return d.y0+15})   
+    .attr("x", function(d){ return d.x0+5})
+    .attr("y", function(d){ return d.y0+15})
     .text(function(d){ return d.data.group })
     .attr("font-size", function(d){if(d.data.group.length > 20){return "2px"}else{return "10px"}})
     .attr("font-family", "consolas")
     .attr("fill", "white")
 
-
+d3.selectAll("rect").on("click", function(d){
+  //works
+  var title = d.title;
+  console.log(d.data.name);
+});
 // Add title for the 3 groups
 /* svg
   .selectAll("titles")
