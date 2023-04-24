@@ -10,9 +10,11 @@ use std::collections::{HashMap, VecDeque};
 use std::ffi::OsString;
 use std::fmt::Write as _;
 
+use std::fs::OpenOptions;
 use std::io::Write as _;
 use std::process::Command;
 
+use std::ptr::null;
 use std::sync::{Arc, Mutex};
 use std::{env, fmt, fs};
 
@@ -303,19 +305,19 @@ impl File {
             8 => self.freq_counter * self.oldest_newest.0 as f32,
             9 => self.bug_counter * self.oldest_newest.0 as f32,
             10 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            11 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 1.1 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            12 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 1.2 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
-            13 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 1.1,
-            14 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 1.2,
+            11 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 2.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+            12 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 10.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
+            13 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 2.0,
+            14 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 10.0,
             //singular
             15 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * 1.0,
             16 => self.oldest_newest.1 as f32 * self.aged_bug_freq_counter + self.oldest_newest.1 as f32 * 1.0,
             //more prio on newest change
             17 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            18 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 1.1 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            19 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 1.2 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
-            20 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 1.1,
-            21 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 1.2,
+            18 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 2.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+            19 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 10.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
+            20 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 2.0,
+            21 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 10.0,
 
             22 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * 1.0,
             23 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter + self.oldest_newest.1 as f32 * 1.0,
@@ -959,6 +961,8 @@ fn main() {
             // args 2+ :
             let json_data_path = &args[2];
             let json_new_file_name = &args[3];
+            let printing_logs_to_file = args.len() > 4;
+
             let file_string = std::fs::read_to_string(json_data_path).unwrap();
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
             //This is how much of the repo to include when making a prediction list we make a list of prioritized files for each precentage of the data.
@@ -979,8 +983,24 @@ fn main() {
                     final_data.get_mut(index as usize).unwrap().push((*p, vec![]))
                 }
             }
+             //DEBUG-log
+            let mut log_file:fs::File;
+            let _ = fs::remove_file(json_new_file_name.to_owned() + "__log");
+            //let _ = fs::File::create(json_new_file_name.to_owned() + "__log");
+            //let mut  log_file = std::fs::File::options().append(true).open().unwrap();
+            log_file = OpenOptions::new().create_new(true).append(true).open(json_new_file_name.to_owned() + "__log").unwrap();
+            if !printing_logs_to_file{
+                //OBS: TODO: this doesnt remove file
+                let _ = fs::remove_file(json_new_file_name.to_owned() + "__log");
+            }
 
             for precentage in precentages{
+
+                if printing_logs_to_file{
+                    //log_file.write_all(precentage.to_string());
+                    let _ = writeln!(&mut log_file, "{}% of repo", precentage);
+                    let _ = writeln!(&mut log_file, "  #Field");
+                }
 
 
                 let age_cuttof_in_precentage_points = precentage as usize;
@@ -988,6 +1008,12 @@ fn main() {
                 let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
 
                 for i in 0..nr_of_fields{
+
+                    if printing_logs_to_file{
+                        let _ = writeln!(&mut log_file, "  #{}", i);
+                        let _ = writeln!(&mut log_file, "     top->found");
+                    }
+
                     let field_to_sort_by = i;
 
                     let mut sortable_file_vec:Vec<&File> = file_list.files.values().into_iter().collect();
@@ -1020,6 +1046,9 @@ fn main() {
 
                         //run check for breakpoints where we list how many % of bugs found
                         if breakpoint_index < precentages_to_files.len() && index == precentages_to_files[breakpoint_index]{
+                            if printing_logs_to_file{
+                                let _ = writeln!(&mut log_file, "     {}% -> {}%", top_list_precentage_breakpoints.get(breakpoint_index).unwrap(),precentage_found_count);
+                            }
                             breakpoints_total_bugs_predicted.push_back(precentage_found_count);
                             breakpoint_index += 1;
                         }
@@ -1160,7 +1189,7 @@ fn main() {
                         breakpoint_index += 1;
                     }
 
-    /*                 //filter out json etc. OBS TODO disabled
+                    /*//filter out json etc. OBS TODO disabled
 
 
                     let _ = write!(huge_string, "{}", file);

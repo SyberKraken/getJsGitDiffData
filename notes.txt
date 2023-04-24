@@ -1,5 +1,10 @@
+some of most starred projects on github with good labeling of bugfixes
+
 https://github.com/electron/electron/commits/main
 https://www.electronjs.org/docs/latest/development/pull-requests#commit-message-guidelines
 
 vue2
 https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md
+
+angular
+https://github.com/angular/angular/blob/main/CONTRIBUTING.md
