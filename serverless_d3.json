@@ -1,0 +1,135 @@
+{
+  "name": "Container",
+  "children": [
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "lib/utils/index.js",
+          "value": 354847.44,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "all.js",
+      "children": [
+        {
+          "name": "all.js",
+          "group": "tests/all.js",
+          "value": 286436.25,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "FunctionCreate.js",
+      "children": [
+        {
+          "name": "FunctionCreate.js",
+          "group": "lib/actions/FunctionCreate.js",
+          "value": 222922.72,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "EndpointBuildApiGateway.js",
+      "children": [
+        {
+          "name": "EndpointBuildApiGateway.js",
+          "group": "lib/actions/EndpointBuildApiGateway.js",
+          "value": 208917.84,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "FunctionDeploy.js",
+      "children": [
+        {
+          "name": "FunctionDeploy.js",
+          "group": "lib/actions/FunctionDeploy.js",
+          "value": 208773.48,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "aws.js",
+      "children": [
+        {
+          "name": "aws.js",
+          "group": "lib/utils/aws.js",
+          "value": 193413.1,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "deploy_lambda.js",
+      "children": [
+        {
+          "name": "deploy_lambda.js",
+          "group": "lib/commands/deploy_lambda.js",
+          "value": 193391.88,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "jaws",
+      "children": [
+        {
+          "name": "jaws",
+          "group": "bin/jaws",
+          "value": 181332.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Serverless.js",
+      "children": [
+        {
+          "name": "Serverless.js",
+          "group": "lib/Serverless.js",
+          "value": 176041.34,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ServerlessProject.js",
+      "children": [
+        {
+          "name": "ServerlessProject.js",
+          "group": "lib/ServerlessProject.js",
+          "value": 164837.44,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    }
+  ]
+}

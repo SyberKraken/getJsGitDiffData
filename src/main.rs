@@ -14,7 +14,8 @@ use std::fs::OpenOptions;
 use std::io::Write as _;
 use std::process::Command;
 
-use std::ptr::null;
+//use std::ptr::null;
+//use std::slice::SliceIndex;
 use std::sync::{Arc, Mutex};
 use std::{env, fmt, fs};
 
@@ -110,12 +111,12 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i
             .diff_tree_to_tree(Some(&tree2), Some(&tree1), None)
             .expect("Failed to diff trees");
         let mut diff_text = Vec::new();
-        diff.print(git2::DiffFormat::Patch, |_, _, line| {
+        let _ = diff.print(git2::DiffFormat::Patch, |_, _, line| {
             diff_text.extend_from_slice(line.content());
             diff_text.push(b'\n');
             true
-        })
-        .expect("Failed to print diff");
+        });
+
         let diff_str = String::from_utf8_lossy(&diff_text).to_string();
 
         let parsed_diff = get_functions_from_diff(&diff_str, age.try_into().unwrap(), &sha.1);
@@ -342,7 +343,7 @@ impl File {
                 .insert(function_name.to_owned(), 1);
         }
     }
-    fn get_sorted_function_vec_by_field(&self, field: i32) -> Vec<&Function> {
+    fn _get_sorted_function_vec_by_field(&self, field: i32) -> Vec<&Function> {
         let mut fn_list: Vec<&Function> = self.function_list.values().into_iter().collect();
         fn_list.sort_by(|a, b| b.get_field(field).total_cmp(&a.get_field(field)));
         return fn_list;
@@ -698,15 +699,15 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
 }
 
 #[derive(Debug)]
-struct Folder_file {
+struct FolderFile {
     name: String,
-    value: i32,
+    value: f32,
 }
 
 #[derive(Debug)]
 struct Folder {
     name: String,
-    files: HashMap<String, Folder_file>,
+    files: HashMap<String, FolderFile>,
     subfolders: HashMap<String, Folder>,
 }
 
@@ -719,12 +720,12 @@ impl Folder {
         }
     }
 
-    fn get_value(&self, path: &str) -> Option<i32> {
-        let mut parts = path.split('/');
-        let first_part = parts.next()?;
+    fn _get_value(&self, path: &str) -> Option<f32> {
+        let parts = path.split('/');
+        /* let first_part = parts.next()?;
         if first_part != "" {
             return None;
-        }
+        } */
         let mut current_folder = self;
         for part in parts {
             if part == "" {
@@ -738,17 +739,18 @@ impl Folder {
         Some(current_folder.get_total_value())
     }
 
-    fn get_total_value(&self) -> i32 {
-        let files_value: i32 = self.files.values().map(|file| file.value).sum();
-        let subfolders_value: i32 = self.subfolders.values().map(|folder| folder.get_total_value()).sum();
+    fn get_total_value(&self) -> f32 {
+        let files_value: f32 = self.files.values().map(|file| file.value).sum();
+        let subfolders_value: f32 = self.subfolders.values().map(|folder| folder.get_total_value()).sum();
         files_value + subfolders_value
     }
-    fn add_file(&mut self, path: &str, value: i32) {
-        let mut parts = path.split('/');
-        let first_part = parts.next().unwrap(); // path always starts with '/'
+    fn add_file(&mut self, path: &str, value: f32) {
+        let parts = path.split('/');
+       /*  let first_part = parts.next().unwrap(); // path always starts with '/'
         if first_part != "" {
+            println!("{}", path);
             panic!("Invalid path");
-        }
+        } */
 
         let mut current_folder = self;
 
@@ -767,7 +769,7 @@ impl Folder {
         }
 
         let file_name = String::from(parts.last().unwrap());
-        let file = Folder_file { name: file_name.clone(), value };
+        let file = FolderFile { name: file_name.clone(), value };
         let existing_file = current_folder.files.get_mut(&file_name);
         if existing_file.is_some() {
             existing_file.unwrap().value += value;
@@ -775,25 +777,73 @@ impl Folder {
             current_folder.files.insert(file_name, file);
         }
     }
+    fn get_path_items(&self, path: &str) -> Option<Vec<(String, f32)>> {
+        let parts = path.split('/');
+        let mut current_folder = self;
 
+        for part in parts {
+            if part == "" {
+                continue;
+            }
+            match current_folder.subfolders.get(part) {
+                Some(folder) => current_folder = folder,
+                None => return None,
+            }
+        }
 
+        let mut result = Vec::new();
+        let _files_value: f32 = current_folder.files.values().map(|file| {
+            result.push((file.name.clone(), file.value));
+            file.value
+        }).sum();
+        let _subfolders_value: f32 = current_folder.subfolders.values().map(|folder| {
+            result.push((folder.name.clone(), folder.get_total_value()));
+            folder.get_total_value()
+        }).sum();
+
+        result.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
+
+        Some(result)
+    }
+
+    fn print_folder_structure(&self, depth: u32) -> String {
+        let mut result = String::new();
+
+        let indent = "--".repeat((depth * 2) as usize);
+        result.push_str(&format!("{}{} - {:.2}\n", indent, self.name, self.get_total_value()));
+
+        let mut subfolders: Vec<&Folder> = self.subfolders.values().collect();
+        subfolders.sort_by(|a, b| b.get_total_value().partial_cmp(&a.get_total_value()).unwrap());
+
+        for folder in subfolders {
+            result.push_str(&folder.print_folder_structure(depth + 1));
+        }
+
+        result
+    }
 
 
 }
-impl fmt::Display for Folder_file {
+impl fmt::Display for FolderFile {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{} ({})", self.name, self.value)
     }
 }
 
+
 impl fmt::Display for Folder {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}\n", self.name)?;
-        for (_, file) in &self.files {
-            write!(f, "- {}\n", file)?;
+        write!(f, "{}: {}\n", self.name, self.get_total_value())?;
+        let mut file_list = Vec::from_iter(self.files.iter());
+        file_list.sort_by(|b,a|a.1.value.partial_cmp(&b.1.value).unwrap());
+        for (_, file) in file_list {
+            write!(f, "-- {}\n", file)?;
         }
-        for (_, folder) in &self.subfolders {
-            write!(f, "- {}\n", folder)?;
+        write!(f, "\n")?;
+        let mut folder_list = Vec::from_iter(self.subfolders.iter());
+        folder_list.sort_by(|b,a|a.1.get_total_value().partial_cmp(&b.1.get_total_value()).unwrap());
+        for (_, folder) in folder_list {
+            write!(f, "{}\\{} \n",self.name , folder)?;
         }
         Ok(())
     }
@@ -947,10 +997,11 @@ fn main() {
         args = vec![
             "main.rs".to_string(),
             "d3".to_string(),
-            r"C:\Users\simon\Documents\rust stuff\getJsGitDiffData\upsales.json".to_string(),
-            "d3Data".to_string(),
-            "full".to_string(),
-            "2".to_string(),
+            r"serverless.json".to_string(),
+            "serverless".to_string(),
+            "files".to_string(),
+            "23".to_string(),
+            "10".to_string(),
         ];
     }
     let mode: &str = &args[1];
@@ -999,8 +1050,8 @@ fn main() {
                 if printing_logs_to_file{
                     //log_file.write_all(precentage.to_string());
                     let _ = writeln!(&mut log_file, "{}% of repo", precentage);
-                    let _ = writeln!(&mut log_file, "  #Field");
                 }
+                let _ = writeln!(&mut log_file, "  #Field");
 
 
                 let age_cuttof_in_precentage_points = precentage as usize;
@@ -1021,14 +1072,14 @@ fn main() {
                     //sort files by chosen field
                     sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
 
-                    let endings_filter = |name:&str|-> bool{
+                    /* let endings_filter = |name:&str|-> bool{
                         for end in &filtered_file_types{
                             if name.ends_with(end){
                                 return true;
                             }
                         }
                         return false;
-                    };
+                    }; */
 
 
 
@@ -1080,9 +1131,9 @@ fn main() {
             //Get total deviation from precentages
             let mut movable_index_divergence_total:HashMap<usize, f64> = HashMap::new();
 
-            for (i,label) in final_data_labels.iter().enumerate(){
+            for (i,_/*_=label*/) in final_data_labels.iter().enumerate(){
                 movable_index_divergence_total.insert(i.to_owned(), 0.0);
-                for title_vector in final_data.get(i){
+                while let Some(title_vector) = final_data.get(i){
                     for precentage_pair in title_vector{
                         let avg_sum:f64 = precentage_pair.1.iter().sum();
                         let avg = avg_sum/(precentage_pair.1.len() as f64);
@@ -1105,19 +1156,19 @@ fn main() {
             let mut huge_string:String = String::new();
 
             for moved_index in movable_indexes{
-                writeln!(huge_string,"{} > avg deviation = {}", final_data_labels.get(moved_index).unwrap(), movable_index_divergence_total.get(&moved_index).unwrap());
+                let _ = writeln!(huge_string,"{} > avg deviation = {}", final_data_labels.get(moved_index).unwrap(), movable_index_divergence_total.get(&moved_index).unwrap());
             }
 
 
             //below code is old and should be incorporated with sortablble_indexes, right now we simply print all fo the big data below teh neer metadata
 
             for (i,label) in final_data_labels.iter().enumerate(){
-                writeln!(huge_string,"{}", label);
-                for title_vector in final_data.get(i){
+                let _ = writeln!(huge_string,"{}", label);
+                while let Some(title_vector) = final_data.get(i){
                     for precentage_pair in title_vector{
                         let avg_sum:f64 = precentage_pair.1.iter().sum();
                         let avg = avg_sum/(precentage_pair.1.len() as f64);
-                        writeln!(huge_string,"  {} => {}", &precentage_pair.0, avg);
+                        let _ = writeln!(huge_string,"  {} => {}", &precentage_pair.0, avg);
                     }
                 }
 
@@ -1162,14 +1213,14 @@ fn main() {
                 //append metatdata to top, this should probably be in a var in json later TODO: disabled
                // let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
 
-                let endings_filter = |name:&str|-> bool{
+                /* let endings_filter = |name:&str|-> bool{
                     for end in &filtered_file_types{
                         if name.ends_with(end){
                             return true;
                         }
                     }
                     return false;
-                };
+                }; */
 
                 let top_list_precentage_breakpoints = [1, 5, 10, 25, 50, 75];
                 let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i)/100});
@@ -1281,15 +1332,42 @@ fn main() {
             // container is the dataformat for a d3 visualization json
             //Dumb copy making to not implement COPY trait
             let mut copy_container : Container = Container { name: "Container".to_string(), children: (vec![]) };
+            let mut f :Folder = Folder::new("");
 
             for mut p in container.children{
+
+               //let path =  p.name.split("/");
                 p.remove_children_with_ending(&filtered_file_types);
                 p.sort_children_by_value();
                 if p.name.ends_with(".json") || p.name.ends_with(".JSON"){
                    continue;
                 }
+
+                for item in &p.children{
+                    f.add_file(&item.group, item.value);
+                }
+
                 copy_container.children.push(p);
+
+                //new
+
             }
+
+            //File log part
+
+            //THIS GETS CONTENTS OF SINGLE FOLDER
+            //let t = f.get_path_items("lib/plugins/aws/package").unwrap();
+
+           /*  for pair in t{
+                temp = temp + &pair.0 + " - " + &pair.1.to_string() + "\n";
+            } */
+
+            //THIS GETS ENTIRE FOLDER STRUCTURE
+            let temp = f.print_folder_structure(0);
+
+            let _ = fs::remove_file(new_filename.to_owned() + "_file_structure.txt");
+            let mut file = fs::File::create(new_filename.to_owned() + "_file_structure.txt").unwrap();
+            file.write_all(temp.as_bytes()).unwrap();
 
 
             copy_container.children.truncate(amount_items_to_show);
