@@ -6,7 +6,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
-use std::collections::{HashMap, VecDeque};
+use std::collections::{HashMap, VecDeque, HashSet};
 use std::ffi::OsString;
 use std::fmt::Write as _;
 
@@ -1372,7 +1372,7 @@ fn main() {
             //Dumb copy making to not implement COPY trait
             let mut copy_container : Container = Container { name: "Container".to_string(), children: (vec![]) };
             let mut f :Folder = Folder::new("");
-
+            let mut all_folder_paths = HashSet::new();
             for mut p in container.children{
 
                //let path =  p.name.split("/");
@@ -1384,6 +1384,12 @@ fn main() {
 
                 for item in &p.children{
                     f.add_file(&item.group, item.value);
+
+                    let cln = item.group.clone();
+                    let mut parts: Vec<&str> = cln.split('/').collect();
+                    parts.pop();
+                    all_folder_paths.insert(parts.join("/"));
+
                 }
 
                 copy_container.children.push(p);
@@ -1409,14 +1415,20 @@ fn main() {
             file.write_all(temp.as_bytes()).unwrap();
             //--
 
+            for path in all_folder_paths {
 
+                let partial_container = f.get_path_container(&path);
+                let partial_container_json = serde_json::to_string_pretty(&partial_container).unwrap();
 
-            let partial_container = f.get_path_container("lib");
-            let partial_container_json = serde_json::to_string_pretty(&partial_container).unwrap();
+                fs::create_dir_all("containers/".to_owned() + &path);
 
-            let _ = fs::remove_file(new_filename.to_owned() + "_dir_test.json");
-            let mut file = fs::File::create(new_filename.to_owned() + "_dir_test.json").unwrap();
-            file.write_all(partial_container_json.as_bytes()).unwrap();
+                let _ = fs::remove_file("containers/".to_owned() + &path + ".json" );
+                println!("{}", "containers/".to_owned() + &path + ".json");
+                let mut file = fs::File::create("containers/".to_owned() + &path + ".json").unwrap();
+                file.write_all(partial_container_json.as_bytes()).unwrap();
+
+            }
+
 
 
 

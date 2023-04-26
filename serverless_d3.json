@@ -46,7 +46,7 @@
         {
           "name": "EndpointBuildApiGateway.js",
           "group": "lib/actions/EndpointBuildApiGateway.js",
-          "value": 208917.86,
+          "value": 208917.84,
           "colname": "level3"
         }
       ],
@@ -98,7 +98,7 @@
         {
           "name": "jaws",
           "group": "bin/jaws",
-          "value": 181331.98,
+          "value": 181332.0,
           "colname": "level3"
         }
       ],
@@ -111,7 +111,7 @@
         {
           "name": "Serverless.js",
           "group": "lib/Serverless.js",
-          "value": 176041.38,
+          "value": 176041.33,
           "colname": "level3"
         }
       ],
