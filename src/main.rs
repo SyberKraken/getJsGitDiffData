@@ -13,7 +13,7 @@ use std::fmt::Write as _;
 use std::fs::OpenOptions;
 use std::io::Write as _;
 use std::process::Command;
-
+use std::path::Path;
 //use std::ptr::null;
 //use std::slice::SliceIndex;
 use std::sync::{Arc, Mutex};
@@ -597,6 +597,14 @@ struct Parent {
 }
 
 impl Parent {
+    fn new(name: String, children: Vec<Child>, value: f32, colname: String) -> Parent {
+        Parent {
+            name,
+            children,
+            value,
+            colname,
+        }
+    }
     fn sort_children_by_value(&mut self) {
         self.children
             .sort_by(|b, a| a.value.partial_cmp(&b.value).unwrap());
@@ -698,13 +706,13 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
     return container;
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize)]
 struct FolderFile {
     name: String,
     value: f32,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize)]
 struct Folder {
     name: String,
     files: HashMap<String, FolderFile>,
@@ -806,6 +814,38 @@ impl Folder {
         Some(result)
     }
 
+    fn get_path_container(&self, path: &str) -> Container {
+        let mut parent = Parent {
+            name: path.to_string(),
+            children: Vec::new(),
+            value: 0.0,
+            colname: "".to_owned(),
+        };
+
+        if path.len() > 0 {
+            let items = self.get_path_items(&path).unwrap();
+            for item in items {
+                let child = Child::new(
+                    item.0.to_owned(),
+                    "".to_owned(),
+                    item.1,
+                    "level3".to_owned(),
+                );
+                parent.children.push(child);
+            }
+        }
+
+        parent.sort_children_by_value();
+        parent.remove_children_with_ending(&vec!["lnk"]);
+
+        let mut container = Container {
+            name: path.to_string(),
+            children: Vec::new(),
+        };
+        container.children.push(parent);
+
+        return container;
+    }
     fn print_folder_structure(&self, depth: u32) -> String {
         let mut result = String::new();
 
@@ -821,7 +861,6 @@ impl Folder {
 
         result
     }
-
 
 }
 impl fmt::Display for FolderFile {
@@ -1368,6 +1407,22 @@ fn main() {
             let _ = fs::remove_file(new_filename.to_owned() + "_file_structure.txt");
             let mut file = fs::File::create(new_filename.to_owned() + "_file_structure.txt").unwrap();
             file.write_all(temp.as_bytes()).unwrap();
+            //--
+
+
+
+            let partial_container = f.get_path_container("lib");
+            let partial_container_json = serde_json::to_string_pretty(&partial_container).unwrap();
+
+            let _ = fs::remove_file(new_filename.to_owned() + "_dir_test.json");
+            let mut file = fs::File::create(new_filename.to_owned() + "_dir_test.json").unwrap();
+            file.write_all(partial_container_json.as_bytes()).unwrap();
+
+
+
+
+
+
 
 
             copy_container.children.truncate(amount_items_to_show);

@@ -7,7 +7,7 @@
         {
           "name": "index.js",
           "group": "lib/utils/index.js",
-          "value": 354847.44,
+          "value": 354847.4,
           "colname": "level3"
         }
       ],
@@ -46,7 +46,7 @@
         {
           "name": "EndpointBuildApiGateway.js",
           "group": "lib/actions/EndpointBuildApiGateway.js",
-          "value": 208917.84,
+          "value": 208917.86,
           "colname": "level3"
         }
       ],
@@ -72,7 +72,7 @@
         {
           "name": "aws.js",
           "group": "lib/utils/aws.js",
-          "value": 193413.1,
+          "value": 193413.08,
           "colname": "level3"
         }
       ],
@@ -85,7 +85,7 @@
         {
           "name": "deploy_lambda.js",
           "group": "lib/commands/deploy_lambda.js",
-          "value": 193391.88,
+          "value": 193391.86,
           "colname": "level3"
         }
       ],
@@ -98,7 +98,7 @@
         {
           "name": "jaws",
           "group": "bin/jaws",
-          "value": 181332.0,
+          "value": 181331.98,
           "colname": "level3"
         }
       ],
@@ -111,7 +111,7 @@
         {
           "name": "Serverless.js",
           "group": "lib/Serverless.js",
-          "value": 176041.34,
+          "value": 176041.38,
           "colname": "level3"
         }
       ],
@@ -124,7 +124,7 @@
         {
           "name": "ServerlessProject.js",
           "group": "lib/ServerlessProject.js",
-          "value": 164837.44,
+          "value": 164837.42,
           "colname": "level3"
         }
       ],
