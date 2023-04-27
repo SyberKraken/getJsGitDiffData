@@ -10,6 +10,7 @@ git2 = "0.16.1"
 indexmap = "1.9.2"
 indicatif = "0.17.3"
 permutation = "0.4.1"
+rand = "0.8.5"
 rayon = "1.7.0"
 regex = "1.7.2"
 serde = { version = "1.0.158", features = ["derive"] }

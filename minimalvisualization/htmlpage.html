@@ -101,7 +101,7 @@ let count = 0
 let mapper = (d) =>{
   if (d.data.value > max){max = d.data.value}
   if (d.data.value < min){min = d.data.value}
-  count ++
+  count += 1
 }
 
 let inc_count = 0
@@ -131,12 +131,17 @@ let title_sizing = (d) =>{
   titleindexer ++
   titleindexerlist.push(d.data.name)
   let width = recmapper.get((d.x0,d.y0))
+  //OBS: this just removes titles that cant be siplayed propperley with value, not correct way of doing it since its not based on width
+  if( d.data.value < max/ 200 ){
+    return "0px"
+  }
   let name = d.data.name
   if (name.length < 5) {return "30px"}
   //console.log(d.data.name, width)
   //console.log(d)
   if (width > 300){ return "30px"}
   if (width > 200){
+    if (name.length < 5) {return "30px"}
     if(name.length > 17){
       return "15px"
     }
@@ -146,6 +151,7 @@ let title_sizing = (d) =>{
     return "23px"
   }
   else if (width > 150){
+    if (name.length < 5) {return "30px"}
     if (name.length > 25){
       return "8px"
     }
@@ -158,14 +164,19 @@ let title_sizing = (d) =>{
     return "20px"
   }
   else if (width > 100){
+
+    if (name.length < 5) {return "30px"}
     if (name.length < 15){
-      return "20px"
+      return "17px"
     }
     return "10px"
   }
   else if (width > 50){
     return "7x"
+  }else{
+    return "12px"
   }
+
 }
 
 
@@ -231,10 +242,10 @@ svg
   .data(root.leaves())
   .enter()
   .append("text")
-    .attr("x", function(d){ return d.x0 +5})    // +10 to adjust position (more right)
-    .attr("y", function(d){return d.y0 + 50})    // +20 to adjust position (lower)
+    .attr("x", function(d){ return d.x0 +5})    //  (more right)
+    .attr("y", function(d){return d.y0 + 40})    // (lower)
     .text(function(d){ return d.data.name})
-    .attr("font-size", function(d){return title_sizing(d)})
+    .attr("font-size", function(d){ return title_sizing(d)})
     .attr("font-family", "consolas")
     .attr("fill", "white")
 
@@ -259,6 +270,7 @@ d3.selectAll("rect").on("click", function(d){
   const url = `http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/${fileName}/${newPart}.json`;
   window.location.href = url;
 });
+
 // Add title for the 3 groups
 /* svg
   .selectAll("titles")

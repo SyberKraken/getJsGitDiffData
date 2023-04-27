@@ -7,7 +7,7 @@ use rayon::prelude::*;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, VecDeque, HashSet};
-use std::ffi::OsString;
+use std::ffi::{OsString, c_long};
 use std::fmt::Write as _;
 
 use std::fs::OpenOptions;
@@ -1132,6 +1132,7 @@ fn main() {
 
                     for file in sortable_file_vec{
 
+
                         precentage_found_count += ((file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*10000.0).round()/100.0;
 
                         //run check for breakpoints where we list how many % of bugs found
@@ -1171,8 +1172,9 @@ fn main() {
             let mut movable_index_divergence_total:HashMap<usize, f64> = HashMap::new();
 
             for (i,_/*_=label*/) in final_data_labels.iter().enumerate(){
+
                 movable_index_divergence_total.insert(i.to_owned(), 0.0);
-                while let Some(title_vector) = final_data.get(i){
+                if let Some(title_vector) = final_data.get(i){
                     for precentage_pair in title_vector{
                         let avg_sum:f64 = precentage_pair.1.iter().sum();
                         let avg = avg_sum/(precentage_pair.1.len() as f64);
@@ -1202,8 +1204,9 @@ fn main() {
             //below code is old and should be incorporated with sortablble_indexes, right now we simply print all fo the big data below teh neer metadata
 
             for (i,label) in final_data_labels.iter().enumerate(){
+
                 let _ = writeln!(huge_string,"{}", label);
-                while let Some(title_vector) = final_data.get(i){
+                if let Some(title_vector) = final_data.get(i){
                     for precentage_pair in title_vector{
                         let avg_sum:f64 = precentage_pair.1.iter().sum();
                         let avg = avg_sum/(precentage_pair.1.len() as f64);
