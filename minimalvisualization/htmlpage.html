@@ -6,19 +6,29 @@
     background-color: black;
   }
 
-  a {
+  a, button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
     color: aliceblue;
+    background-color: black;
+    border-radius: 5px;
+  }
+  input{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    width: 75%;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 5px;
   }
   .linkcontainer{
     margin-top: 0;
     padding:5px 20px 5px 20px ;
-    background-color: darkslategray;
+    background-color: black;
     width: 50vw;
     display: flex;
     justify-content: space-between;
-    border-bottom-right-radius: 20px;
+
   }
   .fullwidthparent{
     width: 100vw;
@@ -32,15 +42,35 @@
 </style>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
-<body>
+<body onload="loadCurrentPath()">
 
   <div class = "fullwidthparent">
     <div class="linkcontainer">
-      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/root.json">top_folder</a>
+      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/root.json">top folder</a>
+      <input type="text" id="json-file">
+	    <button onclick="redirectToPage()">Go to page</button>
     </div>
+
+
 </div>
 <div id="my_dataviz" style="width: 100%; height: 100vh;"></div>
 <script>
+  function loadCurrentPath() {
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const currentPath = urlParams.get('file').replace('containers/', '').replace('.json', '')
+      if (currentPath === "root"){
+        document.getElementById('json-file').value = "";
+        return
+      }
+			document.getElementById('json-file').value = currentPath;
+      //this should be own function : makeOnclicks
+		}
+  function redirectToPage() {
+			const fileName = document.getElementById("json-file").value;
+			const url = `http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/${fileName}.json`;
+			window.location.href = url;
+		}
 
    // set the dimensions and margins of the graph
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
@@ -98,9 +128,11 @@ let inc_colour = (d) =>{
 }
 
 let title_sizing = (d) =>{
+  titleindexer ++
+  titleindexerlist.push(d.data.name)
   let width = recmapper.get((d.x0,d.y0))
   let name = d.data.name
-
+  if (name.length < 5) {return "30px"}
   //console.log(d.data.name, width)
   //console.log(d)
   if (width > 300){ return "30px"}
@@ -170,6 +202,15 @@ var opacity = d3.scaleLinear()
 
 let recmapper = new Map()
 // use this information to add rectangles:
+// and to add the text labels
+let titleindexer = -1;
+let titleindexerlist = [];
+svg
+  .selectAll("text")
+  .data(root.leaves())
+  .enter()
+  .each(function (d) {titleindexerlist.push(d.data.name);})
+
 svg
   .selectAll("rect")
   .data(root.leaves())
@@ -182,9 +223,9 @@ svg
     .style("stroke", "black")
     .style("fill", function(d){ return inc_colour(d)} )
     .style("opacity", function(d){ return opacity(d.data.value)})
-    .attr("title", "TESTWORK")
+    .attr("title", function (d) {titleindexer++; return titleindexerlist[titleindexer]})
 
-// and to add the text labels
+
 svg
   .selectAll("text")
   .data(root.leaves())
@@ -197,7 +238,7 @@ svg
     .attr("font-family", "consolas")
     .attr("fill", "white")
 
-// and to add the text labels
+
 svg
   .selectAll("vals")
   .data(root.leaves())
@@ -212,8 +253,11 @@ svg
 
 d3.selectAll("rect").on("click", function(d){
   //works
-  var title = d.title;
-  console.log(d.data.name);
+  //console.log(d.data.name);
+  let newPart = d.data.name;
+  const fileName = document.getElementById("json-file").value;
+  const url = `http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/${fileName}/${newPart}.json`;
+  window.location.href = url;
 });
 // Add title for the 3 groups
 /* svg
@@ -236,6 +280,19 @@ d3.selectAll("rect").on("click", function(d){
     .attr("font-size", "19px")
     .attr("fill",  "grey" )
  */
+
+ /* let rects = document.getElementsByTagName("rect");
+      console.log(rects)
+      for (let index = 0; index < rects.length; index++) {
+        const rect = rects.item(index);
+        //console.log(rect.attributes.title.value)
+        if (!rect.hasEventListener("click")){
+          rect.addEventListener("click", ()=>{
+          console.log(rect.attributes.title.value)
+        })
+        }
+
+      } */
 })
 </script>
 </body>

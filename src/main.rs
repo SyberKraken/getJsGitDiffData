@@ -1406,6 +1406,7 @@ fn main() {
                 //new
 
             }
+            all_folder_paths.insert("".to_string());
 
             //File log part
 
