@@ -7,7 +7,7 @@
         {
           "name": "index.js",
           "group": "lib/utils/index.js",
-          "value": 354847.4,
+          "value": 354847.44,
           "colname": "level3"
         }
       ],
@@ -33,7 +33,7 @@
         {
           "name": "FunctionCreate.js",
           "group": "lib/actions/FunctionCreate.js",
-          "value": 222922.72,
+          "value": 222922.7,
           "colname": "level3"
         }
       ],
@@ -85,7 +85,7 @@
         {
           "name": "deploy_lambda.js",
           "group": "lib/commands/deploy_lambda.js",
-          "value": 193391.86,
+          "value": 193391.88,
           "colname": "level3"
         }
       ],
@@ -98,7 +98,7 @@
         {
           "name": "jaws",
           "group": "bin/jaws",
-          "value": 181332.0,
+          "value": 181331.98,
           "colname": "level3"
         }
       ],
@@ -111,7 +111,7 @@
         {
           "name": "Serverless.js",
           "group": "lib/Serverless.js",
-          "value": 176041.33,
+          "value": 176041.34,
           "colname": "level3"
         }
       ],

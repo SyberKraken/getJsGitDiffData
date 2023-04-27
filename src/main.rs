@@ -822,18 +822,18 @@ impl Folder {
             colname: "".to_owned(),
         };
 
-        if path.len() > 0 {
-            let items = self.get_path_items(&path).unwrap();
-            for item in items {
-                let child = Child::new(
-                    item.0.to_owned(),
-                    "".to_owned(),
-                    item.1,
-                    "level3".to_owned(),
-                );
-                parent.children.push(child);
-            }
+
+        let items = self.get_path_items(&path).unwrap();
+        for item in items {
+            let child = Child::new(
+                item.0.to_owned(),
+                "".to_owned(),
+                item.1,
+                "level3".to_owned(),
+            );
+            parent.children.push(child);
         }
+
 
         parent.sort_children_by_value();
         parent.remove_children_with_ending(&vec!["lnk"]);
@@ -1334,8 +1334,8 @@ fn main() {
             file.write_all(json.as_bytes()).unwrap();
             }
         ,
-
-        //Convert raw extracted data into d3 treemap parsable json, this in entire structure with files and functions
+            //OBS: this function has deadcode from original purpose, several args are not used
+        //Convert raw extracted data into d3 treemap parsable jsons for entire folder structure
         //args 2 is string representing if we want files,functions or both
         "d3"=>{
             println!("Convert file/function objects into d3 treemap parsable json");
@@ -1388,11 +1388,20 @@ fn main() {
                     let cln = item.group.clone();
                     let mut parts: Vec<&str> = cln.split('/').collect();
                     parts.pop();
-                    all_folder_paths.insert(parts.join("/"));
+                    let mut path = "".to_string();
+                    for part in &parts{
+                        if path != ""{
+                            path += "/";
+                        }
+                        path += part;
+                        all_folder_paths.insert(path.clone());
+
+                    }
+
 
                 }
-
-                copy_container.children.push(p);
+                //OBS: disabled since were doing all files instead of 1
+                //copy_container.children.push(p);
 
                 //new
 
@@ -1420,11 +1429,23 @@ fn main() {
                 let partial_container = f.get_path_container(&path);
                 let partial_container_json = serde_json::to_string_pretty(&partial_container).unwrap();
 
-                fs::create_dir_all("containers/".to_owned() + &path);
+                let mut filteredpath =  path.clone() ;
+                if  filteredpath.starts_with("."){
+                    filteredpath = (&path[1..]).to_string();
 
-                let _ = fs::remove_file("containers/".to_owned() + &path + ".json" );
-                println!("{}", "containers/".to_owned() + &path + ".json");
-                let mut file = fs::File::create("containers/".to_owned() + &path + ".json").unwrap();
+                }
+                else if  filteredpath == ""{
+                    filteredpath = "root".to_string();
+                }
+
+                fs::create_dir_all("containers/".to_owned() + &filteredpath);
+
+
+                let filename = "containers/".to_owned() + &filteredpath + ".json";
+
+                let _ = fs::remove_file(&filename );
+                //println!("{}", filename);
+                let mut file = fs::File::create(&filename).unwrap();
                 file.write_all(partial_container_json.as_bytes()).unwrap();
 
             }
@@ -1436,15 +1457,15 @@ fn main() {
 
 
 
-
-            copy_container.children.truncate(amount_items_to_show);
+            //OBS:Temp disables since folder version is working better
+           /*  copy_container.children.truncate(amount_items_to_show);
 
 
             let json = serde_json::to_string_pretty(&copy_container).unwrap();
             //d3Data.json hardcoded into visualization atm
             let _ = fs::remove_file(new_filename.to_owned() + "_d3.json");
             let mut file = fs::File::create(new_filename.to_owned() + "_d3.json").unwrap();
-            file.write_all(json.as_bytes()).unwrap();
+            file.write_all(json.as_bytes()).unwrap(); */
 
         }
         //Parse raw data into file/function objects

@@ -36,11 +36,7 @@
 
   <div class = "fullwidthparent">
     <div class="linkcontainer">
-      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=10_d3.json">10</a>
-      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=20_d3.json">20</a>
-      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=30_d3.json">30</a>
-      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=50_d3.json">50</a>
-      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=100_d3.json">100</a>
+      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/root.json">top_folder</a>
     </div>
 </div>
 <div id="my_dataviz" style="width: 100%; height: 100vh;"></div>
@@ -210,7 +206,7 @@ svg
     .attr("x", function(d){ return d.x0+5})
     .attr("y", function(d){ return d.y0+15})
     .text(function(d){ return d.data.group })
-    .attr("font-size", function(d){if(d.data.group.length > 20){return "2px"}else{return "10px"}})
+    .attr("font-size", function(d){if(d.data.group.length > 20){return "10px"}else{return "10px"}})
     .attr("font-family", "consolas")
     .attr("fill", "white")
 
