@@ -1,5 +1,5 @@
 newest change > avg deviation = 7.5200000000000005
-custom formula bug1 > avg deviation = 6.79
+F12_past_bug_prio_1 > avg deviation = 6.79
 custom formula bug2 > avg deviation = 6.79
 custom formula > avg deviation = 6.78
 custom formula freq1 > avg deviation = 6.78
@@ -92,7 +92,7 @@ custom formula freq2
   10 => 35.87140576168895
   25 => 52.5442046324412
   50 => 68.01293818155925
-custom formula bug1
+F12_past_bug_prio_1
   1 => 10.319336749364933
   5 => 25.936706893891095
   10 => 35.93607174679637

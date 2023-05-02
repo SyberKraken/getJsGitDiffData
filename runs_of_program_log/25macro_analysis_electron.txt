@@ -1,11 +1,11 @@
 custom formula bugonly > avg deviation = 62.530754315694175
 custom formula bug2  more newest change > avg deviation = 59.55837849680583
-custom formula bug1  more newest change > avg deviation = 59.47875299835205
+F12_past_bug_prio_1  more newest change > avg deviation = 59.47875299835205
 custom formula more newest change > avg deviation = 59.42038000996908
 custom formula freq1  more newest change > avg deviation = 59.332272939046234
 custom formula freq2  more newest change > avg deviation = 59.25987261199952
 custom formula bug2 > avg deviation = 59.10926058197021
-custom formula bug1 > avg deviation = 59.04296652984618
+F12_past_bug_prio_1 > avg deviation = 59.04296652984618
 custom formula > avg deviation = 58.98552664693196
 custom formula freq1 > avg deviation = 58.96056680297852
 custom formula freq2 > avg deviation = 58.910992739359536
@@ -228,7 +228,7 @@ fixed bugs aged by most recent newest file change
   23 => 74.73534444173177
   24 => 74.78001073201497
   25 => 74.84201024373372
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 21.21666628519694
   2 => 30.84933204650879
   3 => 37.55266507466634
@@ -254,7 +254,7 @@ frequency aged by most recent oldest file change
   23 => 71.17932459513347
   24 => 71.7539909362793
   25 => 72.51799112955729
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 29.392000929514566
   2 => 35.34933382670085
   3 => 42.06200046539307
@@ -358,7 +358,7 @@ custom formula freq2
   23 => 87.20666147867838
   24 => 87.75599212646485
   25 => 88.51465555826823
-custom formula bug1
+F12_past_bug_prio_1
   1 => 24.28000005086263
   2 => 37.83133176167806
   3 => 48.500664965311685
@@ -540,7 +540,7 @@ custom formula freq2  more newest change
   23 => 87.88599446614583
   24 => 88.36665852864583
   25 => 88.95265757242838
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 24.280000178019204
   2 => 37.83133150736491
   3 => 48.62466538747152

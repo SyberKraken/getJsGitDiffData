@@ -3,9 +3,9 @@ custom formula bugonly  more newest change > avg deviation = 24.59313264409204
 custom formula bugonly > avg deviation = 24.384767671023805
 custom formula bug2  more newest change > avg deviation = 24.08166842359304
 custom formula bug2 > avg deviation = 24.069296910544235
-custom formula bug1  more newest change > avg deviation = 24.068682575166225
+F12_past_bug_prio_1  more newest change > avg deviation = 24.068682575166225
 custom formula more newest change > avg deviation = 24.053563256522022
-custom formula bug1 > avg deviation = 24.051724611858525
+F12_past_bug_prio_1 > avg deviation = 24.051724611858525
 custom formula > avg deviation = 24.038418856243286
 custom formula freq1  more newest change > avg deviation = 24.036257165849204
 custom formula freq2  more newest change > avg deviation = 24.029377670864264
@@ -230,7 +230,7 @@ fixed bugs aged by most recent newest file change
   23 => 49.407665427525835
   24 => 50.128307008743285
   25 => 50.92695355415344
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 3.7046671946843466
   2 => 5.924667962392172
   3 => 7.938005622227987
@@ -256,7 +256,7 @@ frequency aged by most recent oldest file change
   23 => 31.45679251352946
   24 => 32.4734587987264
   25 => 33.49212366739909
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 4.41666673819224
   2 => 7.084002828598022
   3 => 9.262011114756266
@@ -360,7 +360,7 @@ custom formula freq2
   23 => 49.861740016937254
   24 => 50.768369833628334
   25 => 51.61366529464722
-custom formula bug1
+F12_past_bug_prio_1
   1 => 10.140003317470352
   2 => 15.496012260392309
   3 => 19.352020408585666
@@ -542,7 +542,7 @@ custom formula freq2  more newest change
   23 => 49.921731344858806
   24 => 50.80436201095581
   25 => 51.66099246342977
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 10.14000338104864
   2 => 15.496012419338028
   3 => 19.37935392248134

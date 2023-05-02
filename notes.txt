@@ -12,3 +12,9 @@ https://github.com/angular/angular/blob/main/CONTRIBUTING.md
 serverless
 https://github.com/serverless/serverless/blob/fb8852e2e893e0f0b98cc54fcab01883aad13239/RELEASE_PROCESS.md
 https://www.conventionalcommits.org/en/v1.0.0-beta.4/#summary
+
+
+
+BTC
+https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md
+ 37,372 commits

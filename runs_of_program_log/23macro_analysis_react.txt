@@ -1,13 +1,13 @@
 newest change > avg deviation = 56.22102778879802
 custom formula bugonly > avg deviation = 54.10886788177489
-custom formula bug1  more newest change > avg deviation = 47.304546518961594
+F12_past_bug_prio_1  more newest change > avg deviation = 47.304546518961594
 custom formula bug2  more newest change > avg deviation = 47.3039326171875
 custom formula more newest change > avg deviation = 47.28078650919596
 custom formula freq1  more newest change > avg deviation = 47.16945285542806
 custom formula freq2  more newest change > avg deviation = 47.11246617635091
 custom formula freqonly > avg deviation = 47.0628927001953
 custom formula bug2 > avg deviation = 46.51379955037435
-custom formula bug1 > avg deviation = 46.49070661417644
+F12_past_bug_prio_1 > avg deviation = 46.49070661417644
 custom formula > avg deviation = 46.46553328959148
 custom formula freq1 > avg deviation = 46.440626159667964
 custom formula freq2 > avg deviation = 46.4211331431071
@@ -228,7 +228,7 @@ fixed bugs aged by most recent newest file change
   23 => 48.16667416890462
   24 => 48.53200798034668
   25 => 49.06467475891113
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 14.599999872843425
   2 => 18.849333190917967
   3 => 23.579333623250324
@@ -254,7 +254,7 @@ frequency aged by most recent oldest file change
   23 => 57.81534322102865
   24 => 58.28134358723958
   25 => 59.151343790690106
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 9.11199982961019
   2 => 15.585333061218261
   3 => 18.176666196187337
@@ -358,7 +358,7 @@ custom formula freq2
   23 => 74.4820157368978
   24 => 75.20868403116862
   25 => 75.91668395996093
-custom formula bug1
+F12_past_bug_prio_1
   1 => 22.764000447591147
   2 => 30.605335235595703
   3 => 38.59667205810547
@@ -540,7 +540,7 @@ custom formula freq2  more newest change
   23 => 75.20534718831381
   24 => 76.52334823608399
   25 => 77.13068186442057
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 22.76866709391276
   2 => 30.76400197347005
   3 => 38.96400553385417

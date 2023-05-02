@@ -2,8 +2,8 @@ newest change > avg deviation = 15.786932687759398
 custom formula bugonly > avg deviation = 14.994199180727204
 custom formula bug2 > avg deviation = 14.484466490397852
 custom formula bug2  more newest change > avg deviation = 14.483666970117223
-custom formula bug1  more newest change > avg deviation = 14.472066600769757
-custom formula bug1 > avg deviation = 14.468244191457828
+F12_past_bug_prio_1  more newest change > avg deviation = 14.472066600769757
+F12_past_bug_prio_1 > avg deviation = 14.468244191457828
 custom formula > avg deviation = 14.461089131219516
 custom formula more newest change > avg deviation = 14.459844891412391
 custom formula freq1 > avg deviation = 14.45028907052345
@@ -108,7 +108,7 @@ fixed bugs aged by most recent newest file change
   8 => 34.05471450885137
   9 => 36.14203407367071
   10 => 37.89401517311732
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 3.899333945910136
   2 => 6.336002159118652
   3 => 8.56734143892924
@@ -119,7 +119,7 @@ frequency aged by most recent oldest file change
   8 => 16.997391255696616
   9 => 18.590735721588135
   10 => 20.120081361134847
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 4.769333751996358
   2 => 7.638671588897705
   3 => 9.974681011835735
@@ -163,7 +163,7 @@ custom formula freq2
   8 => 34.403387659663956
   9 => 36.414716038977105
   10 => 38.30736028539638
-custom formula bug1
+F12_past_bug_prio_1
   1 => 10.797337454433242
   2 => 16.602012938136856
   3 => 20.822021247819066
@@ -240,7 +240,7 @@ custom formula freq2  more newest change
   8 => 34.42405505366624
   9 => 36.40138278193772
   10 => 38.28002645360927
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 10.794670822098851
   2 => 16.60867963023484
   3 => 20.853354726110897

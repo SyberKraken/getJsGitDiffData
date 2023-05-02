@@ -22,7 +22,7 @@ use std::{env, fmt, fs};
 //sha,  funcs, age, commit message
 fn get_implemented_nr_of_fields_for_analysis() -> i32 {
     //TODO: this needs to be manualy updated
-    return 24;
+    return 26;
 }
 
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i32, String)>> {
@@ -272,23 +272,27 @@ fn get_file_field_name(n: i32) -> String {
         7 => return "fixed bugs aged by most recent newest file change".to_string(),
         8 => return "frequency aged by most recent oldest file change ".to_string(),
         9 => return "fixed bugs aged by most recent oldest file change ".to_string(),
-        10 => return "custom formula".to_string(),
-        11 => return "custom formula freq1".to_string(),
-        12 => return "custom formula freq2".to_string(),
-        13 => return "custom formula bug1".to_string(),
-        14 => return "custom formula bug2".to_string(),
 
-        15 => return "custom formula freqonly".to_string(),
-        16 => return "custom formula bugonly".to_string(),
+        10 => return "frequency aged by commit ages * newest change".to_string(),
+        11 => return "fixed bugs aged by commit ages * newest change".to_string(),
 
-        17 => return "custom formula more newest change".to_string(),
-        18 => return "custom formula freq1  more newest change".to_string(),
-        19 => return "custom formula freq2  more newest change".to_string(),
-        20 => return "custom formula bug1  more newest change".to_string(),
-        21 => return "custom formula bug2  more newest change".to_string(),
+        12 => return "custom formula".to_string(),
+        13 => return "custom formula freq1".to_string(),
+        14 => return "custom formula freq2".to_string(),
+        15 => return "custom formula bug1".to_string(),
+        16 => return "custom formula bug2".to_string(),
 
-        22 => return "custom formula freqonly  more newest change".to_string(),
-        23 => return "custom formula bugonly  more newest change".to_string(),
+        17 => return "custom formula freqonly".to_string(),
+        18 => return "custom formula bugonly".to_string(),
+
+        19 => return "custom formula more newest change".to_string(),
+        20 => return "custom formula freq1  more newest change".to_string(),
+        21 => return "custom formula freq2  more newest change".to_string(),
+        22 => return "custom formula bug1  more newest change".to_string(),
+        23 => return "custom formula bug2  more newest change".to_string(),
+
+        24 => return "custom formula freqonly  more newest change".to_string(),
+        25 => return "custom formula bugonly  more newest change".to_string(),
         _ => return "!!!!!!!!ERROR unknown field!!!!!!!!!!!".to_string(),
     }
 }
@@ -305,23 +309,27 @@ impl File {
             7 => self.bug_counter * self.oldest_newest.1 as f32,
             8 => self.freq_counter * self.oldest_newest.0 as f32,
             9 => self.bug_counter * self.oldest_newest.0 as f32,
-            10 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            11 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 2.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            12 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 10.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
-            13 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 2.0,
-            14 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 10.0,
-            //singular
-            15 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * 1.0,
-            16 => self.oldest_newest.1 as f32 * self.aged_bug_freq_counter + self.oldest_newest.1 as f32 * 1.0,
-            //more prio on newest change
-            17 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            18 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 2.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
-            19 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 10.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
-            20 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 2.0,
-            21 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 10.0,
 
-            22 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * 1.0,
-            23 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter + self.oldest_newest.1 as f32 * 1.0,
+            10 => self.oldest_newest.1 as f32 * self.aged_freq_counter,
+            11 => self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+
+            12 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+            13 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 2.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+            14 => self.oldest_newest.1 as f32 * self.aged_freq_counter * 10.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
+            15 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 2.0,
+            16 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 10.0,
+            //singular
+            17 => self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * 1.0,
+            18 => self.oldest_newest.1 as f32 * self.aged_bug_freq_counter + self.oldest_newest.1 as f32 * 1.0,
+            //more prio on newest change
+            19 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+            20 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 2.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter,
+            21 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter * 10.0 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter ,
+            22 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 2.0,
+            23 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter * 10.0,
+
+            24 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_freq_counter + self.oldest_newest.1 as f32 * 1.0,
+            25 => self.oldest_newest.1 as f32 + self.oldest_newest.1 as f32 * self.aged_bug_freq_counter + self.oldest_newest.1 as f32 * 1.0,
             _ => -1.0,
         }
     }
@@ -835,8 +843,8 @@ impl Folder {
         }
 
 
-        parent.sort_children_by_value();
-        parent.remove_children_with_ending(&vec!["lnk"]);
+        //parent.sort_children_by_value();
+        //parent.remove_children_with_ending(&vec!["lnk"]);
 
         let mut container = Container {
             name: path.to_string(),
@@ -918,7 +926,7 @@ fn filelist_to_container_only_files(filelist: &FileList, field: i32) -> Containe
 fn file_data_map_to_file_list(
     file_data: &HashMap<String, Vec<(String, Vec<String>, i32, String)>>,
     age_limit: usize,
-    recognized_bugfix_indicators: &[regex::Regex; 5],
+    recognized_bugfix_indicators: &[regex::Regex; 7],
 ) -> FileList {
     let max_age = file_data.len();
 
@@ -1019,15 +1027,16 @@ fn file_data_map_to_file_list(
 //Parsing of generated json is 1:path to json, 2: new filename, 3:age cuttof, 0 indicates no cuttof
 fn main() {
     let mut args: Vec<String> = env::args().collect();
-    //let age_to_year_amount = 1000000; //TODO: not implemented
-    //let supported_file_types = ["js", "ts", "jsx", "tsx"]; //TODO: not implemented
-    let filtered_file_types = vec!["json", "md"];
+
+    let filtered_file_types = vec!["json", "md",];
     let recognized_bugfix_indicators = [
         Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
         Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
         Regex::new(r"(?i)hotfix").unwrap(),      //upsales confirmed 2nd standard for speedier fixes
         Regex::new(r"(?i)fix:").unwrap(),        //confirmed as standard in electron
         Regex::new(r"(?i)fix(.*):").unwrap(),    //confirmed as standard in vue(v2)
+        Regex::new(r"(?i)bugfix").unwrap(),      //btc
+        Regex::new(r"(?i)[ \n]fix ").unwrap(),   //btc
     ];
     //Modes: repo, classes, d3, text\
 
@@ -1403,10 +1412,10 @@ fn main() {
 
 
                 }
-                //OBS: disabled since were doing all files instead of 1
-                //copy_container.children.push(p);
 
-                //new
+                copy_container.children.push(p);
+
+
 
             }
             all_folder_paths.insert("".to_string());
@@ -1427,7 +1436,7 @@ fn main() {
             let mut file = fs::File::create(new_filename.to_owned() + "_file_structure.txt").unwrap();
             file.write_all(temp.as_bytes()).unwrap();
             //--
-
+            //generate d3 jsons
             for path in all_folder_paths {
 
                 let partial_container = f.get_path_container(&path);
@@ -1455,21 +1464,21 @@ fn main() {
             }
 
 
+            let json1 = serde_json::to_string_pretty(&copy_container).unwrap();
+            let _ = fs::remove_file(new_filename.to_owned() + "_all_d3.json");
+            let mut file1 = fs::File::create(new_filename.to_owned() + "_all_d3.json").unwrap();
+            file1.write_all(json1.as_bytes()).unwrap();
 
 
 
 
-
-
-            //OBS:Temp disables since folder version is working better
-           /*  copy_container.children.truncate(amount_items_to_show);
+             copy_container.children.truncate(amount_items_to_show);
 
 
             let json = serde_json::to_string_pretty(&copy_container).unwrap();
-            //d3Data.json hardcoded into visualization atm
             let _ = fs::remove_file(new_filename.to_owned() + "_d3.json");
             let mut file = fs::File::create(new_filename.to_owned() + "_d3.json").unwrap();
-            file.write_all(json.as_bytes()).unwrap(); */
+            file.write_all(json.as_bytes()).unwrap();
 
         }
         //Parse raw data into file/function objects

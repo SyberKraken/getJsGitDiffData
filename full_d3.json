@@ -1,0 +1,1305 @@
+{
+  "name": "Container",
+  "children": [
+    {
+      "name": "editOrder.js",
+      "children": [
+        {
+          "name": "editOrder.js",
+          "group": "ui/app/upsales/domain/order/controllers/editOrder.js",
+          "value": 182388600.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "globalHelpers.js",
+      "children": [
+        {
+          "name": "globalHelpers.js",
+          "group": "ui/app/babel/components/__setup__/globalHelpers.js",
+          "value": 159146180.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.html",
+      "children": [
+        {
+          "name": "index.html",
+          "group": "app/index.html",
+          "value": 142183400.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "admin.js",
+      "children": [
+        {
+          "name": "admin.js",
+          "group": "ui/app/upsales/domain/admin/admin.js",
+          "value": 136643940.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "templateParser.js",
+      "children": [
+        {
+          "name": "templateParser.js",
+          "group": "ui/app/upsales/common/services/templateParser.js",
+          "value": 132628900.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.js",
+      "children": [
+        {
+          "name": "account.js",
+          "group": "ui/app/upsales/domain/account/controllers/account.js",
+          "value": 132320140.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "salesboard.js",
+      "children": [
+        {
+          "name": "salesboard.js",
+          "group": "ui/app/upsales/domain/salesboard/controllers/salesboard.js",
+          "value": 130808350.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "_admin.scss",
+      "children": [
+        {
+          "name": "_admin.scss",
+          "group": "ui/app/styles/_admin.scss",
+          "value": 130731180.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "app.js",
+      "children": [
+        {
+          "name": "app.js",
+          "group": "ui/app/upsales/app.js",
+          "value": 125720300.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "contact.js",
+      "children": [
+        {
+          "name": "contact.js",
+          "group": "ui/app/upsales/common/attributes/contact.js",
+          "value": 123096776.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "sidebar.jsx",
+      "children": [
+        {
+          "name": "sidebar.jsx",
+          "group": "ui/app/upsales/common/components/react/admin/sidebar.jsx",
+          "value": 123042560.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "sub.js",
+      "children": [
+        {
+          "name": "sub.js",
+          "group": "ui/app/upsales/domain/admin/controllers/sub.js",
+          "value": 119402060.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editAgreement.js",
+      "children": [
+        {
+          "name": "editAgreement.js",
+          "group": "ui/app/upsales/domain/agreement/controllers/editAgreement.js",
+          "value": 117291100.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editActivity.js",
+      "children": [
+        {
+          "name": "editActivity.js",
+          "group": "ui/app/upsales/domain/activity/controllers/editActivity.js",
+          "value": 116429110.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editSegment.js",
+      "children": [
+        {
+          "name": "editSegment.js",
+          "group": "ui/app/upsales/domain/segment/controllers/editSegment.js",
+          "value": 115433416.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "root.jsx",
+      "children": [
+        {
+          "name": "root.jsx",
+          "group": "ui/app/upsales/common/components/react/navbar/root.jsx",
+          "value": 112561450.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "all-spec.js",
+      "children": [
+        {
+          "name": "all-spec.js",
+          "group": "api/test/controller/all-spec.js",
+          "value": 109854330.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "contact.js",
+      "children": [
+        {
+          "name": "contact.js",
+          "group": "ui/app/upsales/domain/contact/controllers/contact.js",
+          "value": 104176910.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "FilterHelper.js",
+      "children": [
+        {
+          "name": "FilterHelper.js",
+          "group": "ui/app/upsales/common/components/listFilters/FilterHelper.js",
+          "value": 101798180.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "featureHelper.js",
+      "children": [
+        {
+          "name": "featureHelper.js",
+          "group": "ui/app/upsales/common/helpers/featureHelper.js",
+          "value": 100638720.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.html",
+      "children": [
+        {
+          "name": "index.html",
+          "group": "ui/app/index.html",
+          "value": 99808900.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "main.js",
+      "children": [
+        {
+          "name": "main.js",
+          "group": "ui/app/upsales/main.js",
+          "value": 99493460.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "advancedSearch.js",
+      "children": [
+        {
+          "name": "advancedSearch.js",
+          "group": "ui/app/upsales/domain/advanced-search/controllers/advancedSearch.js",
+          "value": 98279810.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.jsx",
+      "children": [
+        {
+          "name": "index.jsx",
+          "group": "ui/app/upsales/common/components/react/index.jsx",
+          "value": 98145970.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "AppointmentModalFields.js",
+      "children": [
+        {
+          "name": "AppointmentModalFields.js",
+          "group": "ui/app/babel/components/Modals/Appointment/AppointmentModalFields.js",
+          "value": 92633710.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "tagService.js",
+      "children": [
+        {
+          "name": "tagService.js",
+          "group": "ui/app/upsales/common/services/tagService.js",
+          "value": 86742180.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "features.js",
+      "children": [
+        {
+          "name": "features.js",
+          "group": "base/core/enum/features.js",
+          "value": 84903260.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editActivity.html",
+      "children": [
+        {
+          "name": "editActivity.html",
+          "group": "ui/app/upsales/domain/activity/views/editActivity.html",
+          "value": 84130510.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "appService.js",
+      "children": [
+        {
+          "name": "appService.js",
+          "group": "ui/app/upsales/common/services/appService.js",
+          "value": 84028910.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editOrder.html",
+      "children": [
+        {
+          "name": "editOrder.html",
+          "group": "ui/app/upsales/domain/order/views/editOrder.html",
+          "value": 83967600.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "landingpageEditor.js",
+      "children": [
+        {
+          "name": "landingpageEditor.js",
+          "group": "ui/app/upsales/domain/form/controllers/landingpageEditor.js",
+          "value": 82398010.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editOrder.js",
+      "children": [
+        {
+          "name": "editOrder.js",
+          "group": "app/upsales/domain/order/controllers/editOrder.js",
+          "value": 81154610.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "tools.js",
+      "children": [
+        {
+          "name": "tools.js",
+          "group": "ui/app/upsales/common/services/tools.js",
+          "value": 80326320.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "AppointmentCtrl.js",
+      "children": [
+        {
+          "name": "AppointmentCtrl.js",
+          "group": "ui/app/babel/components/Modals/Appointment/AppointmentCtrl.js",
+          "value": 79099280.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "multiRunnerActions.js",
+      "children": [
+        {
+          "name": "multiRunnerActions.js",
+          "group": "ui/app/upsales/common/services/multiRunnerActions.js",
+          "value": 79039370.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.html",
+      "children": [
+        {
+          "name": "account.html",
+          "group": "ui/app/upsales/domain/account/views/account.html",
+          "value": 77662000.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upsales-base.js",
+      "children": [
+        {
+          "name": "upsales-base.js",
+          "group": "upsalesMocks/upsales-base.js",
+          "value": 76072570.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.js",
+      "children": [
+        {
+          "name": "account.js",
+          "group": "ui/app/upsales/common/attributes/account.js",
+          "value": 75294320.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upListFilters.jsx",
+      "children": [
+        {
+          "name": "upListFilters.jsx",
+          "group": "ui/app/upsales/common/components/react/upListFilters.jsx",
+          "value": 73922330.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "profile.jsx",
+      "children": [
+        {
+          "name": "profile.jsx",
+          "group": "ui/app/upsales/common/components/react/admin/pages/profile.jsx",
+          "value": 73818424.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upNavbarRoot.js",
+      "children": [
+        {
+          "name": "upNavbarRoot.js",
+          "group": "ui/app/upsales/common/directives/react-roots/upNavbarRoot.js",
+          "value": 72890430.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Billing.js",
+      "children": [
+        {
+          "name": "Billing.js",
+          "group": "ui/app/babel/components/Billing/Billing.js",
+          "value": 72111260.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "base/index.js",
+          "value": 71841870.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.js",
+      "children": [
+        {
+          "name": "account.js",
+          "group": "app/upsales/domain/account/controllers/account.js",
+          "value": 71412050.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "order.js",
+      "children": [
+        {
+          "name": "order.js",
+          "group": "ui/app/upsales/common/attributes/order.js",
+          "value": 70716450.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "job.js",
+      "children": [
+        {
+          "name": "job.js",
+          "group": "base/core/enum/job.js",
+          "value": 70583060.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "SocialEventResourceReducer.js",
+      "children": [
+        {
+          "name": "SocialEventResourceReducer.js",
+          "group": "ui/app/babel/store/reducers/SocialEventResourceReducer.js",
+          "value": 70194530.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "repository.js",
+      "children": [
+        {
+          "name": "repository.js",
+          "group": "base/core/__mocks__/repository.js",
+          "value": 70107976.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "legacy-dynamic-load.js",
+      "children": [
+        {
+          "name": "legacy-dynamic-load.js",
+          "group": "ui/app/babel/legacy-dynamic-load.js",
+          "value": 70101650.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "main.scss",
+      "children": [
+        {
+          "name": "main.scss",
+          "group": "ui/app/styles/main.scss",
+          "value": 69573464.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upOrderRow.js",
+      "children": [
+        {
+          "name": "upOrderRow.js",
+          "group": "ui/app/upsales/common/directives/upOrderRow.js",
+          "value": 69237390.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "pushNotifications.js",
+      "children": [
+        {
+          "name": "pushNotifications.js",
+          "group": "ui/app/upsales/common/resources/pushNotifications.js",
+          "value": 68480120.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editOrderForm.html",
+      "children": [
+        {
+          "name": "editOrderForm.html",
+          "group": "ui/app/upsales/domain/order/views/editOrderForm.html",
+          "value": 68100810.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "contact.html",
+      "children": [
+        {
+          "name": "contact.html",
+          "group": "ui/app/upsales/domain/contact/views/contact.html",
+          "value": 67922100.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upFlashRoot.js",
+      "children": [
+        {
+          "name": "upFlashRoot.js",
+          "group": "ui/app/upsales/common/directives/react-roots/upFlashRoot.js",
+          "value": 67363304.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editGroupMail.js",
+      "children": [
+        {
+          "name": "editGroupMail.js",
+          "group": "ui/app/upsales/domain/mail/controllers/editGroupMail.js",
+          "value": 67091736.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editActivity.js",
+      "children": [
+        {
+          "name": "editActivity.js",
+          "group": "app/upsales/domain/activity/controllers/editActivity.js",
+          "value": 65618310.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editIntegration.jsx",
+      "children": [
+        {
+          "name": "editIntegration.jsx",
+          "group": "ui/app/upsales/common/components/react/admin/pages/editIntegration.jsx",
+          "value": 65257730.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "factory.ts",
+      "children": [
+        {
+          "name": "factory.ts",
+          "group": "api/src/controller/factory.ts",
+          "value": 64336016.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "entity.js",
+      "children": [
+        {
+          "name": "entity.js",
+          "group": "base/core/enum/entity.js",
+          "value": 63558132.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "customFieldInput.jsx",
+      "children": [
+        {
+          "name": "customFieldInput.jsx",
+          "group": "ui/app/upsales/common/components/react/customFieldInput.jsx",
+          "value": 63161600.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ActivityOutcomes.js",
+      "children": [
+        {
+          "name": "ActivityOutcomes.js",
+          "group": "ui/app/babel/components/Activity/ActivityOutcomes/ActivityOutcomes.js",
+          "value": 63019240.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "_segment.scss",
+      "children": [
+        {
+          "name": "_segment.scss",
+          "group": "ui/app/styles/_segment.scss",
+          "value": 62269000.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "EditSocialEventDetails.js",
+      "children": [
+        {
+          "name": "EditSocialEventDetails.js",
+          "group": "ui/app/babel/components/SocialEvent/EditSocialEventDetails.js",
+          "value": 61844764.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "accountDashboard.js",
+      "children": [
+        {
+          "name": "accountDashboard.js",
+          "group": "ui/app/upsales/domain/account/controllers/accountDashboard.js",
+          "value": 61832970.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "EditSocialEventContacts.js",
+      "children": [
+        {
+          "name": "EditSocialEventContacts.js",
+          "group": "ui/app/babel/components/SocialEvent/EditSocialEventContacts.js",
+          "value": 61485080.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "configureIntegration.js",
+      "children": [
+        {
+          "name": "configureIntegration.js",
+          "group": "ui/app/upsales/domain/admin/controllers/standardIntegration/configureIntegration.js",
+          "value": 61233176.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editActivity.html",
+      "children": [
+        {
+          "name": "editActivity.html",
+          "group": "app/upsales/domain/activity/views/editActivity.html",
+          "value": 60755504.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "SocialEventReducer.js",
+      "children": [
+        {
+          "name": "SocialEventReducer.js",
+          "group": "ui/app/babel/store/reducers/SocialEventReducer.js",
+          "value": 60750852.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upOrderRow.tpl.html",
+      "children": [
+        {
+          "name": "upOrderRow.tpl.html",
+          "group": "ui/app/upsales/common/directives/templates/upOrderRow.tpl.html",
+          "value": 60182360.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "accountOrders.js",
+      "children": [
+        {
+          "name": "accountOrders.js",
+          "group": "ui/app/upsales/domain/account/controllers/accountOrders.js",
+          "value": 58719116.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "_modal.scss",
+      "children": [
+        {
+          "name": "_modal.scss",
+          "group": "ui/app/styles/_modal.scss",
+          "value": 58114550.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Filter2.js",
+      "children": [
+        {
+          "name": "Filter2.js",
+          "group": "ui/app/upsales/common/components/listFilters/Filter2.js",
+          "value": 57857230.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "body.jsx",
+      "children": [
+        {
+          "name": "body.jsx",
+          "group": "ui/app/upsales/common/components/react/segment/body.jsx",
+          "value": 57574636.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "sendEmail.js",
+      "children": [
+        {
+          "name": "sendEmail.js",
+          "group": "ui/app/upsales/domain/mail/controllers/sendEmail.js",
+          "value": 57105536.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editIntegration.js",
+      "children": [
+        {
+          "name": "editIntegration.js",
+          "group": "ui/app/upsales/domain/admin/controllers/standardIntegration/editIntegration.js",
+          "value": 57029970.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "factory.js",
+      "children": [
+        {
+          "name": "factory.js",
+          "group": "base/domain/factory.js",
+          "value": 56048256.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "app.js",
+      "children": [
+        {
+          "name": "app.js",
+          "group": "app/upsales/app.js",
+          "value": 55874976.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "editEsign.js",
+      "children": [
+        {
+          "name": "editEsign.js",
+          "group": "ui/app/upsales/domain/esign/controllers/editEsign.js",
+          "value": 55807560.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Tools.d.ts",
+      "children": [
+        {
+          "name": "Tools.d.ts",
+          "group": "ui/types/Tools.d.ts",
+          "value": 55499040.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "opportunity.js",
+      "children": [
+        {
+          "name": "opportunity.js",
+          "group": "ui/app/upsales/common/attributes/opportunity.js",
+          "value": 55424256.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "baseWidget.js",
+      "children": [
+        {
+          "name": "baseWidget.js",
+          "group": "base/src/core/report/widget/baseWidget.js",
+          "value": 54475010.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "gulpfile.js",
+      "children": [
+        {
+          "name": "gulpfile.js",
+          "group": "ui/gulpfile.js",
+          "value": 54431292.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "flowPopup.jsx",
+      "children": [
+        {
+          "name": "flowPopup.jsx",
+          "group": "ui/app/upsales/common/components/react/segment/flowPopup.jsx",
+          "value": 54286036.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "supersearch.jsx",
+      "children": [
+        {
+          "name": "supersearch.jsx",
+          "group": "ui/app/upsales/common/components/react/navbar/supersearch.jsx",
+          "value": 53829530.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "getMockScope.js",
+      "children": [
+        {
+          "name": "getMockScope.js",
+          "group": "upsalesMocks/getMockScope.js",
+          "value": 53676096.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upsales.js",
+      "children": [
+        {
+          "name": "upsales.js",
+          "group": "provisioning/src/helpers/upsales.js",
+          "value": 53526560.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "MailTemplate.js",
+      "children": [
+        {
+          "name": "MailTemplate.js",
+          "group": "ui/app/babel/services/MailTemplate.js",
+          "value": 53210090.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "formEditor.js",
+      "children": [
+        {
+          "name": "formEditor.js",
+          "group": "ui/app/upsales/domain/form/controllers/formEditor.js",
+          "value": 52862936.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Resource.js",
+      "children": [
+        {
+          "name": "Resource.js",
+          "group": "ui/app/babel/resources/Resource.js",
+          "value": 52796050.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "markdownService.js",
+      "children": [
+        {
+          "name": "markdownService.js",
+          "group": "base/core/mail/markdownService.js",
+          "value": 52444450.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "notificationManager.js",
+      "children": [
+        {
+          "name": "notificationManager.js",
+          "group": "base/core/notificationManager.js",
+          "value": 52107890.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "generic.js",
+      "children": [
+        {
+          "name": "generic.js",
+          "group": "api/src/interface/express/v2/generic.js",
+          "value": 51914480.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "GroupMailEditorActions.js",
+      "children": [
+        {
+          "name": "GroupMailEditorActions.js",
+          "group": "ui/app/babel/store/actions/GroupMailEditorActions.js",
+          "value": 51675224.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "account.html",
+      "children": [
+        {
+          "name": "account.html",
+          "group": "app/upsales/domain/account/views/account.html",
+          "value": 51650396.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upCustomField.js",
+      "children": [
+        {
+          "name": "upCustomField.js",
+          "group": "ui/app/upsales/common/directives/upCustomField.js",
+          "value": 51587816.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "AppointmentModal.js",
+      "children": [
+        {
+          "name": "AppointmentModal.js",
+          "group": "ui/app/babel/components/Modals/Appointment/AppointmentModal.js",
+          "value": 51492560.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "products.js",
+      "children": [
+        {
+          "name": "products.js",
+          "group": "ui/app/babel/components/Admin/products.js",
+          "value": 51047868.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "upEventActivity.js",
+      "children": [
+        {
+          "name": "upEventActivity.js",
+          "group": "ui/app/upsales/common/directives/event/upEventActivity.js",
+          "value": 50965230.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "scopeManager.js",
+      "children": [
+        {
+          "name": "scopeManager.js",
+          "group": "base/core/scopeManager.js",
+          "value": 50795810.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    }
+  ]
+}

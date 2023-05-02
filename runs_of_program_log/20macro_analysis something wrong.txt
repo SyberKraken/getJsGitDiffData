@@ -1,11 +1,11 @@
 custom formula bugonly > avg deviation = 102.63976094139946
 custom formula bug2  more newest change > avg deviation = 97.58166339874269
-custom formula bug1  more newest change > avg deviation = 97.44450944688583
+F12_past_bug_prio_1  more newest change > avg deviation = 97.44450944688583
 custom formula more newest change > avg deviation = 97.35446542104086
 custom formula freq1  more newest change > avg deviation = 97.21299848344589
 custom formula freq2  more newest change > avg deviation = 97.09006534576415
 custom formula bug2 > avg deviation = 96.76917762332492
-custom formula bug1 > avg deviation = 96.6641111924913
+F12_past_bug_prio_1 > avg deviation = 96.6641111924913
 custom formula > avg deviation = 96.57308857811822
 custom formula freq1 > avg deviation = 96.53059903038873
 custom formula freq2 > avg deviation = 96.44633154551188
@@ -228,7 +228,7 @@ fixed bugs aged by most recent newest file change
   23 => 73.91802571614583
   24 => 73.96802546183268
   25 => 74.00602518717447
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 20.95133352279663
   2 => 30.444666481018068
   3 => 37.05733432769775
@@ -254,7 +254,7 @@ frequency aged by most recent oldest file change
   23 => 70.3440045674642
   24 => 70.97400309244792
   25 => 71.891335550944
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 29.138668155670167
   2 => 35.09466870625814
   3 => 41.68533420562744
@@ -358,7 +358,7 @@ custom formula freq2
   23 => 85.957337697347
   24 => 86.47800318400066
   25 => 87.22200037638346
-custom formula bug1
+F12_past_bug_prio_1
   1 => 24.010667355855308
   2 => 37.428667577107746
   3 => 48.09667021433513
@@ -540,7 +540,7 @@ custom formula freq2  more newest change
   23 => 86.71333643595378
   24 => 87.32066650390625
   25 => 87.89333165486654
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 24.010667483011883
   2 => 37.43000055948893
   3 => 48.23533662160238

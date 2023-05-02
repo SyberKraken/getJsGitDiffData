@@ -39,6 +39,24 @@
   rect{
 
   }
+  .generated{
+    color: white;
+  }
+  text foreignObject{
+    pointer-events: none;
+  }
+  #tooltip {
+  position: absolute;
+  z-index: 999;
+  background-color: black;
+  font-family: consolas;
+  font-size: 30px;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  opacity: 0;
+  text-decoration: dotted underline;
+}
 </style>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
@@ -46,12 +64,11 @@
 
   <div class = "fullwidthparent">
     <div class="linkcontainer">
+      <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=full_d3.json">Just files</a>
       <a href="http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/root.json">top folder</a>
       <input type="text" id="json-file">
 	    <button onclick="redirectToPage()">Go to page</button>
     </div>
-
-
 </div>
 <div id="my_dataviz" style="width: 100%; height: 100vh;"></div>
 <script>
@@ -132,15 +149,20 @@ let title_sizing = (d) =>{
   titleindexerlist.push(d.data.name)
   let width = recmapper.get((d.x0,d.y0))
   //OBS: this just removes titles that cant be siplayed propperley with value, not correct way of doing it since its not based on width
+  //less than 0.5% of max pred
   if( d.data.value < max/ 200 ){
     return "0px"
   }
   let name = d.data.name
-  if (name.length < 5) {return "30px"}
-  //console.log(d.data.name, width)
   //console.log(d)
-  if (width > 300){ return "30px"}
+  if(d.data.value  >= max){return "30px"}
+  if (name.length < 4) {return "30px"}
+ /*  console.log(d.data.name, width)
+  console.log(d) */
+
+  if (width > 300){ if (name.len < 26){return "30px"} else return "23px"}
   if (width > 200){
+
     if (name.length < 5) {return "30px"}
     if(name.length > 17){
       return "15px"
@@ -151,6 +173,7 @@ let title_sizing = (d) =>{
     return "23px"
   }
   else if (width > 150){
+
     if (name.length < 5) {return "30px"}
     if (name.length > 25){
       return "8px"
@@ -158,23 +181,40 @@ let title_sizing = (d) =>{
     if (name.length > 20){
       return "11px"
     }
+    if (name.length > 17){
+      return "13px"
+    }
     if (name.length > 15){
       return "15px"
     }
     return "20px"
   }
   else if (width > 100){
-
+   /*  console.log()
+    console.log(name + " " + name.length) */
     if (name.length < 5) {return "30px"}
-    if (name.length < 15){
+    if (name.length < 12){
       return "17px"
     }
-    return "10px"
+    if (name.length < 20){
+      return "10px"
+    }
+    return "6px"
   }
   else if (width > 50){
-    return "7x"
+    if (name.length < 15){
+      return "11px"
+    }
+    if (name.length < 18){
+    return "10px"}
+    if(name.length < 20){return "8px"}
+    if(name.length < 30){return "11px"}
+    return "1px"
   }else{
-    return "12px"
+    if (name.length < 15){
+      return "11px"
+    }
+    return "8px"
   }
 
 }
@@ -243,24 +283,60 @@ svg
   .enter()
   .append("text")
     .attr("x", function(d){ return d.x0 +5})    //  (more right)
-    .attr("y", function(d){return d.y0 + 40})    // (lower)
+    .attr("y", function(d){return d.y0 + 30})    // (lower)
     .text(function(d){ return d.data.name})
     .attr("font-size", function(d){ return title_sizing(d)})
     .attr("font-family", "consolas")
     .attr("fill", "white")
 
 
-svg
-  .selectAll("vals")
+svg.selectAll("vals")
   .data(root.leaves())
   .enter()
-  .append("text")
-    .attr("x", function(d){ return d.x0+5})
-    .attr("y", function(d){ return d.y0+15})
-    .text(function(d){ return d.data.group })
-    .attr("font-size", function(d){if(d.data.group.length > 20){return "10px"}else{return "10px"}})
-    .attr("font-family", "consolas")
-    .attr("fill", "white")
+  .append("g")
+  .attr("transform", function(d) { return "translate(" + (d.x0) + "," + (d.y1-50) + ")"; })
+  .each(function(d) {
+    if (d.data.group !== "") {
+      d3.select(this)
+        .append("foreignObject")
+        .attr("width", function(d) { return d.x1 - d.x0 -2; })
+        .attr("height", function(d) { return d.y1 - d.y0; })
+        .append("xhtml:body")
+        .style("font", "10px consolas")
+        .style("background-color", "transparent")
+        .html(function(d) { return wrapText(d.data.group, d.x1 - d.x0, d.y1 - d.y0); });
+    }
+  });
+
+function wrapText(text, width, height) {
+    var words = text.split(/\s+/),
+        line = "",
+        lines = [],
+        lineHeight = 0.9, // Adjust as needed
+        textNode = document.createElement("span");
+    textNode.style.whiteSpace = "nowrap";
+    textNode.style.position = "absolute";
+    textNode.style.visibility = "hidden";
+    textNode.style.fontSize = "10px"; // Change as needed
+    document.body.appendChild(textNode);
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        textNode.textContent += word + " ";
+        if (textNode.offsetWidth > width) {
+            textNode.textContent = line.trim();
+            lines.push(line);
+            line = word + " ";
+        } else {
+            line += word + " ";
+        }
+    }
+    lines.push(line);
+    document.body.removeChild(textNode);
+    return lines.map(function(line) {
+        return "<div class='generated' style='line-height:" + lineHeight + ";height:" + 0 + "px'>" + line.trim() + "</div>";
+    }).join("");
+}
+
 
 d3.selectAll("rect").on("click", function(d){
   //works
@@ -270,6 +346,42 @@ d3.selectAll("rect").on("click", function(d){
   const url = `http://localhost:5500/minimalvisualization/htmlpage.html?file=containers/${fileName}/${newPart}.json`;
   window.location.href = url;
 });
+
+// Create the tooltip element
+var tooltip = d3.select("body")
+  .append("div")
+  .attr("id", "tooltip")
+  .style("position", "fixed")
+
+
+// Add the mouseover event listener to the rect elements
+
+  d3.selectAll("rect")
+  .on("mouseover", function(d) {
+    tooltip.text(d.data.name);
+    // Show the tooltip and position it at the top left corner
+    tooltip.style("opacity", 1)
+      .style("left", "0px")
+      .style("top", "0px");
+  })
+  .on("mouseout", function(d) {
+    // Hide the tooltip on mouseout
+    tooltip.style("opacity", 0);
+  });
+//cleanup sloppy generation of wrapping text
+
+const divElements = document.querySelectorAll('div.generated');
+divElements.forEach((div) => {
+  if (div.textContent.trim() === '') {
+    // Remove the div if it doesn't have any text content
+    div.remove();
+  }
+})
+let fo = document.querySelectorAll('foreignObject');
+fo.forEach((o) => {
+  o.setAttribute("height",50)
+})
+
 
 // Add title for the 3 groups
 /* svg

@@ -1,12 +1,12 @@
 newest change > avg deviation = 32.453182392385266
 custom formula bugonly > avg deviation = 29.810761827354632
 custom formula bug2  more newest change > avg deviation = 29.10517482139171
-custom formula bug1  more newest change > avg deviation = 29.087263790940245
+F12_past_bug_prio_1  more newest change > avg deviation = 29.087263790940245
 custom formula more newest change > avg deviation = 29.065753043666483
 custom formula bug2 > avg deviation = 29.05588665979604
 custom formula freq1  more newest change > avg deviation = 29.048198673634065
 custom formula freq2  more newest change > avg deviation = 29.038688184064295
-custom formula bug1 > avg deviation = 29.034109128490087
+F12_past_bug_prio_1 > avg deviation = 29.034109128490087
 custom formula > avg deviation = 29.02059904751678
 custom formula freq1 > avg deviation = 29.008109906688336
 custom formula freq2 > avg deviation = 28.98908854184052
@@ -172,7 +172,7 @@ fixed bugs aged by most recent newest file change
   23 => 52.21088698705037
   25 => 53.73152526219686
   50 => 69.08053045272827
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 3.8133338769276937
   2 => 6.170668093363444
   3 => 8.29000678062439
@@ -191,7 +191,7 @@ frequency aged by most recent oldest file change
   23 => 33.53142229715983
   25 => 35.626746368408206
   50 => 58.33118209838867
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 4.624000438054403
   2 => 7.47933767636617
   3 => 9.75267941157023
@@ -267,7 +267,7 @@ custom formula freq2
   23 => 52.6269105275472
   25 => 54.48884417215983
   50 => 70.20973574320475
-custom formula bug1
+F12_past_bug_prio_1
   1 => 10.575337046260636
   2 => 16.20601236211757
   3 => 20.270687248185276
@@ -400,7 +400,7 @@ custom formula freq2  more newest change
   23 => 52.71157112121582
   25 => 54.533513768514
   50 => 70.57574501037598
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 10.573337079957128
   2 => 16.211345690364638
   3 => 20.300020744279028

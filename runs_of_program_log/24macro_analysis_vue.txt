@@ -3,9 +3,9 @@ fixed bugs aged by commit ages > avg deviation = 49.807518845876054
 fixed bugs aged by most recent newest file change > avg deviation = 48.92799992624918
 fixed bugs aged by most recent oldest file change  > avg deviation = 48.62858524831136
 custom formula bug2 > avg deviation = 47.03890751806895
-custom formula bug1 > avg deviation = 46.944720843315125
+F12_past_bug_prio_1 > avg deviation = 46.944720843315125
 custom formula bug2  more newest change > avg deviation = 46.778454770406086
-custom formula bug1  more newest change > avg deviation = 46.73322810490926
+F12_past_bug_prio_1  more newest change > avg deviation = 46.73322810490926
 custom formula > avg deviation = 46.707813831647236
 custom formula freq1 > avg deviation = 46.660453880627955
 custom formula more newest change > avg deviation = 46.58117459996541
@@ -228,7 +228,7 @@ fixed bugs aged by most recent newest file change
   23 => 73.45266621907552
   24 => 73.62199986775717
   25 => 73.76066614786784
-frequency aged by most recent oldest file change 
+frequency aged by most recent oldest file change
   1 => 5.566666674613953
   2 => 12.453333497047424
   3 => 20.773333684603372
@@ -254,7 +254,7 @@ frequency aged by most recent oldest file change
   23 => 70.5246644337972
   24 => 70.79066403706868
   25 => 71.29666430155436
-fixed bugs aged by most recent oldest file change 
+fixed bugs aged by most recent oldest file change
   1 => 16.799333381652833
   2 => 36.52066650390625
   3 => 41.21533330281576
@@ -358,7 +358,7 @@ custom formula freq2
   23 => 78.69400100708008
   24 => 79.5260004679362
   25 => 80.06400044759114
-custom formula bug1
+F12_past_bug_prio_1
   1 => 10.76000012556712
   2 => 16.23333344459534
   3 => 29.805333518981932
@@ -540,7 +540,7 @@ custom formula freq2  more newest change
   23 => 77.78533566792807
   24 => 78.21400235493978
   25 => 78.53666865030924
-custom formula bug1  more newest change
+F12_past_bug_prio_1  more newest change
   1 => 11.020666885375977
   2 => 16.233333508173626
   3 => 29.97600040435791
