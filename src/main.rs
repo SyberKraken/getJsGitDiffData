@@ -1470,9 +1470,7 @@ fn main() {
             file1.write_all(json1.as_bytes()).unwrap();
 
 
-
-
-             copy_container.children.truncate(amount_items_to_show);
+            copy_container.children.truncate(amount_items_to_show);
 
 
             let json = serde_json::to_string_pretty(&copy_container).unwrap();
