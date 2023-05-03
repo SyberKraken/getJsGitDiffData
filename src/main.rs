@@ -1028,7 +1028,7 @@ fn file_data_map_to_file_list(
 fn main() {
     let mut args: Vec<String> = env::args().collect();
 
-    let filtered_file_types = vec!["json", "md",];
+    let filtered_file_types = vec!["json","JSON", "md", "MD"];
     let recognized_bugfix_indicators = [
         Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
         Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
@@ -1388,11 +1388,16 @@ fn main() {
             for mut p in container.children{
 
                //let path =  p.name.split("/");
+                let mut skip = false;
+                for ending in &filtered_file_types{
+                    if p.name.ends_with(ending){skip = true; break}
+                }
+                if skip {continue;}
+
                 p.remove_children_with_ending(&filtered_file_types);
                 p.sort_children_by_value();
-                if p.name.ends_with(".json") || p.name.ends_with(".JSON"){
-                   continue;
-                }
+
+
 
                 for item in &p.children{
                     f.add_file(&item.group, item.value);
@@ -1468,7 +1473,6 @@ fn main() {
             let _ = fs::remove_file(new_filename.to_owned() + "_all_d3.json");
             let mut file1 = fs::File::create(new_filename.to_owned() + "_all_d3.json").unwrap();
             file1.write_all(json1.as_bytes()).unwrap();
-
 
             copy_container.children.truncate(amount_items_to_show);
 

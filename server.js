@@ -1,4 +1,5 @@
 const childprocess = require('child_process');
+const { dir } = require('console');
 const express = require('express');
 const path = require('path');
 
@@ -16,22 +17,41 @@ app.get('/generation', (req, res) => {
   res.sendFile(path.join(__dirname, 'data_generation.html'));
 });
 
+let text_to_factor_index = (text) =>{
+  switch (text) {
+    case "NOT IMPLEMENTED":
+
+      break;
+
+    default:
+      return 23
+      break;
+  }
+}
+
 app.get('/full_backend_generation', (req, res) => {
   //works
     console.log("BACKEND COMMANDO " + req.query.path + "   " + req.query.factor)
-    let post_repo = () => {
-
-      console.log("done with generation")
+    let factor = req.query.factor
+    //default to 23
+    if (factor.length < 1){
+      factor = 23
     }
+    let path_command = '"target/release/gitdiffjson.exe" "repo" "' + req.query.path + '"'
 
-    let child = childprocess.exec("/target/release/gitdiffjson.exe repo " + req.query.path)
-    //let child = childprocess.exec("type nul > your_file.txt")
-    child.stdout.pipe(process.stdout)
-    child.on('exit', post_repo)
+    console.log(path_command)
+    let _child1 = childprocess.execSync( path_command, [], {shell:false})
+    console.log("done with generation")
 
+    let d3_generation_command = '"target/release/gitdiffjson.exe" "d3" "generatedJson.json" "full" "files" "' + text_to_factor_index(factor) + '" "100"'
+
+    let _child2 = childprocess.execSync(d3_generation_command, [], {shell:false})
+    console.log("done with d3 gen")
+    //let child = childprocess.exec("cd /dir > your_file.txt")
+    //target/release/gitdiffjson.exe "d3" "generatedJson.json" "full" "files" "23" "100"
 });
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 // Serve other files in the path
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, req.url));

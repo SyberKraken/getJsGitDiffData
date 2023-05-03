@@ -12,6 +12,7 @@
     color: aliceblue;
     background-color: black;
     border-radius: 5px;
+    margin-left: 10px;
   }
   input{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -42,9 +43,10 @@
   .generated{
     color: white;
   }
-  text foreignObject{
+  text foreignObject g{
     pointer-events: none;
   }
+
   #tooltip {
   position: absolute;
   z-index: 999;
@@ -68,6 +70,7 @@
       <a href="http://localhost:5500/?file=containers/root.json">top folder</a>
       <input type="text" id="json-file">
 	    <button onclick="redirectToPage()">Go to page</button>
+      <a href="http://localhost:5500/generation">generate data</a>
     </div>
 </div>
 <div id="my_dataviz" style="width: 100%; height: 100vh;"></div>
@@ -305,12 +308,13 @@ svg.selectAll("vals")
         .append("xhtml:body")
         .style("font", "10px consolas")
         .style("background-color", "transparent")
-        .html(function(d) { return wrapText(d.data.group, d.x1 - d.x0, d.y1 - d.y0); });
+        .html(function(d) { return wrapText(d, d.x1 - d.x0, d.y1 - d.y0); });
     }
   });
 
-function wrapText(text, width, height) {
-    var words = text.split(/\s+/),
+function wrapText(d, width, height) {
+    console.log(d)
+    var words = d.data.group.split(/\s+/),
         line = "",
         lines = [],
         lineHeight = 0.9, // Adjust as needed
@@ -379,6 +383,10 @@ divElements.forEach((div) => {
   }
 })
 let fo = document.querySelectorAll('foreignObject');
+fo.forEach((o) => {
+  o.setAttribute("height",50)
+})
+let fi = document.querySelectorAll('g');
 fo.forEach((o) => {
   o.setAttribute("height",50)
 })

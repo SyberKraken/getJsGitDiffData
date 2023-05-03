@@ -26,18 +26,35 @@
   label{
     color: white;
   }
+  .backbutton{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .linkcontainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
 </style>
 <body>
-    <div class = "fullwidthparent">
+        <div class="backbutton"> <a href="http://localhost:5500/?file=full_d3.json">----////----------////----------////------RETURN------////--------////----------////------</a></div>
+
         <div class="linkcontainer">
             <label>Path to repository:</label>
             <input type="text" id="server_path">
             <button onclick="run_backend_generation()">Generate new data</button>
-            <p>fill in the absolute or relative path to the repository you want to generate the visualization from, if you want to change what factor the rectangles are sized by please enter that into the field below, otherwise the default-reccomended sorting will be done.</p>
+
+        </div>
+        <p>fill in the absolute or relative path to the repository you want to generate the visualization from, if you want to change what factor the rectangles are sized by please enter that into the field below, otherwise the default-reccomended sorting will be done.</p>
+
+        <div class="linkcontainer">
             <label>Factor(enter text from list below):</label>
             <input type="text" id="factor">
         </div>
-        <p>The list of factors below are sorted by their performance effectiveness in general, different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
+
+    <p>The list of factors below are sorted by their performance effectiveness in general, different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
         <p>FACTORS:</p>
         <p>Frequency of change:</p>
         <p>Previous bugfixes</p>
@@ -55,7 +72,6 @@
         <p>FACTORS:</p>
         <p>FACTORS:</p>
         <p>FACTORS:</p>
-    </div>
     <script>
 
 
