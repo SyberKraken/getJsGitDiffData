@@ -20,10 +20,9 @@ https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md
  37,372 commits
   target/release/gitdiffjson.exe "multi_analysis" "bitcoin.json" "final_runs_multianalysis/bitcoin" "yes"
 
-  obs studio
-   12,738 commits
-   https://github.com/obsproject/obs-studio/blob/master/CONTRIBUTING.rst
-   https://github.com/torvalds/linux/blob/master/Documentation/process/coding-style.rst
-   https://cbea.ms/git-commit/
-
+obs studio
+12,738 commits
+https://github.com/obsproject/obs-studio/blob/master/CONTRIBUTING.rst
+https://github.com/torvalds/linux/blob/master/Documentation/process/coding-style.rst
+https://cbea.ms/git-commit/
 notes: obs not as HARD definitions but when manualy checking commits messages "fix" regexes do fit into their pattern of writing messages
