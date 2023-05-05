@@ -27,19 +27,38 @@
     color: white;
   }
   .backbutton{
-    width: 100vw;
+    width:  200px;
+    background-color: rgb(136, 7, 61);
+    padding: 5px;
+    text-align: center;
+  }
+  .backbuttoncontainer{
+    width:  fit-content;
     display: flex;
     justify-content: center;
+    height: fit-content;
   }
   .linkcontainer{
     width: 100vw;
     display: flex;
     justify-content: center;
+    margin: 15px;
+  }
+  label{
+    font-size: 20px;
+    background-color: rgb(61, 61, 61);
+    padding: 10px;
+  }
+  p{
+    font-size: 18px;
+  }
+  body{
+    margin: 1%;
   }
 
 </style>
 <body>
-        <div class="backbutton"> <a href="http://localhost:5500/?file=full_d3.json">----////----------////----------////------RETURN------////--------////----------////------</a></div>
+        <div class="backbuttoncontainer"> <a class="backbutton" href="http://localhost:5500/?file=full_d3.json">RETURN</a></div>
 
         <div class="linkcontainer">
             <label>Path to repository:</label>
@@ -47,31 +66,52 @@
             <button onclick="run_backend_generation()">Generate new data</button>
 
         </div>
-        <p>fill in the absolute or relative path to the repository you want to generate the visualization from, if you want to change what factor the rectangles are sized by please enter that into the field below, otherwise the default-reccomended sorting will be done.</p>
 
         <div class="linkcontainer">
-            <label>Factor(enter text from list below):</label>
+            <label>Factor(optional):</label>
             <input type="text" id="factor">
         </div>
+        <p>fill in the absolute or relative path to the repository you want to generate the visualization from, if you want to change what factor the rectangles are sized by please enter that into the field above.(copy paste from list below), otherwise the default-reccomended sorting will be done.</p>
 
-    <p>The list of factors below are sorted by their performance effectiveness in general, different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
-        <p>FACTORS:</p>
-        <p>Frequency of change:</p>
-        <p>Previous bugfixes</p>
+    <p>The lists of factors below are sorted by their performance effectiveness, the pure factors are less effective but simpler, the composite factors are contructed from various formulas using the pure factors. different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
+    <label>Pure factors:</label>
         <p>Newest change</p>
-        <p>File creation age</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
-        <p>FACTORS:</p>
+        <p>Frequency of change with impact reduced by commit age</p>
+        <p>Amount of previously fixed buged with impact reduced by commit age</p>
+        <p>Frequency of change</p>
+        <p>Amount of previously fixed bugs</p>
+        <p>Oldest change          (not recommended)</p>
+
+
+        <label>Composite Factors (WIP, some getting removed, some renamed, some more added etc.)</label>
+    <p>custom formula bugonly  more newest change</p>
+    <p>custom formula bugonly</p>
+    <p>custom formula bug2  more newest change</p>
+    <p>custom formula bug2</p>
+    <p>custom formula bug1  more newest change</p>
+    <p>custom formula bug1</p>
+    <p>custom formula more newest change</p>
+    <p>custom formula</p>
+    <p>newest change</p>
+    <p>custom formula freq1  more newest change</p>
+    <p>custom formula freq1</p>
+    <p>custom formula freqonly  more newest change</p>
+    <p>custom formula freqonly</p>
+    <p>custom formula freq2  more newest change</p>
+    <p>custom formula freq2</p>
+    <p>frequency aged by commit ages * newest change</p>
+    <p>frequency aged by commit ages</p>
+    <p>frequency aged by most recent newest file change</p>
+    <p>fixed bugs aged by commit ages * newest change</p>
+    <p>fixed bugs aged by most recent newest file change</p>
+    <p>fixed bugs aged by commit ages</p>
+    <p>frequency</p>
+    <p>fixed bugs</p>
+    <p>fixed bugs aged by most recent oldest file change</p>
+    <p>frequency aged by most recent oldest file change</p>
+    <p>oldest change</p>
+
+
     <script>
 
 

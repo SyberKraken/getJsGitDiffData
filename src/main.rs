@@ -261,7 +261,7 @@ struct File {
 }
 fn get_file_field_name(n: i32) -> String {
     let _ret = "ERROR no field for: ".to_owned() + &n.to_string();
-    match n {
+    match n-1 {
         0 => return "frequency".to_string(),
         1 => return "fixed bugs".to_string(),
         2 => return "oldest change".to_string(),
@@ -1065,7 +1065,8 @@ fn main() {
             let file_string = std::fs::read_to_string(json_data_path).unwrap();
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
             //This is how much of the repo to include when making a prediction list we make a list of prioritized files for each precentage of the data.
-            let precentages = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75];
+            let precentages = [5
+            ,10,15,20,25,30,35,40,45,50,55,60,65,70,75];
              //this is breakpoints for top% of items, so 1 is the top 1% of items sorted by the chosen factor
             let top_list_precentage_breakpoints = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];//
             let nr_of_fields = get_implemented_nr_of_fields_for_analysis();
