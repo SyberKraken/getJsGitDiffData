@@ -1,6 +1,14 @@
 Project data-parsing and generation is ran with a rust-script in folder as well as a nodejs-express server.
+It visualizes the most bug-prone files in a repository via treemaps.
 
 To start server: node server.js
+
+The "top folder" page shows the contents of the repository folder by folder prioritized by its contents values.
+
+Click on the rectangles or enter a path in the top field to navigate the structure.
+
+The "just files" page shows the top 100(or different amount if manualy generated) files predicted in teh entire repository with its full path.
+
 
 Generate new data via "http://localhost:5500/generation" page, where you can run the rust-generation scripts that generate pre-named data files that the visualization shows.
 
