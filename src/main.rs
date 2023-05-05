@@ -261,7 +261,7 @@ struct File {
 }
 fn get_file_field_name(n: i32) -> String {
     let _ret = "ERROR no field for: ".to_owned() + &n.to_string();
-    match n-1 {
+    match n {
         0 => return "frequency".to_string(),
         1 => return "fixed bugs".to_string(),
         2 => return "oldest change".to_string(),
