@@ -8,13 +8,13 @@ use regex::Regex;
 use serde::{Deserialize, Serialize};
 use core::time;
 use std::collections::{HashMap, VecDeque, HashSet};
-use std::ffi::{OsString, c_long};
+use std::ffi::{OsString};
 use std::fmt::Write as _;
 
 use std::fs::OpenOptions;
 use std::io::Write as _;
 use std::process::Command;
-use std::path::Path;
+
 //use std::ptr::null;
 //use std::slice::SliceIndex;
 use std::sync::{Arc, Mutex};
@@ -606,7 +606,7 @@ struct Parent {
 }
 
 impl Parent {
-    fn new(name: String, children: Vec<Child>, value: f32, colname: String) -> Parent {
+    fn _new(name: String, children: Vec<Child>, value: f32, colname: String) -> Parent {
         Parent {
             name,
             children,
@@ -1457,10 +1457,10 @@ fn main() {
                 else if  filteredpath == ""{
                     filteredpath = "root".to_string();
                 }
-                fs::remove_dir_all("containers/");
+                let _ = fs::remove_dir_all("containers/");
                 std::thread::sleep(time::Duration::from_millis(1000));
 
-                fs::create_dir_all("containers/".to_owned() + &filteredpath);
+                let _ = fs::create_dir_all("containers/".to_owned() + &filteredpath);
 
 
                 let filename = "containers/".to_owned() + &filteredpath + ".json";

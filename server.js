@@ -74,7 +74,7 @@ app.get('/full_backend_generation', (req, res) => {
   if (platform === "win32"){ compiled_rust = compiled_rust + ".exe"}
 
   //works
-    console.log("BACKEND COMMANDO " + req.query.path + "   " + req.query.factor)
+    console.log("BACKEND COMMANDO " + req.url)
 
     let path = req.query.path
     if(req.query.is_remote){
@@ -98,6 +98,7 @@ app.get('/full_backend_generation', (req, res) => {
     console.log("deleted local repo")
     //let child = childprocess.exec("cd /dir > your_file.txt")
     //target/release/gitdiffjson.exe "d3" "generatedJson.json" "full" "files" "26" "100"
+    console.log("finished BACKEND COMMANDO " + req.url)
 });
 
 // Serve other files in the path
