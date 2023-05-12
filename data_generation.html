@@ -19,6 +19,7 @@
     color: aliceblue;
     background-color: black;
     border-radius: 5px;
+    margin-right: 10px;
   }
   p{
     color: white;
@@ -46,8 +47,11 @@
   }
   label{
     font-size: 20px;
-    background-color: rgb(61, 61, 61);
+    background-color: rgb(5, 101, 71);
     padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
   }
 
   li{
@@ -60,6 +64,11 @@
   body{
     margin: 1%;
   }
+  #remote_box{
+    margin: 0;
+    background-color: red;
+    width: 100px;
+  }
 
 </style>
 <body>
@@ -69,7 +78,8 @@
             <label>Path to repository:</label>
             <input type="text" id="server_path">
             <button onclick="run_backend_generation()">Generate new data</button>
-
+            <label>Is remote repo</label>
+            <input type="checkbox" id="remote_box">
         </div>
 
         <div class="linkcontainer">
@@ -77,9 +87,9 @@
             <input type="text" id="factor">
         </div>
 
-        <li>fill in the absolute or relative path to the repository you want to generate the visualization from, if you want to change what factor the rectangles are sized by please enter that into the field above.(copy paste from list below), otherwise the default-reccomended sorting will be done.</li>
+        <p>fill in the absolute or relative path to the repository you want to generate the visualization from. If it is a remote repo check the checkbox above. if you want to change what factor the rectangles are sized by please enter that into the field above.(copy paste from list below), otherwise the default-reccomended sorting will be done.</p>
 
-    <li>The lists of factors below are sorted by their performance effectiveness, the pure factors are less effective but simpler, the composite(custom) factors are contructed from various formulas using the pure factors. different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</li>
+    <p>The lists of factors below are sorted by their performance effectiveness, the pure factors are less effective but simpler, the composite(custom) factors are contructed from various formulas using the pure factors. different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
     <label>Pure factors:</label>
     <ul>
       <li>newest change</li>
@@ -128,7 +138,8 @@
         function run_backend_generation(){
             let path = document.getElementById('server_path').value;
             let factor = document.getElementById('factor').value;
-            fetch("http://localhost:5500/full_backend_generation" + "?path=" + path + "&factor=" + factor , {
+            let is_remote = document.getElementById("remote_box").checked;
+            fetch("http://localhost:5500/full_backend_generation" + "?path=" + path + "&factor=" + factor +"&is_remote=" + is_remote , {
                             method: "GET" // default, so we can ignore
                         })
 

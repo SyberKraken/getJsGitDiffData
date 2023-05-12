@@ -6,6 +6,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
+use core::time;
 use std::collections::{HashMap, VecDeque, HashSet};
 use std::ffi::{OsString, c_long};
 use std::fmt::Write as _;
@@ -1456,6 +1457,8 @@ fn main() {
                 else if  filteredpath == ""{
                     filteredpath = "root".to_string();
                 }
+                fs::remove_dir_all("containers/");
+                std::thread::sleep(time::Duration::from_millis(1000));
 
                 fs::create_dir_all("containers/".to_owned() + &filteredpath);
 

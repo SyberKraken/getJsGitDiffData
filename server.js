@@ -1,3 +1,4 @@
+const del = require('del') ;
 const childprocess = require('child_process');
 const { dir } = require('console');
 const express = require('express');
@@ -50,16 +51,37 @@ let text_to_factor_index = (text) =>{
 
   }
 }
+//clones adress to temporary repo, returns repo path for later deletion(or not)
+let clone_adress = (adressUrl) => {
+    // Create a temporary directory to clone the repository int
+    const cleanedAddr = adressUrl.replace(/[ &\/\\#,+()$~%.'":*?<>{}]/g, "");
+    const repoDir = "./downloaded_repositories/" + cleanedAddr;
+    console.log("start cloning")
+    // Clone the repository
+    childprocess.execSync(`git clone ${adressUrl} ${repoDir}`, [], {shell:false});
+
+    console.log("done with cloning")
+    return repoDir
+}
+
+let delete_local_directory = (local_dir) =>{
+  del.sync([local_dir], { force: true });
+}
 
 app.get('/full_backend_generation', (req, res) => {
   //works
     console.log("BACKEND COMMANDO " + req.query.path + "   " + req.query.factor)
 
-    factor = text_to_factor_index(req.query.factor)
-    console.log(factor);
-    let path_command = '"target/release/gitdiffjson.exe" "repo" "' + req.query.path + '"'
+    let path = req.query.path
+    if(req.query.is_remote){
+      path = clone_adress(req.query.path)
+    }
+    console.log("done cloning")
 
-    console.log(path_command)
+    //run rust parsing on repo path
+
+    factor = text_to_factor_index(req.query.factor)
+    let path_command = '"target/release/gitdiffjson.exe" "repo" "' + path + '"'
     let _child1 = childprocess.execSync( path_command, [], {shell:false})
     console.log("done with generation")
 
@@ -67,10 +89,12 @@ app.get('/full_backend_generation', (req, res) => {
 
     let _child2 = childprocess.execSync(d3_generation_command, [], {shell:false})
     console.log("done with d3 gen")
+
+    delete_local_directory(path)
+    console.log("deleted local repo")
     //let child = childprocess.exec("cd /dir > your_file.txt")
     //target/release/gitdiffjson.exe "d3" "generatedJson.json" "full" "files" "26" "100"
 });
-
 
 // Serve other files in the path
 app.get('*', (req, res) => {

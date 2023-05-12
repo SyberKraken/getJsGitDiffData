@@ -26,3 +26,16 @@ https://github.com/obsproject/obs-studio/blob/master/CONTRIBUTING.rst
 https://github.com/torvalds/linux/blob/master/Documentation/process/coding-style.rst
 https://cbea.ms/git-commit/
 notes: obs not as HARD definitions but when manualy checking commits messages "fix" regexes do fit into their pattern of writing messages
+
+
+
+
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\vue.json" "final_runs_multianalysis\vue" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\react.json" "final_runs_multianalysis\react" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\electron.json" "final_runs_multianalysis\electron" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\angular.json" "final_runs_multianalysis\angular" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\bitcoin.json" "final_runs_multianalysis\bitcoin" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\nextjs.json" "final_runs_multianalysis\nextjs" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\obs-studio.json" "final_runs_multianalysis\obs-studio" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "full_repo_data\serverless.json" "final_runs_multianalysis\serverless" "yes"
+target/release/gitdiffjson.exe "multi_analysis" "C:\Users\simon\Downloads\upsalesJson.json" "final_runs_multianalysis/upsales" "yes"
