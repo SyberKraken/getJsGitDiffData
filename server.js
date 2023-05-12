@@ -69,6 +69,10 @@ let delete_local_directory = (local_dir) =>{
 }
 
 app.get('/full_backend_generation', (req, res) => {
+  let compiled_rust = "target/release/gitdiffjson"
+  let platform = process.platform
+  if (platform === "win32"){ compiled_rust = compiled_rust + ".exe"}
+
   //works
     console.log("BACKEND COMMANDO " + req.query.path + "   " + req.query.factor)
 
