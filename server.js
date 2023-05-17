@@ -69,36 +69,40 @@ let delete_local_directory = (local_dir) =>{
 }
 
 app.get('/full_backend_generation', (req, res) => {
+
   let compiled_rust = "target/release/gitdiffjson"
   let platform = process.platform
   if (platform === "win32"){ compiled_rust = compiled_rust + ".exe"}
-
   //works
-    console.log("BACKEND COMMANDO " + req.url)
+  console.log("BACKEND COMMANDO " + req.url)
 
-    let path = req.query.path
-    if(req.query.is_remote){
-      path = clone_adress(req.query.path)
-    }
+  let path = req.query.path
+  if(req.query.is_remote === "true"){
+    path = clone_adress(req.query.path)
     console.log("done cloning")
+  }
 
-    //run rust parsing on repo path
 
-    factor = text_to_factor_index(req.query.factor)
-    let path_command = '"target/release/gitdiffjson.exe" "repo" "' + path + '"'
-    let _child1 = childprocess.execSync( path_command, [], {shell:false})
-    console.log("done with generation")
+  //run rust parsing on repo path
 
-    let d3_generation_command = '"target/release/gitdiffjson.exe" "d3" "generatedJson.json" "full" "files" "' + text_to_factor_index(factor) + '" "100"'
+  factor = text_to_factor_index(req.query.factor)
+  let path_command = '"' + compiled_rust + '" "repo" "' + path + '"'
+  let _child1 = childprocess.execSync( path_command, [], {shell:false})
+  console.log("done with generation")
+//fix clone repo fix exe text inline TODO:
+  let d3_generation_command = '"' + compiled_rust + '" "d3" "generatedJson.json" "full" "files" "' + text_to_factor_index(factor) + '" "100"'
 
-    let _child2 = childprocess.execSync(d3_generation_command, [], {shell:false})
-    console.log("done with d3 gen")
+  let _child2 = childprocess.execSync(d3_generation_command, [], {shell:false})
+  console.log("done with d3 gen")
 
+
+  if(req.query.is_remote === "true"){
     delete_local_directory(path)
     console.log("deleted local repo")
-    //let child = childprocess.exec("cd /dir > your_file.txt")
-    //target/release/gitdiffjson.exe "d3" "generatedJson.json" "full" "files" "26" "100"
-    console.log("finished BACKEND COMMANDO " + req.url)
+  }
+  //let child = childprocess.exec("cd /dir > your_file.txt")
+  //target/release/gitdiffjson.exe "d3" "generatedJson.json" "full" "files" "26" "100"
+  console.log("finished BACKEND COMMANDO " + req.url)
 });
 
 // Serve other files in the path

@@ -1,6 +1,10 @@
 Project data-parsing and generation is ran with a rust-script in folder as well as a nodejs-express server.
 It visualizes the most bug-prone files in a repository via treemaps.
 
+To get started you need to generate the rust executables for your OS:
+!!!!!OBS!!!!! nightly version of rust is required to compile. If using rustup use command: "rustup toolchain install nightly " and set default compile version to nightley via: "rustup default nightly"
+Compile rust script with: cargo build --release
+
 To start server: node server.js
 
 The "top folder" page shows the contents of the repository folder by folder prioritized by its contents values.
@@ -9,12 +13,9 @@ Click on the rectangles or enter a path in the top field to navigate the structu
 
 The "just files" page shows the top 100(or different amount if manualy generated) files predicted in teh entire repository with its full path.
 
-
 Generate new data via "http://localhost:5500/generation" page, where you can run the rust-generation scripts that generate pre-named data files that the visualization shows.
 
 Or you can manually generate a variety of files via the rust script:
-
-Compile rust script with: cargo build --release
 
 Rust-functionality:
 run: target/release/gitdiff.json
