@@ -1045,19 +1045,26 @@ fn main() {
         ];
     }
 
-    for item in filtered_file_types{
-        println!("{}", item.as_str());
+
+    let raw_string_recognized_bugfix_indicators = std::fs::read_to_string("regex_recognized_bugfixes.json").unwrap();
+    let parsed_raw_string_recognized_bugfix_indicators: Vec<String> = serde_json::from_str(&raw_string_recognized_bugfix_indicators).unwrap();
+    let mut recognized_bugfix_indicators =vec![];
+    if parsed_raw_string_recognized_bugfix_indicators.len() > 0{
+        for string in parsed_raw_string_recognized_bugfix_indicators{
+            recognized_bugfix_indicators.push(Regex::new(&string).unwrap())
+        }
+    }else{
+        recognized_bugfix_indicators = vec![
+            Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
+            Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
+            Regex::new(r"(?i)hotfix").unwrap(),      //upsales confirmed 2nd standard for speedier fixes
+            Regex::new(r"(?i)fix:").unwrap(),        //confirmed as standard in electron
+            Regex::new(r"(?i)fix(.*):").unwrap(),    //confirmed as standard in vue(v2)
+            Regex::new(r"(?i)bugfix").unwrap(),      //btc
+            Regex::new(r"(?i)[ \n]fix ").unwrap(),   //btc
+        ];
     }
-    //TODO: do same with this as with filtered file types
-    let recognized_bugfix_indicators = vec![
-        Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
-        Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
-        Regex::new(r"(?i)hotfix").unwrap(),      //upsales confirmed 2nd standard for speedier fixes
-        Regex::new(r"(?i)fix:").unwrap(),        //confirmed as standard in electron
-        Regex::new(r"(?i)fix(.*):").unwrap(),    //confirmed as standard in vue(v2)
-        Regex::new(r"(?i)bugfix").unwrap(),      //btc
-        Regex::new(r"(?i)[ \n]fix ").unwrap(),   //btc
-    ];
+
     //Modes: repo, classes, d3, text\
 
     if args.len() == 1 {
