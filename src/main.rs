@@ -1031,10 +1031,24 @@ fn file_data_map_to_file_list(
 fn main() {
     let mut args: Vec<String> = env::args().collect();
 
-    let filtered_file_types = vec![
-        Regex::new(r"(?i).\.json$").unwrap(),
-        Regex::new(r"(?i).\.md$").unwrap(),
+    let raw_string_filtered_file_types = std::fs::read_to_string("regex_filtered_file_types.json").unwrap();
+    let parsed_raw_string_filtered_file_types: Vec<String> = serde_json::from_str(&raw_string_filtered_file_types).unwrap();
+    let mut filtered_file_types =vec![];
+    if parsed_raw_string_filtered_file_types.len() > 0{
+        for string in parsed_raw_string_filtered_file_types{
+            filtered_file_types.push(Regex::new(&string).unwrap())
+        }
+    }else{
+        filtered_file_types = vec![
+            Regex::new(r"(?i).\.json$").unwrap(),
+            Regex::new(r"(?i).\.md$").unwrap(),
         ];
+    }
+
+    for item in filtered_file_types{
+        println!("{}", item.as_str());
+    }
+    return;
     let recognized_bugfix_indicators = vec![
         Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
         Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
