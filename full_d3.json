@@ -2,12 +2,12 @@
   "name": "Container",
   "children": [
     {
-      "name": "vue.d.ts",
+      "name": "yarn.lock",
       "children": [
         {
-          "name": "vue.d.ts",
-          "group": "types/vue.d.ts",
-          "value": 23368.137,
+          "name": "yarn.lock",
+          "group": "yarn.lock",
+          "value": 281986.0,
           "colname": "level3"
         }
       ],
@@ -15,12 +15,12 @@
       "colname": "level2"
     },
     {
-      "name": "options.d.ts",
+      "name": "webpack-config.ts",
       "children": [
         {
-          "name": "options.d.ts",
-          "group": "types/options.d.ts",
-          "value": 22658.941,
+          "name": "webpack-config.ts",
+          "group": "packages/next/build/webpack-config.ts",
+          "value": 189737.66,
           "colname": "level3"
         }
       ],
@@ -28,64 +28,12 @@
       "colname": "level2"
     },
     {
-      "name": "options-test.ts",
+      "name": "1.bug_report.yml",
       "children": [
         {
-          "name": "options-test.ts",
-          "group": "types/test/options-test.ts",
-          "value": 21701.521,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "vnode.d.ts",
-      "children": [
-        {
-          "name": "vnode.d.ts",
-          "group": "types/vnode.d.ts",
-          "value": 13900.32,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "vue-test.ts",
-      "children": [
-        {
-          "name": "vue-test.ts",
-          "group": "types/test/vue-test.ts",
-          "value": 12765.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "plugin-test.ts",
-      "children": [
-        {
-          "name": "plugin-test.ts",
-          "group": "types/test/plugin-test.ts",
-          "value": 9538.74,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.d.ts",
-      "children": [
-        {
-          "name": "index.d.ts",
-          "group": "types/index.d.ts",
-          "value": 9113.22,
+          "name": "1.bug_report.yml",
+          "group": ".github/ISSUE_TEMPLATE/1.bug_report.yml",
+          "value": 144882.5,
           "colname": "level3"
         }
       ],
@@ -97,8 +45,8 @@
       "children": [
         {
           "name": "index.ts",
-          "group": "src/core/observer/index.ts",
-          "value": 8191.26,
+          "group": "packages/next/build/index.ts",
+          "value": 129979.516,
           "colname": "level3"
         }
       ],
@@ -106,12 +54,12 @@
       "colname": "level2"
     },
     {
-      "name": "apiWatch.spec.ts",
+      "name": "_error-debug.js",
       "children": [
         {
-          "name": "apiWatch.spec.ts",
-          "group": "test/unit/features/v3/apiWatch.spec.ts",
-          "value": 8191.26,
+          "name": "_error-debug.js",
+          "group": "pages/_error-debug.js",
+          "value": 124473.15,
           "colname": "level3"
         }
       ],
@@ -119,12 +67,12 @@
       "colname": "level2"
     },
     {
-      "name": "ref.ts",
+      "name": "webpack.js",
       "children": [
         {
-          "name": "ref.ts",
-          "group": "src/v3/reactivity/ref.ts",
-          "value": 7872.12,
+          "name": "webpack.js",
+          "group": "server/build/webpack.js",
+          "value": 122727.086,
           "colname": "level3"
         }
       ],
@@ -132,12 +80,12 @@
       "colname": "level2"
     },
     {
-      "name": "parseComponent.ts",
+      "name": "render.js",
       "children": [
         {
-          "name": "parseComponent.ts",
-          "group": "packages/compiler-sfc/src/parseComponent.ts",
-          "value": 7836.66,
+          "name": "render.js",
+          "group": "server/render.js",
+          "value": 108530.1,
           "colname": "level3"
         }
       ],
@@ -145,12 +93,12 @@
       "colname": "level2"
     },
     {
-      "name": ".flowconfig",
+      "name": "index.test.js",
       "children": [
         {
-          "name": ".flowconfig",
-          "group": ".flowconfig",
-          "value": 7812.5,
+          "name": "index.test.js",
+          "group": "test/integration/client-navigation/test/index.test.js",
+          "value": 106970.805,
           "colname": "level3"
         }
       ],
@@ -158,12 +106,12 @@
       "colname": "level2"
     },
     {
-      "name": "state.ts",
+      "name": "taskfile.js",
       "children": [
         {
-          "name": "state.ts",
-          "group": "src/core/instance/state.ts",
-          "value": 7765.74,
+          "name": "taskfile.js",
+          "group": "packages/next/taskfile.js",
+          "value": 106026.95,
           "colname": "level3"
         }
       ],
@@ -171,12 +119,12 @@
       "colname": "level2"
     },
     {
-      "name": "watcher.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "watcher.ts",
-          "group": "src/core/observer/watcher.ts",
-          "value": 7765.74,
+          "name": "index.test.js",
+          "group": "test/integration/production/test/index.test.js",
+          "value": 93284.83,
           "colname": "level3"
         }
       ],
@@ -184,12 +132,12 @@
       "colname": "level2"
     },
     {
-      "name": "apiWatch.ts",
+      "name": "app.js",
       "children": [
         {
-          "name": "apiWatch.ts",
-          "group": "src/v3/apiWatch.ts",
-          "value": 7765.74,
+          "name": "app.js",
+          "group": "lib/app.js",
+          "value": 90913.625,
           "colname": "level3"
         }
       ],
@@ -197,12 +145,12 @@
       "colname": "level2"
     },
     {
-      "name": "define-component-test.tsx",
+      "name": "link.tsx",
       "children": [
         {
-          "name": "define-component-test.tsx",
-          "group": "types/test/v3/define-component-test.tsx",
-          "value": 7730.2803,
+          "name": "link.tsx",
+          "group": "packages/next/client/link.tsx",
+          "value": 87911.91,
           "colname": "level3"
         }
       ],
@@ -210,12 +158,12 @@
       "colname": "level2"
     },
     {
-      "name": "pnpm-lock.yaml",
+      "name": "index.js",
       "children": [
         {
-          "name": "pnpm-lock.yaml",
-          "group": "pnpm-lock.yaml",
-          "value": 7694.82,
+          "name": "index.js",
+          "group": "client/index.js",
+          "value": 86483.68,
           "colname": "level3"
         }
       ],
@@ -223,12 +171,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.html",
+      "name": "build_test_deploy.yml",
       "children": [
         {
-          "name": "index.html",
-          "group": "benchmarks/uptime/index.html",
-          "value": 7694.82,
+          "name": "build_test_deploy.yml",
+          "group": ".github/workflows/build_test_deploy.yml",
+          "value": 85733.95,
           "colname": "level3"
         }
       ],
@@ -236,12 +184,12 @@
       "colname": "level2"
     },
     {
-      "name": "umd.d.ts",
+      "name": "withData.js",
       "children": [
         {
-          "name": "umd.d.ts",
-          "group": "types/umd.d.ts",
-          "value": 7623.9,
+          "name": "withData.js",
+          "group": "examples/with-apollo/lib/withData.js",
+          "value": 84924.0,
           "colname": "level3"
         }
       ],
@@ -249,12 +197,12 @@
       "colname": "level2"
     },
     {
-      "name": "render.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "render.ts",
-          "group": "src/core/instance/render.ts",
-          "value": 7623.9,
+          "name": "index.js",
+          "group": "server/index.js",
+          "value": 78330.42,
           "colname": "level3"
         }
       ],
@@ -262,12 +210,12 @@
       "colname": "level2"
     },
     {
-      "name": "umd-test.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "umd-test.ts",
-          "group": "types/test/umd-test.ts",
-          "value": 7623.9,
+          "name": "index.test.js",
+          "group": "test/integration/build-output/test/index.test.js",
+          "value": 78183.07,
           "colname": "level3"
         }
       ],
@@ -275,12 +223,12 @@
       "colname": "level2"
     },
     {
-      "name": "ci.yml",
+      "name": "next-dev.js",
       "children": [
         {
-          "name": "ci.yml",
-          "group": ".github/workflows/ci.yml",
-          "value": 7588.44,
+          "name": "next-dev.js",
+          "group": "client/next-dev.js",
+          "value": 75760.76,
           "colname": "level3"
         }
       ],
@@ -288,233 +236,12 @@
       "colname": "level2"
     },
     {
-      "name": "prefixIdentifiers.ts",
+      "name": "document.js",
       "children": [
         {
-          "name": "prefixIdentifiers.ts",
-          "group": "packages/compiler-sfc/src/prefixIdentifiers.ts",
-          "value": 7588.44,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "codegen.spec.ts",
-      "children": [
-        {
-          "name": "codegen.spec.ts",
-          "group": "test/unit/modules/compiler/codegen.spec.ts",
-          "value": 7552.98,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "apiSetup.spec.ts",
-      "children": [
-        {
-          "name": "apiSetup.spec.ts",
-          "group": "test/unit/features/v3/apiSetup.spec.ts",
-          "value": 7552.98,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "component-slot.spec.ts",
-      "children": [
-        {
-          "name": "component-slot.spec.ts",
-          "group": "test/unit/features/component/component-slot.spec.ts",
-          "value": 7552.98,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "normalize-scoped-slots.ts",
-      "children": [
-        {
-          "name": "normalize-scoped-slots.ts",
-          "group": "src/core/vdom/helpers/normalize-scoped-slots.ts",
-          "value": 7552.98,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "apiSetup.ts",
-      "children": [
-        {
-          "name": "apiSetup.ts",
-          "group": "src/v3/apiSetup.ts",
-          "value": 7552.98,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.ts",
-      "children": [
-        {
-          "name": "index.ts",
-          "group": "src/v3/index.ts",
-          "value": 7517.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "operations.ts",
-      "children": [
-        {
-          "name": "operations.ts",
-          "group": "src/v3/reactivity/operations.ts",
-          "value": 7517.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "parseComponent.spec.ts",
-      "children": [
-        {
-          "name": "parseComponent.spec.ts",
-          "group": "packages/compiler-sfc/test/parseComponent.spec.ts",
-          "value": 7517.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "computed.spec.ts",
-      "children": [
-        {
-          "name": "computed.spec.ts",
-          "group": "test/unit/features/v3/reactivity/computed.spec.ts",
-          "value": 7517.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "setup-test.ts",
-      "children": [
-        {
-          "name": "setup-test.ts",
-          "group": "types/test/v3/setup-test.ts",
-          "value": 7517.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "compileScript.ts",
-      "children": [
-        {
-          "name": "compileScript.ts",
-          "group": "packages/compiler-sfc/src/compileScript.ts",
-          "value": 7517.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "reactive.ts",
-      "children": [
-        {
-          "name": "reactive.ts",
-          "group": "src/v3/reactivity/reactive.ts",
-          "value": 7446.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "v3-component-public-instance.d.ts",
-      "children": [
-        {
-          "name": "v3-component-public-instance.d.ts",
-          "group": "types/v3-component-public-instance.d.ts",
-          "value": 7446.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "async-component-test.ts",
-      "children": [
-        {
-          "name": "async-component-test.ts",
-          "group": "types/test/async-component-test.ts",
-          "value": 7446.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "lifecycle.ts",
-      "children": [
-        {
-          "name": "lifecycle.ts",
-          "group": "src/core/instance/lifecycle.ts",
-          "value": 7446.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "extend.ts",
-      "children": [
-        {
-          "name": "extend.ts",
-          "group": "src/core/global-api/extend.ts",
-          "value": 7411.14,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "parse.ts",
-      "children": [
-        {
-          "name": "parse.ts",
-          "group": "packages/compiler-sfc/src/parse.ts",
-          "value": 7411.14,
+          "name": "document.js",
+          "group": "server/document.js",
+          "value": 74454.54,
           "colname": "level3"
         }
       ],
@@ -526,8 +253,8 @@
       "children": [
         {
           "name": "utils.ts",
-          "group": "packages/compiler-sfc/src/templateCompilerModules/utils.ts",
-          "value": 7411.14,
+          "group": "packages/next/build/utils.ts",
+          "value": 74289.62,
           "colname": "level3"
         }
       ],
@@ -535,12 +262,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.ts",
+      "name": "next-test-utils.js",
       "children": [
         {
-          "name": "index.ts",
-          "group": "src/compiler/codegen/index.ts",
-          "value": 7411.14,
+          "name": "next-test-utils.js",
+          "group": "test/lib/next-test-utils.js",
+          "value": 71418.734,
           "colname": "level3"
         }
       ],
@@ -548,12 +275,12 @@
       "colname": "level2"
     },
     {
-      "name": "directives.ts",
+      "name": "client-navigation.js",
       "children": [
         {
-          "name": "directives.ts",
-          "group": "src/core/vdom/modules/directives.ts",
-          "value": 7411.1396,
+          "name": "client-navigation.js",
+          "group": "test/integration/basic/test/client-navigation.js",
+          "value": 69269.2,
           "colname": "level3"
         }
       ],
@@ -561,12 +288,12 @@
       "colname": "level2"
     },
     {
-      "name": "component.spec.ts",
+      "name": "_document.js",
       "children": [
         {
-          "name": "component.spec.ts",
-          "group": "test/unit/features/component/component.spec.ts",
-          "value": 7375.6797,
+          "name": "_document.js",
+          "group": "examples/with-styletron/pages/_document.js",
+          "value": 67643.3,
           "colname": "level3"
         }
       ],
@@ -574,12 +301,12 @@
       "colname": "level2"
     },
     {
-      "name": "init.spec.ts",
+      "name": "_document.js",
       "children": [
         {
-          "name": "init.spec.ts",
-          "group": "test/unit/features/instance/init.spec.ts",
-          "value": 7375.6797,
+          "name": "_document.js",
+          "group": "examples/with-react-helmet/pages/_document.js",
+          "value": 67014.06,
           "colname": "level3"
         }
       ],
@@ -587,12 +314,12 @@
       "colname": "level2"
     },
     {
-      "name": "wait-for-update.ts",
+      "name": "next-server.ts",
       "children": [
         {
-          "name": "wait-for-update.ts",
-          "group": "test/helpers/wait-for-update.ts",
-          "value": 7375.6797,
+          "name": "next-server.ts",
+          "group": "packages/next/next-server/server/next-server.ts",
+          "value": 65814.164,
           "colname": "level3"
         }
       ],
@@ -600,12 +327,12 @@
       "colname": "level2"
     },
     {
-      "name": "style.ts",
+      "name": "router.ts",
       "children": [
         {
-          "name": "style.ts",
-          "group": "src/platforms/web/util/style.ts",
-          "value": 7375.6797,
+          "name": "router.ts",
+          "group": "packages/next/next-server/lib/router/router.ts",
+          "value": 65582.42,
           "colname": "level3"
         }
       ],
@@ -613,12 +340,12 @@
       "colname": "level2"
     },
     {
-      "name": "error.ts",
+      "name": "2.example_bug_report.yml",
       "children": [
         {
-          "name": "error.ts",
-          "group": "src/core/util/error.ts",
-          "value": 7375.6797,
+          "name": "2.example_bug_report.yml",
+          "group": ".github/ISSUE_TEMPLATE/2.example_bug_report.yml",
+          "value": 65283.652,
           "colname": "level3"
         }
       ],
@@ -626,12 +353,12 @@
       "colname": "level2"
     },
     {
-      "name": "errorCaptured.spec.ts",
+      "name": "next.config.js",
       "children": [
         {
-          "name": "errorCaptured.spec.ts",
-          "group": "test/unit/features/options/errorCaptured.spec.ts",
-          "value": 7375.6797,
+          "name": "next.config.js",
+          "group": "examples/with-sentry/next.config.js",
+          "value": 63867.86,
           "colname": "level3"
         }
       ],
@@ -639,12 +366,12 @@
       "colname": "level2"
     },
     {
-      "name": "component-scoped-slot.spec.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "component-scoped-slot.spec.ts",
-          "group": "test/unit/features/component/component-scoped-slot.spec.ts",
-          "value": 7375.6797,
+          "name": "index.test.js",
+          "group": "test/integration/font-optimization/test/index.test.js",
+          "value": 63710.547,
           "colname": "level3"
         }
       ],
@@ -652,12 +379,12 @@
       "colname": "level2"
     },
     {
-      "name": "renderError.spec.ts",
+      "name": "server.js",
       "children": [
         {
-          "name": "renderError.spec.ts",
-          "group": "test/unit/features/options/renderError.spec.ts",
-          "value": 7375.6797,
+          "name": "server.js",
+          "group": "examples/with-react-intl/server.js",
+          "value": 63215.6,
           "colname": "level3"
         }
       ],
@@ -665,12 +392,12 @@
       "colname": "level2"
     },
     {
-      "name": "error-detector.ts",
+      "name": "preset.ts",
       "children": [
         {
-          "name": "error-detector.ts",
-          "group": "src/compiler/error-detector.ts",
-          "value": 7375.6797,
+          "name": "preset.ts",
+          "group": "packages/next/build/babel/preset.ts",
+          "value": 63171.25,
           "colname": "level3"
         }
       ],
@@ -678,12 +405,12 @@
       "colname": "level2"
     },
     {
-      "name": "transition-util.ts",
+      "name": "next.js",
       "children": [
         {
-          "name": "transition-util.ts",
-          "group": "src/platforms/web/runtime/transition-util.ts",
-          "value": 7375.6797,
+          "name": "next.js",
+          "group": "client/next.js",
+          "value": 62916.0,
           "colname": "level3"
         }
       ],
@@ -691,12 +418,12 @@
       "colname": "level2"
     },
     {
-      "name": "mixin.spec.ts",
+      "name": "router.js",
       "children": [
         {
-          "name": "mixin.spec.ts",
-          "group": "test/unit/features/global-api/mixin.spec.ts",
-          "value": 7375.6797,
+          "name": "router.js",
+          "group": "lib/router.js",
+          "value": 62844.0,
           "colname": "level3"
         }
       ],
@@ -704,12 +431,12 @@
       "colname": "level2"
     },
     {
-      "name": "debug.ts",
+      "name": "_error.js",
       "children": [
         {
-          "name": "debug.ts",
-          "group": "src/core/util/debug.ts",
-          "value": 7375.6797,
+          "name": "_error.js",
+          "group": "lib/pages/_error.js",
+          "value": 62828.0,
           "colname": "level3"
         }
       ],
@@ -717,12 +444,12 @@
       "colname": "level2"
     },
     {
-      "name": "class.ts",
+      "name": "_document.tsx",
       "children": [
         {
-          "name": "class.ts",
-          "group": "src/platforms/web/util/class.ts",
-          "value": 7375.6797,
+          "name": "_document.tsx",
+          "group": "packages/next/pages/_document.tsx",
+          "value": 62801.9,
           "colname": "level3"
         }
       ],
@@ -730,12 +457,12 @@
       "colname": "level2"
     },
     {
-      "name": "ref.spec.ts",
+      "name": "withRematch.js",
       "children": [
         {
-          "name": "ref.spec.ts",
-          "group": "test/unit/features/v3/reactivity/ref.spec.ts",
-          "value": 7375.6797,
+          "name": "withRematch.js",
+          "group": "examples/with-rematch/shared/utils/withRematch.js",
+          "value": 61142.996,
           "colname": "level3"
         }
       ],
@@ -743,12 +470,12 @@
       "colname": "level2"
     },
     {
-      "name": "env.ts",
+      "name": "link.js",
       "children": [
         {
-          "name": "env.ts",
-          "group": "src/core/util/env.ts",
-          "value": 7375.6797,
+          "name": "link.js",
+          "group": "lib/link.js",
+          "value": 60679.203,
           "colname": "level3"
         }
       ],
@@ -756,12 +483,12 @@
       "colname": "level2"
     },
     {
-      "name": "methods-events.spec.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "methods-events.spec.ts",
-          "group": "test/unit/features/instance/methods-events.spec.ts",
-          "value": 7375.6797,
+          "name": "index.js",
+          "group": "examples/with-apollo/pages/index.js",
+          "value": 59463.18,
           "colname": "level3"
         }
       ],
@@ -769,12 +496,12 @@
       "colname": "level2"
     },
     {
-      "name": "error-handling.spec.ts",
+      "name": "Header.js",
       "children": [
         {
-          "name": "error-handling.spec.ts",
-          "group": "test/unit/features/error-handling.spec.ts",
-          "value": 7375.6797,
+          "name": "Header.js",
+          "group": "examples/with-apollo/components/Header.js",
+          "value": 59463.18,
           "colname": "level3"
         }
       ],
@@ -782,12 +509,12 @@
       "colname": "level2"
     },
     {
-      "name": "set-delete.spec.ts",
+      "name": "about.js",
       "children": [
         {
-          "name": "set-delete.spec.ts",
-          "group": "test/unit/features/global-api/set-delete.spec.ts",
-          "value": 7375.6797,
+          "name": "about.js",
+          "group": "examples/with-apollo/pages/about.js",
+          "value": 59463.18,
           "colname": "level3"
         }
       ],
@@ -795,12 +522,12 @@
       "colname": "level2"
     },
     {
-      "name": "debug.spec.ts",
+      "name": "index.tsx",
       "children": [
         {
-          "name": "debug.spec.ts",
-          "group": "test/unit/features/debug.spec.ts",
-          "value": 7375.6797,
+          "name": "index.tsx",
+          "group": "packages/next/client/index.tsx",
+          "value": 59175.99,
           "colname": "level3"
         }
       ],
@@ -808,12 +535,12 @@
       "colname": "level2"
     },
     {
-      "name": "data.spec.ts",
+      "name": "error-debug.js",
       "children": [
         {
-          "name": "data.spec.ts",
-          "group": "test/unit/features/options/data.spec.ts",
-          "value": 7375.6797,
+          "name": "error-debug.js",
+          "group": "lib/error-debug.js",
+          "value": 59076.883,
           "colname": "level3"
         }
       ],
@@ -821,12 +548,12 @@
       "colname": "level2"
     },
     {
-      "name": "properties.spec.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "properties.spec.ts",
-          "group": "test/unit/features/instance/properties.spec.ts",
-          "value": 7375.6797,
+          "name": "index.js",
+          "group": "examples/with-sentry/pages/index.js",
+          "value": 58991.25,
           "colname": "level3"
         }
       ],
@@ -834,12 +561,12 @@
       "colname": "level2"
     },
     {
-      "name": "observer.spec.ts",
+      "name": "next",
       "children": [
         {
-          "name": "observer.spec.ts",
-          "group": "test/unit/modules/observer/observer.spec.ts",
-          "value": 7375.6797,
+          "name": "next",
+          "group": "bin/next",
+          "value": 58983.75,
           "colname": "level3"
         }
       ],
@@ -847,12 +574,12 @@
       "colname": "level2"
     },
     {
-      "name": "to-function.ts",
+      "name": "store.js",
       "children": [
         {
-          "name": "to-function.ts",
-          "group": "src/compiler/to-function.ts",
-          "value": 7375.6797,
+          "name": "store.js",
+          "group": "examples/with-redux/store.js",
+          "value": 58555.89,
           "colname": "level3"
         }
       ],
@@ -860,12 +587,12 @@
       "colname": "level2"
     },
     {
-      "name": "next-tick.ts",
+      "name": "next.ts",
       "children": [
         {
-          "name": "next-tick.ts",
-          "group": "src/core/util/next-tick.ts",
-          "value": 7375.6797,
+          "name": "next.ts",
+          "group": "packages/next/bin/next.ts",
+          "value": 58534.0,
           "colname": "level3"
         }
       ],
@@ -873,12 +600,12 @@
       "colname": "level2"
     },
     {
-      "name": "prefixIdentifiers.spec.ts",
+      "name": "error-in-browser-render-status-code.js",
       "children": [
         {
-          "name": "prefixIdentifiers.spec.ts",
-          "group": "packages/compiler-sfc/test/prefixIdentifiers.spec.ts",
-          "value": 7375.6797,
+          "name": "error-in-browser-render-status-code.js",
+          "group": "test/integration/production/pages/error-in-browser-render-status-code.js",
+          "value": 58047.39,
           "colname": "level3"
         }
       ],
@@ -886,12 +613,12 @@
       "colname": "level2"
     },
     {
-      "name": "render.spec.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "render.spec.ts",
-          "group": "test/unit/features/options/render.spec.ts",
-          "value": 7375.6797,
+          "name": "index.js",
+          "group": "examples/with-apollo-and-redux/pages/index.js",
+          "value": 57890.08,
           "colname": "level3"
         }
       ],
@@ -899,12 +626,12 @@
       "colname": "level2"
     },
     {
-      "name": "create-compiler.ts",
+      "name": "redux.js",
       "children": [
         {
-          "name": "create-compiler.ts",
-          "group": "src/compiler/create-compiler.ts",
-          "value": 7375.6797,
+          "name": "redux.js",
+          "group": "examples/with-apollo-and-redux/pages/redux.js",
+          "value": 57890.08,
           "colname": "level3"
         }
       ],
@@ -912,12 +639,12 @@
       "colname": "level2"
     },
     {
-      "name": "lifecycle.spec.ts",
+      "name": "_app.tsx",
       "children": [
         {
-          "name": "lifecycle.spec.ts",
-          "group": "test/unit/features/options/lifecycle.spec.ts",
-          "value": 7375.6797,
+          "name": "_app.tsx",
+          "group": "examples/with-react-intl/pages/_app.tsx",
+          "value": 57890.08,
           "colname": "level3"
         }
       ],
@@ -925,12 +652,12 @@
       "colname": "level2"
     },
     {
-      "name": "readonly.spec.ts",
+      "name": "_document.js",
       "children": [
         {
-          "name": "readonly.spec.ts",
-          "group": "test/unit/features/v3/reactivity/readonly.spec.ts",
-          "value": 7340.2197,
+          "name": "_document.js",
+          "group": "examples/with-styled-components/pages/_document.js",
+          "value": 57787.438,
           "colname": "level3"
         }
       ],
@@ -938,12 +665,12 @@
       "colname": "level2"
     },
     {
-      "name": "global.d.ts",
+      "name": "Counter.re",
       "children": [
         {
-          "name": "global.d.ts",
-          "group": "src/global.d.ts",
-          "value": 7340.2197,
+          "name": "Counter.re",
+          "group": "examples/with-reasonml/components/Counter.re",
+          "value": 57575.46,
           "colname": "level3"
         }
       ],
@@ -951,12 +678,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.ts",
+      "name": "_app.js",
       "children": [
         {
-          "name": "index.ts",
-          "group": "src/platforms/web/runtime/index.ts",
-          "value": 7340.2197,
+          "name": "_app.js",
+          "group": "examples/with-mobx/pages/_app.js",
+          "value": 56946.22,
           "colname": "level3"
         }
       ],
@@ -964,12 +691,12 @@
       "colname": "level2"
     },
     {
-      "name": "compileTemplate.spec.ts",
+      "name": "withData.js",
       "children": [
         {
-          "name": "compileTemplate.spec.ts",
-          "group": "packages/compiler-sfc/test/compileTemplate.spec.ts",
-          "value": 7340.2197,
+          "name": "withData.js",
+          "group": "examples/with-apollo-and-redux/lib/withData.js",
+          "value": 56498.49,
           "colname": "level3"
         }
       ],
@@ -977,12 +704,12 @@
       "colname": "level2"
     },
     {
-      "name": "inject.ts",
+      "name": "rendering.js",
       "children": [
         {
-          "name": "inject.ts",
-          "group": "src/core/instance/inject.ts",
-          "value": 7340.2197,
+          "name": "rendering.js",
+          "group": "test/integration/basic/test/rendering.js",
+          "value": 55415.36,
           "colname": "level3"
         }
       ],
@@ -990,12 +717,12 @@
       "colname": "level2"
     },
     {
-      "name": "entry-runtime-with-compiler-esm.ts",
+      "name": "image.tsx",
       "children": [
         {
-          "name": "entry-runtime-with-compiler-esm.ts",
-          "group": "src/platforms/web/entry-runtime-with-compiler-esm.ts",
-          "value": 7340.2197,
+          "name": "image.tsx",
+          "group": "packages/next/client/image.tsx",
+          "value": 55177.016,
           "colname": "level3"
         }
       ],
@@ -1003,12 +730,12 @@
       "colname": "level2"
     },
     {
-      "name": "entry-runtime-with-compiler.ts",
+      "name": "worker.js",
       "children": [
         {
-          "name": "entry-runtime-with-compiler.ts",
-          "group": "src/platforms/web/entry-runtime-with-compiler.ts",
-          "value": 7340.2197,
+          "name": "worker.js",
+          "group": "packages/next/export/worker.js",
+          "value": 55097.0,
           "colname": "level3"
         }
       ],
@@ -1016,12 +743,12 @@
       "colname": "level2"
     },
     {
-      "name": "runtime-with-compiler.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "runtime-with-compiler.ts",
-          "group": "src/platforms/web/runtime-with-compiler.ts",
-          "value": 7340.2197,
+          "name": "index.test.js",
+          "group": "test/integration/typescript/test/index.test.js",
+          "value": 54901.188,
           "colname": "level3"
         }
       ],
@@ -1029,12 +756,12 @@
       "colname": "level2"
     },
     {
-      "name": "perf.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "perf.ts",
-          "group": "src/core/util/perf.ts",
-          "value": 7304.76,
+          "name": "index.js",
+          "group": "packages/next/client/index.js",
+          "value": 54664.68,
           "colname": "level3"
         }
       ],
@@ -1042,12 +769,12 @@
       "colname": "level2"
     },
     {
-      "name": "class.spec.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "class.spec.ts",
-          "group": "test/unit/features/directives/class.spec.ts",
-          "value": 7304.76,
+          "name": "index.test.js",
+          "group": "test/integration/eslint/test/index.test.js",
+          "value": 53800.016,
           "colname": "level3"
         }
       ],
@@ -1055,12 +782,12 @@
       "colname": "level2"
     },
     {
-      "name": "dep.ts",
+      "name": "pass-href-prop.js",
       "children": [
         {
-          "name": "dep.ts",
-          "group": "src/core/observer/dep.ts",
-          "value": 7304.76,
+          "name": "pass-href-prop.js",
+          "group": "test/integration/basic/pages/nav/pass-href-prop.js",
+          "value": 53411.758,
           "colname": "level3"
         }
       ],
@@ -1068,12 +795,12 @@
       "colname": "level2"
     },
     {
-      "name": "array.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "array.ts",
-          "group": "src/core/observer/array.ts",
-          "value": 7304.76,
+          "name": "index.test.js",
+          "group": "test/integration/cli/test/index.test.js",
+          "value": 53328.09,
           "colname": "level3"
         }
       ],
@@ -1081,12 +808,12 @@
       "colname": "level2"
     },
     {
-      "name": "test.ts",
+      "name": "store.js",
       "children": [
         {
-          "name": "test.ts",
-          "group": "packages/server-renderer/types/test.ts",
-          "value": 7304.76,
+          "name": "store.js",
+          "group": "examples/with-mobx/store.js",
+          "value": 52856.156,
           "colname": "level3"
         }
       ],
@@ -1094,12 +821,12 @@
       "colname": "level2"
     },
     {
-      "name": ".gitignore",
+      "name": "index.test.js",
       "children": [
         {
-          "name": ".gitignore",
-          "group": ".gitignore",
-          "value": 7304.76,
+          "name": "index.test.js",
+          "group": "test/integration/dynamic-routing/test/index.test.js",
+          "value": 52698.85,
           "colname": "level3"
         }
       ],
@@ -1107,12 +834,12 @@
       "colname": "level2"
     },
     {
-      "name": "v3-component-props.d.ts",
+      "name": "_app.js",
       "children": [
         {
-          "name": "v3-component-props.d.ts",
-          "group": "types/v3-component-props.d.ts",
-          "value": 7304.76,
+          "name": "_app.js",
+          "group": "examples/with-sentry/pages/_app.js",
+          "value": 52384.23,
           "colname": "level3"
         }
       ],
@@ -1120,12 +847,12 @@
       "colname": "level2"
     },
     {
-      "name": "vue.runtime.mjs",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "vue.runtime.mjs",
-          "group": "dist/vue.runtime.mjs",
-          "value": 7304.76,
+          "name": "index.test.js",
+          "group": "test/integration/i18n-support/test/index.test.js",
+          "value": 52226.92,
           "colname": "level3"
         }
       ],
@@ -1133,12 +860,12 @@
       "colname": "level2"
     },
     {
-      "name": "release-tag.yml",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "release-tag.yml",
-          "group": ".github/workflows/release-tag.yml",
-          "value": 7304.76,
+          "name": "index.test.js",
+          "group": "test/integration/amphtml/test/index.test.js",
+          "value": 51912.297,
           "colname": "level3"
         }
       ],
@@ -1146,12 +873,12 @@
       "colname": "level2"
     },
     {
-      "name": "compiler-options.spec.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "compiler-options.spec.ts",
-          "group": "test/unit/modules/server-compiler/compiler-options.spec.ts",
-          "value": 7304.76,
+          "name": "index.js",
+          "group": "examples/with-ant-design/pages/index.js",
+          "value": 51858.52,
           "colname": "level3"
         }
       ],
@@ -1159,12 +886,12 @@
       "colname": "level2"
     },
     {
-      "name": "ssr-reactivity.spec.ts",
+      "name": "_app.js",
       "children": [
         {
-          "name": "ssr-reactivity.spec.ts",
-          "group": "packages/server-renderer/test/ssr-reactivity.spec.ts",
-          "value": 7304.76,
+          "name": "_app.js",
+          "group": "examples/with-styletron/pages/_app.js",
+          "value": 51754.992,
           "colname": "level3"
         }
       ],
@@ -1172,12 +899,12 @@
       "colname": "level2"
     },
     {
-      "name": "computed.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "computed.ts",
-          "group": "src/v3/reactivity/computed.ts",
-          "value": 7304.76,
+          "name": "index.test.js",
+          "group": "test/integration/prerender/test/index.test.js",
+          "value": 51754.992,
           "colname": "level3"
         }
       ],
@@ -1185,12 +912,12 @@
       "colname": "level2"
     },
     {
-      "name": "readonly.ts",
+      "name": "styletron.js",
       "children": [
         {
-          "name": "readonly.ts",
-          "group": "src/v3/reactivity/readonly.ts",
-          "value": 7269.3,
+          "name": "styletron.js",
+          "group": "examples/with-styletron/styletron.js",
+          "value": 51754.992,
           "colname": "level3"
         }
       ],
@@ -1198,12 +925,12 @@
       "colname": "level2"
     },
     {
-      "name": "vitest.config.ts",
+      "name": "withI18next.js",
       "children": [
         {
-          "name": "vitest.config.ts",
-          "group": "vitest.config.ts",
-          "value": 7269.3,
+          "name": "withI18next.js",
+          "group": "examples/with-react-i18next/lib/withI18next.js",
+          "value": 51272.203,
           "colname": "level3"
         }
       ],
@@ -1211,12 +938,12 @@
       "colname": "level2"
     },
     {
-      "name": "init.ts",
+      "name": "next.config.js",
       "children": [
         {
-          "name": "init.ts",
-          "group": "src/core/instance/init.ts",
-          "value": 7269.3,
+          "name": "next.config.js",
+          "group": "examples/using-preact/next.config.js",
+          "value": 50496.508,
           "colname": "level3"
         }
       ],
@@ -1224,12 +951,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.ts",
+      "name": "index.d.ts",
       "children": [
         {
-          "name": "index.ts",
-          "group": "packages/compiler-sfc/src/index.ts",
-          "value": 7269.3,
+          "name": "index.d.ts",
+          "group": "packages/next/types/index.d.ts",
+          "value": 49867.273,
           "colname": "level3"
         }
       ],
@@ -1237,12 +964,12 @@
       "colname": "level2"
     },
     {
-      "name": "reactive.spec.ts",
+      "name": "index.test.js",
       "children": [
         {
-          "name": "reactive.spec.ts",
-          "group": "test/unit/features/v3/reactivity/reactive.spec.ts",
-          "value": 7233.84,
+          "name": "index.test.js",
+          "group": "test/integration/build-warnings/test/index.test.js",
+          "value": 49867.27,
           "colname": "level3"
         }
       ],
@@ -1250,12 +977,12 @@
       "colname": "level2"
     },
     {
-      "name": "types.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "types.ts",
-          "group": "packages/compiler-sfc/src/types.ts",
-          "value": 7233.84,
+          "name": "index.js",
+          "group": "examples/with-firebase-hosting/src/functions/index.js",
+          "value": 49777.203,
           "colname": "level3"
         }
       ],
@@ -1263,12 +990,12 @@
       "colname": "level2"
     },
     {
-      "name": "compileStyle.spec.ts",
+      "name": "index.js",
       "children": [
         {
-          "name": "compileStyle.spec.ts",
-          "group": "packages/compiler-sfc/test/compileStyle.spec.ts",
-          "value": 7233.84,
+          "name": "index.js",
+          "group": "examples/with-semantic-ui/pages/index.js",
+          "value": 49395.34,
           "colname": "level3"
         }
       ],
@@ -1276,12 +1003,12 @@
       "colname": "level2"
     },
     {
-      "name": "template-ref.spec.ts",
+      "name": "Dockerfile",
       "children": [
         {
-          "name": "template-ref.spec.ts",
-          "group": "test/unit/features/template-ref.spec.ts",
-          "value": 7233.84,
+          "name": "Dockerfile",
+          "group": "examples/with-docker/Dockerfile",
+          "value": 49080.72,
           "colname": "level3"
         }
       ],
@@ -1289,12 +1016,285 @@
       "colname": "level2"
     },
     {
-      "name": "tsx-test.tsx",
+      "name": "_error.js",
       "children": [
         {
-          "name": "tsx-test.tsx",
-          "group": "types/test/v3/tsx-test.tsx",
-          "value": 7233.84,
+          "name": "_error.js",
+          "group": "examples/with-sentry/pages/_error.js",
+          "value": 49080.72,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "_document.js",
+      "children": [
+        {
+          "name": "_document.js",
+          "group": "examples/with-emotion/pages/_document.js",
+          "value": 49075.6,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "router.ts",
+      "children": [
+        {
+          "name": "router.ts",
+          "group": "packages/next/shared/lib/router/router.ts",
+          "value": 49043.023,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "config.ts",
+      "children": [
+        {
+          "name": "config.ts",
+          "group": "packages/next/next-server/server/config.ts",
+          "value": 49013.008,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "next-esm-plugin.ts",
+      "children": [
+        {
+          "name": "next-esm-plugin.ts",
+          "group": "packages/next/build/webpack/plugins/next-esm-plugin.ts",
+          "value": 48934.8,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "packages/eslint-config-next/index.js",
+          "value": 48923.41,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "packages/next/export/index.js",
+          "value": 48179.04,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "main.rs",
+      "children": [
+        {
+          "name": "main.rs",
+          "group": "packages/next-swc/crates/next-dev/src/main.rs",
+          "value": 48136.86,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ssr.js",
+      "children": [
+        {
+          "name": "ssr.js",
+          "group": "test/integration/export/test/ssr.js",
+          "value": 47937.27,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "hot-reloader.js",
+      "children": [
+        {
+          "name": "hot-reloader.js",
+          "group": "packages/next/server/hot-reloader.js",
+          "value": 47914.32,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.test.js",
+      "children": [
+        {
+          "name": "index.test.js",
+          "group": "test/integration/file-serving/test/index.test.js",
+          "value": 47822.242,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "long-page-to-snap-scroll.js",
+      "children": [
+        {
+          "name": "long-page-to-snap-scroll.js",
+          "group": "test/integration/client-navigation/pages/nav/long-page-to-snap-scroll.js",
+          "value": 47822.24,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "nextjs-ssr-module-cache.js",
+      "children": [
+        {
+          "name": "nextjs-ssr-module-cache.js",
+          "group": "packages/next/build/webpack/plugins/nextjs-ssr-module-cache.js",
+          "value": 47781.96,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "router.js",
+      "children": [
+        {
+          "name": "router.js",
+          "group": "packages/next-server/lib/router/router.js",
+          "value": 47753.08,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "next.config.js",
+      "children": [
+        {
+          "name": "next.config.js",
+          "group": "test/integration/export/next.config.js",
+          "value": 47670.21,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "next.config.js",
+      "children": [
+        {
+          "name": "next.config.js",
+          "group": "examples/with-react-native-web/next.config.js",
+          "value": 47664.93,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.test.js",
+      "children": [
+        {
+          "name": "index.test.js",
+          "group": "test/integration/custom-server/test/index.test.js",
+          "value": 47507.62,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "_document.js",
+      "children": [
+        {
+          "name": "_document.js",
+          "group": "examples/with-next-page-transitions/pages/_document.js",
+          "value": 47507.62,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "examples.ts",
+      "children": [
+        {
+          "name": "examples.ts",
+          "group": "packages/create-next-app/helpers/examples.ts",
+          "value": 47350.31,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.test.ts",
+      "children": [
+        {
+          "name": "index.test.ts",
+          "group": "test/e2e/switchable-runtime/index.test.ts",
+          "value": 47350.31,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Cargo.toml",
+      "children": [
+        {
+          "name": "Cargo.toml",
+          "group": "packages/next-swc/crates/napi/Cargo.toml",
+          "value": 47193.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "next-dev",
+      "children": [
+        {
+          "name": "next-dev",
+          "group": "bin/next-dev",
+          "value": 47154.0,
           "colname": "level3"
         }
       ],

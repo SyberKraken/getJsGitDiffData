@@ -1036,12 +1036,13 @@ fn main() {
     let mut filtered_file_types =vec![];
     if parsed_raw_string_filtered_file_types.len() > 0{
         for string in parsed_raw_string_filtered_file_types{
-            filtered_file_types.push(Regex::new(&string).unwrap())
+            let reg = Regex::new(&string).unwrap();
+            filtered_file_types.push(reg)
         }
     }else{
         filtered_file_types = vec![
-            Regex::new(r"(?i).\.json$").unwrap(),
-            Regex::new(r"(?i).\.md$").unwrap(),
+            Regex::new(r"(?i).json$").unwrap(),
+            Regex::new(r"(?i).md$").unwrap(),
         ];
     }
 
@@ -1051,7 +1052,8 @@ fn main() {
     let mut recognized_bugfix_indicators =vec![];
     if parsed_raw_string_recognized_bugfix_indicators.len() > 0{
         for string in parsed_raw_string_recognized_bugfix_indicators{
-            recognized_bugfix_indicators.push(Regex::new(&string).unwrap())
+            let reg = Regex::new(&string).unwrap();
+            recognized_bugfix_indicators.push(reg);
         }
     }else{
         recognized_bugfix_indicators = vec![
@@ -1423,6 +1425,7 @@ fn main() {
                     .any(|regex| regex.is_match(&p.name))
                 {
                     skip = true;
+                    println!("{}",&p.name)
                 }
 
                 if skip {continue;}

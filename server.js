@@ -3,7 +3,7 @@ const childprocess = require('child_process');
 const { dir } = require('console');
 const express = require('express');
 const path = require('path');
-
+const fs = require('fs');
 const app = express();
 
 // Serve static files in the current directory
@@ -76,6 +76,27 @@ app.get('/full_backend_generation', (req, res) => {
   //works
   console.log("BACKEND COMMANDO " + req.url)
 
+  let bugfix_regex_list = []
+
+  if(req.query.bugfix_regex){
+    //TODO split req.query.bugfix_regex whne working and make into list
+    bugfix_regex_list.push(req.query.bugfix_regex) //this is temp to work with oneliners
+    console.log("using:" + req.query.bugfix_regex + " bugfix regex")
+    //When fixing this remember it needs to be comma separated according to json from frontend
+  }
+  let bugjson = JSON.stringify(bugfix_regex_list)
+  fs.writeFileSync("regex_filtered_file_types.json", bugjson);
+
+  let filetype_regex_list = []
+  if(req.query.filetype_regex){
+    //TODO split req.query.filetype_regex whne working and make into list
+    filetype_regex_list.push(req.query.filetype_regex) //this is temp to work with oneliners
+    console.log("using:" + req.query.filetype_regex + " filetype regex")
+    //When fixing this remember it needs to be comma separated according to json from frontend
+  }
+  let filejson = JSON.stringify(filetype_regex_list)
+  fs.writeFileSync("regex_recognized_bugfixes.json", filejson);
+
   let path = req.query.path
   if(req.query.is_remote === "true"){
     path = clone_adress(req.query.path)
@@ -84,7 +105,7 @@ app.get('/full_backend_generation', (req, res) => {
 
 
   //run rust parsing on repo path
-
+  console.log("Starting generation")
   factor = text_to_factor_index(req.query.factor)
   let path_command = '"' + compiled_rust + '" "repo" "' + path + '"'
   let _child1 = childprocess.execSync( path_command, [], {shell:false})

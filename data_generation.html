@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+  /* CSS */
       body {
     margin: 0;
     background-color: black;
@@ -12,6 +13,11 @@
     background-color: black;
     border-radius: 5px;
   }
+  #criticalbutton{
+    border: solid;
+    border-color: red;
+  }
+
   input{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
@@ -71,78 +77,73 @@
   }
 
 </style>
+<!-- html -->
 <body>
-        <div class="backbuttoncontainer"> <a class="backbutton" href="http://localhost:5500/?file=full_d3.json">⇒ RETURN ⇐</a></div>
+       <div class="backbuttoncontainer"><a class="backbutton" href="http://localhost:5500/?file=full_d3.json">⇒ RETURN ⇐</a></div>
+       <p>fill in the absolute or relative path to the repository you want to generate the visualization from. If it is a remote repo check the checkbox above. if you want to change what factor the rectangles are sized by please enter that into the field above.(copy paste from list below), otherwise the default-reccomended sorting will be done.</p>
+       <div class="linkcontainer">
+           <label>Path to repository:</label>
+           <input type="text" id="server_path">
+           <button onclick="run_backend_generation()" id="criticalbutton">Generate new data</button>
+           <label>Is remote repo</label>
+           <input type="checkbox" id="remote_box">
+       </div>
 
-        <div class="linkcontainer">
-            <label>Path to repository:</label>
-            <input type="text" id="server_path">
-            <button onclick="run_backend_generation()">Generate new data</button>
-            <label>Is remote repo</label>
-            <input type="checkbox" id="remote_box">
-        </div>
+       <div class="linkcontainer">
+       <p>The selectable factors are sorted by their performance effectiveness. Different ones are be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
 
-        <div class="linkcontainer">
-            <label>Factor(optional):</label>
-            <input type="text" id="factor">
-        </div>
+           <label>Factor(optional):</label>
+           <!--<input type="text" id="factor"> -->
+           <select  id="factor">
+             <option>custom formula bug1</option>
+             <option>custom formula bug1  more newest change</option>
+             <option>custom formula</option>
+             <option>custom formula bug2  more newest change</option>
+             <option>custom formula more newest change</option>
+             <option>custom formula bug2</option>
+             <option>custom formula freq1</option>
+             <option>custom formula bugonly  more newest change</option>
+             <option>custom formula freq1  more newest change</option>
+             <option>custom formula freq2</option>
+             <option>custom formula freq2  more newest change</option>
+             <option>custom formula freqonly  more newest change</option>
+             <option>frequency aged by commit ages * newest change</option>
+             <option>custom formula freqonly</option>
+             <option>custom formula bugonly</option>
+             <option>frequency aged by commit ages</option>
+             <option>frequency aged by most recent newest file change</option>
+             <option>frequency</option>
+             <option>fixed bugs aged by commit ages * newest change</option>
+             <option>fixed bugs aged by most recent newest file change</option>
+             <option>newest change</option>
+             <option>fixed bugs aged by commit ages</option>
+             <option>fixed bugs</option>
+             <option>fixed bugs aged by most recent oldest file change</option>
+             <option>frequency aged by most recent oldest file change</option>
+             <option>oldest change</option>
+           </select>
+       </div>
+       <p> !!!OBS!!! one-liner regexes only atm, multirow does not work yet. Example regex: (?i).js$ this removes all files ending in .js .JS .Js .jS. The textareas below need to use escaped regex, so for example if the actual regex is \..* it needs to be \\..* this is to be json-compatable, when in use the used(non escaped) regex is printed in server console. empty will use pre-made settings</p>
+       <div class="linkcontainer">
+        <label>Recognized Bugfixes</label>
+        <textarea id="bugfix_area"></textarea>
+        <label>Filtered Filetypes</label>
+        <textarea id="filetype_area"></textarea>
+       </div>
 
-        <p>fill in the absolute or relative path to the repository you want to generate the visualization from. If it is a remote repo check the checkbox above. if you want to change what factor the rectangles are sized by please enter that into the field above.(copy paste from list below), otherwise the default-reccomended sorting will be done.</p>
-
-    <p>The lists of factors below are sorted by their performance effectiveness, the pure factors are less effective but simpler, the composite(custom) factors are contructed from various formulas using the pure factors. different ones might be better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
-    <label>Pure factors:</label>
-    <ul>
-      <li>newest change</li>
-      <li>frequency aged by commit ages</li>
-      <li>fixed bugs aged by commit ages</li>
-      <li>frequency</li>
-      <li>fixed bugs</li>
-      <li>oldest change (not recommended)</li>
-    </ul>
-
-
-
-    <label>All Factors (WIP, some getting removed, some renamed, some more added etc.)</label>
-    <ol>
-      <li>custom formula bugonly  more newest change</li>
-      <li>custom formula bugonly</li>
-      <li>custom formula bug2  more newest change</li>
-      <li>custom formula bug2</li>
-      <li>custom formula bug1  more newest change</li>
-      <li>custom formula bug1</li>
-      <li>custom formula more newest change</li>
-      <li>custom formula</li>
-      <li>newest change</li>
-      <li>custom formula freq1  more newest change</li>
-      <li>custom formula freq1</li>
-      <li>custom formula freqonly  more newest change</li>
-      <li>custom formula freqonly</li>
-      <li>custom formula freq2  more newest change</li>
-      <li>custom formula freq2</li>
-      <li>frequency aged by commit ages * newest change</li>
-      <li>frequency aged by commit ages</li>
-      <li>frequency aged by most recent newest file change</li>
-      <li>fixed bugs aged by commit ages * newest change</li>
-      <li>fixed bugs aged by most recent newest file change</li>
-      <li>fixed bugs aged by commit ages</li>
-      <li>frequency</li>
-      <li>fixed bugs</li>
-      <li>fixed bugs aged by most recent oldest file change</li>
-      <li>frequency aged by most recent oldest file change</li>
-      <li>oldest change</li>
-    </ol>
-
-    <script>
-
-
+   <script>
+    /* JS */
         function run_backend_generation(){
             let path = document.getElementById('server_path').value;
             let factor = document.getElementById('factor').value;
             let is_remote = document.getElementById("remote_box").checked;
-            fetch("http://localhost:5500/full_backend_generation" + "?path=" + path + "&factor=" + factor +"&is_remote=" + is_remote , {
+            let bugfix_lines = document.getElementById("bugfix_area").value;
+            let filetype_lines = document.getElementById("filetype_area").value;
+
+            fetch("http://localhost:5500/full_backend_generation" + "?path=" + path + "&factor=" + factor +"&is_remote=" + is_remote +"&bugfix_regex=" + bugfix_lines +"&filetype_regex=" + filetype_lines, {
                             method: "GET" // default, so we can ignore
                         })
 
         }
-    </script>
+   </script>
 </body>
