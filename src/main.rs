@@ -1048,7 +1048,7 @@ fn main() {
     for item in filtered_file_types{
         println!("{}", item.as_str());
     }
-    return;
+    //TODO: do same with this as with filtered file types
     let recognized_bugfix_indicators = vec![
         Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
         Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
