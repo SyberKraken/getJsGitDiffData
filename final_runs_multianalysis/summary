@@ -1,189 +1,241 @@
-custom formula more newest change > avg deviation = 35.9291073176066
-custom formula freqonly  more newest change > avg deviation = 35.86929532623291
-custom formula bug1  more newest change > avg deviation = 35.84649385960898
-custom formula freqonly > avg deviation = 35.83676119105021
-custom formula freq1  more newest change > avg deviation = 35.76758690134684
-custom formula freq1 > avg deviation = 35.71750804392496
-custom formula freq2 > avg deviation = 35.658414705912264
-frequency aged by commit ages * newest change > avg deviation = 35.609801703135176
-custom formula freq2  more newest change > avg deviation = 35.597747521718354
-custom formula > avg deviation = 35.59004063034057
-custom formula bug1 > avg deviation = 35.29558732477823
-custom formula bugonly  more newest change > avg deviation = 34.44142867024739
-custom formula bug2  more newest change > avg deviation = 34.3700380706787
-frequency aged by commit ages > avg deviation = 34.19462754694621
-custom formula bugonly > avg deviation = 34.00217370859782
-newest change > avg deviation = 33.461028621673584
-custom formula bug2 > avg deviation = 33.22734472910563
-frequency aged by most recent newest file change > avg deviation = 33.17275654856364
-frequency > avg deviation = 28.296755691528322
-frequency aged by most recent oldest file change  > avg deviation = 21.810377784729003
-fixed bugs aged by commit ages * newest change > avg deviation = 16.926245681762694
-fixed bugs aged by most recent newest file change > avg deviation = 16.8375514233907
-fixed bugs aged by commit ages > avg deviation = 16.634298806508387
-fixed bugs > avg deviation = 14.869737463633218
-fixed bugs aged by most recent oldest file change  > avg deviation = 13.909712412834168
-oldest change > avg deviation = 5.393947804530461
+newest change > avg deviation   ,  29.934840821901957
+custom formula bugonly  more newest change > avg deviation , 27.508831789250177
+custom formula bug2  more newest change > avg deviation , 27.33742437057694
+custom formula bug2 > avg deviation , 27.31174399070938
+custom formula bugonly > avg deviation , 27.295797681406146
+fixed bugs aged by commit ages * newest change > avg deviation , 27.181213452254735
+custom formula bug1  more newest change > avg deviation , 26.972311300148572
+custom formula bug1 > avg deviation , 26.930659224698942
+custom formula more newest change > avg deviation , 26.833566330691177
+custom formula > avg deviation , 26.789833835065366
+custom formula freq1  more newest change > avg deviation , 26.747194565708437
+custom formula freq1 > avg deviation , 26.712314277902248
+custom formula freqonly  more newest change > avg deviation , 26.673410188446443
+custom formula freqonly > avg deviation , 26.656689890950922
+custom formula freq2  more newest change > avg deviation , 26.641035192261135
+custom formula freq2 > avg deviation , 26.631115438232825
+frequency aged by commit ages * newest change > avg deviation , 26.611514934311312
+fixed bugs aged by most recent newest file change > avg deviation , 26.347672744880125
+fixed bugs aged by commit ages > avg deviation , 25.65092207057775
+frequency aged by most recent newest file change > avg deviation , 25.50688458438218
+frequency aged by commit ages > avg deviation , 24.794558648983642
+fixed bugs > avg deviation , 22.930157775446773
+frequency > avg deviation , 21.851500161444143
+fixed bugs aged by most recent oldest file change  > avg deviation , 11.311443042914075
+frequency aged by most recent oldest file change  > avg deviation , 9.42361013285319
+oldest change > avg deviation , 0.3789681848188241
 
-custom formula bugonly > avg deviation =	 51.73888938268027
-custom formula bugonly  more newest change > avg deviation =	 51.64443600082397
-custom formula bug2  more newest change > avg deviation =	 50.779341257731126
-custom formula bug2 > avg deviation =		 50.408140932718915
-fixed bugs aged by commit ages * newest change > avg deviation =	 49.89435397084554
-fixed bugs aged by commit ages > avg deviation =	 49.694834097544344
-fixed bugs aged by most recent oldest file change  > avg deviation =	 48.81782107798258
-fixed bugs aged by most recent newest file change > avg deviation =	 48.79608704121908
-custom formula bug1 > avg deviation =	 48.11229987748463
-custom formula bug1  more newest change > avg deviation =	 47.978860051155095
-custom formula more newest change > avg deviation =	 46.59496615600585
-custom formula > avg deviation =	 46.53723276869456
-custom formula freq1 > avg deviation =	 45.38069909620286
-custom formula freq1  more newest change > avg deviation =	 45.3710998117129
-fixed bugs > avg deviation =	 45.31349986394247
-custom formula freqonly  more newest change > avg deviation =	 44.76347345463435
-custom formula freq2  more newest change > avg deviation =	 44.27424568096797
-custom formula freqonly > avg deviation =	 44.16507361650468
-custom formula freq2 > avg deviation =	 44.09448518164952
-frequency aged by commit ages * newest change > avg deviation =	 43.78443179305395
-newest change > avg deviation =	 43.11011011505127
-frequency aged by most recent newest file change > avg deviation =	 41.710403987884526
-frequency aged by commit ages > avg deviation =	 41.59957653570175
-frequency aged by most recent oldest file change  > avg deviation =	 39.58112352752685
-frequency > avg deviation =	 33.55658814183871
-oldest change > avg deviation =	 20.065284318645794
+custom formula bugonly > avg deviation , 49.01973560333252
+custom formula bugonly  more newest change > avg deviation , 48.85672298526763
+fixed bugs aged by commit ages * newest change > avg deviation , 48.77832190958658
+custom formula bug2  more newest change > avg deviation , 48.5577353591919
+fixed bugs aged by commit ages > avg deviation , 48.509174715677894
+custom formula bug2 > avg deviation , 48.26685520426432
+fixed bugs aged by most recent oldest file change  > avg deviation , 47.72821352450054
+fixed bugs aged by most recent newest file change > avg deviation , 47.68405295181275
+custom formula bug1 > avg deviation , 46.49026651000976
+custom formula bug1  more newest change > avg deviation , 46.46453358014425
+custom formula more newest change > avg deviation , 45.41864046796163
+custom formula > avg deviation , 45.40224058914184
+custom formula freq1  more newest change > avg deviation , 44.54280041567485
+custom formula freq1 > avg deviation , 44.44533396116892
+custom formula freqonly  more newest change > avg deviation , 43.71386732991537
+custom formula freqonly > avg deviation , 43.47381404781341
+custom formula freq2  more newest change > avg deviation , 43.46837408606212
+fixed bugs > avg deviation , 43.37866791152955
+custom formula freq2 > avg deviation , 43.332293946901956
+frequency aged by commit ages * newest change > avg deviation , 43.08304090340932
+frequency aged by most recent newest file change > avg deviation , 41.4133061987559
+frequency aged by commit ages > avg deviation , 40.89189206123352
+newest change > avg deviation , 40.728296897411354
+frequency aged by most recent oldest file change  > avg deviation , 38.50637261422476
+frequency > avg deviation , 33.42261140569051
+oldest change > avg deviation , 14.732853766679765
+custom formula more newest change > avg deviation , 63.503706436157216
+custom formula freq1  more newest change > avg deviation , 63.459946472167964
+custom formula freqonly > avg deviation , 63.44818613179524
+custom formula bug1  more newest change > avg deviation , 63.41461407470703
+custom formula freqonly  more newest change > avg deviation , 63.39466470336914
+custom formula > avg deviation , 63.37322699991863
+custom formula freq1 > avg deviation , 63.35237433878581
+custom formula freq2  more newest change > avg deviation , 63.344267461140944
+custom formula freq2 > avg deviation , 63.33960085042317
+frequency aged by commit ages * newest change > avg deviation , 63.2870674947103
+custom formula bug1 > avg deviation , 63.190480923970554
+custom formula bug2  more newest change > avg deviation , 62.35746944173177
+custom formula bug2 > avg deviation , 62.207576388041176
+frequency aged by commit ages > avg deviation , 62.202215138753246
+custom formula bugonly  more newest change > avg deviation , 61.82418853251139
+frequency aged by most recent newest file change > avg deviation , 61.8190967610677
+custom formula bugonly > avg deviation , 61.00885607401531
+frequency > avg deviation , 59.43613630167644
+newest change > avg deviation , 54.07992066526412
+fixed bugs aged by most recent newest file change > avg deviation , 49.506825533549005
+fixed bugs aged by commit ages * newest change > avg deviation , 47.81189358011882
+fixed bugs aged by commit ages > avg deviation , 45.53194790649414
+fixed bugs > avg deviation , 45.214719851175936
+frequency aged by most recent oldest file change  > avg deviation , 44.59327834320069
+fixed bugs aged by most recent oldest file change  > avg deviation , 34.59525078447659
+oldest change > avg deviation , 0.9112795229752859
 
+newest change > avg deviation , 57.27801871617635
+custom formula bugonly  more newest change > avg deviation , 54.9950560092926
+custom formula bugonly > avg deviation , 52.601080372492476
+custom formula freqonly  more newest change > avg deviation , 49.85248981475829
+custom formula freqonly > avg deviation , 49.092195828755706
+custom formula more newest change > avg deviation , 49.04747563298544
+custom formula bug1  more newest change > avg deviation , 48.93968840408324
+custom formula freq1  more newest change > avg deviation , 48.70582187143961
+custom formula freq1 > avg deviation , 48.4415819829305
+custom formula freq2  more newest change > avg deviation , 48.4393160832723
+custom formula freq2 > avg deviation , 48.40454282887776
+custom formula > avg deviation , 48.399315624237055
+frequency aged by commit ages * newest change > avg deviation , 48.39280950164795
+custom formula bug1 > avg deviation , 48.361075575510654
+custom formula bug2  more newest change > avg deviation , 47.45675315221151
+custom formula bug2 > avg deviation , 46.77200689570109
+frequency aged by commit ages > avg deviation , 44.70638003412883
+frequency aged by most recent newest file change > avg deviation , 41.358512419064844
+frequency > avg deviation , 36.82448482942581
+frequency aged by most recent oldest file change  > avg deviation , 30.90453964614868
+fixed bugs aged by most recent newest file change > avg deviation , 22.727519364674887
+fixed bugs aged by commit ages * newest change > avg deviation , 22.45255917485555
+fixed bugs aged by commit ages > avg deviation , 21.902958974838263
+fixed bugs > avg deviation , 20.789624832709634
+oldest change > avg deviation , 20.422911080042525
+fixed bugs aged by most recent oldest file change  > avg deviation , 19.55269134712219
 
-newest change > avg deviation =	 31.06615359385809
-custom formula bugonly  more newest change > avg deviation =	 28.120465838824707
-custom formula bugonly > avg deviation =	 27.89503326614201
-custom formula bug2  more newest change > avg deviation =	 27.872235165407265
-custom formula bug2 > avg deviation =	 27.842822108715776
-fixed bugs aged by commit ages * newest change > avg deviation =	 27.762447806750735
-custom formula bug1  more newest change > avg deviation =	 27.474670880744867
-custom formula bug1 > avg deviation =	 27.428163374056417
-custom formula more newest change > avg deviation =	 27.327021168013413
-custom formula > avg deviation =	 27.282194360355536
-custom formula freq1  more newest change > avg deviation =	 27.236489238436025
-custom formula freq1 > avg deviation =	 27.19998303255935
-custom formula freqonly  more newest change > avg deviation =	 27.16686439236999
-custom formula freqonly > avg deviation =	 27.145877230733632
-custom formula freq2  more newest change > avg deviation =	 27.128410992076006
-custom formula freq2 > avg deviation =	 27.11785167099039
-frequency aged by commit ages * newest change > avg deviation =	 27.09862485672037
-fixed bugs aged by most recent newest file change > avg deviation =	 26.85740613568822
-fixed bugs aged by commit ages > avg deviation =	 26.158845711146796
-frequency aged by most recent newest file change > avg deviation =	 25.927638507798314
-frequency aged by commit ages > avg deviation =	 25.183876067399982
-fixed bugs > avg deviation =	 23.29207842926681
-frequency > avg deviation =	 22.121290337199973
-fixed bugs aged by most recent oldest file change  > avg deviation =	 11.902271147886916
-frequency aged by most recent oldest file change  > avg deviation =	 9.899175055821736
-oldest change > avg deviation =	 0.7172267071207366
+custom formula bug2 > avg deviation , 59.91966535441082
+custom formula bug1 > avg deviation , 59.092654515584314
+custom formula bug2  more newest change > avg deviation , 59.090278818766265
+custom formula > avg deviation , 58.51382798258463
+custom formula freq1 > avg deviation , 58.038442687988265
+frequency aged by commit ages > avg deviation , 57.85001668802898
+custom formula bug1  more newest change > avg deviation , 57.767721486409506
+custom formula freq2 > avg deviation , 57.5913492635091
+frequency aged by commit ages * newest change > avg deviation , 57.45220365397135
+frequency aged by most recent newest file change > avg deviation , 57.361240829467775
+custom formula freq2  more newest change > avg deviation , 57.34788280232746
+custom formula freq1  more newest change > avg deviation , 57.2320678507487
+custom formula more newest change > avg deviation , 57.17910832722983
+frequency > avg deviation , 56.61817488606771
+custom formula freqonly > avg deviation , 56.11318822733561
+fixed bugs aged by most recent newest file change > avg deviation , 55.843675694783535
+fixed bugs aged by commit ages * newest change > avg deviation , 55.73415832519531
+custom formula freqonly  more newest change > avg deviation , 55.47372218322754
+fixed bugs aged by commit ages > avg deviation , 54.983760152180984
+custom formula bugonly > avg deviation , 54.938797770182305
+fixed bugs > avg deviation , 53.92263734944661
+custom formula bugonly  more newest change > avg deviation , 53.55917363993327
+fixed bugs aged by most recent oldest file change  > avg deviation , 43.996373289108284
+newest change > avg deviation , 36.31589300425847
+frequency aged by most recent oldest file change  > avg deviation , 29.762137555440262
+oldest change > avg deviation , -5.293546542664369
 
-newest change > avg deviation =	 56.86464616648356
-custom formula bugonly  more newest change > avg deviation =	 56.44131209309896
-custom formula bugonly > avg deviation =	 54.72197873687744
-custom formula freqonly  more newest change > avg deviation =	 48.36131373341878
-custom formula bug1  more newest change > avg deviation =	 47.704673253377294
-custom formula more newest change > avg deviation =	 47.66582006581625
-custom formula freqonly > avg deviation =	 47.41008706919352
-custom formula bug2  more newest change > avg deviation =	 47.13824775441488
-custom formula freq1  more newest change > avg deviation =	 47.12160643768309
-custom formula bug1 > avg deviation =	 46.92184684244793
-custom formula > avg deviation =	 46.8197670771281
-custom formula freq1 > avg deviation =	 46.70592678070067
-custom formula freq2  more newest change > avg deviation =	 46.640300392150884
-custom formula freq2 > avg deviation =	 46.598540524800626
-frequency aged by commit ages * newest change > avg deviation =	 46.57827389272055
-custom formula bug2 > avg deviation =	 46.35734156799317
-frequency aged by commit ages > avg deviation =	 42.929767281850175
-frequency aged by most recent newest file change > avg deviation =	 39.96995606215794
-frequency > avg deviation =	 36.01742497555415
-frequency aged by most recent oldest file change  > avg deviation =	 29.150799964904788
-fixed bugs aged by most recent newest file change > avg deviation =	 23.979202995300295
-fixed bugs aged by commit ages * newest change > avg deviation =	 23.370483305613195
-fixed bugs aged by commit ages > avg deviation =	 23.003149959564205
-fixed bugs > avg deviation =	 22.381070107142133
-fixed bugs aged by most recent oldest file change  > avg deviation =	 21.690508612314858
-oldest change > avg deviation =	 20.468612443765004
+custom formula more newest change > avg deviation , 35.9291073176066
+custom formula freqonly  more newest change > avg deviation , 35.86929532623291
+custom formula bug1  more newest change > avg deviation , 35.84649385960898
+custom formula freqonly > avg deviation , 35.83676119105021
+custom formula freq1  more newest change > avg deviation , 35.76758690134684
+custom formula freq1 > avg deviation , 35.71750804392496
+custom formula freq2 > avg deviation , 35.658414705912264
+frequency aged by commit ages * newest change > avg deviation , 35.609801703135176
+custom formula freq2  more newest change > avg deviation , 35.597747521718354
+custom formula > avg deviation , 35.59004063034057
+custom formula bug1 > avg deviation , 35.29558732477823
+custom formula bugonly  more newest change > avg deviation , 34.44142867024739
+custom formula bug2  more newest change > avg deviation , 34.3700380706787
+frequency aged by commit ages > avg deviation , 34.19462754694621
+custom formula bugonly > avg deviation , 34.00217370859782
+newest change > avg deviation , 33.461028621673584
+custom formula bug2 > avg deviation , 33.22734472910563
+frequency aged by most recent newest file change > avg deviation , 33.17275654856364
+frequency > avg deviation , 28.296755691528322
+frequency aged by most recent oldest file change  > avg deviation , 21.810377784729003
+fixed bugs aged by commit ages * newest change > avg deviation , 16.926245681762694
+fixed bugs aged by most recent newest file change > avg deviation , 16.8375514233907
+fixed bugs aged by commit ages > avg deviation , 16.634298806508387
+fixed bugs > avg deviation , 14.869737463633218
+fixed bugs aged by most recent oldest file change  > avg deviation , 13.909712412834168
+oldest change > avg deviation , 5.393947804530461
 
-custom formula bugonly  more newest change > avg deviation =	 63.29200697580974
-custom formula bugonly > avg deviation =	 62.53734278615315
-custom formula bug2  more newest change > avg deviation =	 60.64646632385254
-custom formula bug2 > avg deviation =	 60.25742715454101
-custom formula bug1  more newest change > avg deviation =	 59.91185002390544
-custom formula bug1 > avg deviation =	 59.499531018575034
-custom formula more newest change > avg deviation =	 59.44902732594808
-custom formula > avg deviation =	 59.01692199452718
-custom formula freqonly  more newest change > avg deviation =	 58.935824864705395
-custom formula freq1  more newest change > avg deviation =	 58.85313424682617
-custom formula freq1 > avg deviation =	 58.60182717386881
-custom formula freqonly > avg deviation =	 58.544625546773275
-custom formula freq2  more newest change > avg deviation =	 58.25190672810873
-custom formula freq2 > avg deviation =	 58.18972020975749
-frequency aged by commit ages * newest change > avg deviation =	 58.0737197825114
-newest change > avg deviation =	 56.04329678217571
-frequency aged by commit ages > avg deviation =	 55.2655353825887
-fixed bugs aged by commit ages * newest change > avg deviation =	 54.06076756286621
-frequency aged by most recent newest file change > avg deviation =	 53.90913484827677
-fixed bugs aged by most recent newest file change > avg deviation =	 53.11485036214193
-fixed bugs aged by commit ages > avg deviation =	 51.501195752461754
-frequency > avg deviation =	 46.396739091237386
-fixed bugs > avg deviation =	 45.535814580281574
-frequency aged by most recent oldest file change  > avg deviation =	 44.38900358963013
-fixed bugs aged by most recent oldest file change  > avg deviation =	 43.71951397705078
-oldest change > avg deviation =	 3.234347335875034
+custom formula bugonly  more newest change > avg deviation , 61.538352572123216
+custom formula bugonly > avg deviation , 60.81203031412759
+custom formula bug2  more newest change > avg deviation , 59.74648931884766
+custom formula bug2 > avg deviation , 59.39963498942056
+custom formula bug1  more newest change > avg deviation , 59.27893204498291
+custom formula bug1 > avg deviation , 58.91671946970623
+custom formula more newest change > avg deviation , 58.84365065002443
+custom formula > avg deviation , 58.474024541219066
+custom formula freqonly  more newest change > avg deviation , 58.414241256713865
+custom formula freq1  more newest change > avg deviation , 58.30551862843831
+custom formula freq1 > avg deviation , 58.07074509429932
+custom formula freqonly > avg deviation , 58.04677441914877
+custom formula freq2  more newest change > avg deviation , 57.77680068969728
+custom formula freq2 > avg deviation , 57.708640630086265
+frequency aged by commit ages * newest change > avg deviation , 57.593733599344894
+newest change > avg deviation , 55.550291356404614
+frequency aged by commit ages > avg deviation , 54.78994707489012
+fixed bugs aged by commit ages * newest change > avg deviation , 54.151250595092776
+frequency aged by most recent newest file change > avg deviation , 53.72749611155192
+fixed bugs aged by most recent newest file change > avg deviation , 52.579359235127775
+fixed bugs aged by commit ages > avg deviation , 51.10562018330893
+frequency > avg deviation , 46.469996287027996
+fixed bugs > avg deviation , 44.180208605448406
+frequency aged by most recent oldest file change  > avg deviation , 41.62172304217022
+fixed bugs aged by most recent oldest file change  > avg deviation , 37.930941434224444
+oldest change > avg deviation , 6.731306971420845
 
-custom formula bug1 > avg deviation =	 36.4734599870046
-custom formula > avg deviation =	 36.300153645197554
-custom formula freq1 > avg deviation =	 35.97519435564677
-custom formula bug2 > avg deviation =	 35.79075360806783
-custom formula bug1  more newest change > avg deviation =	 35.729864024480186
-frequency aged by most recent newest file change > avg deviation =	 35.634223547935484
-custom formula freq2 > avg deviation =	 35.577124542236334
-frequency aged by commit ages * newest change > avg deviation =	 35.48253829447428
-custom formula bug2  more newest change > avg deviation =	 35.48104880460102
-custom formula more newest change > avg deviation =	 35.43992214647928
-custom formula freq2  more newest change > avg deviation =	 35.4355795542399
-custom formula freq1  more newest change > avg deviation =	 35.38050828488668
-frequency aged by commit ages > avg deviation =	 34.61933177248637
-custom formula freqonly > avg deviation =	 34.54841553370158
-custom formula freqonly  more newest change > avg deviation =	 34.020425383249915
-frequency > avg deviation =	 33.507749841372174
-custom formula bugonly > avg deviation =	 33.111212347795565
-custom formula bugonly  more newest change > avg deviation =	 32.8812836095194
-fixed bugs aged by commit ages * newest change > avg deviation =	 32.803495783617095
-fixed bugs aged by most recent newest file change > avg deviation =	 32.6168569556276
-fixed bugs aged by commit ages > avg deviation =	 31.8231775580744
-fixed bugs > avg deviation =	 30.188248127053182
-newest change > avg deviation =	 27.80241788832347
-fixed bugs aged by most recent oldest file change  > avg deviation =	 23.457179751078286
-frequency aged by most recent oldest file change  > avg deviation =	 21.184042310873668
-oldest change > avg deviation =	 -2.128480122913917
+custom formula > avg deviation , 46.00146180725098
+custom formula bug1 > avg deviation , 45.96740902201335
+custom formula freq1 > avg deviation , 45.95881897481282
+custom formula freq2 > avg deviation , 45.91332658894857
+frequency aged by commit ages * newest change > avg deviation , 45.88626036580404
+custom formula freq2  more newest change > avg deviation , 45.880073094685876
+custom formula freq1  more newest change > avg deviation , 45.86647166951497
+custom formula more newest change > avg deviation , 45.86476689147948
+custom formula bug1  more newest change > avg deviation , 45.84244753011067
+custom formula freqonly > avg deviation , 45.74031093343098
+custom formula freqonly  more newest change > avg deviation , 45.63428330993653
+frequency aged by commit ages > avg deviation , 45.34692595672607
+custom formula bug2 > avg deviation , 45.18778989410401
+custom formula bug2  more newest change > avg deviation , 45.09589629618326
+frequency aged by most recent newest file change > avg deviation , 44.94487092081706
+frequency > avg deviation , 43.961962910970065
+custom formula bugonly  more newest change > avg deviation , 41.584170145670576
+custom formula bugonly > avg deviation , 41.318087145487475
+fixed bugs aged by most recent newest file change > avg deviation , 39.91564096577963
+fixed bugs aged by commit ages * newest change > avg deviation , 39.71305220794677
+fixed bugs aged by commit ages > avg deviation , 38.683745249430345
+fixed bugs > avg deviation , 38.04259765370687
+newest change > avg deviation , 36.83250546391805
+fixed bugs aged by most recent oldest file change  > avg deviation , 18.64689488820235
+frequency aged by most recent oldest file change  > avg deviation , 9.429084142684937
+oldest change > avg deviation , -5.590506669849158
 
-custom formula > avg deviation =	46.601733311971024
-custom formula bug1 > avg deviation =	46.57786944071451
-custom formula freq1 > avg deviation =	46.55378565979004
-custom formula freq2 > avg deviation =	46.50330499267579
-frequency aged by commit ages * newest change > avg deviation =	46.476371612548824
-custom formula freq2  more newest change > avg deviation =	46.46850476074218
-custom formula more newest change > avg deviation =	46.4541061147054
-custom formula freq1  more newest change > avg deviation =	46.45375846354167
-custom formula bug1  more newest change > avg deviation =	46.43773591613769
-custom formula freqonly > avg deviation =	46.31743693033854
-custom formula freqonly  more newest change > avg deviation =	46.20634441630046
-frequency aged by commit ages > avg deviation =	45.95458381652832
-custom formula bug2 > avg deviation =	45.79360647583007
-custom formula bug2  more newest change > avg deviation =	45.707154439290356
-frequency aged by most recent newest file change > avg deviation =	45.532424738566085
-frequency > avg deviation =	44.572101974487296
-custom formula bugonly  more newest change > avg deviation =	42.13433860270182
-custom formula bugonly > avg deviation =	41.88094882710774
-fixed bugs aged by most recent newest file change > avg deviation =	40.40321831003826
-fixed bugs aged by commit ages * newest change > avg deviation =	40.21409957631429
-fixed bugs aged by commit ages > avg deviation =	39.21890062713623
-fixed bugs > avg deviation =	38.50225665537517
-newest change > avg deviation =	37.39921069335938
-fixed bugs aged by most recent oldest file change  > avg deviation =	18.698305093208948
-frequency aged by most recent oldest file change  > avg deviation =	9.560442815780638
-oldest change > avg deviation =	-5.839865445474784
+custom formula > avg deviation , 39.383748588562014
+custom formula bug1 > avg deviation , 39.35378057988485
+custom formula freq1 > avg deviation , 39.255297097524014
+frequency aged by most recent newest file change > avg deviation , 39.24704400316874
+custom formula freq2 > avg deviation , 38.952580671946215
+frequency aged by commit ages * newest change > avg deviation , 38.918525229136144
+custom formula freq2  more newest change > avg deviation , 38.87793797938029
+custom formula freq1  more newest change > avg deviation , 38.857852575937905
+custom formula bug1  more newest change > avg deviation , 38.85113660558064
+custom formula more newest change > avg deviation , 38.82654641723633
+custom formula freqonly > avg deviation , 38.26150578435262
+custom formula freqonly  more newest change > avg deviation , 37.84057055536906
+custom formula bug2 > avg deviation , 37.77988697942098
+custom formula bug2  more newest change > avg deviation , 37.72878984451293
+frequency aged by commit ages > avg deviation , 37.719060428619386
+frequency > avg deviation , 36.93022370592754
+custom formula bugonly  more newest change > avg deviation , 35.26254921277365
+custom formula bugonly > avg deviation , 35.17870748456319
+fixed bugs aged by commit ages * newest change > avg deviation , 35.01586465390523
+fixed bugs aged by most recent newest file change > avg deviation , 34.89736565844218
+fixed bugs aged by commit ages > avg deviation , 33.75554473813375
+fixed bugs > avg deviation , 32.092548508962
+newest change > avg deviation , 30.73176019986471
+fixed bugs aged by most recent oldest file change  > avg deviation , 20.036158198038734
+frequency aged by most recent oldest file change  > avg deviation , 18.948322044054667
+oldest change > avg deviation , -2.6184828985333444

@@ -2,7 +2,7 @@ Project data-parsing and generation is ran with a rust-script in folder as well 
 It visualizes the most bug-prone files in a repository via treemaps.
 
 To get started you need to generate the rust executables for your OS:
-!!!!!OBS!!!!! nightly version of rust is required to compile. If using rustup use command: "rustup toolchain install nightly " and set default compile version to nightley via: "rustup default nightly"
+!!!!!OBS!!!!! nightly version of rust is required to compile. If using rustup use command: "rustup toolchain install nightly " and set default compile version to nightley via: "rustup default nightly" or "cargo +nightly build --release" to run it once
 Compile rust script with: cargo build --release
 
 To start server: node server.js

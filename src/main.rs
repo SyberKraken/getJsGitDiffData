@@ -3,7 +3,7 @@
 use git2::{Oid, Repository, RepositoryOpenFlags};
 use indicatif::{ProgressBar, ProgressStyle};
 
-use rayon::prelude::*;
+use rayon::{prelude::*};
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 use core::time;
@@ -618,13 +618,13 @@ impl Parent {
         self.children
             .sort_by(|b, a| a.value.partial_cmp(&b.value).unwrap());
     }
-    fn remove_children_with_ending(&mut self, endings: &Vec<&str>) {
+    fn remove_children_with_ending(&mut self, endings: &Vec<Regex>) {
         let filter = |name: &str| -> bool {
-            for end in endings {
-                if name.ends_with(end) {
-                    return true;
-                }
-            }
+
+            if endings
+                .iter()
+                .any(|regex| regex.is_match(&name)){return true}
+
             return false;
         };
 
@@ -927,7 +927,8 @@ fn filelist_to_container_only_files(filelist: &FileList, field: i32) -> Containe
 fn file_data_map_to_file_list(
     file_data: &HashMap<String, Vec<(String, Vec<String>, i32, String)>>,
     age_limit: usize,
-    recognized_bugfix_indicators: &[regex::Regex; 7],
+    recognized_bugfix_indicators: &Vec<Regex>,
+    filtered_filetypes: &Vec<Regex>,
 ) -> FileList {
     let max_age = file_data.len();
 
@@ -947,9 +948,11 @@ fn file_data_map_to_file_list(
             // post-cuttof functionality counts bugg fixed after cuttoff
             for (filename, functions, _age, message) in files {
                 //TODO: filter other types here as well, list in main mbe.
-                if filename.ends_with(".json") || filename.ends_with(".JSON") {
-                    continue;
-                };
+                if filtered_filetypes
+                    .iter()
+                    .any(|regex| regex.is_match(&filename)){
+                        continue;
+                    }
 
                 if recognized_bugfix_indicators
                     .iter()
@@ -1024,13 +1027,15 @@ fn file_data_map_to_file_list(
     file_list
 }
 
-//Generation Exec with arg being filepath in quotes, "C:\\Users\\simon\\Documents\\My Web Sites\\datavisualisation\\dv"
-//Parsing of generated json is 1:path to json, 2: new filename, 3:age cuttof, 0 indicates no cuttof
+
 fn main() {
     let mut args: Vec<String> = env::args().collect();
 
-    let filtered_file_types = vec!["json","JSON", "md", "MD"];
-    let recognized_bugfix_indicators = [
+    let filtered_file_types = vec![
+        Regex::new(r"(?i).\.json$").unwrap(),
+        Regex::new(r"(?i).\.md$").unwrap(),
+        ];
+    let recognized_bugfix_indicators = vec![
         Regex::new(r"(?i)line-[0-9]+").unwrap(), //upsales confirmed standard
         Regex::new(r"(?i)bug").unwrap(),         //older upsales confirmed, might break on other ones
         Regex::new(r"(?i)hotfix").unwrap(),      //upsales confirmed 2nd standard for speedier fixes
@@ -1106,7 +1111,7 @@ fn main() {
 
                 let age_cuttof_in_precentage_points = precentage as usize;
 
-                let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
+                let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators, &filtered_file_types);
 
                 for i in 0..nr_of_fields{
 
@@ -1247,7 +1252,7 @@ fn main() {
 
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
 
-            let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators);
+            let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators, &filtered_file_types);
 
             //now loops over all into files
             //let field_to_sort_by:i32 = args[5].parse::<i32>().unwrap();
@@ -1366,7 +1371,7 @@ fn main() {
 
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
 
-            let file_list = file_data_map_to_file_list(&file_data, 100, &recognized_bugfix_indicators);
+            let file_list = file_data_map_to_file_list(&file_data, 100, &recognized_bugfix_indicators, &filtered_file_types);
             //file_list.files.get(name) gives object from full filepath
             let mut container : Container ;
 
@@ -1391,9 +1396,14 @@ fn main() {
 
                //let path =  p.name.split("/");
                 let mut skip = false;
-                for ending in &filtered_file_types{
-                    if p.name.ends_with(ending){skip = true; break}
+
+                if filtered_file_types
+                    .iter()
+                    .any(|regex| regex.is_match(&p.name))
+                {
+                    skip = true;
                 }
+
                 if skip {continue;}
 
                 p.remove_children_with_ending(&filtered_file_types);
@@ -1444,6 +1454,8 @@ fn main() {
             file.write_all(temp.as_bytes()).unwrap();
             //--
             //generate d3 jsons
+            let _ = fs::remove_dir_all("containers/");
+            std::thread::sleep(time::Duration::from_millis(1000));
             for path in all_folder_paths {
 
                 let partial_container = f.get_path_container(&path);
@@ -1457,8 +1469,6 @@ fn main() {
                 else if  filteredpath == ""{
                     filteredpath = "root".to_string();
                 }
-                let _ = fs::remove_dir_all("containers/");
-                std::thread::sleep(time::Duration::from_millis(1000));
 
                 let _ = fs::create_dir_all("containers/".to_owned() + &filteredpath);
 
@@ -1499,7 +1509,7 @@ fn main() {
             let file_string = std::fs::read_to_string(json_path).unwrap();
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
 
-            let file_list = file_data_map_to_file_list(&file_data, age_cuttof, &recognized_bugfix_indicators);
+            let file_list = file_data_map_to_file_list(&file_data, age_cuttof, &recognized_bugfix_indicators, &filtered_file_types);
 
 
             //println!("{}", file_list);
