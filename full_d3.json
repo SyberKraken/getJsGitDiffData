@@ -2,12 +2,12 @@
   "name": "Container",
   "children": [
     {
-      "name": "yarn.lock",
+      "name": "generateDiffFiles.py",
       "children": [
         {
-          "name": "yarn.lock",
-          "group": "yarn.lock",
-          "value": 281986.0,
+          "name": "generateDiffFiles.py",
+          "group": "gitscripts/generateDiffFiles.py",
+          "value": 93.61,
           "colname": "level3"
         }
       ],
@@ -15,12 +15,12 @@
       "colname": "level2"
     },
     {
-      "name": "webpack-config.ts",
+      "name": "README.md",
       "children": [
         {
-          "name": "webpack-config.ts",
-          "group": "packages/next/build/webpack-config.ts",
-          "value": 189737.66,
+          "name": "README.md",
+          "group": "README.md",
+          "value": 93.61,
           "colname": "level3"
         }
       ],
@@ -28,12 +28,12 @@
       "colname": "level2"
     },
     {
-      "name": "1.bug_report.yml",
+      "name": "gitlogfile.bat",
       "children": [
         {
-          "name": "1.bug_report.yml",
-          "group": ".github/ISSUE_TEMPLATE/1.bug_report.yml",
-          "value": 144882.5,
+          "name": "gitlogfile.bat",
+          "group": "gitscripts/gitlogfile.bat",
+          "value": 93.61,
           "colname": "level3"
         }
       ],
@@ -41,12 +41,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.ts",
+      "name": "result.json",
       "children": [
         {
-          "name": "index.ts",
-          "group": "packages/next/build/index.ts",
-          "value": 129979.516,
+          "name": "result.json",
+          "group": "gitscripts/result.json",
+          "value": 93.61,
           "colname": "level3"
         }
       ],
@@ -54,12 +54,12 @@
       "colname": "level2"
     },
     {
-      "name": "_error-debug.js",
+      "name": "remote_branch_fetch.ts",
       "children": [
         {
-          "name": "_error-debug.js",
-          "group": "pages/_error-debug.js",
-          "value": 124473.15,
+          "name": "remote_branch_fetch.ts",
+          "group": "pages/api/remote_branch_fetch.ts",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -67,12 +67,12 @@
       "colname": "level2"
     },
     {
-      "name": "webpack.js",
+      "name": "{",
       "children": [
         {
-          "name": "webpack.js",
-          "group": "server/build/webpack.js",
-          "value": 122727.086,
+          "name": "{",
+          "group": "{",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -80,12 +80,12 @@
       "colname": "level2"
     },
     {
-      "name": "render.js",
+      "name": "data.ts",
       "children": [
         {
-          "name": "render.js",
-          "group": "server/render.js",
-          "value": 108530.1,
+          "name": "data.ts",
+          "group": "pages/api/data.ts",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -93,12 +93,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.test.js",
+      "name": "globals.css",
       "children": [
         {
-          "name": "index.test.js",
-          "group": "test/integration/client-navigation/test/index.test.js",
-          "value": 106970.805,
+          "name": "globals.css",
+          "group": "styles/globals.css",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -106,12 +106,12 @@
       "colname": "level2"
     },
     {
-      "name": "taskfile.js",
+      "name": "example.png",
       "children": [
         {
-          "name": "taskfile.js",
-          "group": "packages/next/taskfile.js",
-          "value": 106026.95,
+          "name": "example.png",
+          "group": "imgs/example.png",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -119,12 +119,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.test.js",
+      "name": "Home.module.css",
       "children": [
         {
-          "name": "index.test.js",
-          "group": "test/integration/production/test/index.test.js",
-          "value": 93284.83,
+          "name": "Home.module.css",
+          "group": "styles/Home.module.css",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -132,12 +132,12 @@
       "colname": "level2"
     },
     {
-      "name": "app.js",
+      "name": "package.json",
       "children": [
         {
-          "name": "app.js",
-          "group": "lib/app.js",
-          "value": 90913.625,
+          "name": "package.json",
+          "group": "package.json",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -145,12 +145,12 @@
       "colname": "level2"
     },
     {
-      "name": "link.tsx",
+      "name": "gitlogtext.ts",
       "children": [
         {
-          "name": "link.tsx",
-          "group": "packages/next/client/link.tsx",
-          "value": 87911.91,
+          "name": "gitlogtext.ts",
+          "group": "jsscripts/gitlogtext.ts",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -158,12 +158,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.js",
+      "name": "resetfiles.bat",
       "children": [
         {
-          "name": "index.js",
-          "group": "client/index.js",
-          "value": 86483.68,
+          "name": "resetfiles.bat",
+          "group": "gitscripts/resetfiles.bat",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -171,12 +171,12 @@
       "colname": "level2"
     },
     {
-      "name": "build_test_deploy.yml",
+      "name": "package-lock.json",
       "children": [
         {
-          "name": "build_test_deploy.yml",
-          "group": ".github/workflows/build_test_deploy.yml",
-          "value": 85733.95,
+          "name": "package-lock.json",
+          "group": "package-lock.json",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -184,12 +184,12 @@
       "colname": "level2"
     },
     {
-      "name": "withData.js",
+      "name": "data.json",
       "children": [
         {
-          "name": "withData.js",
-          "group": "examples/with-apollo/lib/withData.js",
-          "value": 84924.0,
+          "name": "data.json",
+          "group": "public/data.json",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -197,12 +197,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.js",
+      "name": "log.csv",
       "children": [
         {
-          "name": "index.js",
-          "group": "server/index.js",
-          "value": 78330.42,
+          "name": "log.csv",
+          "group": "log.csv",
+          "value": 74.0,
           "colname": "level3"
         }
       ],
@@ -210,12 +210,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.test.js",
+      "name": "data.js",
       "children": [
         {
-          "name": "index.test.js",
-          "group": "test/integration/build-output/test/index.test.js",
-          "value": 78183.07,
+          "name": "data.js",
+          "group": "static/data.js",
+          "value": 72.0,
           "colname": "level3"
         }
       ],
@@ -223,12 +223,12 @@
       "colname": "level2"
     },
     {
-      "name": "next-dev.js",
+      "name": "gitdifffor2commits.bat",
       "children": [
         {
-          "name": "next-dev.js",
-          "group": "client/next-dev.js",
-          "value": 75760.76,
+          "name": "gitdifffor2commits.bat",
+          "group": "gitscripts/gitdifffor2commits.bat",
+          "value": 64.0,
           "colname": "level3"
         }
       ],
@@ -236,12 +236,12 @@
       "colname": "level2"
     },
     {
-      "name": "document.js",
+      "name": "gitstuff.bat",
       "children": [
         {
-          "name": "document.js",
-          "group": "server/document.js",
-          "value": 74454.54,
+          "name": "gitstuff.bat",
+          "group": "gitscripts/gitstuff.bat",
+          "value": 64.0,
           "colname": "level3"
         }
       ],
@@ -249,12 +249,12 @@
       "colname": "level2"
     },
     {
-      "name": "utils.ts",
+      "name": "gitdifffile.bat",
       "children": [
         {
-          "name": "utils.ts",
-          "group": "packages/next/build/utils.ts",
-          "value": 74289.62,
+          "name": "gitdifffile.bat",
+          "group": "gitscripts/gitdifffile.bat",
+          "value": 62.0,
           "colname": "level3"
         }
       ],
@@ -262,12 +262,12 @@
       "colname": "level2"
     },
     {
-      "name": "next-test-utils.js",
+      "name": "result.json",
       "children": [
         {
-          "name": "next-test-utils.js",
-          "group": "test/lib/next-test-utils.js",
-          "value": 71418.734,
+          "name": "result.json",
+          "group": "pages/api/result.json",
+          "value": 60.0,
           "colname": "level3"
         }
       ],
@@ -275,12 +275,12 @@
       "colname": "level2"
     },
     {
-      "name": "client-navigation.js",
+      "name": "package.json",
       "children": [
         {
-          "name": "client-navigation.js",
-          "group": "test/integration/basic/test/client-navigation.js",
-          "value": 69269.2,
+          "name": "package.json",
+          "group": "gitscripts/package.json",
+          "value": 50.0,
           "colname": "level3"
         }
       ],
@@ -288,64 +288,12 @@
       "colname": "level2"
     },
     {
-      "name": "_document.js",
+      "name": "package-lock.json",
       "children": [
         {
-          "name": "_document.js",
-          "group": "examples/with-styletron/pages/_document.js",
-          "value": 67643.3,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_document.js",
-      "children": [
-        {
-          "name": "_document.js",
-          "group": "examples/with-react-helmet/pages/_document.js",
-          "value": 67014.06,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next-server.ts",
-      "children": [
-        {
-          "name": "next-server.ts",
-          "group": "packages/next/next-server/server/next-server.ts",
-          "value": 65814.164,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "router.ts",
-      "children": [
-        {
-          "name": "router.ts",
-          "group": "packages/next/next-server/lib/router/router.ts",
-          "value": 65582.42,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "2.example_bug_report.yml",
-      "children": [
-        {
-          "name": "2.example_bug_report.yml",
-          "group": ".github/ISSUE_TEMPLATE/2.example_bug_report.yml",
-          "value": 65283.652,
+          "name": "package-lock.json",
+          "group": "gitscripts/package-lock.json",
+          "value": 50.0,
           "colname": "level3"
         }
       ],
@@ -357,8 +305,8 @@
       "children": [
         {
           "name": "next.config.js",
-          "group": "examples/with-sentry/next.config.js",
-          "value": 63867.86,
+          "group": "gitscripts/next.config.js",
+          "value": 46.0,
           "colname": "level3"
         }
       ],
@@ -366,935 +314,12 @@
       "colname": "level2"
     },
     {
-      "name": "index.test.js",
+      "name": "test.ts",
       "children": [
         {
-          "name": "index.test.js",
-          "group": "test/integration/font-optimization/test/index.test.js",
-          "value": 63710.547,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "server.js",
-      "children": [
-        {
-          "name": "server.js",
-          "group": "examples/with-react-intl/server.js",
-          "value": 63215.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "preset.ts",
-      "children": [
-        {
-          "name": "preset.ts",
-          "group": "packages/next/build/babel/preset.ts",
-          "value": 63171.25,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next.js",
-      "children": [
-        {
-          "name": "next.js",
-          "group": "client/next.js",
-          "value": 62916.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "router.js",
-      "children": [
-        {
-          "name": "router.js",
-          "group": "lib/router.js",
-          "value": 62844.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_error.js",
-      "children": [
-        {
-          "name": "_error.js",
-          "group": "lib/pages/_error.js",
-          "value": 62828.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_document.tsx",
-      "children": [
-        {
-          "name": "_document.tsx",
-          "group": "packages/next/pages/_document.tsx",
-          "value": 62801.9,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "withRematch.js",
-      "children": [
-        {
-          "name": "withRematch.js",
-          "group": "examples/with-rematch/shared/utils/withRematch.js",
-          "value": 61142.996,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "link.js",
-      "children": [
-        {
-          "name": "link.js",
-          "group": "lib/link.js",
-          "value": 60679.203,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "examples/with-apollo/pages/index.js",
-          "value": 59463.18,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "Header.js",
-      "children": [
-        {
-          "name": "Header.js",
-          "group": "examples/with-apollo/components/Header.js",
-          "value": 59463.18,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "about.js",
-      "children": [
-        {
-          "name": "about.js",
-          "group": "examples/with-apollo/pages/about.js",
-          "value": 59463.18,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.tsx",
-      "children": [
-        {
-          "name": "index.tsx",
-          "group": "packages/next/client/index.tsx",
-          "value": 59175.99,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "error-debug.js",
-      "children": [
-        {
-          "name": "error-debug.js",
-          "group": "lib/error-debug.js",
-          "value": 59076.883,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "examples/with-sentry/pages/index.js",
-          "value": 58991.25,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next",
-      "children": [
-        {
-          "name": "next",
-          "group": "bin/next",
-          "value": 58983.75,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "store.js",
-      "children": [
-        {
-          "name": "store.js",
-          "group": "examples/with-redux/store.js",
-          "value": 58555.89,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next.ts",
-      "children": [
-        {
-          "name": "next.ts",
-          "group": "packages/next/bin/next.ts",
-          "value": 58534.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "error-in-browser-render-status-code.js",
-      "children": [
-        {
-          "name": "error-in-browser-render-status-code.js",
-          "group": "test/integration/production/pages/error-in-browser-render-status-code.js",
-          "value": 58047.39,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "examples/with-apollo-and-redux/pages/index.js",
-          "value": 57890.08,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "redux.js",
-      "children": [
-        {
-          "name": "redux.js",
-          "group": "examples/with-apollo-and-redux/pages/redux.js",
-          "value": 57890.08,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_app.tsx",
-      "children": [
-        {
-          "name": "_app.tsx",
-          "group": "examples/with-react-intl/pages/_app.tsx",
-          "value": 57890.08,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_document.js",
-      "children": [
-        {
-          "name": "_document.js",
-          "group": "examples/with-styled-components/pages/_document.js",
-          "value": 57787.438,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "Counter.re",
-      "children": [
-        {
-          "name": "Counter.re",
-          "group": "examples/with-reasonml/components/Counter.re",
-          "value": 57575.46,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_app.js",
-      "children": [
-        {
-          "name": "_app.js",
-          "group": "examples/with-mobx/pages/_app.js",
-          "value": 56946.22,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "withData.js",
-      "children": [
-        {
-          "name": "withData.js",
-          "group": "examples/with-apollo-and-redux/lib/withData.js",
-          "value": 56498.49,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "rendering.js",
-      "children": [
-        {
-          "name": "rendering.js",
-          "group": "test/integration/basic/test/rendering.js",
-          "value": 55415.36,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "image.tsx",
-      "children": [
-        {
-          "name": "image.tsx",
-          "group": "packages/next/client/image.tsx",
-          "value": 55177.016,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "worker.js",
-      "children": [
-        {
-          "name": "worker.js",
-          "group": "packages/next/export/worker.js",
-          "value": 55097.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/typescript/test/index.test.js",
-          "value": 54901.188,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "packages/next/client/index.js",
-          "value": 54664.68,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/eslint/test/index.test.js",
-          "value": 53800.016,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "pass-href-prop.js",
-      "children": [
-        {
-          "name": "pass-href-prop.js",
-          "group": "test/integration/basic/pages/nav/pass-href-prop.js",
-          "value": 53411.758,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/cli/test/index.test.js",
-          "value": 53328.09,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "store.js",
-      "children": [
-        {
-          "name": "store.js",
-          "group": "examples/with-mobx/store.js",
-          "value": 52856.156,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/dynamic-routing/test/index.test.js",
-          "value": 52698.85,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_app.js",
-      "children": [
-        {
-          "name": "_app.js",
-          "group": "examples/with-sentry/pages/_app.js",
-          "value": 52384.23,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/i18n-support/test/index.test.js",
-          "value": 52226.92,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/amphtml/test/index.test.js",
-          "value": 51912.297,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "examples/with-ant-design/pages/index.js",
-          "value": 51858.52,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_app.js",
-      "children": [
-        {
-          "name": "_app.js",
-          "group": "examples/with-styletron/pages/_app.js",
-          "value": 51754.992,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/prerender/test/index.test.js",
-          "value": 51754.992,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "styletron.js",
-      "children": [
-        {
-          "name": "styletron.js",
-          "group": "examples/with-styletron/styletron.js",
-          "value": 51754.992,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "withI18next.js",
-      "children": [
-        {
-          "name": "withI18next.js",
-          "group": "examples/with-react-i18next/lib/withI18next.js",
-          "value": 51272.203,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next.config.js",
-      "children": [
-        {
-          "name": "next.config.js",
-          "group": "examples/using-preact/next.config.js",
-          "value": 50496.508,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.d.ts",
-      "children": [
-        {
-          "name": "index.d.ts",
-          "group": "packages/next/types/index.d.ts",
-          "value": 49867.273,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/build-warnings/test/index.test.js",
-          "value": 49867.27,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "examples/with-firebase-hosting/src/functions/index.js",
-          "value": 49777.203,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "examples/with-semantic-ui/pages/index.js",
-          "value": 49395.34,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "Dockerfile",
-      "children": [
-        {
-          "name": "Dockerfile",
-          "group": "examples/with-docker/Dockerfile",
-          "value": 49080.72,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_error.js",
-      "children": [
-        {
-          "name": "_error.js",
-          "group": "examples/with-sentry/pages/_error.js",
-          "value": 49080.72,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_document.js",
-      "children": [
-        {
-          "name": "_document.js",
-          "group": "examples/with-emotion/pages/_document.js",
-          "value": 49075.6,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "router.ts",
-      "children": [
-        {
-          "name": "router.ts",
-          "group": "packages/next/shared/lib/router/router.ts",
-          "value": 49043.023,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "config.ts",
-      "children": [
-        {
-          "name": "config.ts",
-          "group": "packages/next/next-server/server/config.ts",
-          "value": 49013.008,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next-esm-plugin.ts",
-      "children": [
-        {
-          "name": "next-esm-plugin.ts",
-          "group": "packages/next/build/webpack/plugins/next-esm-plugin.ts",
-          "value": 48934.8,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "packages/eslint-config-next/index.js",
-          "value": 48923.41,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.js",
-      "children": [
-        {
-          "name": "index.js",
-          "group": "packages/next/export/index.js",
-          "value": 48179.04,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "main.rs",
-      "children": [
-        {
-          "name": "main.rs",
-          "group": "packages/next-swc/crates/next-dev/src/main.rs",
-          "value": 48136.86,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "ssr.js",
-      "children": [
-        {
-          "name": "ssr.js",
-          "group": "test/integration/export/test/ssr.js",
-          "value": 47937.27,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "hot-reloader.js",
-      "children": [
-        {
-          "name": "hot-reloader.js",
-          "group": "packages/next/server/hot-reloader.js",
-          "value": 47914.32,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/file-serving/test/index.test.js",
-          "value": 47822.242,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "long-page-to-snap-scroll.js",
-      "children": [
-        {
-          "name": "long-page-to-snap-scroll.js",
-          "group": "test/integration/client-navigation/pages/nav/long-page-to-snap-scroll.js",
-          "value": 47822.24,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "nextjs-ssr-module-cache.js",
-      "children": [
-        {
-          "name": "nextjs-ssr-module-cache.js",
-          "group": "packages/next/build/webpack/plugins/nextjs-ssr-module-cache.js",
-          "value": 47781.96,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "router.js",
-      "children": [
-        {
-          "name": "router.js",
-          "group": "packages/next-server/lib/router/router.js",
-          "value": 47753.08,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next.config.js",
-      "children": [
-        {
-          "name": "next.config.js",
-          "group": "test/integration/export/next.config.js",
-          "value": 47670.21,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next.config.js",
-      "children": [
-        {
-          "name": "next.config.js",
-          "group": "examples/with-react-native-web/next.config.js",
-          "value": 47664.93,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.js",
-      "children": [
-        {
-          "name": "index.test.js",
-          "group": "test/integration/custom-server/test/index.test.js",
-          "value": 47507.62,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "_document.js",
-      "children": [
-        {
-          "name": "_document.js",
-          "group": "examples/with-next-page-transitions/pages/_document.js",
-          "value": 47507.62,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "examples.ts",
-      "children": [
-        {
-          "name": "examples.ts",
-          "group": "packages/create-next-app/helpers/examples.ts",
-          "value": 47350.31,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "index.test.ts",
-      "children": [
-        {
-          "name": "index.test.ts",
-          "group": "test/e2e/switchable-runtime/index.test.ts",
-          "value": 47350.31,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "Cargo.toml",
-      "children": [
-        {
-          "name": "Cargo.toml",
-          "group": "packages/next-swc/crates/napi/Cargo.toml",
-          "value": 47193.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "next-dev",
-      "children": [
-        {
-          "name": "next-dev",
-          "group": "bin/next-dev",
-          "value": 47154.0,
+          "name": "test.ts",
+          "group": "pages/api/test.ts",
+          "value": 36.0,
           "colname": "level3"
         }
       ],

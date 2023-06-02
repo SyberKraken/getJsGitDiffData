@@ -1368,7 +1368,24 @@ fn main() {
 
             let mut result = HashMap::new();
             for (sha, parsed_diffs) in sha_to_parsed_diffs {
-                result.insert(sha, parsed_diffs);
+                //This should filter out all files matching filtered_filetypes //TODO-do remove other places where i use filter,
+                let mut filtered_diffs = vec![];
+                for item in parsed_diffs{
+                    let mut is_valid_item = true;
+                    for filter in &filtered_file_types{
+                        println!("{}-{}-{}", filter.as_str(), item.0, filter.is_match(&item.0));
+                        if filter.is_match(&item.0){
+                            is_valid_item = false;
+                            break;
+                        }
+                    }
+                    if is_valid_item{
+                        filtered_diffs.push(item)
+                    }
+
+                }
+                result.insert(sha, filtered_diffs);
+
             }
 
             let json = serde_json::to_string_pretty(&result).unwrap();
@@ -1393,6 +1410,7 @@ fn main() {
             let file_string = std::fs::read_to_string(json_path).unwrap();
 
             let file_data: HashMap<String, Vec<(String, Vec<String>, i32, String)>> = serde_json::from_str(&file_string).unwrap();
+
 
             let file_list = file_data_map_to_file_list(&file_data, 100, &recognized_bugfix_indicators, &filtered_file_types);
             //file_list.files.get(name) gives object from full filepath

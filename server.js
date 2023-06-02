@@ -85,7 +85,7 @@ app.get('/full_backend_generation', (req, res) => {
     //When fixing this remember it needs to be comma separated according to json from frontend
   }
   let bugjson = JSON.stringify(bugfix_regex_list)
-  fs.writeFileSync("regex_filtered_file_types.json", bugjson);
+  fs.writeFileSync("regex_recognized_bugfixes.json", bugjson);
 
   let filetype_regex_list = []
   if(req.query.filetype_regex){
@@ -95,7 +95,7 @@ app.get('/full_backend_generation', (req, res) => {
     //When fixing this remember it needs to be comma separated according to json from frontend
   }
   let filejson = JSON.stringify(filetype_regex_list)
-  fs.writeFileSync("regex_recognized_bugfixes.json", filejson);
+  fs.writeFileSync("regex_filtered_file_types.json", filejson);
 
   let path = req.query.path
   if(req.query.is_remote === "true"){
