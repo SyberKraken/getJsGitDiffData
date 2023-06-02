@@ -99,7 +99,7 @@ app.get('/full_backend_generation', (req, res) => {
 
   let path = req.query.path
   if(req.query.is_remote === "true"){
-    path = clone_adress(req.query.path)
+    path = clone_adress(path)
     console.log("done cloning")
   }
 

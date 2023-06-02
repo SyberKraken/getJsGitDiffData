@@ -2,11 +2,24 @@
   "name": "Container",
   "children": [
     {
-      "name": "generateDiffFiles.py",
+      "name": "index.tsx",
       "children": [
         {
-          "name": "generateDiffFiles.py",
-          "group": "gitscripts/generateDiffFiles.py",
+          "name": "index.tsx",
+          "group": "pages/index.tsx",
+          "value": 95.46,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "File_treemap.tsx",
+      "children": [
+        {
+          "name": "File_treemap.tsx",
+          "group": "components/File_treemap.tsx",
           "value": 93.61,
           "colname": "level3"
         }
@@ -15,11 +28,11 @@
       "colname": "level2"
     },
     {
-      "name": "README.md",
+      "name": "generateDiffFiles.py",
       "children": [
         {
-          "name": "README.md",
-          "group": "README.md",
+          "name": "generateDiffFiles.py",
+          "group": "gitscripts/generateDiffFiles.py",
           "value": 93.61,
           "colname": "level3"
         }
@@ -41,115 +54,11 @@
       "colname": "level2"
     },
     {
-      "name": "result.json",
-      "children": [
-        {
-          "name": "result.json",
-          "group": "gitscripts/result.json",
-          "value": 93.61,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "remote_branch_fetch.ts",
-      "children": [
-        {
-          "name": "remote_branch_fetch.ts",
-          "group": "pages/api/remote_branch_fetch.ts",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "{",
-      "children": [
-        {
-          "name": "{",
-          "group": "{",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "data.ts",
-      "children": [
-        {
-          "name": "data.ts",
-          "group": "pages/api/data.ts",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "globals.css",
-      "children": [
-        {
-          "name": "globals.css",
-          "group": "styles/globals.css",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
       "name": "example.png",
       "children": [
         {
           "name": "example.png",
           "group": "imgs/example.png",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "Home.module.css",
-      "children": [
-        {
-          "name": "Home.module.css",
-          "group": "styles/Home.module.css",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "package.json",
-      "children": [
-        {
-          "name": "package.json",
-          "group": "package.json",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "gitlogtext.ts",
-      "children": [
-        {
-          "name": "gitlogtext.ts",
-          "group": "jsscripts/gitlogtext.ts",
           "value": 74.0,
           "colname": "level3"
         }
@@ -171,32 +80,6 @@
       "colname": "level2"
     },
     {
-      "name": "package-lock.json",
-      "children": [
-        {
-          "name": "package-lock.json",
-          "group": "package-lock.json",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "data.json",
-      "children": [
-        {
-          "name": "data.json",
-          "group": "public/data.json",
-          "value": 74.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
       "name": "log.csv",
       "children": [
         {
@@ -210,11 +93,115 @@
       "colname": "level2"
     },
     {
+      "name": "globals.css",
+      "children": [
+        {
+          "name": "globals.css",
+          "group": "styles/globals.css",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Home.module.css",
+      "children": [
+        {
+          "name": "Home.module.css",
+          "group": "styles/Home.module.css",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "Menu.tsx",
+      "children": [
+        {
+          "name": "Menu.tsx",
+          "group": "components/Menu.tsx",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "remote_branch_fetch.ts",
+      "children": [
+        {
+          "name": "remote_branch_fetch.ts",
+          "group": "pages/api/remote_branch_fetch.ts",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "gitlogtext.ts",
+      "children": [
+        {
+          "name": "gitlogtext.ts",
+          "group": "jsscripts/gitlogtext.ts",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "data.ts",
+      "children": [
+        {
+          "name": "data.ts",
+          "group": "pages/api/data.ts",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "{",
+      "children": [
+        {
+          "name": "{",
+          "group": "{",
+          "value": 74.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
       "name": "data.js",
       "children": [
         {
           "name": "data.js",
           "group": "static/data.js",
+          "value": 72.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "X.tsx",
+      "children": [
+        {
+          "name": "X.tsx",
+          "group": "components/X.tsx",
           "value": 72.0,
           "colname": "level3"
         }
@@ -255,45 +242,6 @@
           "name": "gitdifffile.bat",
           "group": "gitscripts/gitdifffile.bat",
           "value": 62.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "result.json",
-      "children": [
-        {
-          "name": "result.json",
-          "group": "pages/api/result.json",
-          "value": 60.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "package.json",
-      "children": [
-        {
-          "name": "package.json",
-          "group": "gitscripts/package.json",
-          "value": 50.0,
-          "colname": "level3"
-        }
-      ],
-      "value": 0.0,
-      "colname": "level2"
-    },
-    {
-      "name": "package-lock.json",
-      "children": [
-        {
-          "name": "package-lock.json",
-          "group": "gitscripts/package-lock.json",
-          "value": 50.0,
           "colname": "level3"
         }
       ],

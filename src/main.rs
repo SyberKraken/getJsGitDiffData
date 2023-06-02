@@ -1368,7 +1368,7 @@ fn main() {
 
             let mut result = HashMap::new();
             for (sha, parsed_diffs) in sha_to_parsed_diffs {
-                //This should filter out all files matching filtered_filetypes //TODO-do remove other places where i use filter,
+                //This  filters out all files matching filtered_filetypes //TODO-do remove other places where i use filter or remove this place.
                 let mut filtered_diffs = vec![];
                 for item in parsed_diffs{
                     let mut is_valid_item = true;

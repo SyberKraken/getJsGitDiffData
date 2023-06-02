@@ -1,16 +1,13 @@
 {
-  "f5895b63ce8936434ddf1e8e80818500bdb8264e": [
-    [
-      "styles/globals.css",
-      [],
-      21,
-      "reworked menu header"
-    ]
-  ],
+  "b83d4e6b4a45efd783597231e6a5fc4fe41d9747": [],
   "9d8c3d2a8fa7c490e5ab92bc50571b86eafb0678": [
     [
-      "README.md",
-      [],
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
       16,
       "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
     ],
@@ -39,116 +36,207 @@
       [],
       16,
       "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home"
+      ],
+      16,
+      "now only shows amount of updates to function since gihub does not support notes, fully javascript now"
     ]
   ],
-  "90532b1810c4178ec99d5bec457344c7a4327a58": [
+  "45f1acdd8266c46675bcfca1fd6c5033ca0f15b1": [
     [
-      "package-lock.json",
-      [],
-      36,
-      "custom data container added"
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      23,
+      "optimized string pruning"
     ],
     [
-      "package.json",
+      "gitscripts/generateDiffFiles.py",
       [],
-      36,
-      "custom data container added"
+      23,
+      "optimized string pruning"
     ],
     [
-      "static/data.js",
+      "gitscripts/next.config.js",
       [],
-      36,
-      "custom data container added"
+      23,
+      "optimized string pruning"
+    ]
+  ],
+  "bb60aa6f1453914ebf66a29754b3df4aed80f982": [
+    [
+      "components/Menu.tsx",
+      [],
+      12,
+      "styling change"
     ],
     [
-      "styles/Home.module.css",
-      [],
-      36,
-      "custom data container added"
+      "pages/index.tsx",
+      [
+        "Home"
+      ],
+      12,
+      "styling change"
     ],
     [
       "styles/globals.css",
       [],
-      36,
-      "custom data container added"
+      12,
+      "styling change"
     ]
   ],
-  "c1466b2edf4ac954469713d3c977b6cd7c8a6d80": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ],
-    [
-      "gitscripts/gitdifffile.bat",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ],
-    [
-      "gitscripts/gitlogfile.bat",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ],
-    [
-      "gitscripts/package-lock.json",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ],
-    [
-      "gitscripts/package.json",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ],
-    [
-      "gitscripts/resetfiles.bat",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      25,
-      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
-    ]
-  ],
-  "40fc944f6f5d46219e4bc27d07a057da3838cb82": [
-    [
-      "README.md",
-      [],
-      15,
-      "fully working input on page for loading data from remote repositories"
-    ],
+  "1a343b082c77bf09084b55fed7ada818e062d19c": [
     [
       "jsscripts/gitlogtext.ts",
       [
         "getGitLog"
       ],
-      15,
-      "fully working input on page for loading data from remote repositories"
+      17,
+      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
+    ]
+  ],
+  "884d6d111701d7e7587319c3ad6f8dd9ea5e0327": [
+    [
+      "pages/index.tsx",
+      [
+        "logTest"
+      ],
+      33,
+      "test3"
+    ]
+  ],
+  "ea811e5ac21b3aadc2a8f2dc5a10e07b601f9ba2": [
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home",
+        "Home"
+      ],
+      14,
+      "updated readme and added hint in input bar"
+    ]
+  ],
+  "3ba623a3a4c003fcd20c6d7c527d372761273a92": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "X"
+      ],
+      35,
+      "testcommit1"
     ],
     [
-      "pages/api/remote_branch_fetch.ts",
+      "components/X.tsx",
+      [
+        "X"
+      ],
+      35,
+      "testcommit1"
+    ],
+    [
+      "pages/api/data.ts",
       [],
-      15,
-      "fully working input on page for loading data from remote repositories"
+      35,
+      "testcommit1"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "Home"
+      ],
+      35,
+      "testcommit1"
+    ],
+    [
+      "static/data.js",
+      [],
+      35,
+      "testcommit1"
     ],
     [
       "styles/globals.css",
       [],
-      15,
-      "fully working input on page for loading data from remote repositories"
+      35,
+      "testcommit1"
+    ]
+  ],
+  "ca104b2ad2d84a92f6c5c10ba762c6e2ed0917a0": [
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync"
+      ],
+      22,
+      "bugfixcommitexamplefortesting"
+    ]
+  ],
+  "f5895b63ce8936434ddf1e8e80818500bdb8264e": [
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      21,
+      "reworked menu header"
     ],
     [
-      "{",
+      "styles/globals.css",
       [],
-      15,
-      "fully working input on page for loading data from remote repositories"
+      21,
+      "reworked menu header"
+    ]
+  ],
+  "45196e216366dd279feb1afd905a28083815a69d": [],
+  "2792a12205260c105bb200e30404b66ee971b762": [
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      30,
+      "frontend not uses data from json file in gitscripts"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      30,
+      "frontend not uses data from json file in gitscripts"
+    ]
+  ],
+  "76e58bf3cd10f2e99833656f35794f6ec0c3b33b": [],
+  "cc1adad5413f7380a604f20948128cc5ce68326b": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      28,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      28,
+      "fully working detection all  the way toscreen"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      28,
+      "fully working detection all  the way toscreen"
     ]
   ],
   "e99015c98a79afb499730f77f4895b7f018e97c6": [
@@ -161,7 +249,89 @@
       "forgot to save 1 file last commit"
     ]
   ],
-  "ca104b2ad2d84a92f6c5c10ba762c6e2ed0917a0": [],
+  "75831242a562ac42dce97980c0f1e06251b626c2": [
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      27,
+      "pushing to remote"
+    ]
+  ],
+  "0e4e8e2a247ef6d4e053ccf1e203f5c8ae045779": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "X",
+        "File_treemap"
+      ],
+      34,
+      "test2"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest"
+      ],
+      34,
+      "test2"
+    ]
+  ],
+  "95c8e390c962802df08b3192386e203543655622": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      3,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "getGitLog"
+      ],
+      3,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      3,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      3,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      3,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      3,
+      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+    ]
+  ],
   "63603d564c2cf50e1772eec560134bb18ca044dd": [
     [
       "gitscripts/generateDiffFiles.py",
@@ -182,25 +352,7 @@
       "cleanup for unused files"
     ],
     [
-      "gitscripts/package-lock.json",
-      [],
-      19,
-      "cleanup for unused files"
-    ],
-    [
-      "gitscripts/package.json",
-      [],
-      19,
-      "cleanup for unused files"
-    ],
-    [
       "gitscripts/resetfiles.bat",
-      [],
-      19,
-      "cleanup for unused files"
-    ],
-    [
-      "gitscripts/result.json",
       [],
       19,
       "cleanup for unused files"
@@ -212,41 +364,276 @@
       "cleanup for unused files"
     ]
   ],
-  "757c050da187e6163a38441aa3599f9f8470ec85": [
+  "c1466b2edf4ac954469713d3c977b6cd7c8a6d80": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      25,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      25,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/gitdifffile.bat",
+      [],
+      25,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      25,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      25,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      25,
+      "now removes generated files and added functionality to give path to any other directory with a git repo to generate values"
+    ]
+  ],
+  "0443608c68a72346597223bc1dede74e167de5c9": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "components/Menu.tsx",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "imgs/example.png",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
     [
       "jsscripts/gitlogtext.ts",
       [
+        "isBug",
+        "processDiff"
+      ],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "log.csv",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "pages/api/data.ts",
+      [
+        "load_data"
+      ],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "styles/Home.module.css",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ],
+    [
+      "{",
+      [],
+      37,
+      "Initial commit from Create Next App"
+    ]
+  ],
+  "d977974ec98cc89d2e325c71c7f4ef5f302b89e0": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      5,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
+        "getGitLog",
+        "getGitLog",
+        "isBug"
+      ],
+      5,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      5,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      5,
+      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
+    ]
+  ],
+  "f9881d2b658cf28527314e22eb31729741b8f78f": [
+    [
+      "styles/globals.css",
+      [],
+      11,
+      "added image"
+    ]
+  ],
+  "a08e7aadceaf7f673c2bc2d690e4da5563e8c00d": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      20,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      20,
+      "now shows precentage of commits that are bugs of given functions"
+    ],
+    [
+      "gitscripts/gitlogfile.bat",
+      [],
+      20,
+      "now shows precentage of commits that are bugs of given functions"
+    ]
+  ],
+  "a09a0697e57dd2a68e027ce14b201da5a9ea1612": [
+    [
+      "imgs/example.png",
+      [],
+      10,
+      "actualy added images"
+    ]
+  ],
+  "84a07502f9ffd55f71990ddd04fb54f80f09f1d6": [
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      32,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/gitdifffor2commits.bat",
+      [],
+      32,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/gitstuff.bat",
+      [],
+      32,
+      "first version of counting touched function frequency is added"
+    ],
+    [
+      "gitscripts/resetfiles.bat",
+      [],
+      32,
+      "first version of counting touched function frequency is added"
+    ]
+  ],
+  "ba4c2670a51051c8e84ec54fee74f1b0d31eee1f": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      13,
+      "fixed git exec command in gitlogtext"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog",
         "getGitLog"
       ],
-      18,
-      "working initial count of functions form weblink and js"
+      13,
+      "fixed git exec command in gitlogtext"
     ],
     [
-      "package-lock.json",
-      [],
-      18,
-      "working initial count of functions form weblink and js"
-    ],
-    [
-      "package.json",
-      [],
-      18,
-      "working initial count of functions form weblink and js"
-    ],
-    [
-      "pages/api/test.ts",
-      [],
-      18,
-      "working initial count of functions form weblink and js"
+      "pages/index.tsx",
+      [
+        "Home"
+      ],
+      13,
+      "fixed git exec command in gitlogtext"
     ]
   ],
   "b3950b47726910642377917c09be0e050ddddf9b": [
-    [
-      "README.md",
-      [],
-      24,
-      "updated readme and comments"
-    ],
     [
       "gitscripts/generateDiffFiles.py",
       [],
@@ -270,40 +657,41 @@
       [],
       24,
       "updated readme and comments"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      24,
-      "updated readme and comments"
     ]
   ],
-  "3ba623a3a4c003fcd20c6d7c527d372761273a92": [
+  "760a943ab34a70dd2b8bbe286532b785733fcc08": [
     [
-      "pages/api/data.ts",
-      [],
-      35,
-      "testcommit1"
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      2,
+      "added full state variables for factors, consider calculating all the factor version and displaying results"
     ],
     [
-      "public/data.json",
+      "jsscripts/gitlogtext.ts",
       [],
-      35,
-      "testcommit1"
+      2,
+      "added full state variables for factors, consider calculating all the factor version and displaying results"
     ],
     [
-      "static/data.js",
+      "pages/api/remote_branch_fetch.ts",
       [],
-      35,
-      "testcommit1"
+      2,
+      "added full state variables for factors, consider calculating all the factor version and displaying results"
     ],
     [
-      "styles/globals.css",
-      [],
-      35,
-      "testcommit1"
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      2,
+      "added full state variables for factors, consider calculating all the factor version and displaying results"
     ]
   ],
+  "20c733da2b8a0a5e62d0c10eed21b7dc17c25ee0": [],
   "44f07236cde453992f27a0cb02872db0bb5267bb": [
     [
       "gitscripts/generateDiffFiles.py",
@@ -336,79 +724,201 @@
       "api/data now reads values form generated result file"
     ],
     [
-      "gitscripts/result.json",
-      [],
-      31,
-      "api/data now reads values form generated result file"
-    ],
-    [
       "pages/api/data.ts",
       [],
       31,
       "api/data now reads values form generated result file"
     ]
   ],
-  "f9881d2b658cf28527314e22eb31729741b8f78f": [
+  "c8d37542cd53de0ac7af725ffc454e793926c895": [
+    [
+      "gitscripts/generateDiffFiles.py",
+      [],
+      29,
+      "testing for arrow fiuncton detection"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "logTest",
+        "arrowtest",
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      29,
+      "testing for arrow fiuncton detection"
+    ]
+  ],
+  "2c2e9562f4f746c90debfa22427fa6738f14429d": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      1,
+      "removed example clone of treemap for multichart"
+    ]
+  ],
+  "40fc944f6f5d46219e4bc27d07a057da3838cb82": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      15,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog"
+      ],
+      15,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "pages/api/remote_branch_fetch.ts",
+      [],
+      15,
+      "fully working input on page for loading data from remote repositories"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "asyncarrowtestasync",
+        "Home"
+      ],
+      15,
+      "fully working input on page for loading data from remote repositories"
+    ],
     [
       "styles/globals.css",
       [],
-      11,
-      "added image"
-    ]
-  ],
-  "b83d4e6b4a45efd783597231e6a5fc4fe41d9747": [
+      15,
+      "fully working input on page for loading data from remote repositories"
+    ],
     [
-      "README.md",
+      "{",
       [],
-      9,
-      "added image to readme"
+      15,
+      "fully working input on page for loading data from remote repositories"
     ]
   ],
-  "95c8e390c962802df08b3192386e203543655622": [
+  "90532b1810c4178ec99d5bec457344c7a4327a58": [
+    [
+      "components/Menu.tsx",
+      [
+        "Menu"
+      ],
+      36,
+      "custom data container added"
+    ],
+    [
+      "components/X.tsx",
+      [
+        "X"
+      ],
+      36,
+      "custom data container added"
+    ],
+    [
+      "pages/index.tsx",
+      [
+        "Home",
+        "Home"
+      ],
+      36,
+      "custom data container added"
+    ],
+    [
+      "static/data.js",
+      [],
+      36,
+      "custom data container added"
+    ],
+    [
+      "styles/Home.module.css",
+      [],
+      36,
+      "custom data container added"
+    ],
+    [
+      "styles/globals.css",
+      [],
+      36,
+      "custom data container added"
+    ]
+  ],
+  "63efe55c0a6cf626992cc7e4cf1ad4c64e5ce7fa": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap",
+        "File_treemap"
+      ],
+      7,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
+    ],
     [
       "jsscripts/gitlogtext.ts",
       [
         "getGitLog",
         "getGitLog",
         "getGitLog",
-        "getGitLog",
-        "getGitLog",
-        "getGitLog"
+        "processDiff"
       ],
-      3,
-      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
-    ],
-    [
-      "pages/api/data.ts",
-      [
-        "load_data"
-      ],
-      3,
-      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+      7,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
     ],
     [
       "pages/api/remote_branch_fetch.ts",
       [],
-      3,
-      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
-    ],
-    [
-      "styles/globals.css",
-      [],
-      3,
-      "started adding of factors, maybe want to be able to dynamicly tick boxes to show differing results, maybe perform all of the different variations in factors and then have all data avilable and simply show teh requested one with the checkboxes"
+      7,
+      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
     ]
   ],
-  "2c2e9562f4f746c90debfa22427fa6738f14429d": [],
-  "76e58bf3cd10f2e99833656f35794f6ec0c3b33b": [
+  "757c050da187e6163a38441aa3599f9f8470ec85": [
     [
-      "README.md",
+      "components/File_treemap.tsx",
+      [
+        "File_treemap",
+        "File_treemap"
+      ],
+      18,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "jsscripts/gitlogtext.ts",
+      [
+        "getGitLog"
+      ],
+      18,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "pages/api/test.ts",
       [],
-      26,
-      "readme update"
+      18,
+      "working initial count of functions form weblink and js"
+    ],
+    [
+      "pages/index.tsx",
+      [],
+      18,
+      "working initial count of functions form weblink and js"
     ]
   ],
   "502aec9f2908b0993d1991c4198b9cb12c353bf6": [
+    [
+      "components/File_treemap.tsx",
+      [
+        "File_treemap"
+      ],
+      6,
+      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
+    ],
     [
       "jsscripts/gitlogtext.ts",
       [
@@ -422,390 +932,6 @@
       ],
       6,
       "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
-    ],
-    [
-      "package-lock.json",
-      [],
-      6,
-      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
-    ],
-    [
-      "package.json",
-      [],
-      6,
-      "everything now functions on larger libraries, reconsidering movement of filtering, maybe should run a local C or  rust program to improve speed"
-    ]
-  ],
-  "20c733da2b8a0a5e62d0c10eed21b7dc17c25ee0": [
-    [
-      "README.md",
-      [],
-      0,
-      "Merge branch 'main' of github.com:SyberKraken/Git-Commit-Functions-Change-Frequency-Data-Vizualisation"
-    ]
-  ],
-  "63efe55c0a6cf626992cc7e4cf1ad4c64e5ce7fa": [
-    [
-      "jsscripts/gitlogtext.ts",
-      [
-        "getGitLog",
-        "getGitLog",
-        "getGitLog",
-        "processDiff"
-      ],
-      7,
-      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
-    ],
-    [
-      "pages/api/remote_branch_fetch.ts",
-      [],
-      7,
-      "api now returns commits and the functions changed in them, broken treemap for now since it thinks that it is using the old dataformat of titles and numbers"
-    ]
-  ],
-  "cc1adad5413f7380a604f20948128cc5ce68326b": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      28,
-      "fully working detection all  the way toscreen"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      28,
-      "fully working detection all  the way toscreen"
-    ],
-    [
-      "pages/api/result.json",
-      [],
-      28,
-      "fully working detection all  the way toscreen"
-    ]
-  ],
-  "45f1acdd8266c46675bcfca1fd6c5033ca0f15b1": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      23,
-      "optimized string pruning"
-    ],
-    [
-      "gitscripts/next.config.js",
-      [],
-      23,
-      "optimized string pruning"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      23,
-      "optimized string pruning"
-    ]
-  ],
-  "45196e216366dd279feb1afd905a28083815a69d": [
-    [
-      "README.md",
-      [],
-      8,
-      "Added video to readme"
-    ]
-  ],
-  "c8d37542cd53de0ac7af725ffc454e793926c895": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      29,
-      "testing for arrow fiuncton detection"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      29,
-      "testing for arrow fiuncton detection"
-    ]
-  ],
-  "2792a12205260c105bb200e30404b66ee971b762": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      30,
-      "frontend not uses data from json file in gitscripts"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      30,
-      "frontend not uses data from json file in gitscripts"
-    ],
-    [
-      "pages/api/data.ts",
-      [
-        "load_data"
-      ],
-      30,
-      "frontend not uses data from json file in gitscripts"
-    ],
-    [
-      "pages/api/result.json",
-      [],
-      30,
-      "frontend not uses data from json file in gitscripts"
-    ]
-  ],
-  "1a343b082c77bf09084b55fed7ada818e062d19c": [
-    [
-      "gitscripts/result.json",
-      [],
-      17,
-      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
-    ],
-    [
-      "jsscripts/gitlogtext.ts",
-      [
-        "getGitLog"
-      ],
-      17,
-      "github does not support notes, i can either use gitlab or do some workarount with exat nameing or lists of commits either way need to reword"
-    ]
-  ],
-  "75831242a562ac42dce97980c0f1e06251b626c2": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      27,
-      "pushing to remote"
-    ]
-  ],
-  "ba4c2670a51051c8e84ec54fee74f1b0d31eee1f": [
-    [
-      "jsscripts/gitlogtext.ts",
-      [
-        "getGitLog",
-        "getGitLog"
-      ],
-      13,
-      "fixed git exec command in gitlogtext"
-    ]
-  ],
-  "a08e7aadceaf7f673c2bc2d690e4da5563e8c00d": [
-    [
-      "README.md",
-      [],
-      20,
-      "now shows precentage of commits that are bugs of given functions"
-    ],
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      20,
-      "now shows precentage of commits that are bugs of given functions"
-    ],
-    [
-      "gitscripts/gitlogfile.bat",
-      [],
-      20,
-      "now shows precentage of commits that are bugs of given functions"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      20,
-      "now shows precentage of commits that are bugs of given functions"
-    ]
-  ],
-  "760a943ab34a70dd2b8bbe286532b785733fcc08": [
-    [
-      "jsscripts/gitlogtext.ts",
-      [],
-      2,
-      "added full state variables for factors, consider calculating all the factor version and displaying results"
-    ],
-    [
-      "pages/api/remote_branch_fetch.ts",
-      [],
-      2,
-      "added full state variables for factors, consider calculating all the factor version and displaying results"
-    ]
-  ],
-  "a09a0697e57dd2a68e027ce14b201da5a9ea1612": [
-    [
-      "imgs/example.png",
-      [],
-      10,
-      "actualy added images"
-    ]
-  ],
-  "bb60aa6f1453914ebf66a29754b3df4aed80f982": [
-    [
-      "styles/globals.css",
-      [],
-      12,
-      "styling change"
-    ]
-  ],
-  "d977974ec98cc89d2e325c71c7f4ef5f302b89e0": [
-    [
-      "jsscripts/gitlogtext.ts",
-      [
-        "getGitLog",
-        "getGitLog",
-        "getGitLog",
-        "isBug"
-      ],
-      5,
-      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
-    ],
-    [
-      "pages/api/remote_branch_fetch.ts",
-      [],
-      5,
-      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
-    ],
-    [
-      "styles/globals.css",
-      [],
-      5,
-      "fully working treemap with big repos, big repos have too small function items, TODO: split functions into files and make more treemaps ocntaining the fuinctions per file"
-    ]
-  ],
-  "884d6d111701d7e7587319c3ad6f8dd9ea5e0327": [],
-  "ea811e5ac21b3aadc2a8f2dc5a10e07b601f9ba2": [
-    [
-      "README.md",
-      [],
-      14,
-      "updated readme and added hint in input bar"
-    ]
-  ],
-  "84a07502f9ffd55f71990ddd04fb54f80f09f1d6": [
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      32,
-      "first version of counting touched function frequency is added"
-    ],
-    [
-      "gitscripts/gitdifffor2commits.bat",
-      [],
-      32,
-      "first version of counting touched function frequency is added"
-    ],
-    [
-      "gitscripts/gitstuff.bat",
-      [],
-      32,
-      "first version of counting touched function frequency is added"
-    ],
-    [
-      "gitscripts/resetfiles.bat",
-      [],
-      32,
-      "first version of counting touched function frequency is added"
-    ]
-  ],
-  "0e4e8e2a247ef6d4e053ccf1e203f5c8ae045779": [],
-  "0443608c68a72346597223bc1dede74e167de5c9": [
-    [
-      "README.md",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "gitscripts/generateDiffFiles.py",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "gitscripts/gitlogfile.bat",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "gitscripts/resetfiles.bat",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "gitscripts/result.json",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "imgs/example.png",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "jsscripts/gitlogtext.ts",
-      [
-        "isBug",
-        "processDiff"
-      ],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "log.csv",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "package-lock.json",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "package.json",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "pages/api/data.ts",
-      [
-        "load_data"
-      ],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "pages/api/remote_branch_fetch.ts",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "public/data.json",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "styles/Home.module.css",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "styles/globals.css",
-      [],
-      37,
-      "Initial commit from Create Next App"
-    ],
-    [
-      "{",
-      [],
-      37,
-      "Initial commit from Create Next App"
     ]
   ]
 }

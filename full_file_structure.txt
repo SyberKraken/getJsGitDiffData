@@ -1,9 +1,9 @@
- - 1766.44
-----gitscripts - 690.83
-----pages - 244.00
---------api - 244.00
+ - 1532.29
+----gitscripts - 497.22
+----pages - 279.46
+--------api - 184.00
+----components - 239.61
 ----styles - 148.00
-----imgs - 74.00
-----public - 74.00
 ----jsscripts - 74.00
+----imgs - 74.00
 ----static - 72.00
