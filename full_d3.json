@@ -2,12 +2,12 @@
   "name": "Container",
   "children": [
     {
-      "name": "index.tsx",
+      "name": "patch.js",
       "children": [
         {
-          "name": "index.tsx",
-          "group": "pages/index.tsx",
-          "value": 95.46,
+          "name": "patch.js",
+          "group": "src/core/vdom/patch.js",
+          "value": 38355.68,
           "colname": "level3"
         }
       ],
@@ -15,12 +15,12 @@
       "colname": "level2"
     },
     {
-      "name": "File_treemap.tsx",
+      "name": "index.js",
       "children": [
         {
-          "name": "File_treemap.tsx",
-          "group": "components/File_treemap.tsx",
-          "value": 93.61,
+          "name": "index.js",
+          "group": "src/compiler/codegen/index.js",
+          "value": 33721.047,
           "colname": "level3"
         }
       ],
@@ -28,12 +28,12 @@
       "colname": "level2"
     },
     {
-      "name": "generateDiffFiles.py",
+      "name": "index.js",
       "children": [
         {
-          "name": "generateDiffFiles.py",
-          "group": "gitscripts/generateDiffFiles.py",
-          "value": 93.61,
+          "name": "index.js",
+          "group": "src/compiler/parser/index.js",
+          "value": 32685.12,
           "colname": "level3"
         }
       ],
@@ -41,12 +41,12 @@
       "colname": "level2"
     },
     {
-      "name": "gitlogfile.bat",
+      "name": "codegen.spec.js",
       "children": [
         {
-          "name": "gitlogfile.bat",
-          "group": "gitscripts/gitlogfile.bat",
-          "value": 93.61,
+          "name": "codegen.spec.js",
+          "group": "test/unit/modules/compiler/codegen.spec.js",
+          "value": 30818.877,
           "colname": "level3"
         }
       ],
@@ -54,12 +54,12 @@
       "colname": "level2"
     },
     {
-      "name": "example.png",
+      "name": "ssr-string.spec.js",
       "children": [
         {
-          "name": "example.png",
-          "group": "imgs/example.png",
-          "value": 74.0,
+          "name": "ssr-string.spec.js",
+          "group": "test/ssr/ssr-string.spec.js",
+          "value": 28151.996,
           "colname": "level3"
         }
       ],
@@ -67,12 +67,12 @@
       "colname": "level2"
     },
     {
-      "name": "resetfiles.bat",
+      "name": "parser.spec.js",
       "children": [
         {
-          "name": "resetfiles.bat",
-          "group": "gitscripts/resetfiles.bat",
-          "value": 74.0,
+          "name": "parser.spec.js",
+          "group": "test/unit/modules/compiler/parser.spec.js",
+          "value": 26841.238,
           "colname": "level3"
         }
       ],
@@ -80,12 +80,12 @@
       "colname": "level2"
     },
     {
-      "name": "log.csv",
+      "name": "create-component.js",
       "children": [
         {
-          "name": "log.csv",
-          "group": "log.csv",
-          "value": 74.0,
+          "name": "create-component.js",
+          "group": "src/core/vdom/create-component.js",
+          "value": 26699.2,
           "colname": "level3"
         }
       ],
@@ -93,12 +93,12 @@
       "colname": "level2"
     },
     {
-      "name": "globals.css",
+      "name": "util.js",
       "children": [
         {
-          "name": "globals.css",
-          "group": "styles/globals.css",
-          "value": 74.0,
+          "name": "util.js",
+          "group": "src/shared/util.js",
+          "value": 26173.78,
           "colname": "level3"
         }
       ],
@@ -106,12 +106,12 @@
       "colname": "level2"
     },
     {
-      "name": "Home.module.css",
+      "name": "render.js",
       "children": [
         {
-          "name": "Home.module.css",
-          "group": "styles/Home.module.css",
-          "value": 74.0,
+          "name": "render.js",
+          "group": "src/core/instance/render.js",
+          "value": 24452.562,
           "colname": "level3"
         }
       ],
@@ -119,12 +119,12 @@
       "colname": "level2"
     },
     {
-      "name": "Menu.tsx",
+      "name": "lifecycle.js",
       "children": [
         {
-          "name": "Menu.tsx",
-          "group": "components/Menu.tsx",
-          "value": 74.0,
+          "name": "lifecycle.js",
+          "group": "src/core/instance/lifecycle.js",
+          "value": 24192.08,
           "colname": "level3"
         }
       ],
@@ -132,12 +132,12 @@
       "colname": "level2"
     },
     {
-      "name": "remote_branch_fetch.ts",
+      "name": "vue.d.ts",
       "children": [
         {
-          "name": "remote_branch_fetch.ts",
-          "group": "pages/api/remote_branch_fetch.ts",
-          "value": 74.0,
+          "name": "vue.d.ts",
+          "group": "types/vue.d.ts",
+          "value": 23368.139,
           "colname": "level3"
         }
       ],
@@ -145,12 +145,12 @@
       "colname": "level2"
     },
     {
-      "name": "gitlogtext.ts",
+      "name": "options.d.ts",
       "children": [
         {
-          "name": "gitlogtext.ts",
-          "group": "jsscripts/gitlogtext.ts",
-          "value": 74.0,
+          "name": "options.d.ts",
+          "group": "types/options.d.ts",
+          "value": 22658.938,
           "colname": "level3"
         }
       ],
@@ -158,12 +158,12 @@
       "colname": "level2"
     },
     {
-      "name": "data.ts",
+      "name": "env.js",
       "children": [
         {
-          "name": "data.ts",
-          "group": "pages/api/data.ts",
-          "value": 74.0,
+          "name": "env.js",
+          "group": "src/core/util/env.js",
+          "value": 22629.2,
           "colname": "level3"
         }
       ],
@@ -171,12 +171,12 @@
       "colname": "level2"
     },
     {
-      "name": "{",
+      "name": "html-parser.js",
       "children": [
         {
-          "name": "{",
-          "group": "{",
-          "value": 74.0,
+          "name": "html-parser.js",
+          "group": "src/compiler/parser/html-parser.js",
+          "value": 22139.281,
           "colname": "level3"
         }
       ],
@@ -184,12 +184,12 @@
       "colname": "level2"
     },
     {
-      "name": "data.js",
+      "name": "options.js",
       "children": [
         {
-          "name": "data.js",
-          "group": "static/data.js",
-          "value": 72.0,
+          "name": "options.js",
+          "group": "src/core/util/options.js",
+          "value": 21750.082,
           "colname": "level3"
         }
       ],
@@ -197,12 +197,12 @@
       "colname": "level2"
     },
     {
-      "name": "X.tsx",
+      "name": "options-test.ts",
       "children": [
         {
-          "name": "X.tsx",
-          "group": "components/X.tsx",
-          "value": 72.0,
+          "name": "options-test.ts",
+          "group": "types/test/options-test.ts",
+          "value": 21701.52,
           "colname": "level3"
         }
       ],
@@ -210,12 +210,12 @@
       "colname": "level2"
     },
     {
-      "name": "gitdifffor2commits.bat",
+      "name": "component-slot.spec.js",
       "children": [
         {
-          "name": "gitdifffor2commits.bat",
-          "group": "gitscripts/gitdifffor2commits.bat",
-          "value": 64.0,
+          "name": "component-slot.spec.js",
+          "group": "test/unit/features/component/component-slot.spec.js",
+          "value": 21109.68,
           "colname": "level3"
         }
       ],
@@ -223,12 +223,12 @@
       "colname": "level2"
     },
     {
-      "name": "gitstuff.bat",
+      "name": "attrs.js",
       "children": [
         {
-          "name": "gitstuff.bat",
-          "group": "gitscripts/gitstuff.bat",
-          "value": 64.0,
+          "name": "attrs.js",
+          "group": "src/platforms/web/runtime/modules/attrs.js",
+          "value": 20350.0,
           "colname": "level3"
         }
       ],
@@ -236,12 +236,12 @@
       "colname": "level2"
     },
     {
-      "name": "gitdifffile.bat",
+      "name": "model.js",
       "children": [
         {
-          "name": "gitdifffile.bat",
-          "group": "gitscripts/gitdifffile.bat",
-          "value": 62.0,
+          "name": "model.js",
+          "group": "src/platforms/web/runtime/directives/model.js",
+          "value": 19633.68,
           "colname": "level3"
         }
       ],
@@ -249,12 +249,12 @@
       "colname": "level2"
     },
     {
-      "name": "next.config.js",
+      "name": "model-select.spec.js",
       "children": [
         {
-          "name": "next.config.js",
-          "group": "gitscripts/next.config.js",
-          "value": 46.0,
+          "name": "model-select.spec.js",
+          "group": "test/unit/features/directives/model-select.spec.js",
+          "value": 18476.28,
           "colname": "level3"
         }
       ],
@@ -262,12 +262,1039 @@
       "colname": "level2"
     },
     {
-      "name": "test.ts",
+      "name": "create-element.js",
       "children": [
         {
-          "name": "test.ts",
-          "group": "pages/api/test.ts",
-          "value": 36.0,
+          "name": "create-element.js",
+          "group": "src/core/vdom/create-element.js",
+          "value": 17517.281,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "state.js",
+      "children": [
+        {
+          "name": "state.js",
+          "group": "src/core/instance/state.js",
+          "value": 17484.72,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "vnode.js",
+      "children": [
+        {
+          "name": "vnode.js",
+          "group": "src/core/vdom/vnode.js",
+          "value": 17354.48,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "model.js",
+      "children": [
+        {
+          "name": "model.js",
+          "group": "src/platforms/web/compiler/directives/model.js",
+          "value": 17224.238,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "events.js",
+      "children": [
+        {
+          "name": "events.js",
+          "group": "src/platforms/web/runtime/modules/events.js",
+          "value": 17191.68,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "events.js",
+      "children": [
+        {
+          "name": "events.js",
+          "group": "src/compiler/codegen/events.js",
+          "value": 16807.559,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "attrs.js",
+      "children": [
+        {
+          "name": "attrs.js",
+          "group": "src/platforms/web/server/modules/attrs.js",
+          "value": 16711.75,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "edge-cases.spec.js",
+      "children": [
+        {
+          "name": "edge-cases.spec.js",
+          "group": "test/unit/modules/vdom/patch/edge-cases.spec.js",
+          "value": 16696.617,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "transition.js",
+      "children": [
+        {
+          "name": "transition.js",
+          "group": "src/platforms/web/runtime/modules/transition.js",
+          "value": 16573.04,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "render.js",
+      "children": [
+        {
+          "name": "render.js",
+          "group": "src/server/render.js",
+          "value": 16479.54,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "bind.spec.js",
+      "children": [
+        {
+          "name": "bind.spec.js",
+          "group": "test/unit/features/directives/bind.spec.js",
+          "value": 16208.921,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "create-element.spec.js",
+      "children": [
+        {
+          "name": "create-element.spec.js",
+          "group": "test/unit/modules/vdom/create-element.spec.js",
+          "value": 15566.039,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "component-scoped-slot.spec.js",
+      "children": [
+        {
+          "name": "component-scoped-slot.spec.js",
+          "group": "test/unit/features/component/component-scoped-slot.spec.js",
+          "value": 15239.201,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "src/core/observer/index.js",
+          "value": 14717.12,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "attrs.js",
+      "children": [
+        {
+          "name": "attrs.js",
+          "group": "src/platforms/web/util/attrs.js",
+          "value": 14537.6,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "component-keep-alive.spec.js",
+      "children": [
+        {
+          "name": "component-keep-alive.spec.js",
+          "group": "test/unit/features/component/component-keep-alive.spec.js",
+          "value": 14078.87,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "vnode.d.ts",
+      "children": [
+        {
+          "name": "vnode.d.ts",
+          "group": "types/vnode.d.ts",
+          "value": 13900.32,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "dom-props.js",
+      "children": [
+        {
+          "name": "dom-props.js",
+          "group": "src/platforms/web/runtime/modules/dom-props.js",
+          "value": 13606.801,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "model-text.spec.js",
+      "children": [
+        {
+          "name": "model-text.spec.js",
+          "group": "test/unit/features/directives/model-text.spec.js",
+          "value": 13525.12,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "transition.js",
+      "children": [
+        {
+          "name": "transition.js",
+          "group": "src/platforms/web/runtime/components/transition.js",
+          "value": 13394.811,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "watcher.js",
+      "children": [
+        {
+          "name": "watcher.js",
+          "group": "src/core/observer/watcher.js",
+          "value": 12796.08,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "vue-test.ts",
+      "children": [
+        {
+          "name": "vue-test.ts",
+          "group": "types/test/vue-test.ts",
+          "value": 12765.6,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "scheduler.js",
+      "children": [
+        {
+          "name": "scheduler.js",
+          "group": "src/core/observer/scheduler.js",
+          "value": 12688.65,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "vnode.js",
+      "children": [
+        {
+          "name": "vnode.js",
+          "group": "flow/vnode.js",
+          "value": 12491.68,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "component.js",
+      "children": [
+        {
+          "name": "component.js",
+          "group": "flow/component.js",
+          "value": 12429.84,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "props.js",
+      "children": [
+        {
+          "name": "props.js",
+          "group": "src/core/util/props.js",
+          "value": 12340.24,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "helpers.js",
+      "children": [
+        {
+          "name": "helpers.js",
+          "group": "src/compiler/helpers.js",
+          "value": 12337.35,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ssr.sync.spec.js",
+      "children": [
+        {
+          "name": "ssr.sync.spec.js",
+          "group": "test/ssr/ssr.sync.spec.js",
+          "value": 12164.04,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "for.spec.js",
+      "children": [
+        {
+          "name": "for.spec.js",
+          "group": "test/unit/features/directives/for.spec.js",
+          "value": 11977.03,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "keep-alive.js",
+      "children": [
+        {
+          "name": "keep-alive.js",
+          "group": "src/core/components/keep-alive.js",
+          "value": 11962.561,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "transition.spec.js",
+      "children": [
+        {
+          "name": "transition.spec.js",
+          "group": "test/unit/features/transition/transition.spec.js",
+          "value": 11947.439,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "debug.js",
+      "children": [
+        {
+          "name": "debug.js",
+          "group": "src/core/util/debug.js",
+          "value": 11884.4,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "props.spec.js",
+      "children": [
+        {
+          "name": "props.spec.js",
+          "group": "test/unit/features/options/props.spec.js",
+          "value": 11852.83,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "optimizer.js",
+      "children": [
+        {
+          "name": "optimizer.js",
+          "group": "src/compiler/optimizer.js",
+          "value": 11623.92,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "on.spec.js",
+      "children": [
+        {
+          "name": "on.spec.js",
+          "group": "test/unit/features/directives/on.spec.js",
+          "value": 11583.33,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "proxy.js",
+      "children": [
+        {
+          "name": "proxy.js",
+          "group": "src/core/instance/proxy.js",
+          "value": 11493.68,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "functional.spec.js",
+      "children": [
+        {
+          "name": "functional.spec.js",
+          "group": "test/unit/features/options/functional.spec.js",
+          "value": 11212.289,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "show.js",
+      "children": [
+        {
+          "name": "show.js",
+          "group": "src/platforms/web/runtime/directives/show.js",
+          "value": 11135.52,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "normalize-children.js",
+      "children": [
+        {
+          "name": "normalize-children.js",
+          "group": "src/core/vdom/helpers/normalize-children.js",
+          "value": 11054.399,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "create-component.spec.js",
+      "children": [
+        {
+          "name": "create-component.spec.js",
+          "group": "test/unit/modules/vdom/create-component.spec.js",
+          "value": 10993.32,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "transition-group.js",
+      "children": [
+        {
+          "name": "transition-group.js",
+          "group": "src/platforms/web/runtime/components/transition-group.js",
+          "value": 10968.6,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "events.js",
+      "children": [
+        {
+          "name": "events.js",
+          "group": "src/core/instance/events.js",
+          "value": 10809.92,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "hydration.spec.js",
+      "children": [
+        {
+          "name": "hydration.spec.js",
+          "group": "test/unit/modules/vdom/patch/hydration.spec.js",
+          "value": 10446.6,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "batcher.js",
+      "children": [
+        {
+          "name": "batcher.js",
+          "group": "src/runtime/observer/batcher.js",
+          "value": 10445.49,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "compiler.js",
+      "children": [
+        {
+          "name": "compiler.js",
+          "group": "flow/compiler.js",
+          "value": 10437.439,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "render.js",
+      "children": [
+        {
+          "name": "render.js",
+          "group": "src/runtime/instance/render.js",
+          "value": 10427.67,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "properties.spec.js",
+      "children": [
+        {
+          "name": "properties.spec.js",
+          "group": "test/unit/features/instance/properties.spec.js",
+          "value": 10398.24,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "style.js",
+      "children": [
+        {
+          "name": "style.js",
+          "group": "src/runtime/vdom/modules/style.js",
+          "value": 10375.15,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "inject.spec.js",
+      "children": [
+        {
+          "name": "inject.spec.js",
+          "group": "test/unit/features/options/inject.spec.js",
+          "value": 10292.48,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "build.js",
+      "children": [
+        {
+          "name": "build.js",
+          "group": "build/build.js",
+          "value": 10283.4,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "lifecycle.spec.js",
+      "children": [
+        {
+          "name": "lifecycle.spec.js",
+          "group": "test/unit/features/options/lifecycle.spec.js",
+          "value": 10241.64,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "codegen.js",
+      "children": [
+        {
+          "name": "codegen.js",
+          "group": "src/compiler/codegen.js",
+          "value": 10106.1,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "sfc-parser.spec.js",
+      "children": [
+        {
+          "name": "sfc-parser.spec.js",
+          "group": "test/unit/modules/sfc/sfc-parser.spec.js",
+          "value": 10089.1,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "model-checkbox.spec.js",
+      "children": [
+        {
+          "name": "model-checkbox.spec.js",
+          "group": "test/unit/features/directives/model-checkbox.spec.js",
+          "value": 9902.32,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "dep.js",
+      "children": [
+        {
+          "name": "dep.js",
+          "group": "src/core/observer/dep.js",
+          "value": 9898.24,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "config.js",
+      "children": [
+        {
+          "name": "config.js",
+          "group": "scripts/config.js",
+          "value": 9786.96,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "optimizer.spec.js",
+      "children": [
+        {
+          "name": "optimizer.spec.js",
+          "group": "test/unit/modules/compiler/optimizer.spec.js",
+          "value": 9771.84,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "style.js",
+      "children": [
+        {
+          "name": "style.js",
+          "group": "src/platforms/web/server/modules/style.js",
+          "value": 9735.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "class-util.js",
+      "children": [
+        {
+          "name": "class-util.js",
+          "group": "src/platforms/web/runtime/class-util.js",
+          "value": 9670.32,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "entity-decoder.js",
+      "children": [
+        {
+          "name": "entity-decoder.js",
+          "group": "src/compiler/parser/entity-decoder.js",
+          "value": 9603.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "plugin-test.ts",
+      "children": [
+        {
+          "name": "plugin-test.ts",
+          "group": "types/test/plugin-test.ts",
+          "value": 9538.74,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "test/unit/index.js",
+          "value": 9528.36,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "if.spec.js",
+      "children": [
+        {
+          "name": "if.spec.js",
+          "group": "test/unit/features/directives/if.spec.js",
+          "value": 9390.57,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "webpack.ssr.dev.config.js",
+      "children": [
+        {
+          "name": "webpack.ssr.dev.config.js",
+          "group": "build/webpack.ssr.dev.config.js",
+          "value": 9325.439,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "create-sync-renderer.js",
+      "children": [
+        {
+          "name": "create-sync-renderer.js",
+          "group": "src/server/create-sync-renderer.js",
+          "value": 9300.02,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "create-streaming-renderer.js",
+      "children": [
+        {
+          "name": "create-streaming-renderer.js",
+          "group": "src/server/create-streaming-renderer.js",
+          "value": 9300.02,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "transition-util.js",
+      "children": [
+        {
+          "name": "transition-util.js",
+          "group": "src/platforms/web/runtime/transition-util.js",
+          "value": 9240.42,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "web-runtime-with-compiler.js",
+      "children": [
+        {
+          "name": "web-runtime-with-compiler.js",
+          "group": "src/entries/web-runtime-with-compiler.js",
+          "value": 9240.0,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "src/core/util/index.js",
+          "value": 9149.36,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.d.ts",
+      "children": [
+        {
+          "name": "index.d.ts",
+          "group": "types/index.d.ts",
+          "value": 9113.221,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "src/platforms/web/util/index.js",
+          "value": 8923.75,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "component.spec.js",
+      "children": [
+        {
+          "name": "component.spec.js",
+          "group": "test/unit/features/component/component.spec.js",
+          "value": 8900.561,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "lang.js",
+      "children": [
+        {
+          "name": "lang.js",
+          "group": "src/core/util/lang.js",
+          "value": 8856.32,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "create-functional-component.js",
+      "children": [
+        {
+          "name": "create-functional-component.js",
+          "group": "src/core/vdom/create-functional-component.js",
+          "value": 8842.551,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "html.spec.js",
+      "children": [
+        {
+          "name": "html.spec.js",
+          "group": "test/unit/features/directives/html.spec.js",
+          "value": 8830.25,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "helpers.js",
+      "children": [
+        {
+          "name": "helpers.js",
+          "group": "src/core/vdom/helpers.js",
+          "value": 8823.76,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "index.js",
+      "children": [
+        {
+          "name": "index.js",
+          "group": "src/core/index.js",
+          "value": 8823.76,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "ref.spec.js",
+      "children": [
+        {
+          "name": "ref.spec.js",
+          "group": "test/unit/features/ref.spec.js",
+          "value": 8809.59,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "show.spec.js",
+      "children": [
+        {
+          "name": "show.spec.js",
+          "group": "test/unit/features/directives/show.spec.js",
+          "value": 8733.92,
+          "colname": "level3"
+        }
+      ],
+      "value": 0.0,
+      "colname": "level2"
+    },
+    {
+      "name": "set-delete.spec.js",
+      "children": [
+        {
+          "name": "set-delete.spec.js",
+          "group": "test/unit/features/global-api/set-delete.spec.js",
+          "value": 8682.96,
           "colname": "level3"
         }
       ],

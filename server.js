@@ -58,6 +58,7 @@ let clone_adress = (adressUrl) => {
     const repoDir = "./downloaded_repositories/" + cleanedAddr;
     console.log("start cloning")
     // Clone the repository
+    console.log("command--->  " + `git clone ${adressUrl} ${repoDir}`)
     childprocess.execSync(`git clone ${adressUrl} ${repoDir}`, [], {shell:false});
 
     console.log("done with cloning")
@@ -108,11 +109,13 @@ app.get('/full_backend_generation', (req, res) => {
   console.log("Starting generation")
   factor = text_to_factor_index(req.query.factor)
   let path_command = '"' + compiled_rust + '" "repo" "' + path + '"'
+
+  console.log("command--->  " + path_command)
   let _child1 = childprocess.execSync( path_command, [], {shell:false})
   console.log("done with generation")
 //fix clone repo fix exe text inline TODO:
   let d3_generation_command = '"' + compiled_rust + '" "d3" "generatedJson.json" "full" "files" "' + text_to_factor_index(factor) + '" "100"'
-
+  console.log("command--->  " + d3_generation_command)
   let _child2 = childprocess.execSync(d3_generation_command, [], {shell:false})
   console.log("done with d3 gen")
 

@@ -1373,7 +1373,7 @@ fn main() {
                 for item in parsed_diffs{
                     let mut is_valid_item = true;
                     for filter in &filtered_file_types{
-                        println!("{}-{}-{}", filter.as_str(), item.0, filter.is_match(&item.0));
+                        //println!("{}-{}-{}", filter.as_str(), item.0, filter.is_match(&item.0));
                         if filter.is_match(&item.0){
                             is_valid_item = false;
                             break;
