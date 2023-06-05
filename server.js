@@ -85,7 +85,7 @@ app.get('/full_backend_generation', (req, res) => {
 
   let filetype_regex_list = []
   if(req.query.filetype_regex){
-    //TODO split req.query.filetype_regex whne working and make into list
+    //TODO split req.query.filetype_regex when working and make into list
     filetype_regex_list.push(req.query.filetype_regex) //this is temp to work with oneliners
     console.log("using:" + req.query.filetype_regex + " filetype regex")
     //When fixing this remember it needs to be comma separated according to json from frontend
