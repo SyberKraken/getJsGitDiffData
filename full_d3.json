@@ -20,7 +20,7 @@
         {
           "name": "index.js",
           "group": "src/compiler/codegen/index.js",
-          "value": 33721.047,
+          "value": 33721.05,
           "colname": "level3"
         }
       ],
@@ -72,7 +72,7 @@
         {
           "name": "parser.spec.js",
           "group": "test/unit/modules/compiler/parser.spec.js",
-          "value": 26841.242,
+          "value": 26841.238,
           "colname": "level3"
         }
       ],
@@ -85,7 +85,7 @@
         {
           "name": "create-component.js",
           "group": "src/core/vdom/create-component.js",
-          "value": 26699.203,
+          "value": 26699.201,
           "colname": "level3"
         }
       ],
@@ -150,7 +150,7 @@
         {
           "name": "options.d.ts",
           "group": "types/options.d.ts",
-          "value": 22658.94,
+          "value": 22658.938,
           "colname": "level3"
         }
       ],
@@ -176,7 +176,7 @@
         {
           "name": "html-parser.js",
           "group": "src/compiler/parser/html-parser.js",
-          "value": 22139.281,
+          "value": 22139.28,
           "colname": "level3"
         }
       ],
@@ -228,7 +228,7 @@
         {
           "name": "attrs.js",
           "group": "src/platforms/web/runtime/modules/attrs.js",
-          "value": 20349.998,
+          "value": 20350.0,
           "colname": "level3"
         }
       ],
@@ -280,7 +280,7 @@
         {
           "name": "state.js",
           "group": "src/core/instance/state.js",
-          "value": 17484.719,
+          "value": 17484.72,
           "colname": "level3"
         }
       ],
@@ -293,7 +293,7 @@
         {
           "name": "vnode.js",
           "group": "src/core/vdom/vnode.js",
-          "value": 17354.479,
+          "value": 17354.48,
           "colname": "level3"
         }
       ],
@@ -358,7 +358,7 @@
         {
           "name": "edge-cases.spec.js",
           "group": "test/unit/modules/vdom/patch/edge-cases.spec.js",
-          "value": 16696.62,
+          "value": 16696.621,
           "colname": "level3"
         }
       ],
@@ -423,7 +423,7 @@
         {
           "name": "component-scoped-slot.spec.js",
           "group": "test/unit/features/component/component-scoped-slot.spec.js",
-          "value": 15239.199,
+          "value": 15239.201,
           "colname": "level3"
         }
       ],
@@ -566,7 +566,7 @@
         {
           "name": "vnode.js",
           "group": "flow/vnode.js",
-          "value": 12491.68,
+          "value": 12491.681,
           "colname": "level3"
         }
       ],
@@ -735,7 +735,7 @@
         {
           "name": "functional.spec.js",
           "group": "test/unit/features/options/functional.spec.js",
-          "value": 11212.29,
+          "value": 11212.289,
           "colname": "level3"
         }
       ],
@@ -761,7 +761,7 @@
         {
           "name": "normalize-children.js",
           "group": "src/core/vdom/helpers/normalize-children.js",
-          "value": 11054.4,
+          "value": 11054.399,
           "colname": "level3"
         }
       ],
@@ -891,7 +891,7 @@
         {
           "name": "inject.spec.js",
           "group": "test/unit/features/options/inject.spec.js",
-          "value": 10292.48,
+          "value": 10292.4795,
           "colname": "level3"
         }
       ],
@@ -1164,7 +1164,7 @@
         {
           "name": "index.d.ts",
           "group": "types/index.d.ts",
-          "value": 9113.22,
+          "value": 9113.221,
           "colname": "level3"
         }
       ],
@@ -1216,7 +1216,7 @@
         {
           "name": "create-functional-component.js",
           "group": "src/core/vdom/create-functional-component.js",
-          "value": 8842.551,
+          "value": 8842.55,
           "colname": "level3"
         }
       ],
@@ -1237,11 +1237,11 @@
       "colname": "level2"
     },
     {
-      "name": "helpers.js",
+      "name": "index.js",
       "children": [
         {
-          "name": "helpers.js",
-          "group": "src/core/vdom/helpers.js",
+          "name": "index.js",
+          "group": "src/core/index.js",
           "value": 8823.76,
           "colname": "level3"
         }
@@ -1250,11 +1250,11 @@
       "colname": "level2"
     },
     {
-      "name": "index.js",
+      "name": "helpers.js",
       "children": [
         {
-          "name": "index.js",
-          "group": "src/core/index.js",
+          "name": "helpers.js",
+          "group": "src/core/vdom/helpers.js",
           "value": 8823.76,
           "colname": "level3"
         }

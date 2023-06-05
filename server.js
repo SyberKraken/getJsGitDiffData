@@ -56,15 +56,12 @@ let clone_adress = (adressUrl) => {
     // Create a temporary directory to clone the repository int
     const cleanedAddr = adressUrl.replace(/[ &\/\\#,+()$~%.'":*?<>{}]/g, "");
     const repoDir = "./downloaded_repositories/" + cleanedAddr;
+    fs.rmSync("./downloaded_repositories/", { recursive: true, force: true });
     console.log("start cloning")
     // Clone the repository
     childprocess.execSync(`git clone ${adressUrl} ${repoDir}`, [], {shell:false});
 
     return repoDir
-}
-
-let delete_local_directory = (local_dir) =>{
-  del.sync([local_dir], { force: true });
 }
 
 app.get('/full_backend_generation', (req, res) => {
@@ -115,7 +112,7 @@ app.get('/full_backend_generation', (req, res) => {
   let _child2 = childprocess.execSync(d3_generation_command, [], {shell:false})
 
   if(req.query.is_remote === "true"){
-    delete_local_directory(path)
+    fs.rmSync("./downloaded_repositories/", { recursive: true, force: true });
     console.log("deleted local repo")
   }
   //let child = childprocess.exec("cd /dir > your_file.txt")

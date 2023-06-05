@@ -1,4 +1,4 @@
-Project data-parsing and generation is ran with a rust-script in folder as well as a nodejs-express server.
+The projects data-parsing and generation is ran with a rust-script in folder as well as a nodejs-express server.
 It visualizes the most bug-prone files in a repository via treemaps.
 
 To get started you need to generate the rust executables for your OS:
@@ -52,3 +52,5 @@ run: target/release/gitdiffjson
             The visualization uses the name "full" for its generation, but you can manually enter a file as a get-parameter in the search bar if you want to generate multiple different ones and not have to overwrite it every time you switch between them since the express server serves all files in the folder
 
         There are some more "modes" in the code but they are more for testing or running partial parts of the code or debugging.
+Known "issues" or lacking features.
+The server is single-user based and the backend is not intended to work for multiple users at the same time.
