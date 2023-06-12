@@ -7,7 +7,7 @@
         {
           "name": "patch.js",
           "group": "src/core/vdom/patch.js",
-          "value": 38355.68,
+          "value": 38355.676,
           "colname": "level3"
         }
       ],
@@ -20,7 +20,7 @@
         {
           "name": "index.js",
           "group": "src/compiler/codegen/index.js",
-          "value": 33721.05,
+          "value": 33721.047,
           "colname": "level3"
         }
       ],
@@ -150,7 +150,7 @@
         {
           "name": "options.d.ts",
           "group": "types/options.d.ts",
-          "value": 22658.938,
+          "value": 22658.94,
           "colname": "level3"
         }
       ],
@@ -163,7 +163,7 @@
         {
           "name": "env.js",
           "group": "src/core/util/env.js",
-          "value": 22629.201,
+          "value": 22629.2,
           "colname": "level3"
         }
       ],
@@ -176,7 +176,7 @@
         {
           "name": "html-parser.js",
           "group": "src/compiler/parser/html-parser.js",
-          "value": 22139.28,
+          "value": 22139.281,
           "colname": "level3"
         }
       ],
@@ -189,7 +189,7 @@
         {
           "name": "options.js",
           "group": "src/core/util/options.js",
-          "value": 21750.082,
+          "value": 21750.078,
           "colname": "level3"
         }
       ],
@@ -215,7 +215,7 @@
         {
           "name": "component-slot.spec.js",
           "group": "test/unit/features/component/component-slot.spec.js",
-          "value": 21109.68,
+          "value": 21109.678,
           "colname": "level3"
         }
       ],
@@ -267,7 +267,7 @@
         {
           "name": "create-element.js",
           "group": "src/core/vdom/create-element.js",
-          "value": 17517.28,
+          "value": 17517.281,
           "colname": "level3"
         }
       ],
@@ -280,7 +280,7 @@
         {
           "name": "state.js",
           "group": "src/core/instance/state.js",
-          "value": 17484.72,
+          "value": 17484.719,
           "colname": "level3"
         }
       ],
@@ -358,7 +358,7 @@
         {
           "name": "edge-cases.spec.js",
           "group": "test/unit/modules/vdom/patch/edge-cases.spec.js",
-          "value": 16696.621,
+          "value": 16696.62,
           "colname": "level3"
         }
       ],
@@ -397,7 +397,7 @@
         {
           "name": "bind.spec.js",
           "group": "test/unit/features/directives/bind.spec.js",
-          "value": 16208.921,
+          "value": 16208.92,
           "colname": "level3"
         }
       ],
@@ -410,7 +410,7 @@
         {
           "name": "create-element.spec.js",
           "group": "test/unit/modules/vdom/create-element.spec.js",
-          "value": 15566.04,
+          "value": 15566.039,
           "colname": "level3"
         }
       ],
@@ -501,7 +501,7 @@
         {
           "name": "model-text.spec.js",
           "group": "test/unit/features/directives/model-text.spec.js",
-          "value": 13525.119,
+          "value": 13525.12,
           "colname": "level3"
         }
       ],
@@ -514,7 +514,7 @@
         {
           "name": "transition.js",
           "group": "src/platforms/web/runtime/components/transition.js",
-          "value": 13394.811,
+          "value": 13394.81,
           "colname": "level3"
         }
       ],
@@ -566,7 +566,7 @@
         {
           "name": "vnode.js",
           "group": "flow/vnode.js",
-          "value": 12491.681,
+          "value": 12491.68,
           "colname": "level3"
         }
       ],
@@ -761,7 +761,7 @@
         {
           "name": "normalize-children.js",
           "group": "src/core/vdom/helpers/normalize-children.js",
-          "value": 11054.399,
+          "value": 11054.4,
           "colname": "level3"
         }
       ],
@@ -891,7 +891,7 @@
         {
           "name": "inject.spec.js",
           "group": "test/unit/features/options/inject.spec.js",
-          "value": 10292.4795,
+          "value": 10292.48,
           "colname": "level3"
         }
       ],
@@ -1164,7 +1164,7 @@
         {
           "name": "index.d.ts",
           "group": "types/index.d.ts",
-          "value": 9113.221,
+          "value": 9113.22,
           "colname": "level3"
         }
       ],
@@ -1216,7 +1216,7 @@
         {
           "name": "create-functional-component.js",
           "group": "src/core/vdom/create-functional-component.js",
-          "value": 8842.55,
+          "value": 8842.551,
           "colname": "level3"
         }
       ],
@@ -1237,11 +1237,11 @@
       "colname": "level2"
     },
     {
-      "name": "index.js",
+      "name": "helpers.js",
       "children": [
         {
-          "name": "index.js",
-          "group": "src/core/index.js",
+          "name": "helpers.js",
+          "group": "src/core/vdom/helpers.js",
           "value": 8823.76,
           "colname": "level3"
         }
@@ -1250,11 +1250,11 @@
       "colname": "level2"
     },
     {
-      "name": "helpers.js",
+      "name": "index.js",
       "children": [
         {
-          "name": "helpers.js",
-          "group": "src/core/vdom/helpers.js",
+          "name": "index.js",
+          "group": "src/core/index.js",
           "value": 8823.76,
           "colname": "level3"
         }

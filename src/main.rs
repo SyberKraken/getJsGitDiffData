@@ -981,7 +981,7 @@ fn file_data_map_to_file_list(
 
 
 fn main() {
-    let mut args: Vec<String> = env::args().collect();
+    let args: Vec<String> = env::args().collect();
 
     //Reads regexes to filter from file
     let raw_string_filtered_file_types = std::fs::read_to_string("regex_filtered_file_types.json").unwrap();
