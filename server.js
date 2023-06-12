@@ -59,7 +59,7 @@ let clone_adress = (adressUrl) => {
     fs.rmSync("./downloaded_repositories/", { recursive: true, force: true });
     console.log("start cloning")
     // Clone the repository
-    childprocess.execSync(`git clone ${adressUrl} ${repoDir}`, [], {shell:false});
+    childprocess.execSync(`git clone -c core.longpaths=true ${adressUrl} ${repoDir}`, [], {shell:false});
 
     return repoDir
 }

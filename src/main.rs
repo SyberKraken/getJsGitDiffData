@@ -15,17 +15,16 @@ use std::fs::OpenOptions;
 use std::io::Write as _;
 use std::process::Command;
 
-//use std::ptr::null;
-//use std::slice::SliceIndex;
 use std::sync::{Arc, Mutex};
 use std::{env, fmt, fs};
 
-//sha,  funcs, age, commit message
+
 fn get_implemented_nr_of_fields_for_analysis() -> i32 {
-    //TODO: this needs to be manualy updated
+    //TODO: this needs to be manualy updated when adding fields.
     return 26;
 }
 
+//This generates a hashmap containing the relevant data for analysis from a local repo
 fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i32, String)>> {
     let sha_to_parsed_diffs: HashMap<String, Vec<(String, Vec<String>, i32, String)>> =
         HashMap::new();
@@ -61,20 +60,6 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i
     sha_list.par_iter().enumerate().for_each(|(age, sha)| {
         pb.inc(1);
 
-        /*  let diff_output = Command::new("git")
-            .arg("--git-dir=".to_owned() + repo_path + "/.git")
-            .arg("--work-tree=".to_owned() + repo_path)
-            .arg("diff")
-            .arg(&sha.0)
-            .output();
-
-        let diff = match diff_output {
-            Ok(output) => String::from_utf8_lossy(&output.stdout).to_string(),
-            Err(err) => {
-                println!("Error getting diff for sha {}: {:?}", sha.0, err);
-                return;
-            }
-        };  */
         // Open the repository
         let repo = match Repository::open_ext(
             repo_path,
@@ -135,6 +120,8 @@ fn generate_json(repo_path: &str) -> HashMap<String, Vec<(String, Vec<String>, i
 }
 
 //age and message is passthrough
+//TODO: add file for function regex-writing
+//This function parses entire diff-string and returnsa list of filenames and the functions fixes in those files.
 fn get_functions_from_diff(
     diff: &str,
     age: i32,
@@ -188,8 +175,7 @@ fn get_functions_from_diff(
     files_objects
 }
 
-//Class part easy acess, mbe move this
-
+//Class part, mbe move this
 #[derive(Serialize, Deserialize)]
 struct Function {
     name: String,
@@ -260,6 +246,7 @@ struct File {
     times_functions_got_bugfiexed_after_file_data: i32,
     repo_max_age: i32,
 }
+//The matches in This function needs to match amount in "get_implemented_nr_of_fields_for_analysis" and corresponds to "get_field"
 fn get_file_field_name(n: i32) -> String {
     let _ret = "ERROR no field for: ".to_owned() + &n.to_string();
     match n {
@@ -298,6 +285,7 @@ fn get_file_field_name(n: i32) -> String {
     }
 }
 impl File {
+    //The matches in This function needs to match amount in "get_implemented_nr_of_fields_for_analysis" and corresponds to "get_file_field_name"
     fn get_field(&self, n: i32) -> f32 {
         match n {
             0 => self.freq_counter,
@@ -334,7 +322,7 @@ impl File {
             _ => -1.0,
         }
     }
-
+    //unused
     fn _insert_function_bugfix(&mut self, function_name: String) {
         if self
             .functions_bugfixed_after_file_data
@@ -352,11 +340,13 @@ impl File {
                 .insert(function_name.to_owned(), 1);
         }
     }
+    //unused
     fn _get_sorted_function_vec_by_field(&self, field: i32) -> Vec<&Function> {
         let mut fn_list: Vec<&Function> = self.function_list.values().into_iter().collect();
         fn_list.sort_by(|a, b| b.get_field(field).total_cmp(&a.get_field(field)));
         return fn_list;
     }
+    //unused
     fn _new(
         name: String,
         freq_counter: f32,
@@ -380,7 +370,7 @@ impl File {
             repo_max_age,
         }
     }
-
+    //unused
     fn _add_function(&mut self, function: Function) {
         self.function_list.insert(function.name.clone(), function);
     }
@@ -411,7 +401,6 @@ impl fmt::Display for File {
 struct FileList {
     files: HashMap<String, File>,
     max_age: usize,
-    //TODO: add some post-end bugfixes to files or smthn here1
     files_bugfixed_after_file_list: HashMap<String, i32>,
     total_bugfixes_after_file_list: i32,
 }
@@ -556,16 +545,6 @@ impl FileList {
         }
     }
 }
-/* impl Serialize for FileList {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let mut map = serializer.serialize_map(Some(1))?;
-        map.serialize_entry("files", &self.files)?;
-        map.end()
-    }
-} */
 
 //OBS!!! no longer prints nested functions
 impl fmt::Display for FileList {
@@ -578,7 +557,6 @@ impl fmt::Display for FileList {
 }
 
 //Class part to be equivalent to D3 standard
-
 #[derive(Debug, Deserialize, Serialize, Clone)]
 struct Child {
     name: String,
@@ -638,7 +616,7 @@ impl Parent {
         }
     }
 }
-
+//Classes to represent file-structure
 #[derive(Debug, Deserialize, Serialize)]
 struct Container {
     name: String,
@@ -662,10 +640,7 @@ impl Container {
 }
 
 fn filelist_to_container(filelist: FileList, field: i32) -> Container {
-    /*   let mut container = Container {
-        name: "Container".to_string(),
-        children: vec![],
-    }; */
+
     let child_vec: Vec<Parent> = vec![];
     let pb = ProgressBar::new(filelist.files.len().try_into().unwrap());
     pb.set_style(
@@ -699,7 +674,6 @@ fn filelist_to_container(filelist: FileList, field: i32) -> Container {
             value: file.get_field(field),
             colname: "level2".to_owned(),
         };
-        //container.children.push(parent);
         let mut data = shared_container.lock().unwrap();
         data.push(parent);
         drop(data)
@@ -739,10 +713,6 @@ impl Folder {
 
     fn _get_value(&self, path: &str) -> Option<f32> {
         let parts = path.split('/');
-        /* let first_part = parts.next()?;
-        if first_part != "" {
-            return None;
-        } */
         let mut current_folder = self;
         for part in parts {
             if part == "" {
@@ -763,11 +733,6 @@ impl Folder {
     }
     fn add_file(&mut self, path: &str, value: f32) {
         let parts = path.split('/');
-       /*  let first_part = parts.next().unwrap(); // path always starts with '/'
-        if first_part != "" {
-            println!("{}", path);
-            panic!("Invalid path");
-        } */
 
         let mut current_folder = self;
 
@@ -843,10 +808,6 @@ impl Folder {
             parent.children.push(child);
         }
 
-
-        //parent.sort_children_by_value();
-        //parent.remove_children_with_ending(&vec!["lnk"]);
-
         let mut container = Container {
             name: path.to_string(),
             children: Vec::new(),
@@ -896,7 +857,9 @@ impl fmt::Display for Folder {
         Ok(())
     }
 }
+//END of classes
 
+//Converts filelist to container
 fn filelist_to_container_only_files(filelist: &FileList, field: i32) -> Container {
     let mut parentlist = vec![];
     for (_, file) in &filelist.files {
@@ -923,7 +886,7 @@ fn filelist_to_container_only_files(filelist: &FileList, field: i32) -> Containe
     }
 }
 
-//This function does all the counting of factors we want to extract form the generated data of commits
+//This function does all the counting of factors we want to extract from the generated data of commits
 fn file_data_map_to_file_list(
     file_data: &HashMap<String, Vec<(String, Vec<String>, i32, String)>>,
     age_limit: usize,
@@ -933,32 +896,25 @@ fn file_data_map_to_file_list(
     let max_age = file_data.len();
 
     let age_precentage_to_int: i32 = (max_age as f32 * (age_limit as f32 / 100.0)) as i32;
-    //println!("cuttof: {},\n{}\n{}\n{}", age_precentage_to_int, max_age, age_limit, age_limit as f32 /100.0);
 
-    /*  let mut age_cuttof = age_limit;
-       if age_cuttof == 0{age_cuttof = max_age}
-       let analyze_age_above = max_age - age_cuttof;
-    */
-    //let age_filtered_file_data = item for item in file_data if item.1.2 > ageCuttof;
     let mut file_list: FileList = FileList::new(max_age - 1);
     //"files" represents a commit
     for (_, files) in file_data {
-        //println!("{}, {}", files[0].2,analyze_age_above as i32 );
+        //If relevant & after age_limit
         if (files.len() > 0) && (files[0].2) > age_precentage_to_int as i32 {
             // post-cuttof functionality counts bugg fixed after cuttoff
             for (filename, functions, _age, message) in files {
-                //TODO: filter other types here as well, list in main mbe.
                 if filtered_filetypes
                     .iter()
                     .any(|regex| regex.is_match(&filename)){
                         continue;
                     }
-
+                //If we are bugfix
                 if recognized_bugfix_indicators
                     .iter()
                     .any(|regex| regex.is_match(&message))
                 {
-                    //If we are bugfix
+
                     //if we have a fix on file that didnt exist before cuttof, simply ignore it
                     if !file_list.files.contains_key(filename) {
                         continue;
@@ -967,9 +923,7 @@ fn file_data_map_to_file_list(
                     let changed_file = file_list.files.get_mut(filename).unwrap();
                     file_list.total_bugfixes_after_file_list += 1;
                     changed_file.times_file_got_bugfixed_after_end_of_measuring += 1;
-
-                    // file_list.insert_bugfix(&filename); //old
-                    //increase bug_fixed counter by 1
+                    //This part does put all needed data for functions into file_list
                     for function in functions {
                         //if newer function than cuttof, ignore
                         if !changed_file.function_list.contains_key(function) {
@@ -982,9 +936,6 @@ fn file_data_map_to_file_list(
                             .unwrap()
                             .times_func_got_bugfixed_after_end_of_measuring += 1;
 
-                        /*   let tempname = filename.to_owned();
-                        file_list.files.get_mut(&filename).unwrap().
-                            insert_function_bugfix(function); */ // old
                     }
                 };
             }
@@ -998,7 +949,7 @@ fn file_data_map_to_file_list(
                 {
                     bug_counter += 1.0;
                 };
-                //add_file adds values to existing file if it is in list //TODO: aged currentley adds values form 0 to 1 based on age
+                //add_file adds values to existing file if it is in list
                 file_list.add_file(
                     &filename,
                     1.0,
@@ -1015,8 +966,8 @@ fn file_data_map_to_file_list(
                         &func_name,
                         1.0,
                         bug_counter,
-                        0.0, /*not done yet */
-                        0.0, /*not done yet */
+                        0.0,
+                        0.0,
                         (age.to_owned(), age.to_owned()),
                         file_list.max_age as i32,
                     )
@@ -1031,6 +982,7 @@ fn file_data_map_to_file_list(
 fn main() {
     let mut args: Vec<String> = env::args().collect();
 
+    //Reads regexes to filter from file
     let raw_string_filtered_file_types = std::fs::read_to_string("regex_filtered_file_types.json").unwrap();
     let parsed_raw_string_filtered_file_types: Vec<String> = serde_json::from_str(&raw_string_filtered_file_types).unwrap();
     let mut filtered_file_types =vec![];
@@ -1045,8 +997,7 @@ fn main() {
             Regex::new(r"(?i).md$").unwrap(),
         ];
     }
-
-
+    //Reads regexes to count as bugs from file
     let raw_string_recognized_bugfix_indicators = std::fs::read_to_string("regex_recognized_bugfixes.json").unwrap();
     let parsed_raw_string_recognized_bugfix_indicators: Vec<String> = serde_json::from_str(&raw_string_recognized_bugfix_indicators).unwrap();
     let mut recognized_bugfix_indicators =vec![];
@@ -1067,20 +1018,6 @@ fn main() {
         ];
     }
 
-    //Modes: repo, classes, d3, text\
-
-    if args.len() == 1 {
-        /*assume testing*/
-        args = vec![
-            "main.rs".to_string(),
-            "d3".to_string(),
-            r"serverless.json".to_string(),
-            "serverless".to_string(),
-            "files".to_string(),
-            "23".to_string(),
-            "10".to_string(),
-        ];
-    }
     let mode: &str = &args[1];
     match  mode {
         //exclusivley files, runs multi precentage version of text and anylized the data into averages
@@ -1099,11 +1036,8 @@ fn main() {
              //this is breakpoints for top% of items, so 1 is the top 1% of items sorted by the chosen factor
             let top_list_precentage_breakpoints = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];//
             let nr_of_fields = get_implemented_nr_of_fields_for_analysis();
-            //should be , (FREQ, [(10, [1,5,10...]),(15, [1,5,10..])...])
             let mut final_data_labels = vec![];
             let mut final_data :Vec<Vec<(i32,Vec<f64>)>> = Vec::new();
-
-
 
             for index in 0..nr_of_fields{
                 final_data_labels.push(get_file_field_name(index));
@@ -1149,17 +1083,6 @@ fn main() {
 
                     //sort files by chosen field
                     sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
-
-                    /* let endings_filter = |name:&str|-> bool{
-                        for end in &filtered_file_types{
-                            if name.ends_with(end){
-                                return true;
-                            }
-                        }
-                        return false;
-                    }; */
-
-
 
                     let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i as usize)/100});
                     let mut breakpoints_total_bugs_predicted:VecDeque<f32> = VecDeque::with_capacity(top_list_precentage_breakpoints.len());
@@ -1260,7 +1183,7 @@ fn main() {
             let mut file = fs::File::create(json_new_file_name.to_owned() + "__macro_analysis.txt").unwrap();
             file.write_all(huge_string.as_bytes()).unwrap();
         },
-        //generate mroe compact textfile from raw data(generated by "repo")
+        //generate more compact textfile from raw data(generated by "repo")
         "text" =>{
             println!("generate compact textfile");
             // args 2+ :
@@ -1277,9 +1200,6 @@ fn main() {
 
             let file_list = file_data_map_to_file_list(&file_data, age_cuttof_in_precentage_points.to_owned(), &recognized_bugfix_indicators, &filtered_file_types);
 
-            //now loops over all into files
-            //let field_to_sort_by:i32 = args[5].parse::<i32>().unwrap();
-
 
             for i in 0..nr_of_fields{
                 let field_to_sort_by = i;
@@ -1291,17 +1211,6 @@ fn main() {
                 //sort files by chosen field
                 sortable_file_vec.sort_by(|a:&&File,b:&&File|{b.get_field(field_to_sort_by).partial_cmp(&a.get_field(field_to_sort_by))}.unwrap());
 
-                //append metatdata to top, this should probably be in a var in json later TODO: disabled
-               // let _ = write!(huge_string, "total_bugfixes_for_files = {} \n", file_list.total_bugfixes_after_file_list.to_string());
-
-                /* let endings_filter = |name:&str|-> bool{
-                    for end in &filtered_file_types{
-                        if name.ends_with(end){
-                            return true;
-                        }
-                    }
-                    return false;
-                }; */
 
                 let top_list_precentage_breakpoints = [1, 5, 10, 25, 50, 75];
                 let precentages_to_files = top_list_precentage_breakpoints.map(|i|{ return (sortable_file_vec.len() * i)/100});
@@ -1321,21 +1230,6 @@ fn main() {
                         breakpoint_index += 1;
                     }
 
-                    /*//filter out json etc. OBS TODO disabled
-
-
-                    let _ = write!(huge_string, "{}", file);
-                    //this could be integrated ionto analysis
-                    let _ = write!(huge_string, "   file % of total fixes = {} \n", ((file.times_file_got_bugfixed_after_end_of_measuring as f32/file_list.total_bugfixes_after_file_list as f32)*100.0).to_string() );
-
-                    //sort functions by chosen field
-                    let func_vec = file.get_sorted_function_vec_by_field(field_to_sort_by);
-
-                    //TODO: currentley only files are analyzes in rpecent ang offther studff
-                    for func in func_vec{
-                        let _ = write!(huge_string, "{}", func);
-
-                    }   */
                     index+=1;
                 }
 
@@ -1347,10 +1241,6 @@ fn main() {
 
                 let _ = writeln!(huge_string, "\n");
             }
-
-
-            //println!("{}",huge_string);
-
 
             let _ = fs::remove_file(filename.to_owned() + "_fileMap.txt");
             let mut file = fs::File::create(filename.to_owned() + "_fileMap.txt").unwrap();
@@ -1373,7 +1263,6 @@ fn main() {
                 for item in parsed_diffs{
                     let mut is_valid_item = true;
                     for filter in &filtered_file_types{
-                        //println!("{}-{}-{}", filter.as_str(), item.0, filter.is_match(&item.0));
                         if filter.is_match(&item.0){
                             is_valid_item = false;
                             break;
@@ -1393,18 +1282,16 @@ fn main() {
             file.write_all(json.as_bytes()).unwrap();
             }
         ,
-            //OBS: this function has deadcode from original purpose, several args are not used
+        //OBS: this function has deadcode from original purpose, args 2 full/files sub-mode only works with "files"
         //Convert raw extracted data into d3 treemap parsable jsons for entire folder structure
-        //args 2 is string representing if we want files,functions or both
         "d3"=>{
             println!("Convert file/function objects into d3 treemap parsable json");
             // args 2+ :
-            //TODO: parse into nested folder diagrams
             let json_path = &args[2];
             let new_filename = &args[3];
             let sub_mode:&str = &args[4];
             let field_to_analyze = &args[5].parse::<usize>().unwrap();
-            //this is now set to 100 since the visualization i running on whole repo //let age_cuttof_in_precentage_points = &args[6].parse::<usize>().unwrap();
+            //This is amount of items specificly in the page showing just individual files
             let amount_items_to_show:usize = args[6].parse::<usize>().unwrap();
 
             let file_string = std::fs::read_to_string(json_path).unwrap();
@@ -1435,7 +1322,6 @@ fn main() {
             let mut all_folder_paths = HashSet::new();
             for mut p in container.children{
 
-               //let path =  p.name.split("/");
                 let mut skip = false;
 
                 if filtered_file_types
@@ -1468,25 +1354,10 @@ fn main() {
                         all_folder_paths.insert(path.clone());
 
                     }
-
-
                 }
-
                 copy_container.children.push(p);
-
-
-
             }
             all_folder_paths.insert("".to_string());
-
-            //File log part
-
-            //THIS GETS CONTENTS OF SINGLE FOLDER
-            //let t = f.get_path_items("lib/plugins/aws/package").unwrap();
-
-           /*  for pair in t{
-                temp = temp + &pair.0 + " - " + &pair.1.to_string() + "\n";
-            } */
 
             //THIS GETS ENTIRE FOLDER STRUCTURE
             let temp = f.print_folder_structure(0);
@@ -1494,7 +1365,6 @@ fn main() {
             let _ = fs::remove_file(new_filename.to_owned() + "_file_structure.txt");
             let mut file = fs::File::create(new_filename.to_owned() + "_file_structure.txt").unwrap();
             file.write_all(temp.as_bytes()).unwrap();
-            //--
             //generate d3 jsons
             let _ = fs::remove_dir_all("containers/");
             std::thread::sleep(time::Duration::from_millis(1000));
@@ -1513,8 +1383,6 @@ fn main() {
                 }
 
                 let _ = fs::create_dir_all("containers/".to_owned() + &filteredpath);
-
-
                 let filename = "containers/".to_owned() + &filteredpath + ".json";
 
                 let _ = fs::remove_file(&filename );
@@ -1553,8 +1421,6 @@ fn main() {
 
             let file_list = file_data_map_to_file_list(&file_data, age_cuttof, &recognized_bugfix_indicators, &filtered_file_types);
 
-
-            //println!("{}", file_list);
             let json = serde_json::to_string_pretty(&file_list).unwrap();
             let mut file = fs::File::create(new_filename.to_owned() + ".json").unwrap();
             file.write_all(json.as_bytes()).unwrap();

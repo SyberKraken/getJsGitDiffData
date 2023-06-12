@@ -14,6 +14,8 @@ Click on the rectangles or enter a path in the top field to navigate the structu
 The "just files" page shows the top 100(or different amount if manualy generated) files predicted in the entire repository with its full path.
 
 Generate new data via "http://localhost:5500/generation" page, where you can run the rust-generation scripts that generate pre-named data files that the visualization shows.
+Use regex expressions in the bottom boxes if you want to customize what counts as a bug or what files to exclude.
+!!!OBS!!! only use single regex expression per box. regexes can be "or"d with a "|" ex. \.js|\.tsx to functionaly use multiple regexes.
 
 Or you can manually generate a variety of files via the rust script:
 
@@ -52,5 +54,6 @@ run: target/release/gitdiffjson
             The visualization uses the name "full" for its generation, but you can manually enter a file as a get-parameter in the search bar if you want to generate multiple different ones and not have to overwrite it every time you switch between them since the express server serves all files in the folder
 
         There are some more "modes" in the code but they are more for testing or running partial parts of the code or debugging.
-Known "issues" or lacking features.
-The server is single-user based and the backend is not intended to work for multiple users at the same time.
+Known "issues" or lacking features:
+The server is single-user based and synchronus. Wich is to say the backend does not work for multiple users/requests at the same time and is blocked from requests during certain operations.
+Functions are not included in the visualization or folder-based structure in containers
