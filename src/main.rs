@@ -247,6 +247,7 @@ struct File {
     repo_max_age: i32,
 }
 //The matches in This function needs to match amount in "get_implemented_nr_of_fields_for_analysis" and corresponds to "get_field"
+//The naming is bad
 fn get_file_field_name(n: i32) -> String {
     let _ret = "ERROR no field for: ".to_owned() + &n.to_string();
     match n {

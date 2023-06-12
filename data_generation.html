@@ -93,34 +93,34 @@
        <p>The selectable factors are sorted by their performance effectiveness. Different ones are better for certain repositories. If you want to find the best for your specific repository, please read the README.md and run multivariable-analysis for your repository</p>
 
            <label>Factor(optional):</label>
-           <!--<input type="text" id="factor"> -->
+           <!-- the naming here is bad -->
            <select  id="factor">
-             <option>custom formula bug1</option>
-             <option>custom formula bug1  more newest change</option>
-             <option>custom formula</option>
-             <option>custom formula bug2  more newest change</option>
-             <option>custom formula more newest change</option>
-             <option>custom formula bug2</option>
-             <option>custom formula freq1</option>
-             <option>custom formula bugonly  more newest change</option>
-             <option>custom formula freq1  more newest change</option>
-             <option>custom formula freq2</option>
-             <option>custom formula freq2  more newest change</option>
-             <option>custom formula freqonly  more newest change</option>
-             <option>frequency aged by commit ages * newest change</option>
-             <option>custom formula freqonly</option>
-             <option>custom formula bugonly</option>
-             <option>frequency aged by commit ages</option>
-             <option>frequency aged by most recent newest file change</option>
-             <option>frequency</option>
-             <option>fixed bugs aged by commit ages * newest change</option>
-             <option>fixed bugs aged by most recent newest file change</option>
-             <option>newest change</option>
-             <option>fixed bugs aged by commit ages</option>
-             <option>fixed bugs</option>
-             <option>fixed bugs aged by most recent oldest file change</option>
-             <option>frequency aged by most recent oldest file change</option>
-             <option>oldest change</option>
+             <option value="custom formula bug1">age*(bugs*2+freq)</option>
+             <option value="custom formula bug1  more newest change">age*(bugs*2+freq)+age</option>
+             <option value="custom formula">age*(bugs+freq)</option>
+             <option value="custom formula bug2  more newest change">age*(bugs*10+freq)+age</option>
+             <option value="custom formula more newest change">age*(bugs+freq)+age</option>
+             <option value="custom formula bug2">age*(bugs*10+freq)</option>
+             <option value="custom formula freq1">age*(bugs+freq*2)</option>
+             <option value="custom formula bugonly  more newest change">age*(bugs+1)+age</option>
+             <option value="custom formula freq1  more newest change">age*(bugs+freq*2)+age</option>
+             <option value="custom formula freq2">age*(bugs+freq*10)</option>
+             <option value="custom formula freq2  more newest change">age*(bugs+freq*10)+age</option>
+             <option value="custom formula freqonly  more newest change">age*(1+freq)+age</option>
+             <option value="frequency aged by commit ages * newest change">frequency aged by commit ages * newest change</option>
+             <option value="custom formula freqonly">age*(1+freq)</option>
+             <option value="custom formula bugonly">age*(bugs+1)</option>
+             <option value="frequency aged by commit ages">frequency aged by commit ages</option>
+             <option value="frequency aged by most recent newest file change">frequency aged by most recent newest file change</option>
+             <option value="frequency">frequency</option>
+             <option value="fixed bugs aged by commit ages * newest change">fixed bugs aged by commit ages * newest change</option>
+             <option value="fixed bugs aged by most recent newest file change">fixed bugs aged by most recent newest file change</option>
+             <option value="newest change">newest change</option>
+             <option value="fixed bugs aged by commit ages">fixed bugs aged by commit ages</option>
+             <option value="fixed bugs">fixed bugs</option>
+             <option value="fixed bugs aged by most recent oldest file change">fixed bugs aged by most recent oldest file change</option>
+             <option value="frequency aged by most recent oldest file change">frequency aged by most recent oldest file change</option>
+             <option value="oldest change">oldest change</option>
            </select>
        </div>
        <p> Below fields require valid regexes !!!OBS!!! one-liner regexes only atm, multirow does not work yet. Example regex: \.js|\.tsx this removes all files ending in .js and .tsx .When in use the used regex is printed in server console. empty will use pre-made settings.
